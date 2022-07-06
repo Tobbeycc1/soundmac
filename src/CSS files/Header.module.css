@@ -1,0 +1,50 @@
+.headerContainer{
+    display: flex;
+}
+
+.logoDiv{
+    margin: 30px 0px 0px 50px;
+    margin-right: auto;
+ 
+}
+.logo{
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 30px;
+    vertical-align: middle;
+}
+.navDiv{
+    display: inline-block;
+    margin: 30px 50px 0px 0px;
+    
+}
+.nav{
+    color: var(--purple);
+    margin: 15px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 14px;
+}
+.nav:hover{
+    text-shadow: 0 0 10px #21072154, 6px 14px 11px rgba(33,7,33,0);
+}
+.nav:active, .nav:focus{
+    border-bottom: 5px solid var(--purple);
+}
+.button{
+    margin: 15px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 14px;
+    background: var(--purple);
+    color: white;
+    padding: 5px 15px;
+    border-radius: 7px;
+  
+}
+.button:hover{
+    box-shadow: -3px 8px 22px -6px rgba(0,0,0,0.55);
+-webkit-box-shadow: -3px 8px 22px -6px rgba(0,0,0,0.55);
+-moz-box-shadow: -3px 8px 22px -6px rgba(0,0,0,0.55);
+}
