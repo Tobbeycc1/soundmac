@@ -2,10 +2,13 @@
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+  color: var(--purple);
  }
 :root {
   --purple: #210721;
   --yellow: #FAD30B;
+  --cream: #FFEFCD;
+  --brown: #846757;
   --placeholdercolor: #D2D3D5;
 }
 

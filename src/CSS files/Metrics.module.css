@@ -1,0 +1,10 @@
+.metricsCard{
+text-align: left;
+width: fit-content;
+display: inline-block;
+margin: 30px 30px;
+}
+.category{
+    font-weight: bold ;
+    font-size: 13px;
+}

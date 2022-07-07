@@ -1,0 +1,58 @@
+.megaphoneBackground{
+margin: 0px 50px;
+}
+.header{
+    margin-top: 180px;
+    font-size: 30px;
+    width: 389px;
+}
+.text{
+    font-size: 18px;
+    margin-top: 30px;
+    font-weight: 500;
+    margin-bottom: 100px;
+}
+.purpleBackground{
+    background: var(--purple);
+    width: 100%;
+    height: 500px;
+    text-align: center;
+    
+    
+}
+
+.purpleBackgroundHeader{
+    color: white;
+    font-size: 40px;
+    
+}
+.purpleBackgroundCreate{
+    color: yellow;
+}
+.purpleBackgroundText{
+color: white;
+margin-top: 40px;
+font-size: 18px;
+}
+.purpleBackgroundTextCon{
+    display: inline-block;
+    position: relative;
+    top: 180px;
+    
+}
+.megaphoneHand{
+    vertical-align: middle;
+   
+    
+}
+.purpleBackgroundSubCon{
+   position: relative;
+   top: -430px;
+}
+.checkOur{
+    margin: 160px 50px;
+    font-size: 22px;
+}
+.checkOurText{
+    margin-top: 20px;
+}

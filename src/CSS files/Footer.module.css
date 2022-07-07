@@ -1,0 +1,66 @@
+.footerCon{
+    height: 768px;
+    background: url(../images/Footer\ Background.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    text-align: center;
+    color: white;
+}
+.donotMiss{
+    padding-top: 150px;
+    color: white;
+}
+.eMailInput{
+    margin-top: 30px;
+    width: 70%;
+    height: 61px;
+    background: var(--brown);
+    border-radius: 20px;
+    outline: none;
+    padding: 10px 30px;
+    color: white;
+    border: none;
+    margin-bottom: 20px;
+}
+.submitButton{
+    background: var(--cream);
+    width: 162px;
+    height: 52px;
+    border: none;
+    border-radius: 10px;
+    font-size: 25px;
+    font-weight: bold;
+    margin-bottom: 120px;
+    cursor: pointer;
+}
+.footerNavContentCOn, .footerNavContentCOnB{
+    color: white;
+    width: 310px;
+    display: inline-block;
+    text-align: left;
+    vertical-align: top;
+    margin-right: 80px;
+}
+.footerNavContentCOnB{
+    width: fit-content;
+}
+.footerSoundmac{
+    color: white;
+    margin-bottom: 20px;
+}
+.footerSoundmacText{
+    color: white;
+    font-size: 13px;
+    text-align: justify;
+    margin-bottom: 23px;
+    display: block;
+    text-decoration: none;
+}
+.copywright{
+    color: white;
+    font-size: 13px;
+    margin-top: 40px;
+    display: block;
+    text-decoration: none;
+}

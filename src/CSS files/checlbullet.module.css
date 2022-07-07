@@ -1,0 +1,15 @@
+.squareAndCircleIcon{
+    width: 25px;
+    height: 25px;
+    background: var(--cream);
+    border-radius: 5px;
+    text-align: center;
+    display: inline-block;
+    margin-right: 10px;
+    vertical-align: middle;
+}
+.bulletText{
+    display: inline-block;
+    margin: 10px 0px;
+    font-size: 13px;
+}

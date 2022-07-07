@@ -13,6 +13,9 @@
     font-weight: bold;
     font-size: 30px;
     vertical-align: middle;
+    background: var(--purple);
+    padding: 0px 10px;
+    border-radius: 5px;
 }
 .navDiv{
     display: inline-block;

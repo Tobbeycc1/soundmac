@@ -3,6 +3,28 @@ import Header from '../Componets/Header'
 import classes from '../CSS files/Home.module.css'
 import speaker from '../images/speaker.png'
 import musicAppLogos from '../images/music app logos.png'
+import AOS from 'aos';
+import 'aos/dist/aos.css'; // You can also use <link> for styles
+import LinkCards from '../Componets/LinkCards'
+import musicDistributionLogo from '../images/music distribution icon.png'
+import promotionLogo from '../images/promotion icon.png'
+import pricingLogo from '../images/pricing icon.png'
+import Metrics from '../Componets/Metrics'
+import CheckBullet from '../Componets/check bukket'
+import Footer from '../Componets/Footer'
+
+// ..
+AOS.init();
+
+const checkStyles= {
+    fontSize:'274px',
+    color: 'var(--yellow)',
+    textAlign: 'center',
+    marginTop: '25%',
+    background: 'white',
+    borderRadius: '100%'
+}
+
 function Home(props) {
     return(
         <div className={classes.homeCard1}>
@@ -22,14 +44,151 @@ function Home(props) {
          </div>
 
          {/* Body */}
-         <div className={classes.earnCon}>
+         <div id='musicDistribution' className={classes.earnCon} >
+            <div data-aos="fade-up" data-aos-delay="50"
+    data-aos-duration="1000"
+    data-aos-easing="ease-in-out">
                 <h3 className={classes.earn}>Earn While They Listen, With Over <span className={classes.red}>2million</span> Listeners </h3>
                 <img src={musicAppLogos} alt='music app logos'/>
                 <p className={classes.musicLogotext}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse turpis lorem, placerat non purus sit amet,<br/>
  ultrices dapibus mi. Pellentesque quis dui ligula. Vivamus volutpat nibh hendrerit,<br/>
  rhoncus dolor mattis, aliquam felis. Nulla tristique lacus eget magna fermentum interdum. Suspendisse molestie luctus diam,<br/>
- vitae convallis arcu varius a. Vivamus lobortis posuere magna, at interdum dolor malesuada vel. </p>
+ vitae convallis arcu varius a. Vivamus lobortis posuere magna, at interdum dolor malesuada vel. </p></div>
+                
+
+ {/* About Us */}
+<div id='about' data-aos="fade-down" data-aos-delay="50"
+    data-aos-duration="1000"
+    data-aos-easing="ease-in-out">
+ <h4 className={classes.aboutUsHeader}>About Us</h4>
+
+
+ <div className={classes.aboutUsText}>
+    <h2 className={classes.aboutUsTextHeader}>We are very skilled <br/> at what we do</h2>
+    <p className={classes.aboutUsParagraphText}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse turpis lorem,
+placerat non purus sit amet, ultrices dapibus mi. Pellentesque quis dui ligula. 
+volutpat nibh hendrerit, rhoncus dolor mattis, aliquam felis. Nulla tristique lacus 
+eget magna fermentum interdum. Suspendisse molestie luctus diam, vitae convallis 
+arcu varius a. Vivamus lobortis posuere magna, at interdum dolor malesuada vel. 
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse turpis lorem,
+placerat non purus sit amet, ultrices dapibus mi. Pellentesque quis dui ligula. 
+volutpat nibh hendrerit, rhoncus dolor mattis, aliquam felis. Nulla tristique lacus 
+eget magna fermentum interdum. Suspendisse molestie luctus diam, vitae convallis 
+arcu varius a. Vivamus lobortis posuere magna, at interdum dolor malesuada vel. </p>
+ </div>   
+</div>
+ 
+
             </div>
+            
+            <div id='metrics' className={classes.linkCards}
+            data-aos="fade-down" data-aos-delay="50"
+            data-aos-duration="1000"
+            data-aos-easing="ease-in-out"
+            >
+            {/* Music Distribution */}
+            <LinkCards
+             icon={musicDistributionLogo}
+             link={'/musicdistribution'}
+             iconHeader={'Music distribution'}
+             iconSubText={'Upload your music instantly to Apple music,Spotify, Beatport, iTunes, Amazon, Tik-Tok, YouTube and hundreds of other digital stores and applications.'}
+             />
+
+            {/* Promotion */}
+            <LinkCards
+             icon={promotionLogo}
+             link={'/promotion'}
+             iconHeader={'Promotion'}
+             iconSubText={'Get your music heard! Soundmac’s  easy-to-use promotional tools get your tracks to the people that matters the most lorem Lorem ipsum dolor sit amet, consectetur.'}
+             />
+
+             {/* Pricing */}
+            <LinkCards
+             icon={pricingLogo}
+             link={'/pricing'}
+             iconHeader={'Pricing'}
+             iconSubText={'All-inclusive distribution you keep: 90%  revenue share on distribution and also get your music into over 100 partner stores worldwide. '}
+             />
+
+             
+            </div>  
+       
+        <div className={classes.metricsCon}
+        data-aos="zoom-in" data-aos-delay="50"
+        data-aos-duration="1000"
+        data-aos-easing="ease-in-out"
+        >
+        {/* Happy clients */}
+        <div className={classes.metrics}>
+        <Metrics
+        value={'50+'}
+        category={'Happy Clients'}
+        />    
+        </div>   
+
+        {/* Music Distributed */}
+        <div className={classes.metricsWithBorder}>
+        <Metrics
+        value={'210+'}
+        category={'Music Distributed'}
+        />    
+        </div>    
+
+        {/* Team Members */}
+        <div className={classes.metrics}>
+        <Metrics
+        value={'22'}
+        category={'Team Members'}
+        />    
+        </div>          
+        </div> 
+
+        <div className={classes.largerAudienceCon}>
+        
+            <div className={classes.squareAndCircleIcon}>
+            <i class="fa-solid fa-circle-check"
+            style={checkStyles}
+            ></i>
+            </div>
+            {/* Small thick line */}
+        <div className={classes.smallThinkLine}></div>
+
+        <div className={classes.largerAudienceText}>
+            <h2>Your Independence <br/> Is Our Policy</h2>
+            <br/>
+            <h2 className={classes.reachLargerText}>Reach larger audience, let get your <br/>
+music available across over 120<br/>
+music streaming platforms</h2>
+<CheckBullet
+bulletText={'Distribute your music to hundreds of stores worldwide'}
+/>
+
+<CheckBullet
+bulletText={'Stress free point-and-vlick royalty management'}
+/>
+
+<CheckBullet
+bulletText={'Reach millions of new listeners'}
+/>
+
+<CheckBullet
+bulletText={'The best support worldwide'}
+/>
+
+<CheckBullet
+bulletText={'Keep major share of your music royalty'}
+/>
+<Link className={classes.signUpOrLogIn} to={'/signIn'}>Sign up / Log in</Link>
+        </div>
+
+        </div>
+          
+          <div className={classes.Footer}>
+          <Footer/>
+          </div>
+          
+          
+
         </div>
     )
 }
