@@ -1,10 +1,15 @@
 .headerContainer{
     display: flex;
+    width: 100%;
+       
+   
+    
 }
 
 .logoDiv{
     margin: 30px 0px 0px 50px;
     margin-right: auto;
+    
  
 }
 .logo{

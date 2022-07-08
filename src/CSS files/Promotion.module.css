@@ -56,3 +56,18 @@ font-size: 18px;
 .checkOurText{
     margin-top: 20px;
 }
+.packageDetails{
+    margin: 100px 50px;
+}
+.packageAndFormCon{
+    display: flex;
+}
+.allPackagesCon{
+    display: inline-block;
+    margin-right: auto;
+}
+.formCon{
+    margin-right: 50px;
+    vertical-align: top;
+    margin-top: 100px;
+}
