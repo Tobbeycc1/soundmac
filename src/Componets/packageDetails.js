@@ -13,6 +13,7 @@ function PackageDetails(props) {
           <h2 className={classes.packageOldPrice}>{props.packageOldPrice}</h2>
         <h1 className={classes.packagenewPrice}>{props.packagenewPrice}</h1>   
         </div>
+        <p className={classes.priceIncludes}>{props.priceIncludes}</p>
        
         </div>
     )

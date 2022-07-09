@@ -1,9 +1,9 @@
+import Footer from "../Componets/Footer"
 import Header from "../Componets/Header"
 import PackageDetails from "../Componets/packageDetails"
 import PackagesForm from "../Componets/packagesForm"
 import classes from '../CSS files/Promotion.module.css'
 import megaphoneHand from '../images/megaphoneHand.png'
-
 function Promotion(props) {
     return(
         <div>
@@ -34,7 +34,7 @@ We're are the best spot to reach your fans, so you can focus on your music.</p>
 
 
             <div className={classes.checkOur}>
-            <h2>Check out our <br/>
+            <h2 id="checkOur">Check out our <br/>
 packages below and select what suites you.</h2>
 
 <p className={classes.checkOurText}>All prices include ad placement and strategy, spend, digital marketing consultation and end of campaign reporting. Please note the 
@@ -54,6 +54,7 @@ required assets and specifications our team need from you to kick off the campai
                 packageDetailsSubTextC={'- stay up-to-date with our campaign performance with daily updates and end of campaign report.'}
                 packageOldPrice={'  $ 820  '}
                 packagenewPrice= {' $ 700'}
+                priceIncludes= {' Price includes $550 ad spend.'}
 
                 />
               </div>
@@ -69,6 +70,7 @@ required assets and specifications our team need from you to kick off the campai
                 packageDetailsSubTextD={'- promote your music before it live with a pre-save link which drives fan engagement and build hype into your release'}
                 packageOldPrice={'  $ 900  '}
                 packagenewPrice= {' $ 850'}
+                priceIncludes= {' Price includes $650 ad spend.'}
 
                 />
               </div>
@@ -84,6 +86,7 @@ required assets and specifications our team need from you to kick off the campai
                 packageDetailsSubTextD={"- promote your music before it's live with a pre-save link which drives fan engagement and build hype into your release"}
                 packageOldPrice={'  $ 1,100  '}
                 packagenewPrice= {' $ 1,000'}
+                priceIncludes= {' Price includes $850 ad spend.'}
 
                 />
               </div>
@@ -99,6 +102,7 @@ required assets and specifications our team need from you to kick off the campai
                 packageDetailsSubTextD={'- stay up-to-date with our campaign performance with daily updates and end of campaign report while benefitting from ongoing support.'}
                 packageOldPrice={'  $ 800  '}
                 packagenewPrice= {' $ 700'}
+                priceIncludes= {' Price includes $500 ad spend.'}
 
                 />
               </div>
@@ -114,6 +118,7 @@ required assets and specifications our team need from you to kick off the campai
                 packageDetailsSubTextD={'- Enjoy increased brand awareness for your project'}
                 packageOldPrice={'  $ 1,200  '}
                 packagenewPrice= {' $ 1,00'}
+                priceIncludes= {' Price includes $550 ad spend.'}
 
                 />
               </div>
@@ -124,6 +129,8 @@ required assets and specifications our team need from you to kick off the campai
                 <PackagesForm/>
               </div>
             </div>
+
+            <Footer/>
               
             
         </div>

@@ -1,23 +1,29 @@
-.packageDetailsText{
-    width: 50vw;
-    margin: 25px 0px;
+.packageDetailsText {
+  width: 50vw;
+  margin: 25px 0px;
 }
-.packageDetailsSubText{
-    font-size: 13px;
-    margin: 5px 0px;
-    width: 50vw;
+.packageDetailsSubText {
+  font-size: 13px;
+  margin: 5px 0px;
+  width: 50vw;
 }
-.packageOldPrice{
-    margin-top: 25px ;
-    text-decoration: line-through;
-    text-decoration-color:red ;
-    text-decoration-thickness:3px;
-    
+.packageOldPrice {
+  margin-top: 25px;
+  text-decoration: line-through;
+  text-decoration-color: red;
+  text-decoration-thickness: 3px;
 }
-.packagePriceCon{
-    text-align: center;
-    width: fit-content;
+.packagePriceCon {
+  text-align: center;
+  width: fit-content;
 }
-.packagenewPrice{
-    color: red;
+.packagenewPrice {
+  color: red;
+}
+.priceIncludes {
+  font-size: 13px;
+  margin: 5px 0px;
+  width: 50vw;
+  color: gray;
+  font-weight: bold;
 }
