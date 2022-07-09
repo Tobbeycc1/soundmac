@@ -234,8 +234,15 @@ const totalspotifyAdsPrice= spotifyAdsPrice && 1000
             {youtubeAdsSummary && youtueAdsJSX}
             {spotifyAdsSummary &&  spotifyAdsJSX}
 
-            <diV>
-                {totalNewSinglePrice + totalBeforeReleasePrice + totalMusicVideoOutPrice + totalYoutubeAdsPrice + totalspotifyAdsPrice }  
+            <diV className={classes.checkOutBtnCon}>
+                <button className={classes.checkOutBtn}> Checkout ($
+                {totalNewSinglePrice + totalBeforeReleasePrice + totalMusicVideoOutPrice + totalYoutubeAdsPrice + totalspotifyAdsPrice })
+                </button>
+                  
+            </diV>
+
+            <diV className={classes.iAgreeCon}>
+            <input type={'checkbox'} id='i-agree' value={'i-agree'} /> <label className={classes.checkBoxLabelIAgree}>I agree to the <a href='#'>Terms and Conditions</a> </label> 
             </diV>
 
             </form>
