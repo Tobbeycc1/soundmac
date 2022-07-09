@@ -10,7 +10,9 @@ function PackagesForm(props) {
     const checkBoxC= useRef()
     const checkBoxD= useRef()
     const checkBoxE= useRef()
+
     
+   
 
     
 
@@ -18,12 +20,20 @@ function PackagesForm(props) {
 const [newSingleSummary, setNewSingleSummary]= useState(false)
 const [beforeReleaseSummary, setBeforeReleaseSummary]= useState(false)
 const [musicVideoOutSummary, setMusicVideoOutSummary]= useState(false)
+const [youtubeAdsSummary, setYoutubeAdsSummary]= useState(false)
+const [spotifyAdsSummary, setspotifyAdsSummary]= useState(false)
+
+const [newSinglePrice, setNewSinglePrice]= useState(false)
+const [beforeReleasePrice, setBeforeReleasePrice]= useState(false)
+const [musicVideoOutPrice, setMusicVideoOutPrice]= useState(false)
+const [youtubeAdsPrice, setYoutubeAdsPrice]= useState(false)
+const [spotifyAdsPrice, setspotifyAdsPrice]= useState(false)
 
 
 
 
 // new single out now cart summary JSX 
-const newSingleJSX =  <div className={classes.newSingleJSXCon}> <h4 className={classes.newSingleJSXHeader}>New Single Out Now </h4> <h3>$ <span>750</span> </h3> </div>
+const newSingleJSX =  <div className={classes.newSingleJSXCon}> <h4 className={classes.newSingleJSXHeader}>New Single Out Now </h4> <h3>$ <span>700</span> </h3> </div>
 
 // Before Release Date + Pre Save JSX 
 const beforeReleaseJSX =  <div className={classes.newSingleJSXCon}> <h4 className={classes.newSingleJSXHeader}>Before Release Date + Pre Save </h4> <h3>$ <span>850</span> </h3> </div>
@@ -31,36 +41,86 @@ const beforeReleaseJSX =  <div className={classes.newSingleJSXCon}> <h4 classNam
 // Music Video + Out Now + Pre Save JSX 
 const musicVideoOutJSX =  <div className={classes.newSingleJSXCon}> <h4 className={classes.newSingleJSXHeader}>Music Video + Out Now + Pre Save</h4> <h3>$ <span>1000</span> </h3> </div>
 
+// YouTube Ads JSX 
+const youtueAdsJSX =  <div className={classes.newSingleJSXCon}> <h4 className={classes.newSingleJSXHeader}>YouTube Ads</h4> <h3>$ <span>700</span> </h3> </div>
+
+// Spotify Ads JSX 
+const spotifyAdsJSX =  <div className={classes.newSingleJSXCon}> <h4 className={classes.newSingleJSXHeader}>Spotify Ads </h4> <h3>$ <span>1000</span> </h3> </div>
+
+
+
+const totalNewSinglePrice= newSinglePrice && 700 
+const totalBeforeReleasePrice= beforeReleasePrice && 850 
+const totalMusicVideoOutPrice= musicVideoOutPrice && 1000
+const totalYoutubeAdsPrice= youtubeAdsPrice && 700  
+const totalspotifyAdsPrice= spotifyAdsPrice && 1000
+
+
 
 
     //if check boxes are checked
     function handleChange() {
+       
         
         if (checkBoxA.current.checked) {
             console.log('AAAAAAA');
             setNewSingleSummary(true)
+            setNewSinglePrice(true)
             
         } else{
             console.log('false AAAAAAA');
             setNewSingleSummary(false)
+            setNewSinglePrice(false)
+           
         }
         
 
          if (checkBoxB.current.checked) {
             console.log('BBBBBBBBBB');
             setBeforeReleaseSummary(true)
+            setBeforeReleasePrice(true)
             
-        }
-        else{
+        } else{
             console.log('false BBBBBB');
             setBeforeReleaseSummary(false)
+            setBeforeReleasePrice(false)
+            
         }
+
         if (checkBoxC.current.checked) {
             console.log('CCCCCCCCC');
             setMusicVideoOutSummary(true)
+            setMusicVideoOutPrice(true)
             
+        }else{
+            console.log('false CCCCCCCC');
+            setMusicVideoOutSummary(false)
+            setMusicVideoOutPrice(false)
+        }
+
+        if (checkBoxD.current.checked) {
+            console.log('DDDDDDDD');
+            setYoutubeAdsSummary(true)
+            setYoutubeAdsPrice(true)
+            
+        }else{
+            console.log('false DDDDDD');
+            setYoutubeAdsSummary(false)
+            setYoutubeAdsPrice(false)
+        }
+
+        if (checkBoxE.current.checked) {
+            console.log('EEEEEEEE');
+            setspotifyAdsSummary(true)
+            setspotifyAdsPrice(true)
+            
+        }else{
+            console.log('false EEEEEE');
+            setspotifyAdsSummary(false)
+            setspotifyAdsPrice(false)
         }
         
+       
        
 
         
@@ -153,7 +213,7 @@ const musicVideoOutJSX =  <div className={classes.newSingleJSXCon}> <h4 classNam
                 <div className={classes.inputButDiv}>
 
     <div className={classes.checkBoxDatalistCon}>
-    <input onChange={handleChange} ref={checkBoxA} type={'checkbox'} id='New-Single-Out-Now' value={700} /> <label className={classes.checkBoxLabel}>New Single Out Now</label> <br/>
+    <input onChange={handleChange} ref={checkBoxA} type={'checkbox'} id='New-Single-Out-Now' value={'700'} /> <label className={classes.checkBoxLabel}>New Single Out Now</label> <br/>
     <input onChange={handleChange} ref={checkBoxB} type={'checkbox'} id='Before-Release-Date-Pre Save' value={850} /> <label className={classes.checkBoxLabel}>Before Release Date + Pre Save</label> <br/>
     <input onChange={handleChange} ref={checkBoxC}type={'checkbox'} id='Music-Video-Out-Now-Pre Save' value={1000} /> <label className={classes.checkBoxLabel}>Music Video + Out Now + Pre Save</label> <br/>
     <input onChange={handleChange} ref={checkBoxD} type={'checkbox'} id='YouTube-Ads' value={700} /> <label className={classes.checkBoxLabel}>YouTube Ads</label> <br/>
@@ -171,6 +231,12 @@ const musicVideoOutJSX =  <div className={classes.newSingleJSXCon}> <h4 classNam
             {newSingleSummary && newSingleJSX}
             {beforeReleaseSummary && beforeReleaseJSX}
             {musicVideoOutSummary && musicVideoOutJSX}
+            {youtubeAdsSummary && youtueAdsJSX}
+            {spotifyAdsSummary &&  spotifyAdsJSX}
+
+            <diV>
+                {totalNewSinglePrice + totalBeforeReleasePrice + totalMusicVideoOutPrice + totalYoutubeAdsPrice + totalspotifyAdsPrice }  
+            </diV>
 
             </form>
         </div>
