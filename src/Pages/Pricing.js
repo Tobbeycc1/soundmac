@@ -11,7 +11,7 @@ function Pricing(params) {
            </div>
 
            <div>
-            <img src=" "/>
+            
            </div>
 
         </div>
