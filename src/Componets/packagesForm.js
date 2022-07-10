@@ -1,6 +1,7 @@
 import { useRef, useState } from 'react';
 import classes from '../CSS files/packagesForm.module.css'
 import DatePickerForm from './DatePicker'
+import NumberFormat from 'react-number-format';
 
 
 function PackagesForm(props) {
@@ -39,13 +40,13 @@ const newSingleJSX =  <div className={classes.newSingleJSXCon}> <h4 className={c
 const beforeReleaseJSX =  <div className={classes.newSingleJSXCon}> <h4 className={classes.newSingleJSXHeader}>Before Release Date + Pre Save </h4> <h3>$ <span>850</span> </h3> </div>
 
 // Music Video + Out Now + Pre Save JSX 
-const musicVideoOutJSX =  <div className={classes.newSingleJSXCon}> <h4 className={classes.newSingleJSXHeader}>Music Video + Out Now + Pre Save</h4> <h3>$ <span>1000</span> </h3> </div>
+const musicVideoOutJSX =  <div className={classes.newSingleJSXCon}> <h4 className={classes.newSingleJSXHeader}>Music Video + Out Now + Pre Save</h4> <h3>$ <span>1,000</span> </h3> </div>
 
 // YouTube Ads JSX 
 const youtueAdsJSX =  <div className={classes.newSingleJSXCon}> <h4 className={classes.newSingleJSXHeader}>YouTube Ads</h4> <h3>$ <span>700</span> </h3> </div>
 
 // Spotify Ads JSX 
-const spotifyAdsJSX =  <div className={classes.newSingleJSXCon}> <h4 className={classes.newSingleJSXHeader}>Spotify Ads </h4> <h3>$ <span>1000</span> </h3> </div>
+const spotifyAdsJSX =  <div className={classes.newSingleJSXCon}> <h4 className={classes.newSingleJSXHeader}>Spotify Ads </h4> <h3>$ <span>1,000</span> </h3> </div>
 
 
 
@@ -205,7 +206,7 @@ const totalspotifyAdsPrice= spotifyAdsPrice && 1000
             {/* Package Details Section */}
             
             <h3 className={classes.personalDetails}>Package Details</h3>
-            <a href='#checkOur' className={classes.ensure}>Kindly ensure that all details you input are correct</a>
+            <a href='#checkOur' className={classes.ensure}>Click me to learn more about packages</a>
 
         {/* Select a package */}
 <label className={classes.label}>Select A Package</label>
@@ -235,14 +236,15 @@ const totalspotifyAdsPrice= spotifyAdsPrice && 1000
             {spotifyAdsSummary &&  spotifyAdsJSX}
 
             <diV className={classes.checkOutBtnCon}>
-                <button className={classes.checkOutBtn}> Checkout ($
-                {totalNewSinglePrice + totalBeforeReleasePrice + totalMusicVideoOutPrice + totalYoutubeAdsPrice + totalspotifyAdsPrice })
+                <button className={classes.checkOutBtn}> CHECKOUT (<NumberFormat style={{color:'white'}} value= {totalNewSinglePrice + totalBeforeReleasePrice + totalMusicVideoOutPrice + totalYoutubeAdsPrice + totalspotifyAdsPrice } displayType={'text'} thousandSeparator={true} prefix={'$'} />)
+               
                 </button>
                   
             </diV>
 
             <diV className={classes.iAgreeCon}>
             <input type={'checkbox'} id='i-agree' value={'i-agree'} /> <label className={classes.checkBoxLabelIAgree}>I agree to the <a href='#'>Terms and Conditions</a> </label> 
+            
             </diV>
 
             </form>

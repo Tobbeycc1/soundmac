@@ -1,0 +1,10 @@
+.pricingCon{
+    text-align: center;
+    margin-top: 100px;
+}
+.noBoldOnHeader{
+    font-weight: 400;
+}
+.pricingBigCon{
+    margin: 0px 50px;
+}
