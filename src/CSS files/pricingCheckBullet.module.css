@@ -11,6 +11,6 @@
 .bulletText{
     display: inline-block;
     margin: 10px 0px;
-    font-size: 13px;
+    font-weight: 500;
     vertical-align: middle;
 }

@@ -1,5 +1,4 @@
 import Footer from "../Componets/Footer"
-import Header from "../Componets/Header"
 import PackageDetails from "../Componets/packageDetails"
 import PackagesForm from "../Componets/packagesForm"
 import classes from '../CSS files/Promotion.module.css'
@@ -7,7 +6,7 @@ import megaphoneHand from '../images/megaphoneHand.png'
 function Promotion(props) {
     return(
         <div>
-            <Header/>
+            
             <div className={classes.megaphoneBackground}>
 
             <h2 className={classes.header}>We offer Digital Marketing, Built for musicians</h2>

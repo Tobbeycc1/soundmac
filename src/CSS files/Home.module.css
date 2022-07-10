@@ -6,10 +6,13 @@
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
+   
 }
 .signInAndSpeakerCon{
-    margin: 35vh 50px 0px 50px;
+    margin: -70px 50px 0px 50px;
     display: flex;
+    position: relative;
+    margin-bottom: 45vh;
 }
 .signIn{
     font-size: 80px;
@@ -44,16 +47,17 @@
     display: inline-block;
     margin-right: auto;
     margin-top: 100px;
+    position: relative;
+    top: 45vh;
 
 }
 .speakerCon{
     display: inline-block;
     vertical-align: middle;
+    position: relative;
+    top: 35vh;
 }
-.earn{
-    font-size: 20px;
-    margin-bottom: 30px;
-}
+
 .earnCon{
     margin: 40px 50px;
     text-align: center;
@@ -61,12 +65,7 @@
 .red{
     color: red;
 }
-.musicLogotext{
-    margin-top: 30px;
-    font-size: 13px;
-    margin-bottom: 140px;
-    
-}
+
 .aboutUsHeader{
     transform: rotate(270deg);
     font-size: 20px;

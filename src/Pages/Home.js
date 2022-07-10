@@ -1,5 +1,4 @@
 import { Link } from 'react-router-dom'
-import Header from '../Componets/Header'
 import classes from '../CSS files/Home.module.css'
 import speaker from '../images/speaker.png'
 import musicAppLogos from '../images/music app logos.png'
@@ -12,6 +11,7 @@ import pricingLogo from '../images/pricing icon.png'
 import Metrics from '../Componets/Metrics'
 import CheckBullet from '../Componets/check bukket'
 import Footer from '../Componets/Footer'
+import MusicDistribution from '../Componets/MusicDistribution';
 
 // ..
 AOS.init();
@@ -28,7 +28,7 @@ const checkStyles= {
 function Home(props) {
     return(
         <div className={classes.homeCard1}>
-        <Header/>
+    
         <div className={classes.signInAndSpeakerCon}>
            <div className={classes.signInCon}>
            <Link to={'/myportal'} className={classes.signIn}> SIGN UP <br/> FOR FREE</Link>
@@ -48,12 +48,9 @@ function Home(props) {
             <div data-aos="fade-up" data-aos-delay="50"
     data-aos-duration="1000"
     data-aos-easing="ease-in-out">
-                <h3 className={classes.earn}>Earn While They Listen, With Over <span className={classes.red}>2million</span> Listeners </h3>
-                <img src={musicAppLogos} alt='music app logos'/>
-                <p className={classes.musicLogotext}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse turpis lorem, placerat non purus sit amet,<br/>
- ultrices dapibus mi. Pellentesque quis dui ligula. Vivamus volutpat nibh hendrerit,<br/>
- rhoncus dolor mattis, aliquam felis. Nulla tristique lacus eget magna fermentum interdum. Suspendisse molestie luctus diam,<br/>
- vitae convallis arcu varius a. Vivamus lobortis posuere magna, at interdum dolor malesuada vel. </p></div>
+                
+                <MusicDistribution/>
+                </div>
                 
 
  {/* About Us */}
