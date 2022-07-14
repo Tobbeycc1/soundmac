@@ -10,13 +10,13 @@ import independentArtistLogo from '../images/independent Artist Logo.png'
 import miniLabelLogo from '../images/mini label Logo.png'
 import fullLabelLogo from '../images/full label.png'
 
-function Pricing(params) {
+function Pricing(props) {
     return(
         <div className={classes.pricingBigCon}>
           
 
            <div className={classes.pricingCon}>
-            <h1>While we distribute, <br/> <span className={classes.noBoldOnHeader}>you stay independent, focus in your music and earn money.</span></h1>
+            <h1>While we distribute, <br/> <span className={classes.noBoldOnHeader}>you stay independent, focus on your music and earn money.</span></h1>
            </div>
 
            <div className={classes.pricingCardsCon}>

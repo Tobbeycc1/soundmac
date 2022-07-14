@@ -1,0 +1,168 @@
+.dashboardCon{
+    margin: 0px 150px ;
+}
+.usernameConfidentPhrase{
+    font-weight: 500;
+    margin-bottom: 50px;
+    vertical-align: middle;
+}
+.username{
+    text-transform: uppercase;
+   
+    margin-right: 10px;
+}
+.confidentPhraseAndImageCon{
+    display: flex;
+    margin-top: 100px;
+    
+}
+.confidentPhrase{
+    display: inline-block;
+    margin-right: auto;
+    
+    
+}
+.coolGlassesLady{
+    background: none;
+}
+.tracks{
+    display: inline-block;
+    
+    width: 100px;
+    margin-right: 50px;
+    border-right: 2px solid var(--purple);
+}
+.label{
+    display: inline-block;
+    
+    width: 100px;
+    margin-right: 50px;
+    
+}
+.dashboardAndIconsCon{
+    /* background: green; */
+    margin-top: 50px;
+    display: flex;
+}
+.dashboardIconsCon{
+    padding: 100px 0px 60px 0px;
+    background: var(--grey);
+    width: 500px;
+    border-radius: 20px;
+    text-align: center;
+    display: inline-block;
+    vertical-align: top;
+    margin-right: auto;
+}
+.dashboardIconsSubCon{
+    text-align: center;
+    width: 100%;
+    margin-bottom: 40px;
+    
+}
+.dashboardIconsSubConSpecial{
+    text-align: center;
+    width: 100%;
+    margin-bottom: 40px;
+    font-size: 28px;
+    cursor: default;
+    
+}
+.dashboardIconImage{
+    background: var(--purple);
+    border-radius: 50%;
+    display: inline-block;
+    vertical-align: middle;
+    
+}
+.dashboardiconTextCon{
+    display: inline-block;
+    text-align: left;
+    vertical-align: middle;
+    margin-left: 30px;
+}
+.dashBoardIconLink:hover{
+font-size: 18px;
+}
+.totalStreamUploadAndActiveCon{
+    display: inline-block;
+    /* background: red; */
+    width: 40vw;
+    height: 500px;
+    
+}
+.totalStreamAndUploadCon{
+    display: flex;
+}
+.totalSreamCon{
+    text-align: center;
+    display: inline-block;
+    background: var(--grey);
+    padding: 50px 40px;
+    border-radius: 20px;
+    margin-right: auto;
+}
+.totalSreamConB{
+    text-align: center;
+    display: inline-block;
+    background: var(--grey);
+    padding: 50px 20px;
+    height: 153px;
+    border-radius: 20px;
+}
+.plusIcon{
+    font-size: 40px;
+}
+.linlToAddTrack{
+    text-decoration: none;
+    display: inline-block;
+    width: 160px;
+    border-right: 4px solid var(--purple);
+}
+.linlToAddTrackB{
+    text-decoration: none;
+    display: inline-block;
+    width: 160px;
+}
+.totalSreamNumber{
+    color: var(--green);
+}
+.totalStreamAndUploadUpOnlyCon{
+    /* background: green; */
+    margin-bottom: 40px;
+}
+.allActivePackageCon{
+    /* background: red; */
+    height: 315px;
+    overflow-y: scroll;
+}
+.allActivePackageSubCon{
+    margin-top: 20px;
+    
+    
+   
+}
+
+.oIcon{
+    color: white;
+    margin-right: 5px;
+}
+.packageDivCon{
+    background: var(--purple);
+    padding: 10px 35px;
+    height: 83px;
+    position: relative;
+    border-radius: 15px;
+    margin-top: 21.4px;
+   }
+.packageDivConNoDisplay{
+    display: none;
+   }
+.dashBoardPackageText{
+    color: white;
+    position: absolute;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+

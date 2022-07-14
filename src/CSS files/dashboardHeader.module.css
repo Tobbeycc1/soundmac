@@ -1,0 +1,44 @@
+
+.dashboardHeaderCon{
+    display: flex;
+    margin: 0px 50px;
+    padding-top: 30px;
+}
+.logoDiv{
+  
+    margin-right: auto;
+    display: inline-block;
+    margin-right: auto;
+    
+ 
+}
+.logo{
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 30px;
+    vertical-align: middle;
+}
+.username{
+    display: inline-block;
+    margin: 0px 20px;
+}
+.usernameAndAviDiv{
+    display: inline-block;
+    vertical-align: middle;
+}
+.aviCon{
+    width: 1.875rem;
+    height: 1.875rem;
+    display: inline-block;
+    vertical-align: middle;
+}
+.avi{
+    width: 100%;
+    height: 100%;
+    border-radius: 100%;
+    
+}
+.notificationNumber{
+    color: red;
+    font-weight: 1000;
+}

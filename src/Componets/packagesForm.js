@@ -214,11 +214,11 @@ const totalspotifyAdsPrice= spotifyAdsPrice && 1000
                 <div className={classes.inputButDiv}>
 
     <div className={classes.checkBoxDatalistCon}>
-    <input onChange={handleChange} ref={checkBoxA} type={'checkbox'} id='New-Single-Out-Now' value={'700'} /> <label className={classes.checkBoxLabel}>New Single Out Now</label> <br/>
-    <input onChange={handleChange} ref={checkBoxB} type={'checkbox'} id='Before-Release-Date-Pre Save' value={850} /> <label className={classes.checkBoxLabel}>Before Release Date + Pre Save</label> <br/>
-    <input onChange={handleChange} ref={checkBoxC}type={'checkbox'} id='Music-Video-Out-Now-Pre Save' value={1000} /> <label className={classes.checkBoxLabel}>Music Video + Out Now + Pre Save</label> <br/>
-    <input onChange={handleChange} ref={checkBoxD} type={'checkbox'} id='YouTube-Ads' value={700} /> <label className={classes.checkBoxLabel}>YouTube Ads</label> <br/>
-    <input onChange={handleChange} ref={checkBoxE} type={'checkbox'} id='Spotify Ads' value={1000} /> <label className={classes.checkBoxLabel}>Spotify Ads</label> <br/>
+    <input onChange={handleChange} ref={checkBoxA} type={'checkbox'} id='New-Single-Out-Now' value={'700'} className={classes.checkBoxPF}/> <label className={classes.checkBoxLabel}>New Single Out Now</label> <br/>
+    <input onChange={handleChange} ref={checkBoxB} type={'checkbox'} id='Before-Release-Date-Pre Save' value={850} className={classes.checkBoxPF}/> <label className={classes.checkBoxLabel}>Before Release Date + Pre Save</label> <br/>
+    <input onChange={handleChange} ref={checkBoxC}type={'checkbox'} id='Music-Video-Out-Now-Pre Save' value={1000} className={classes.checkBoxPF}/> <label className={classes.checkBoxLabel}>Music Video + Out Now + Pre Save</label> <br/>
+    <input onChange={handleChange} ref={checkBoxD} type={'checkbox'} id='YouTube-Ads' value={700} className={classes.checkBoxPF}/> <label className={classes.checkBoxLabel}>YouTube Ads</label> <br/>
+    <input onChange={handleChange} ref={checkBoxE} type={'checkbox'} id='Spotify Ads' value={1000} className={classes.checkBoxPF}/> <label className={classes.checkBoxLabel}>Spotify Ads</label> <br/>
 </div>
                 
                 </div>

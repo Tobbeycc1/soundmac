@@ -1,0 +1,85 @@
+.ContactCon{
+    margin: 50px 0px 0px 0px ;
+    text-align: center;
+}
+.ContactFormCon{
+    text-align: center;
+    padding:100px 10vw ;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background: url(../images/contact\ purple\ and\ white\ backgro.png);
+    margin: 70px 0px 150px 0px;
+}
+.ContactFormSubCon{
+
+    text-align: left;
+    background: white;
+    /* width: 100%; */
+    padding: 50px 8vw;
+    /* border: 1px solid var(--pink); */
+}
+.weWould{
+    margin-bottom: 70px;
+    font-size: 13px;
+    font-weight: 500;
+}
+.contactFormLabel{
+    font-size: 13px;
+    font-weight: 500;
+    padding-left: 12px;
+}
+.contactFormLabelItalics{
+    font-style: italic;
+}
+.contactFormInput{
+    width: 100%;
+    height: 46px;
+    background: var(--pink);
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    padding: 0px 12px;
+    margin-bottom: 50px;
+}
+.contactFormTextArea{
+    width: 100%;
+    height: 200px;
+    background: var(--pink);
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    padding:  12px;
+    margin-bottom: 50px;
+}
+.contactFormInput::placeholder{
+    font-style: italic;
+    font-size: 13px;
+}
+.contactFormTextArea::placeholder{
+    padding-top: 10%;
+    text-align: center;
+    font-style: italic;
+    font-size: 13px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.contactFormBtnCon{
+    text-align: right;
+    
+}
+.contactFormBtn{
+    text-align: center;
+    padding: 5px 12px;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    background: var(--purple);
+    color: white;
+    cursor: pointer;
+
+}
+.contactFormBtn:hover{
+    border: 2px solid var(--purple);
+    color: var(--purple);
+    background: none;
+}
