@@ -13,7 +13,7 @@
 }
 .confidentPhraseAndImageCon{
     display: flex;
-    margin-top: 100px;
+    margin-top: 150px;
     
 }
 .confidentPhrase{
@@ -52,7 +52,7 @@
     text-align: center;
     display: inline-block;
     vertical-align: top;
-    margin-right: auto;
+    margin-right: 1.1092vw;
 }
 .dashboardIconsSubCon{
     text-align: center;
@@ -154,15 +154,39 @@ font-size: 18px;
     position: relative;
     border-radius: 15px;
     margin-top: 21.4px;
+    z-index: -1;
    }
 .packageDivConNoDisplay{
     display: none;
    }
 .dashBoardPackageText{
     color: white;
-    position: absolute;
+    position: relative;
     top: 50%;
     -ms-transform: translateY(-50%);
     transform: translateY(-50%);
+    display: inline-block;
+    vertical-align: top;
+    margin-left: 10px;
+    
+}
+.pricingPackage{
+    margin-top: 20px;
+    color: var(--dashPink);
+}
+.myEarningsMoneyDiv{
+    padding-left: 56vw;
+    margin: 30px 0px;
+}
+.myEarningsMoneySubDiv{
+    width: 300px;
+    text-align: center;
+    background: var(--dashPink);
+    border-radius: 15px;
+    padding: 20px;
+}
+.myEarningsMoney{
+    color: white;
+    font-weight: 900;
 }
 

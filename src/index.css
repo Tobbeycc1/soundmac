@@ -3,6 +3,9 @@
   padding: 0;
   margin: 0;
   color: var(--purple);
+  top: 0;
+  left: 0;
+  right: 0;
  }
 :root {
   --purple: #210721;
@@ -12,7 +15,8 @@
   --pink: #FFF0D1;
   --placeholdercolor: #D2D3D5;
   --grey: #F4F4F4;
-  --green: #00bc90
+  --green: #00bc90;
+  --dashPink: #FF939C;
 }
 
 body {

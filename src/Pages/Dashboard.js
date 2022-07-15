@@ -11,7 +11,10 @@ import { useEffect, useRef, useState } from 'react'
 const noOfTracks = 10
 const noOfVideos = 5
 const noOfLabel = 0
-const totalStream = 1000
+const totalStream = 10000
+
+const pricingPackage = 'Independent Artist'
+const myEarningsMoney = '0'
 
 
 
@@ -24,6 +27,17 @@ function Dashboard(props) {
     const [mVOP, setMVOP]= useState('Music Video + Out Now + Pre Save')
     const [yA, setYA]= useState('YouTube Ads')
     const [sA, setSA] = useState('Spotify Ads')
+
+    const circleFAIcon = {
+        color:'white',
+        display: 'inline-block',
+        position: 'relative',
+        top: '50%',
+        mstransform: 'translateY(-50%)',
+        transform: 'translateY(-50%)',
+     display: 'inline-block',
+     
+    }
 
 
    
@@ -51,6 +65,7 @@ function Dashboard(props) {
                     <h2>{noOfLabel}</h2>
                     <h3>label</h3>
                 </div>
+                <h3 className={classes.pricingPackage}>{pricingPackage}</h3>
             </div>
 
             <div className={classes.coolGlassesLady}>
@@ -122,7 +137,7 @@ function Dashboard(props) {
          <div className={classes.totalStreamAndUploadCon}>
 
 <div  className={classes.totalSreamCon}>
-  <h2><NumberFormat className={classes.totalSreamNumber} value={totalStream} displayType={'text'} thousandSeparator={true} prefix={'$'} /></h2>
+  <h2><NumberFormat className={classes.totalSreamNumber} value={totalStream} displayType={'text'} thousandSeparator={true} /></h2>
   <div>total stream</div>
 </div>
 
@@ -151,27 +166,29 @@ style={{ color:'green'}}></i>
                 
             {/* New Single Out Now' */}
                 <div className={`${newSingleOutNow === 'New Single Out Now' ? classes.packageDivCon: classes.packageDivConNoDisplay }`}>
-                    <h2 className={classes.dashBoardPackageText}> <sup className={classes.oIcon}>o</sup>  {newSingleOutNow}</h2>
+                <i class="fa-solid fa-circle" style={circleFAIcon}></i>    <h2 className={classes.dashBoardPackageText}>   {newSingleOutNow}</h2>
+                
+                <i class="fa-solid fa-x" style={circleFAIcon}></i>
                 </div>
 
             {/* Before Release Date + Pre Save */}
             <div className={`${bRDP === 'Before Release Date + Pre Save' ? classes.packageDivCon: classes.packageDivConNoDisplay }`}>
-                    <h2 className={classes.dashBoardPackageText}>{bRDP}</h2>
+            <i class="fa-solid fa-circle" style={circleFAIcon}></i>     <h2 className={classes.dashBoardPackageText}>{bRDP}</h2>
                 </div>
 
           {/* Music Video + Out Now + Pre Save */}
           <div className={`${mVOP === 'Music Video + Out Now + Pre Save' ? classes.packageDivCon: classes.packageDivConNoDisplay }`}>
-                    <h2 className={classes.dashBoardPackageText}>{mVOP}</h2>
+          <i class="fa-solid fa-circle" style={circleFAIcon}></i>   <h2 className={classes.dashBoardPackageText}>{mVOP}</h2>
                 </div>
 
 {/* YouTube Ads */}
           <div className={`${yA === 'YouTube Ads' ? classes.packageDivCon: classes.packageDivConNoDisplay }`}>
-                    <h2 className={classes.dashBoardPackageText}>{yA}</h2>
+          <i class="fa-solid fa-circle" style={circleFAIcon}></i> <h2 className={classes.dashBoardPackageText}>{yA}</h2>
                 </div>
 
         {/* Spotify Ads */}
         <div className={`${sA === 'Spotify Ads' ? classes.packageDivCon: classes.packageDivConNoDisplay }`}>
-                    <h2 className={classes.dashBoardPackageText}>{sA}</h2>
+        <i class="fa-solid fa-circle" style={circleFAIcon}></i>  <h2 className={classes.dashBoardPackageText}>{sA}</h2>
                 </div>
 
     
@@ -191,6 +208,14 @@ style={{ color:'green'}}></i>
 
 
 
+        </div>
+
+        <div className={classes.myEarningsMoneyDiv}>
+            <div className={classes.myEarningsMoneySubDiv}>
+            <h1 ><NumberFormat className={classes.myEarningsMoney} value={myEarningsMoney} displayType={'text'} thousandSeparator={true} prefix={'$'} /></h1>
+            <h3>My Earnings</h3>
+            </div>
+            
         </div>
 
 
