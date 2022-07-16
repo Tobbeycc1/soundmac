@@ -218,9 +218,7 @@
 }
 .signInAndSpeakerCon{
     text-align: center;
-    margin-left: auto;
-    margin-right: auto;
-   
+    /* margin-left: 25%; */
     margin-bottom: 50vh;
     display: flex;
     position: relative;
@@ -228,5 +226,17 @@
 }
 
 
+}
+@media screen and (max-width: 490px) {
+    .signIn{
+        font-size: 60px;
+    }
+    .horizontalLine{
+        width: 100px;
+    }
+    .horizontalLineB{
+        width: 60px;
+    }
+    
 }
 
