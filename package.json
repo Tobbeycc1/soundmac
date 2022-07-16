@@ -17,6 +17,7 @@
     "react-dom": "^18.2.0",
     "react-dropdown-date": "^2.2.7",
     "react-number-format": "^4.9.3",
+    "react-responsive": "^9.0.0-beta.10",
     "react-router-dom": "^6.3.0",
     "react-scripts": "5.0.1",
     "web-vitals": "^2.1.4"

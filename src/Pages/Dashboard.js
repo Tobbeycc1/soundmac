@@ -7,10 +7,9 @@ import historyIcon from '../images/history icon.png'
 import { Link } from 'react-router-dom'
 import NumberFormat from 'react-number-format'
 import { useEffect, useRef, useState } from 'react'
+import ClientsMetrics from '../Componets/clientsMetric'
 
-const noOfTracks = 10
-const noOfVideos = 5
-const noOfLabel = 0
+
 const totalStream = 10000
 
 const pricingPackage = 'Independent Artist'
@@ -51,20 +50,7 @@ function Dashboard(props) {
                 <h1 className={classes.usernameConfidentPhrase}> <span className={classes.username}>{username},</span>we are confident <br/>
             your music is getting the required attention</h1>
 
-                <div className={classes.tracks}>
-                    <h2>{noOfTracks}</h2>
-                    <h3>tracks</h3>
-                </div>
-
-                <div className={classes.tracks}>
-                    <h2>{noOfVideos}</h2>
-                    <h3>videos</h3>
-                </div>
-
-                <div className={classes.label}>
-                    <h2>{noOfLabel}</h2>
-                    <h3>label</h3>
-                </div>
+               <ClientsMetrics/>
                 <h3 className={classes.pricingPackage}>{pricingPackage}</h3>
             </div>
 
@@ -99,7 +85,7 @@ function Dashboard(props) {
 
                 {/* catalog icon */}
 
-                <Link to={'/dashboard'}
+                <Link to={'/catalog'}
                 className={classes.dashBoardIconLink} >
                 <div className={classes.dashboardIconsSubCon}>
                     <img className={classes.dashboardIconImage} src={catalogIcon} alt='catalog icon'/>
@@ -113,7 +99,7 @@ function Dashboard(props) {
 
                  {/* history icon */}
                 
-                 <Link to={'/dashboard'}
+                 <Link to={'/history'}
                 className={classes.dashBoardIconLink} >
                 <div className={classes.dashboardIconsSubCon}>
                     <img className={classes.dashboardIconImage} src={historyIcon} alt='catalog icon'/>

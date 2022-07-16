@@ -1,5 +1,5 @@
 .footerCon{
-    height: 768px;
+    
     background: url(../images/Footer\ Background.png);
     background-position: center;
     background-size: cover;
@@ -63,4 +63,24 @@
     margin-top: 40px;
     display: block;
     text-decoration: none;
+}
+
+/* Media Query */
+@media screen and (max-width: 999px) {
+    .footerNavContentCOn, .footerNavContentCOnB{
+        display: block;
+        width: 100%;
+        text-align: center;
+        padding: 0px 10vw;
+    }
+    .footerSoundmacText{
+        text-align: center;
+    }
+    .footerSoundmacText{
+        display: inline-block;
+        margin-right: 20px;
+    }
+    /* .copywright{
+        margin-bottom: 30px;
+    } */
 }

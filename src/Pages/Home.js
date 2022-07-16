@@ -38,16 +38,14 @@ function Home(props) {
            </div>
 
             <div className={classes.speakerCon}>
-            <img src={speaker} alt='speaker'/>
+            <img src={speaker} alt='speaker' className={classes.speakerImg}/>
             </div>
 
          </div>
 
          {/* Body */}
          <div id='musicDistribution' className={classes.earnCon} >
-            <div data-aos="fade-up" data-aos-delay="50"
-    data-aos-duration="1000"
-    data-aos-easing="ease-in-out">
+            <div >
                 
                 <MusicDistribution/>
                 </div>

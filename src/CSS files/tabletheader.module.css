@@ -1,0 +1,57 @@
+.tabletHeaderCon{
+    width: 100%;
+    padding: 15px;
+    background: white;
+    position: fixed;
+    text-align: center;
+    /* background: red; */
+    z-index: 1000;
+    box-shadow: 0px 7px 5px -2px rgba(54,22,82,0.5);
+-webkit-box-shadow: 0px 7px 5px -2px rgba(54,22,82,0.5);
+-moz-box-shadow: 0px 7px 5px -2px rgba(54,22,82,0.5);
+}
+.logo{
+    text-decoration: none;
+    display: inline-block;
+    margin-right: 5%;
+}
+.haburgerMenu{
+    /* background: var(--purple); */
+    display: inline-block;
+    padding: 5px;
+    border: 2px solid var(--purple);
+    border-radius: 5px;
+    cursor: pointer;
+}
+.tabletNavBar{
+    position: absolute;
+    background: green;
+    top: auto;
+    padding: 30px 0px;
+    background: white;
+    box-shadow: 0px 7px 5px -2px rgba(54,22,82,0.5);
+-webkit-box-shadow: 0px 7px 5px -2px rgba(54,22,82,0.5);
+-moz-box-shadow: 0px 7px 5px -2px rgba(54,22,82,0.5);
+
+
+}
+.nav{
+    display: block;
+    margin-bottom: 5vh;
+    text-decoration: none;
+    font-weight: bold;
+}
+.nav:hover{
+    text-shadow: 0 0 10px #21072154, 6px 14px 11px rgba(33,7,33,0);
+}
+.button{
+    
+    margin-bottom: 10px;
+    text-decoration: none;
+    font-weight: bold;
+    background: var(--purple);
+    padding: 5px 15px;
+    border-radius: 7px;
+    color: white;
+    
+}

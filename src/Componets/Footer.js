@@ -44,7 +44,7 @@ volutpat nibh hendrerit, rhoncus dolor mattis, aliquam</p>
         <a href="mailto:soundmacinfo@gmail.com" className={classes.footerSoundmacText}>soundmacinfo@gmail.com</a>
             <p className={classes.footerSoundmacText}> Rivers, Nigeria </p>
         </div>
-        <p className={classes.copywright}>copywright © SoundMac, 2022 All rights reserved </p>
+        <p className={classes.copywright}>copywright © SoundMac, 2022 All rights reserved </p> <br/>
         </div>
 
         

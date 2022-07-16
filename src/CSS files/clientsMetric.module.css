@@ -1,0 +1,14 @@
+.tracks{
+    display: inline-block;
+    
+    width: 100px;
+    margin-right: 50px;
+    border-right: 2px solid var(--purple);
+}
+.label{
+    display: inline-block;
+    
+    width: 100px;
+    margin-right: 50px;
+    
+}
