@@ -185,7 +185,7 @@
 }
 @media screen and (max-width: 999px) {
     .homeCard1{
-        height: 65vh;
+        height: 767px;
         background: url(../images/1000\ home\ background.png);
         background-position: center;
         background-size: cover;
@@ -195,7 +195,7 @@
        
     }
     .signInCon{
-       top: 25vh;
+       top: 300px;
        margin-right: 20px;
        margin-left: 20px;
        display: block;
@@ -230,7 +230,17 @@
 
 
 }
-@media screen and (max-width: 490px) {
+@media screen and (max-width: 540px) {
+    .signInCon{
+        top: 25vh;
+        margin-right: 20px;
+        margin-left: 20px;
+        display: block;
+     
+     }
+    .homeCard1{
+        height: 65vh;
+    }
     .signIn{
         font-size: 60px;
     }

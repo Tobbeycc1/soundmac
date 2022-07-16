@@ -23,6 +23,8 @@ const checkStyles= {
     marginTop: '25%',
     background: 'white',
     borderRadius: '100%'
+
+    
 }
 
 function Home(props) {
