@@ -186,7 +186,7 @@
     .homeCard1{
         height: 90vh;
         background: url(../images/1000\ home\ background.png);
-        background-size: cover;
+        
        
     }
     .signInCon{
@@ -205,19 +205,18 @@
     margin-top: 550px;
 } */
 .signIn{
-    font-size: 60px;
+    font-size: 80px;
 }
 .horizontalLine{
-    width: 100px;
+    width: 180px;
 }
 .horizontalLineB{
-    width: 60px;
+    width: 70px;
 }
 .signInAndSpeakerCon{
     text-align: center;
-    margin-left: 33%;
-    margin-right: auto;
-    /* width: 5%; */
+   
+    
     margin-bottom: 50vh;
 }
 
