@@ -61,6 +61,7 @@
 .earnCon{
     margin: 40px 50px;
     text-align: center;
+    margin-top: 35vh;
 }
 .red{
     color: red;
@@ -184,11 +185,13 @@
 }
 @media screen and (max-width: 999px) {
     .homeCard1{
-        height: 75vh;
+        height: 65vh;
         background: url(../images/1000\ home\ background.png);
         background-position: center;
         background-size: cover;
         background-repeat: no-repeat;
+        /* height: fit-content; */
+        
        
     }
     .signInCon{
@@ -198,15 +201,16 @@
        display: block;
     
     }
-   
+    .earnCon{
+        margin-top: 5vh;
+        
+    }
     
 
 .speakerCon{
     display: none;
 }
-/* .earnCon{
-    margin-top: 550px;
-} */
+
 .signIn{
     font-size: 80px;
 }
@@ -218,9 +222,8 @@
 }
 .signInAndSpeakerCon{
     text-align: center;
-    /* margin-left: 25%; */
-    margin-bottom: 50vh;
-    display: flex;
+     /* margin-bottom: 50vh; */
+    display: block;
     position: relative;
    
 }

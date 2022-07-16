@@ -27,8 +27,9 @@ const checkStyles= {
 
 function Home(props) {
     return(
+        <div >
+
         <div className={classes.homeCard1}>
-    
         <div className={classes.signInAndSpeakerCon}>
            <div className={classes.signInCon}>
            <Link to={'/myportal'} className={classes.signIn}> SIGN UP <br/> FOR FREE</Link>
@@ -42,6 +43,9 @@ function Home(props) {
             </div>
 
          </div>
+        </div>
+    
+        
 
          {/* Body */}
          <div id='musicDistribution' className={classes.earnCon} >
