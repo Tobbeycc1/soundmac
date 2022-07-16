@@ -184,9 +184,11 @@
 }
 @media screen and (max-width: 999px) {
     .homeCard1{
-        height: 90vh;
+        height: 75vh;
         background: url(../images/1000\ home\ background.png);
-        
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
        
     }
     .signInCon{
@@ -196,6 +198,7 @@
        display: block;
     
     }
+   
     
 
 .speakerCon{
@@ -215,9 +218,13 @@
 }
 .signInAndSpeakerCon{
     text-align: center;
+    margin-left: auto;
+    margin-right: auto;
    
-    
     margin-bottom: 50vh;
+    display: flex;
+    position: relative;
+   
 }
 
 
