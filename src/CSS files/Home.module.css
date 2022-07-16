@@ -94,7 +94,7 @@
 .aboutUsParagraphText{
     width: 400px;
     text-align: justify;
-    font-size: 11px;
+    font-size: 13px;
     line-height: 20px;
     
 }
@@ -255,6 +255,36 @@
         margin: 180px 10px 0px 10px;
         text-align: center;
       
+    }
+    .aboutUsHeader{
+        transform: rotate(270deg);
+        font-size: 20px;
+        font-weight: bold;
+        text-decoration: underline;
+        text-decoration-thickness: 8px;
+        text-decoration-color: var(--cream);
+        display: inline-block;
+        margin-top: 100px;
+        margin-right: -28.3px;
+      
+        
+        
+    }
+    
+    .aboutUsText{
+        display: inline-block;
+        border-left: 2px solid var(--cream);
+        padding: 0px 0px 0px 30px;
+        vertical-align: top;
+    }
+    .aboutUsTextHeader{
+        text-align: left;
+    }
+    .aboutUsParagraphText{
+        width: 200px;
+        text-align: justify;
+        font-size: 13px;
+               
     }
     
 }
