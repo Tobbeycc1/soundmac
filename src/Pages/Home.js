@@ -116,7 +116,7 @@ arcu varius a. Vivamus lobortis posuere magna, at interdum dolor malesuada vel. 
              icon={pricingLogo}
              link={'/pricing'}
              iconHeader={'Pricing'}
-             iconSubText={'All-inclusive distribution you keep: 90%  revenue share on distribution and also get your music into over 100 partner stores worldwide. '}
+             iconSubText={'All-inclusive distribution you keep: 90%  revenue share on distribution and also get your music into over 100 partner stores worldwidelorem Lorem ipsum dolor sit amet, consectetur. '}
              />
              
             </MediaQuery>
@@ -161,7 +161,7 @@ arcu varius a. Vivamus lobortis posuere magna, at interdum dolor malesuada vel. 
              icon={pricingLogo}
              link={'/pricing'}
              iconHeader={'Pricing'}
-             iconSubText={'All-inclusive distribution you keep: 90%  revenue share on distribution and also get your music into over 100 partner stores worldwide. '}
+             iconSubText={'All-inclusive distribution you keep: 90%  revenue share on distribution and also get your music into over 100 partner stores worldwide lorem Lorem ipsum dolor sit amet, consectetur. '}
              />
       </SplideSlide>
     </Splide>
