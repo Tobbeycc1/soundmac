@@ -93,9 +93,13 @@
 }
 .aboutUsParagraphText{
     width: 400px;
-    text-align: justify;
+    text-align: left;
     font-size: 13px;
-    line-height: 20px;
+    /* line-height: 20px; */
+    font-style: italic;
+    margin-top: 20px;
+    text-align: justify;
+
     
 }
 .linkCards{
@@ -257,13 +261,6 @@
       
     }
     .aboutUsHeader{
-        transform: rotate(270deg);
-        font-size: 20px;
-        font-weight: bold;
-        text-decoration: underline;
-        text-decoration-thickness: 8px;
-        text-decoration-color: var(--cream);
-        display: inline-block;
         margin-top: 100px;
         margin-right: -28.3px;
       
@@ -282,9 +279,12 @@
     }
     .aboutUsParagraphText{
         width: 200px;
-        text-align: justify;
         font-size: 13px;
                
+    }
+    .earnCon{
+        margin: 40px 20px;
+        
     }
     
 }

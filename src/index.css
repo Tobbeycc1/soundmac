@@ -4,6 +4,7 @@
   margin: 0;
   color: var(--purple);
   top: 0;
+  
  
  }
 :root {
@@ -16,6 +17,7 @@
   --grey: #F4F4F4;
   --green: #00bc90;
   --dashPink: #FF939C;
+  
 }
 
 body {
@@ -25,6 +27,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
 }
 
 code {
@@ -36,4 +39,7 @@ input[type=checkbox] {
 }
 .splide__pagination__page{
   top: 200px;
+}
+.splide__arrow svg {
+  fill: #210721;
 }
