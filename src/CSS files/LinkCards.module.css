@@ -21,3 +21,16 @@
     font-size: 16px;
     font-weight: bold;
 }
+@media screen and (max-width: 999px) {
+    .LinkCardCon{
+        width: fit-content;
+        background: var(--cream);
+        border-radius: 20px;
+        padding: 40px 10px  ;
+        display: block; 
+        margin:  0px;
+        height: fit-content;
+        text-align: center;
+        
+    }
+}

@@ -14,6 +14,7 @@ import Catalog from './Pages/Catalog';
 import MediaQuery from 'react-responsive'
 import TabletHeader from './Componets/tabletHeader';
 
+
 function App() {
   return (
     <div >

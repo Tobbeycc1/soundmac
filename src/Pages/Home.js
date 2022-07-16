@@ -12,6 +12,10 @@ import Metrics from '../Componets/Metrics'
 import CheckBullet from '../Componets/check bukket'
 import Footer from '../Componets/Footer'
 import MusicDistribution from '../Componets/MusicDistribution';
+import MediaQuery from 'react-responsive'
+import { Splide, SplideSlide,SplideTrack } from '@splidejs/react-splide';
+import '@splidejs/react-splide/css/sea-green'
+import '../index.css'
 
 // ..
 AOS.init();
@@ -87,7 +91,11 @@ arcu varius a. Vivamus lobortis posuere magna, at interdum dolor malesuada vel. 
             data-aos-duration="1000"
             data-aos-easing="ease-in-out"
             >
-            {/* Music Distribution */}
+          
+
+            <MediaQuery minWidth={1000}>
+
+              {/* Music Distribution */}
             <LinkCards
              icon={musicDistributionLogo}
              link={'/musicdistribution'}
@@ -95,7 +103,7 @@ arcu varius a. Vivamus lobortis posuere magna, at interdum dolor malesuada vel. 
              iconSubText={'Upload your music instantly to Apple music,Spotify, Beatport, iTunes, Amazon, Tik-Tok, YouTube and hundreds of other digital stores and applications.'}
              />
 
-            {/* Promotion */}
+             {/* Promotion */}
             <LinkCards
              icon={promotionLogo}
              link={'/promotion'}
@@ -110,6 +118,57 @@ arcu varius a. Vivamus lobortis posuere magna, at interdum dolor malesuada vel. 
              iconHeader={'Pricing'}
              iconSubText={'All-inclusive distribution you keep: 90%  revenue share on distribution and also get your music into over 100 partner stores worldwide. '}
              />
+             
+            </MediaQuery>
+           
+
+           <MediaQuery maxWidth={999}>
+            
+           <Splide
+      options={ {
+        rewind: true,
+        gap   : '4rem',
+        perPage: 1,
+        height: '50 rem',
+        // width : 800,
+        // pagination: false,
+        // arrows: false
+        
+      } }
+      
+    >
+      <SplideSlide>
+        {/* Music Distribution */}
+        <LinkCards
+             icon={musicDistributionLogo}
+             link={'/musicdistribution'}
+             iconHeader={'Music distribution'}
+             iconSubText={'Upload your music instantly to Apple music,Spotify, Beatport, iTunes, Amazon, Tik-Tok, YouTube and hundreds of other digital stores and applications.'}
+             />
+      </SplideSlide>
+      <SplideSlide>
+        {/* Promotion */}
+        <LinkCards
+             icon={promotionLogo}
+             link={'/promotion'}
+             iconHeader={'Promotion'}
+             iconSubText={'Get your music heard! Soundmac’s  easy-to-use promotional tools get your tracks to the people that matters the most lorem Lorem ipsum dolor sit amet, consectetur.'}
+             />
+      </SplideSlide>
+      <SplideSlide>
+        {/* Pricing */}
+        <LinkCards
+             icon={pricingLogo}
+             link={'/pricing'}
+             iconHeader={'Pricing'}
+             iconSubText={'All-inclusive distribution you keep: 90%  revenue share on distribution and also get your music into over 100 partner stores worldwide. '}
+             />
+      </SplideSlide>
+    </Splide>
+           
+           </MediaQuery>
+
+            
 
              
             </div>  
