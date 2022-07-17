@@ -1,16 +1,44 @@
+.squareAndCircleIconCon{
+    margin-bottom: 20px;
+}
 .squareAndCircleIcon{
-    width: 25px;
-    height: 25px;
+    width: fit-content;
+    height: fit-content;
     background: var(--cream);
     border-radius: 5px;
     text-align: center;
     display: inline-block;
     margin-right: 10px;
     vertical-align: middle;
+    padding: 5px;
+    
 }
 .bulletText{
     display: inline-block;
     margin: 10px 0px;
     font-size: 13px;
     vertical-align: middle;
+}
+@media screen and (max-width: 540px) {
+    .smallCheck{
+        width: 10px;
+    }
+    .squareAndCircleIcon{
+        width: fit-content;
+        height: fit-content;
+        background: var(--cream);
+        border-radius: 5px;
+        text-align: center;
+        display: inline-block;
+        margin-right: 5px;
+        vertical-align: middle;
+        padding: 5px;
+        
+    }
+    .bulletText{
+        display: inline-block;
+        margin: 10px 0px;
+        font-size: 11px;
+        vertical-align: middle;
+    }
 }

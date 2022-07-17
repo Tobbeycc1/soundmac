@@ -4,7 +4,8 @@
     margin: 0px 50px;
     padding-top: 30px;
      position: fixed;
-
+    left: 0;
+    right: 0;
   background: white;
 }
 .logoDiv{
@@ -51,6 +52,8 @@
     display: flex;
     text-align: right;
     top: 80px;
+    left: 0;
+    right: 0;
     
    
 }

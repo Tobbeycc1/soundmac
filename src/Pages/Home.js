@@ -16,12 +16,13 @@ import MediaQuery from 'react-responsive'
 import { Splide, SplideSlide,SplideTrack } from '@splidejs/react-splide';
 import '@splidejs/react-splide/css/sea-green'
 import '../index.css'
+import bigCheck from '../images/big check.png'
 
 // ..
 AOS.init();
 
 const checkStyles= {
-    fontSize:'274px',
+    // fontSize:'274px',
     color: 'var(--yellow)',
     textAlign: 'center',
     marginTop: '25%',
@@ -205,11 +206,15 @@ arcu varius a. Vivamus lobortis posuere magna, at interdum dolor malesuada vel. 
 
         <div className={classes.largerAudienceCon}>
         
-            <div className={classes.squareAndCircleIcon}>
-            <i class="fa-solid fa-circle-check"
-            style={checkStyles}
-            ></i>
-            </div>
+        <div className={classes.squareAndCircleIcon}>
+            <img src={bigCheck} alt='big check icon'/>
+        </div>
+       
+
+        
+        
+      
+            
             {/* Small thick line */}
         <div className={classes.smallThinkLine}></div>
 

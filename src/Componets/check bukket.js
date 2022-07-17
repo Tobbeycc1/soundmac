@@ -1,20 +1,12 @@
 import classes from'../CSS files/checlbullet.module.css'
+import smallCheck from '../images/small check.png'
 
-const checkStyles= {
-    fontSize:'13px',
-    color: 'var(--yellow)',
-    textAlign: 'center',
-    marginTop: '25%',
-    background: 'white',
-    borderRadius: '100%'
-}
+
 function CheckBullet(props) {
     return(
-        <div>
+        <div className={classes.squareAndCircleIconCon}>  
          <div className={classes.squareAndCircleIcon}>
-            <i class="fa-solid fa-circle-check"
-            style={checkStyles}
-            ></i>
+            <img src={smallCheck} className={classes.smallCheck} alt='small check icon'/>
             </div>   
             <p className={classes.bulletText}>{props.bulletText}</p>
         </div>

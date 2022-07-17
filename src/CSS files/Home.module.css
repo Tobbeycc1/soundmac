@@ -135,6 +135,7 @@
     display: inline-block;
     margin-right: 50px;
     vertical-align: middle;
+    padding-top: 120px;
 }
 .smallThinkLine{
     width: 8px;
@@ -231,6 +232,46 @@
     position: relative;
    
 }
+.metrics, .metricsWithBorder{
+    margin: 50px 20px;
+    text-align: center;
+    /* display: block; */
+    
+    
+}
+.metricsWithBorder{
+    border-top: 7px solid var(--cream);
+    border-bottom: 7px solid var(--cream);
+    border-left: none;
+    border-right: none;
+    padding-left: 0px;
+    padding-right:0px;
+    padding: 40px 0px;
+    }
+.linkCards{
+    margin: 100px 10px 0px 10px;
+    text-align: center;
+  
+}
+.smallThinkLine{
+    width: 8px;
+    height: 99px;
+    background: var(--cream);
+    display: block;
+    text-align: center;
+    margin: 50px 0px;
+    margin-left: 50%;
+    
+}
+.largerAudienceText{
+    display: inline-block;
+    text-align: left;
+    border-left: 2px solid var(--cream);
+    padding-left: 50px;
+    margin-left: -5px;
+    vertical-align: middle;
+    height: fit-content;
+}
 
 
 
@@ -255,11 +296,7 @@
     .horizontalLineB{
         width: 60px;
     }
-    .linkCards{
-        margin: 180px 10px 0px 10px;
-        text-align: center;
-      
-    }
+    
     .aboutUsHeader{
         margin-top: 100px;
         margin-right: -28.3px;
@@ -286,6 +323,56 @@
         margin: 40px 20px;
         
     }
+    .metrics, .metricsWithBorder{
+        margin: 20px 20px;
+        
+        
+    }
+    
+    .linkCards{
+        margin: 50px 10px 0px 10px;
+        text-align: center;
+      
+    }
+    .squareAndCircleIcon{
+        width: 100%;
+        height: fit-content;
+        background: var(--cream);
+        border-radius: 20px;
+        text-align: center;
+        display: inline-block;
+        margin-right: 50px;
+        vertical-align: middle;
+        padding-top: 0px;
+        padding: 20px 20px;
+    }
+    .smallThinkLine{
+        margin: 20px 0px;
+        margin-left: 50%;
+    }
+    .largerAudienceText{
+        padding-left: 20px;
+        margin-left: -5px;
+       
+        height: fit-content;
+        display: block;
+    }
+    .metrics, .metricsWithBorder{
+        margin: 50px 20px;
+        text-align: center;
+        display: block;
+        
+        
+    }
+    .metricsWithBorder{
+        border-top: 7px solid var(--cream);
+        border-bottom: 7px solid var(--cream);
+        border-left: none;
+        border-right: none;
+        padding-left: 0px;
+        padding-right:0px;
+        padding: 40px 0px;
+        }
     
 }
 
