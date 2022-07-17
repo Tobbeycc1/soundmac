@@ -34,7 +34,7 @@ const checkStyles= {
 
 function Home(props) {
     return(
-        <div >
+        <div className={classes.homeCon}>
 
         <div className={classes.homeCard1}>
         <div className={classes.signInAndSpeakerCon}>
