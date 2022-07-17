@@ -207,7 +207,7 @@ arcu varius a. Vivamus lobortis posuere magna, at interdum dolor malesuada vel. 
         <div className={classes.largerAudienceCon}>
         
         <div className={classes.squareAndCircleIcon}>
-            <img src={bigCheck} alt='big check icon'/>
+            <img src={bigCheck} className={classes.bigCheck} alt='big check icon'/>
         </div>
        
 

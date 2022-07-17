@@ -12,14 +12,14 @@
 }
 @media screen and (max-width: 999px) {
 .musicLogotext{
-       margin-bottom: 100px;
+       margin-bottom: 140px;
     
 }
 }
 
-@media screen and (max-width: 999px) {
+@media screen and (max-width: 540px) {
     .musicLogotext{
-           margin-bottom: 50px;
+           margin-bottom: 120px;
         
     }
  }

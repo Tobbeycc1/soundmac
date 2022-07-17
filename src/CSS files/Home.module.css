@@ -98,9 +98,7 @@
     /* line-height: 20px; */
     font-style: italic;
     margin-top: 20px;
-    text-align: justify;
-
-    
+    text-align: justify; 
 }
 .linkCards{
     margin: 180px 50px 0px 50px;
@@ -167,6 +165,7 @@
     margin-top: 200px;
 }
 
+
 /* Media Query */
 @media screen and (max-width: 1180px) {
 .speakerImg{
@@ -206,7 +205,7 @@
         border-radius: 20px;
         text-align: center;
         display: inline-block;
-        margin-right: 50px;
+      
         vertical-align: middle;
         padding-top: 0px;
         padding: 20px 20px;
@@ -285,11 +284,50 @@
     vertical-align: middle;
     height: fit-content;
 }
-
-
+.bigCheck{
+    width: 66.184vw;
+}
 
 }
+@media screen and (max-width: 590px) {
+    .aboutUsHeader{
+        transform: rotate(0deg);
+        font-size: 20px;
+        font-weight: bold;
+        text-decoration: underline;
+        text-decoration-thickness: 2px;
+        text-decoration-color: var(--cream);
+        display: block;
+        margin-top: 100px;
+        margin-bottom: 20px;
+        text-align: left;
+           
+    }
+    .aboutUsText{
+        display: block;
+        border-left: 2px solid var(--cream);
+        border-right: 2px solid var(--cream);
+        padding: 30px 30px;
+        border-radius: 20px;
+    }
+    .aboutUsParagraphText{
+        width: 100%;
+        font-size: 13px;
+        /* line-height: 20px; */
+        font-style: italic;
+        margin-top: 20px;
+        text-align: justify; 
+        /* background: var(--purple); */
+        /* color: white; */
+    }  
+    /* .aboutUsTextHeader{
+        color: white;
+    }  */
+    
+}
+
 @media screen and (max-width: 540px) {
+    
     .signInCon{
         top: 25vh;
         margin-right: 20px;
@@ -310,28 +348,7 @@
         width: 60px;
     }
     
-    .aboutUsHeader{
-        margin-top: 100px;
-        margin-right: -28.3px;
-      
-        
-        
-    }
-    
-    .aboutUsText{
-        display: inline-block;
-        border-left: 2px solid var(--cream);
-        padding: 0px 0px 0px 30px;
-        vertical-align: top;
-    }
-    .aboutUsTextHeader{
-        text-align: left;
-    }
-    .aboutUsParagraphText{
-        width: 200px;
-        font-size: 13px;
-               
-    }
+   
     .earnCon{
         margin: 40px 20px;
         
@@ -374,6 +391,25 @@
         padding-right:0px;
         padding: 40px 0px;
         }
-    
+        .bigCheck{
+            width: 240px;
+            
+            width: 60.184vw;
+        }
+}
+@media screen and (max-width: 407px) {
+.signIn{
+    font-size: 40px;
+}
+.login{
+    font-size: 15px;
+}
+.horizontalLine{
+    width: 100px;
+}
+.horizontalLineB{
+    width: 40px;
+}
+
 }
 
