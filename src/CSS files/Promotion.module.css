@@ -1,3 +1,6 @@
+.promotionCon{
+    overflow-x: hidden;
+}
 .megaphoneBackground{
 margin: 200px 50px 0px 50px;
 }
@@ -70,4 +73,65 @@ font-size: 18px;
     margin-right: 50px;
     vertical-align: top;
     margin-top: 100px;
+}
+@media screen and (max-width: 1180px) {
+    .megaphoneHand{
+        vertical-align: middle;
+        width: 370px;
+        
+    }
+    .purpleBackground{
+        background: var(--purple);
+        width: 100%;
+        height: 350px;
+        text-align: center;
+        padding: 0px 0px 0px 10px;
+ 
+    }
+    .purpleBackgroundSubCon{
+        position: relative;
+        top: -350px;
+     }
+     .checkOur{
+        margin: 90px 50px;
+        font-size: 22px;
+    }
+    .header{
+        margin-top: 180px;
+        font-size: 30px;
+        width: 90%;
+    }
+    .purpleBackground{
+        background: var(--purple);
+        width: 100%;
+        height: 500px;
+        text-align: center;
+        padding: 0px 10px;
+        
+        
+    }
+   
+}
+@media screen and (max-width: 999px) {
+    .megaphoneHand{
+      display: none;
+    }
+    .purpleBackgroundSubCon{
+        position: relative;
+        top: -80px;
+     }
+     
+     .packageAndFormCon{
+        display: block;
+        
+    }
+     .allPackagesCon{
+        display: block;
+    }
+    .formCon{
+        display: block;
+        margin: 100px 0px;
+        padding: 0px 50px;
+    }
+
 }

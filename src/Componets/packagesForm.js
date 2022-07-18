@@ -154,7 +154,7 @@ const totalspotifyAdsPrice= spotifyAdsPrice && 1000
 
     </div>
 
-    <div className={classes.artisteName}>
+    <div className={classes.RartisteName}>
     <label className={classes.label}>Release Name</label>
             <input className={classes.smallInput} 
             type={'text'}
@@ -179,7 +179,7 @@ const totalspotifyAdsPrice= spotifyAdsPrice && 1000
 
     </div>
 
-    <div className={classes.artisteName}>
+    <div className={classes.RartisteName}>
     <label className={classes.label}>Release Name</label>
             <DatePickerForm/>
 

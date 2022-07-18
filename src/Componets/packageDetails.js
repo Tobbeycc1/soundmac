@@ -1,7 +1,7 @@
 import classes from '../CSS files/packageDetails.module.css'
 function PackageDetails(props) {
     return(
-        <div> 
+        <div className={classes.packageDetailsTextCon}> 
         <h3>{props.packageName}</h3>
         <p className={classes.packageDetailsText}>{props.packageDetailsText}</p>
         <p className={classes.packageDetailsSubText}>{props.packageDetailsSubTextA}</p>

@@ -134,3 +134,26 @@ margin-top: 60px;
 .checkBoxLabelIAgree{
   font-weight: bold;
 }
+@media screen and (max-width: 999px) {
+
+  .artisteReleaseName {
+    display: block;
+  }
+  .artisteName {
+    margin-right: 0px;
+    display: block;
+  }
+  
+}
+@media screen and (max-width: 540px) {
+  .megaphoneBackground{
+    margin: 200px 20px 0px 20px;
+    }
+  .checkOur{
+    margin: 160px 20px;
+    font-size: 22px;
+}
+  .packageDetails{
+    margin: 100px 20px;
+}
+}

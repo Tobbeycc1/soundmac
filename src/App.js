@@ -31,8 +31,20 @@ function App() {
       </div>} />
       
       
-      <Route path='/promotion' element={<div> <Header/> <Promotion/></div>} />
-      <Route path='/musicDistribution' element={<div className={classes.musicDistributionLinkCon}> <Header/> <div className={classes.musicDistributionLinkSubCon}><MusicDistribution/></div> </div>} />
+      <Route path='/musicDistribution' element={
+      <div className={classes.musicDistributionLinkCon}> 
+      <MediaQuery minWidth={1000}><Header/> <div className={classes.musicDistributionLinkSubCon}><MusicDistribution/></div> </MediaQuery>
+      <MediaQuery maxWidth={999}><TabletHeader/><div className={classes.musicDistributionLinkSubCon}><MusicDistribution/></div> </MediaQuery>
+      
+      </div>} />
+
+      <Route path='/promotion' element={
+      <div> 
+        <MediaQuery minWidth={1000}><Header/> <Promotion/> </MediaQuery>
+        <MediaQuery maxWidth={999}><TabletHeader/><Promotion/> </MediaQuery>
+      </div>} />
+
+      
       <Route path='/pricing' element={<div> <Header/> <Pricing/></div>} />
       <Route path='/contact' element={<div> <Header/> <Contact/> </div>} />
       <Route path='/dashboard' element={<div> <DashboardHeader/> <Dashboard/></div>}/>

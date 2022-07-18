@@ -5,7 +5,7 @@ import classes from '../CSS files/Promotion.module.css'
 import megaphoneHand from '../images/megaphoneHand.png'
 function Promotion(props) {
     return(
-        <div>
+        <div className={classes.promotionCon}>
             
             <div className={classes.megaphoneBackground}>
 
