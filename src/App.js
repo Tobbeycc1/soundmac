@@ -25,9 +25,9 @@ function App() {
     <Routes>
       <Route path='/' element={
       <div> 
-      <MediaQuery minWidth={1000}><Header/> </MediaQuery>
-      <MediaQuery maxWidth={999}><TabletHeader/> </MediaQuery>
-      <Home/> 
+      <MediaQuery minWidth={1000}><Header/> <Home/>  </MediaQuery>
+      <MediaQuery maxWidth={999}><TabletHeader/> <Home/>  </MediaQuery>
+     
       </div>} />
       
       

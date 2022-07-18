@@ -133,19 +133,20 @@ font-size: 18px;
         margin: 100px 0px;
         padding: 0px 50px;
     }
+    .megaphoneBackground{
+        margin: 180px 20px 0px 20px;
+        }
 
 }
-@media screen and (max-width: 999px) {
+@media screen and (max-width: 540px) {
     .formCon{
         display: block;
         margin: 100px 0px;
         padding: 0px 10px;
     }
-    .megaphoneBackground{
-        margin: 200px 20px 0px 20px;
-        }
+    
         .checkOur{
-            margin: 160px 20px;
+            margin: 120px 20px;
             font-size: 22px;
         }
         .packageDetails{

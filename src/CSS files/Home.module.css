@@ -1,6 +1,4 @@
-.homeCon{
-    overflow-x: hidden;
-}
+
 .homeCard1{
     width:100% ;
     height: 100vh;
@@ -171,6 +169,7 @@
 
 /* Media Query */
 @media screen and (max-width: 1180px) {
+
 .speakerImg{
     width: 550px;
 }
@@ -191,6 +190,9 @@
 
 }
 @media screen and (max-width: 999px) {
+    .homeCon{
+    overflow-x: hidden;
+}
     .homeCard1{
         height: 767px;
         background: url(../images/1000\ home\ background.png);
