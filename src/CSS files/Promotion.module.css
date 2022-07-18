@@ -135,3 +135,11 @@ font-size: 18px;
     }
 
 }
+@media screen and (max-width: 999px) {
+    .formCon{
+        display: block;
+        margin: 100px 0px;
+        padding: 0px 10px;
+    }
+   
+}
