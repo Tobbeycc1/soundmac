@@ -83,3 +83,18 @@
     color: var(--purple);
     background: none;
 }
+@media screen and (max-width: 999px) {
+    .ContactCon{
+        margin: 150px 0px 0px 0px ;
+        text-align: center;
+    }
+}
+@media screen and (max-width: 540px) {
+    .ContactCon{
+        margin: 150px 0px 0px 0px ;
+        text-align: center;
+    }
+    .ContactFormCon{
+        padding:100px 10px ;
+    }
+}

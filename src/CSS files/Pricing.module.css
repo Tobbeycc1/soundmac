@@ -1,6 +1,7 @@
 .pricingCon{
     text-align: center;
     margin-top: 100px;
+    padding: 0px 20px;
 }
 .cash{
     display: inline-block;
@@ -39,4 +40,29 @@
 }
 .distributeHeader{
     margin-top: 30px;
+}
+@media screen and (max-width: 999px) {
+    .cash{
+        display: block;
+      text-align: center;
+        width: 100%;
+        margin-right: 0%;
+        margin-top: 100px;
+        
+    }
+    .pricingCardsSubCon, .pricingCardsSubConMiniLabel{
+        margin-top: 100px;
+        
+        width: 100%;
+        display: block;
+       
+    }
+    .cashImage{
+        width: 80vw;
+    }
+}
+@media screen and (max-width: 999px) {
+    .pricingCardsCon{
+        margin: 30px 20px 100px 20px;
+    }
 }

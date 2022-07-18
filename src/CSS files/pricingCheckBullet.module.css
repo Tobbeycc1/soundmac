@@ -14,3 +14,13 @@
     font-weight: 500;
     vertical-align: middle;
 }
+@media screen and (max-width: 999px) {
+    .bulletText{
+        display: inline-block;
+        margin: 10px 0px;
+        font-weight: 500;
+        vertical-align: middle;
+        width: 65vw;
+    }
+}
+    

@@ -21,7 +21,7 @@ function Pricing(props) {
 
            <div className={classes.pricingCardsCon}>
             <div className={classes.cash}>
-            <img src={cashImage} alt= "cash" />
+            <img src={cashImage} className={classes.cashImage} alt= "cash" />
             <h1 className={classes.distributeHeader}>Distribute your first release with 
 Soundmac and get your music into 
 over 100 partner stores worldwide!

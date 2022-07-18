@@ -45,8 +45,22 @@ function App() {
       </div>} />
 
       
-      <Route path='/pricing' element={<div> <Header/> <Pricing/></div>} />
-      <Route path='/contact' element={<div> <Header/> <Contact/> </div>} />
+      <Route path='/pricing' element={
+      <div> 
+        <MediaQuery minWidth={1000}><Header/> <Pricing/> </MediaQuery>
+        <MediaQuery maxWidth={999}><TabletHeader/><Pricing/> </MediaQuery>
+        
+      </div>} />
+
+
+      <Route path='/contact' element={
+      <div> 
+        <MediaQuery minWidth={1000}><Header/> <Contact/>  </MediaQuery>
+        <MediaQuery maxWidth={999}><TabletHeader/><Contact/> </MediaQuery>
+        
+      </div>} />
+
+
       <Route path='/dashboard' element={<div> <DashboardHeader/> <Dashboard/></div>}/>
       <Route path='/catalog' element={<div> <DashboardHeader/> <Catalog/> </div>}/>
     </Routes>
