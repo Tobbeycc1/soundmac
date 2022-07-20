@@ -88,3 +88,8 @@
 .dashBoardIconLink:hover, .dashBoardIconLink:focus, .dashBoardIconLink:active{
 font-size: 44px;
 }
+@media screen and (max-width: 750px) {
+    .dashboardHeaderCon{
+        margin: 0px 20px ;
+    } 
+}

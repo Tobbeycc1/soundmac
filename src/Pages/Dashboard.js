@@ -57,6 +57,7 @@ function Dashboard(props) {
             <div className={classes.coolGlassesLady}>
             <img 
             src={coolGlassesLady} 
+            
             alt='Cool Glasses Lady'      
             />
             </div>
@@ -124,19 +125,19 @@ function Dashboard(props) {
 
 <div  className={classes.totalSreamCon}>
   <h2><NumberFormat className={classes.totalSreamNumber} value={totalStream} displayType={'text'} thousandSeparator={true} /></h2>
-  <div>total stream</div>
+  <div className={classes.addNewMedia}>total stream</div>
 </div>
 
 <div  className={classes.totalSreamConB}>
 
   <Link to={'/dashboard'} className={classes.linlToAddTrack}><i class="fi-xwsux2-plus-solid"
 style={{ color:'green'}}></i>
-  <div>add new track</div></Link>
+  <div className={classes.addNewMedia} >add new track</div></Link>
 
   {/* add video */}
   <Link to={'/dashboard'} className={classes.linlToAddTrackB}><i class="fi-xwsux2-plus-solid"
 style={{ color:'green'}}></i>
-  <div>add new video</div></Link>
+  <div className={classes.addNewMedia}>add new video</div></Link>
 
 </div>
 

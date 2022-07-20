@@ -12,3 +12,8 @@
     margin-right: 50px;
     
 }
+@media screen and (max-width: 540px) {
+    .tracks, .label{
+        margin-right: 20px;
+    }
+}

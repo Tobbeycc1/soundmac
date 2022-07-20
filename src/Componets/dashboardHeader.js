@@ -94,6 +94,7 @@ alt= 'dashboard logo'/>
              src={avi} 
              alt='avi'
              className={classes.avi}
+             onClick={smallActionIconsOnClick}
              onMouseEnter={smallActionIconsOnMouseEnter}
              />
             </div>

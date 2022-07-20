@@ -32,9 +32,9 @@
     display: flex;
 }
 .dashboardIconsCon{
-    padding: 100px 0px 60px 0px;
+    padding: 100px 10px 60px 10px;
     background: var(--grey);
-    width: 500px;
+    width: 36.6vw;
     border-radius: 20px;
     text-align: center;
     display: inline-block;
@@ -85,17 +85,19 @@ font-size: 18px;
     text-align: center;
     display: inline-block;
     background: var(--grey);
-    padding: 50px 40px;
+    padding: 50px 10px;
     border-radius: 20px;
-    margin-right: auto;
+    margin-right: 15.77px;
+    width: 12.05vw;
 }
 .totalSreamConB{
     text-align: center;
     display: inline-block;
     background: var(--grey);
-    padding: 50px 20px;
+    padding: 50px 5px;
     height: 153px;
     border-radius: 20px;
+    width: 26.354vw;
 }
 .plusIcon{
     font-size: 40px;
@@ -105,11 +107,12 @@ font-size: 18px;
     display: inline-block;
     width: 160px;
     border-right: 4px solid var(--purple);
+    width: 11.713vw;
 }
 .linlToAddTrackB{
     text-decoration: none;
     display: inline-block;
-    width: 160px;
+    width: 11.713vw;
 }
 .totalSreamNumber{
     color: var(--green);
@@ -136,7 +139,7 @@ font-size: 18px;
 }
 .packageDivCon{
     background: var(--purple);
-    padding: 10px 35px;
+    padding: 10px 2.56vw;
     height: 83px;
     position: relative;
     border-radius: 15px;
@@ -155,6 +158,7 @@ font-size: 18px;
     display: inline-block;
     vertical-align: top;
     margin-left: 10px;
+    font-size: 20px;
     
 }
 .pricingPackage{
@@ -162,7 +166,7 @@ font-size: 18px;
     color: var(--dashPink);
 }
 .myEarningsMoneyDiv{
-    padding-left: 56vw;
+    transform: scale(-1, 1);
     margin: 30px 0px;
 }
 .myEarningsMoneySubDiv{
@@ -171,9 +175,106 @@ font-size: 18px;
     background: var(--dashPink);
     border-radius: 15px;
     padding: 20px;
+    transform: scale(-1, 1);
 }
 .myEarningsMoney{
     color: white;
     font-weight: 900;
 }
+.addNewMedia{
+width: 100%;
+}
+@media screen and (max-width: 1129px) {
+    .allActivePackageCon{
+        /* background: red; */
+        height: 390px;
+        overflow-y: scroll;
+    }
+}
+@media screen and (max-width: 999px) {
+    .coolGlassesLady{
+        display: none;
+    }
+    .dashboardIconsCon{
+        display: none;
+    }
+    .dashboardIconsCon{
+        padding: 100px 10px 60px 10px;
+        background: var(--grey);
+        width: 100%;
+       
+    }
+    .dashboardAndIconsCon{
+        /* background: green; */
+        margin-top: 50px;
+        display: block;
+    }
+       .allActivePackageCon{
+        /* background: red; */
+        height: 315px;
+        overflow-y: scroll;
+        width: 100%;
+    }
+    .totalStreamUploadAndActiveCon{
+        display: inline-block;
+        /* background: red; */
+        width: 100%;
+        height: 500px;
+        
+    }
+    .totalSreamCon{
+        text-align: center;
+        display: inline-block;
+        background: var(--grey);
+        padding: 50px 10px;
+        border-radius: 20px;
+        margin-right: 15.77px;
+        width: 24vw;
+    }
+    .totalSreamConB{
+        text-align: center;
+        display: inline-block;
+        background: var(--grey);
+        padding: 50px 5px;
+        height: 153px;
+        border-radius: 20px;
+        width: 45vw;
+    }
+    .linlToAddTrack{
+    text-decoration: none;
+    display: inline-block;
+    width: 160px;
+    border-right: 4px solid var(--purple);
+    width: 18vw;
+}
+.linlToAddTrackB{
+    text-decoration: none;
+    display: inline-block;
+    width: 18vw;
+}
+}
+@media screen and (max-width: 750px) {
+    .dashboardCon{
+        margin: 0px 20px ;
+    } 
+    .totalSreamCon{
+        width: 36vw;
+    }
+    .totalSreamConB{
+        width: 55vw;
+    }
+   
+}
+.linlToAddTrack, .linlToAddTrackB{
+    width: 24vw;
+}
+@media screen and (max-width: 540px) {
+    .addNewMedia{
+        font-size: 12px;
+    }
+    .dashBoardPackageText{
+        font-size: 18px;
+    }
+}
+
 
