@@ -43,4 +43,14 @@
         vertical-align: middle;
         width: 60vw;
     }
+
+}
+@media screen and (max-width: 360px) {
+    .bulletText{
+        display: inline-block;
+        margin: 10px 0px;
+        font-size: 11px;
+        vertical-align: middle;
+        width: 50vw;
+    }
 }

@@ -417,4 +417,22 @@
 }
 
 }
+@media screen and (max-width: 315px) {
+    .signIn{
+        font-size: 30px;
+        line-height: 50px;
+    }
+    .login{
+        font-size: 10px;
+    }
+    .horizontalLine{
+        width: 70px;
+    }
+    .horizontalLineB{
+        width: 20px;
+    }
+    .squareAndCircleIcon{
+        padding: 5px;
+    }
 
+}

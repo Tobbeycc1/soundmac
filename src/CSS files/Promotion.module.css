@@ -153,3 +153,12 @@ font-size: 18px;
             margin: 100px 20px;
         }
 }
+@media screen and (max-width: 320px) {
+    .purpleBackground{
+        background: var(--purple);
+        width: 100%;
+        height: 650px;
+        text-align: center;
+        padding: 0px 10px;
+    }
+}
