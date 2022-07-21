@@ -99,6 +99,7 @@ font-size: 18px;
     border-radius: 20px;
     width: 26.354vw;
 }
+
 .plusIcon{
     font-size: 40px;
 }
@@ -113,6 +114,7 @@ font-size: 18px;
     text-decoration: none;
     display: inline-block;
     width: 11.713vw;
+   
 }
 .totalSreamNumber{
     color: var(--green);
@@ -183,6 +185,9 @@ font-size: 18px;
 }
 .addNewMedia{
 width: 100%;
+}
+.plusSign{
+    font-weight: 1000;
 }
 @media screen and (max-width: 1129px) {
     .allActivePackageCon{
@@ -263,11 +268,12 @@ width: 100%;
     .totalSreamConB{
         width: 55vw;
     }
+    .linlToAddTrack, .linlToAddTrackB{
+        width: 24vw;
+    }
    
 }
-.linlToAddTrack, .linlToAddTrackB{
-    width: 24vw;
-}
+
 @media screen and (max-width: 540px) {
     .addNewMedia{
         font-size: 12px;

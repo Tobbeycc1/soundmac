@@ -130,13 +130,11 @@ function Dashboard(props) {
 
 <div  className={classes.totalSreamConB}>
 
-  <Link to={'/dashboard'} className={classes.linlToAddTrack}><i class="fi-xwsux2-plus-solid"
-style={{ color:'green'}}></i>
+  <Link to={'/dashboard'} className={classes.linlToAddTrack}><h1 className={classes.plusSign}>+</h1>
   <div className={classes.addNewMedia} >add new track</div></Link>
 
   {/* add video */}
-  <Link to={'/dashboard'} className={classes.linlToAddTrackB}><i class="fi-xwsux2-plus-solid"
-style={{ color:'green'}}></i>
+  <Link to={'/dashboard'} className={classes.linlToAddTrackB}><h1 className={classes.plusSign}>+</h1>
   <div className={classes.addNewMedia}>add new video</div></Link>
 
 </div>
