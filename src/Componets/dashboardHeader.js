@@ -79,7 +79,8 @@ alt= 'dashboard logo'/>
     }
 
     return(
-        <div className={classes.dashboardHeaderCon}>
+        <div className={classes.dashboardHeaderBigCon}> 
+<div className={classes.dashboardHeaderCon}>
             
             <div className={classes.logoDiv} >
             <Link className={classes.logo} to={'/'}>SoundMac</Link>
@@ -104,6 +105,8 @@ alt= 'dashboard logo'/>
             {showSmallActionIcons && smallIconDashboardJSX}
             
         </div>
+        </div>
+        
     )
 }
 export default DashboardHeader
