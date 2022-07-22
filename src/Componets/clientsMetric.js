@@ -8,18 +8,18 @@ function ClientsMetrics(props) {
     return(
         <div>
              <div className={classes.tracks}>
-                    <h2>{noOfTracks}</h2>
-                    <h3>tracks</h3>
+                    <h2 className={classes.nos}>{noOfTracks}</h2>
+                    <h3 className={classes.noText}>tracks</h3>
                 </div>
 
                 <div className={classes.tracks}>
-                    <h2>{noOfVideos}</h2>
-                    <h3>videos</h3>
+                    <h2 className={classes.nos}>{noOfVideos}</h2>
+                    <h3 className={classes.noText}>videos</h3>
                 </div>
 
                 <div className={classes.label}>
-                    <h2>{noOfLabel}</h2>
-                    <h3>label</h3>
+                    <h2 className={classes.nos}>{noOfLabel}</h2>
+                    <h3 className={classes.noText}>label</h3>
                 </div>
         </div>
     )

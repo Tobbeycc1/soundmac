@@ -3,7 +3,7 @@
     
     width: 100px;
     margin-right: 50px;
-    border-right: 2px solid var(--purple);
+    border-right: 2px solid var(--green);
 }
 .label{
     display: inline-block;
@@ -12,8 +12,20 @@
     margin-right: 50px;
     
 }
+.nos{
+    color: var(--green);
+}
+.noText{
+    color: var(--green);
+}
 @media screen and (max-width: 540px) {
     .tracks, .label{
         margin-right: 20px;
+    }
+    .nos{
+        font-size: 18px;
+    }
+    .noText{
+        font-size: 15px;
     }
 }
