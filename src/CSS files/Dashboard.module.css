@@ -306,6 +306,9 @@ width: 100%;
        left: 0;
        right: 0;
     }
+    .dashboardCon{
+     overflow-y: hidden;
+    }
 }
 
 
