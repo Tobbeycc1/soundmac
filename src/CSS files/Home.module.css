@@ -1,4 +1,180 @@
 
+    .homeCard1{
+        width:100% ;
+        height: 100vh;
+        background: red;
+        background: url(../images/exports\ soundmac.png);
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+       
+    }
+    .signInAndSpeakerCon{
+        margin: -70px 50px 0px 50px;
+        display: flex;
+        position: relative;
+        margin-bottom: 45vh;
+    }
+    .signIn{
+        font-size: 150px;
+        color: white;
+        font-weight: 900;
+        text-decoration: none;
+        line-height: 150px;
+        
+    
+    }
+    .horizontalLine{
+        width: 350px;
+        height: 3px;
+        background: white;
+        margin-top: 30px ;
+        display: inline-block;
+    }
+    .login{
+        color: white;
+        display: inline-block;
+        vertical-align: middle;
+        cursor: pointer;
+        font-size: 42px;
+    }
+    .horizontalLineB{
+        width: 160px;
+        height: 3px;
+        background: white;
+        margin-top: 30px ;
+        display: inline-block;
+    }
+    .signInCon{
+        display: inline-block;
+        margin-right: auto;
+        margin-top: 100px;
+        position: relative;
+        top: 55vh;
+    
+    }
+    .speakerCon{
+        display: inline-block;
+        vertical-align: middle;
+        position: relative;
+        top: 55vh;
+    }
+    
+    .earnCon{
+        margin: 40px 50px;
+        text-align: center;
+        margin-top: 35vh;
+    }
+    .red{
+        color: red;
+    }
+    
+    .aboutUsHeader{
+        transform: rotate(270deg);
+        font-size: 20px;
+        font-weight: bold;
+        text-decoration: underline;
+        text-decoration-thickness: 8px;
+        text-decoration-color: var(--cream);
+        display: inline-block;
+        margin-top: 100px;
+        margin-right: -28.3px;
+      
+        
+        
+    }
+    
+    .aboutUsText{
+        display: inline-block;
+        border-left: 2px solid var(--cream);
+        padding: 0px 0px 0px 30px;
+        vertical-align: top;
+    }
+    .aboutUsTextHeader{
+        text-align: left;
+    }
+    .aboutUsParagraphText{
+        width: 400px;
+        text-align: left;
+        font-size: 13px;
+        /* line-height: 20px; */
+        font-style: italic;
+        margin-top: 20px;
+        text-align: justify; 
+    }
+    .linkCards{
+        margin: 180px 50px 0px 50px;
+        text-align: center;
+      
+    }
+    .metrics, .metricsWithBorder{
+        margin: 150px 50px;
+        text-align: center;
+        display: inline-block;
+        
+    }
+    .metricsWithBorder{
+        border-left: 7px solid var(--cream);
+        border-right: 7px solid var(--cream);
+        padding-left: 40px;
+        padding-right:40px;
+    }
+    .metricsCon{
+        text-align: center;
+    }
+    .largerAudienceCon{
+        margin: 0px 50px;
+        text-align: center;
+    }
+    .squareAndCircleIcon{
+        width: 547px;
+        height: 547px;
+        background: var(--cream);
+        border-radius: 50px;
+        text-align: center;
+        display: inline-block;
+        margin-right: 50px;
+        vertical-align: middle;
+        padding-top: 120px;
+    }
+    .smallThinkLine{
+        width: 8px;
+        height: 99px;
+        background: var(--cream);
+        display: inline-block;
+        vertical-align: middle;
+    }
+    .largerAudienceText{
+        display: inline-block;
+        text-align: left;
+        border-left: 2px solid var(--cream);
+        padding-left: 55px;
+        margin-left: -5px;
+        vertical-align: middle;
+        height: 547px;
+    }
+    .reachLargerText{
+        margin-bottom: 75px;
+    }
+    .signUpOrLogIn{
+        text-decoration: none;
+        font-weight: 1000;
+        margin-top: 75px;
+        font-size: 25px;
+        display: block;
+    }
+    .Footer{
+        margin-top: 200px;
+    }
+    .speakerImg{
+        width: 900px;
+    }
+    
+    
+@media screen and (max-width: 1366px) {
+    .speakerImg{
+        width: 100%;
+    }
 .homeCard1{
     width:100% ;
     height: 100vh;
@@ -36,6 +212,7 @@
     display: inline-block;
     vertical-align: middle;
     cursor: pointer;
+    font-size: 24px;
 }
 .horizontalLineB{
     width: 70px;
@@ -165,7 +342,7 @@
 .Footer{
     margin-top: 200px;
 }
-
+}
 
 /* Media Query */
 @media screen and (max-width: 1180px) {
