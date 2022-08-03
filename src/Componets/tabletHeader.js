@@ -7,7 +7,7 @@ import classes from '../CSS files/tabletheader.module.css'
 function TabletHeader(props) {
 
     //  the dropdown for navbar
-const navJSX =  <div className={classes.tabletNavBar}>
+const navJSX =  <div className={`${classes.tabletNavBar} animate__animated animate__pulse`}>
 
 <Link onClick={noNavItem} className={classes.nav} to={'/'}>Home</Link>
 <Link onClick={noNavItem} to={"/musicDistribution"}className={classes.nav}>Music Distribution</Link>

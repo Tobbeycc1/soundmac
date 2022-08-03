@@ -72,11 +72,12 @@
     position: relative;
    
     margin-left: auto;
-    padding: 20px 40px;
+    /* padding: 20px 40px;
     background: white;
     box-shadow: 2px 1px 13px 3px rgba(0,0,0,0.25);
     -webkit-box-shadow: 2px 1px 13px 3px rgba(0,0,0,0.25);
-    -moz-box-shadow: 2px 1px 13px 3px rgba(0,0,0,0.25);
+    -moz-box-shadow: 2px 1px 13px 3px rgba(0,0,0,0.25); */
+    
 }
 /* .dashboardIconImage{
     background: var(--purple);
@@ -107,5 +108,15 @@ font-size: 44px;
     } 
     .myEarningsMoneySubDiv{
         width: 50%;
+    }
+    .dashBoardIcon{
+        position: absolute;
+        display: flex;
+        text-align: right;
+        top: 80px;
+        left: 0;
+        right: 20px;
+        
+       
     }
 }

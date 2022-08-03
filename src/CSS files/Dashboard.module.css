@@ -108,7 +108,7 @@ font-size: 18px;
     text-decoration: none;
     display: inline-block;
     width: 160px;
-    border-right: 4px solid var(--dashPink);
+    border-right: 2px solid var(--dashPink);
     width: 11.713vw;
 }
 .linlToAddTrackB{
@@ -253,7 +253,7 @@ width: 100%;
     text-decoration: none;
     display: inline-block;
     width: 160px;
-    border-right: 4px solid var(--dashPink);
+    
     width: 18vw;
 }
 .linlToAddTrackB{

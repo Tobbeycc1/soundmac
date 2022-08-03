@@ -6,6 +6,7 @@ import catalogSmallIcon from '../images/catalog small icon.png'
 import historySmallIcon from '../images/history small icon.png'
 import { useState } from 'react'
 import 'animate.css';
+// import '../index.css'
 
 
 const notificationBellStyle = {
@@ -24,7 +25,8 @@ function DashboardHeader(props) {
     onMouseLeave={smallActionIconsOnMouseLeave}
     
 >
-<div className={classes.dashBoardIconB}>
+<div className={`${classes.dashBoardIconB} animate__animated animate__pulse`} >
+   
 
 {/* dashboard small icon */}
 <Link
@@ -33,7 +35,9 @@ to={'/dashboard'}>
 
 <img src={dashboardSmallIcon} 
 className={classes.dashboardIconImage} 
-alt= 'dashboard logo'/> 
+alt= 'dashboard logo'
+
+onClick={smallActionIconsOnMouseLeave}/> 
 </Link>
 
 {/* Catalog small icon */}
@@ -43,7 +47,8 @@ to={'/catalog'}>
 
 <img src={catalogSmallIcon} 
 className={classes.dashboardIconImage} 
-alt= 'dashboard logo'/> 
+alt= 'dashboard logo'
+onClick={smallActionIconsOnMouseLeave}/> 
 </Link>
 
 {/* History small icon */}
@@ -53,13 +58,17 @@ to={'/history'}>
 
 <img src={historySmallIcon} 
 className={classes.dashboardIconImage} 
-alt= 'dashboard logo'/> 
+alt= 'dashboard logo'
+onClick={smallActionIconsOnMouseLeave}/> 
 </Link>
+</div>
+
+
 
 
 </div>
 
-</div>
+
 // small dashboard icons JSX ends
 
 
