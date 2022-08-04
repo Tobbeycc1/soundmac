@@ -35,6 +35,7 @@ const checkStyles= {
 function Home(props) {
     return(
         <div className={classes.homeCon}>
+     
 
         <div className={classes.homeCard1}>
         <div className={classes.signInAndSpeakerCon}>
@@ -51,7 +52,8 @@ function Home(props) {
 
          </div>
         </div>
-    
+        
+  
         
 
          {/* Body */}
@@ -219,7 +221,7 @@ arcu varius a. Vivamus lobortis posuere magna, at interdum dolor malesuada vel. 
         <div className={classes.smallThinkLine}></div>
 
         <div className={classes.largerAudienceText}>
-            <h2>Your Independence <br/> Is Our Policy</h2>
+            <h2 className={classes.reachLargerTextA}>Your Independence <br/> Is Our Policy</h2>
             <br/>
             <h2 className={classes.reachLargerText}>Reach larger audience, let get your <br/>
 music available across over 120<br/>
@@ -253,6 +255,7 @@ bulletText={'Keep major share of your music royalty'}
           </div>
           
           
+         
 
         </div>
     )

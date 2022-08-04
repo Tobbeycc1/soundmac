@@ -6,5 +6,17 @@ margin: 30px 30px;
 }
 .category{
     font-weight: bold ;
-    font-size: 13px;
+    font-size: 0.952vw;
+}
+.value{
+    font-size: 2.34vw;
+}
+@media screen and (max-width: 999px) {
+    .value{
+        font-size: 32px;
+    }
+    .category{
+        font-weight: bold ;
+        font-size: 13px;
+    }
 }

@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 * {
   box-sizing: border-box;
   padding: 0;
@@ -7,6 +11,7 @@
   
  
  }
+ 
 :root {
   --purple: #210721;
   --yellow: #FAD30B;

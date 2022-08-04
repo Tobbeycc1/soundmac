@@ -10,6 +10,7 @@
 .donotMiss{
     padding-top: 150px;
     color: white;
+    font-size: 1.76vw;
 }
 .eMailInput{
     margin-top: 30px;
@@ -25,11 +26,12 @@
 }
 .submitButton{
     background: var(--cream);
-    width: 162px;
-    height: 52px;
+    width: fit-content;
+    height: fit-content;
+    padding: 10px;
     border: none;
     border-radius: 10px;
-    font-size: 25px;
+    font-size: 1.83vw;
     font-weight: bold;
     margin-bottom: 120px;
     cursor: pointer;
@@ -48,10 +50,11 @@
 .footerSoundmac{
     color: white;
     margin-bottom: 20px;
+    font-size: 1.76vw;
 }
 .footerSoundmacText{
     color: white;
-    font-size: 13px;
+    font-size: 0.952vw;
     text-align: justify;
     margin-bottom: 23px;
     display: block;
@@ -67,6 +70,12 @@
 
 /* Media Query */
 @media screen and (max-width: 999px) {
+    .donotMiss{
+        font-size: 24px;
+    }
+    .submitButton{
+        font-size: 25px;
+    }
     .footerNavContentCOn, .footerNavContentCOnB{
         display: block;
         width: 100%;
@@ -79,6 +88,10 @@
     .footerSoundmacText{
         display: inline-block;
         margin-right: 20px;
+        font-size: 13px;
+    }
+    .footerSoundmac{
+        font-size: 24px;
     }
     /* .copywright{
         margin-bottom: 30px;

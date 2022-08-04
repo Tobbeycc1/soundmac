@@ -10,16 +10,18 @@
   color: white;
   padding: 20px 40px;
   border-radius: 10px;
+  font-size: 1.37vw;
 }
 .personalDetails {
   margin-top: 70px;
+  font-size: 1.37vw;
 }
 .ensure {
-  font-size: 11px;
+  font-size: 0.81vw;
   font-style: italic;
 }
 .label {
-  font-size: 11px;
+  font-size: 0.81vw;
   margin-top: 50px;
   display: block;
   margin-left: 12px;
@@ -92,7 +94,7 @@
 }
 .checkBoxLabel {
   margin-right: 10px;
-  font-size: 11px;
+  font-size: 0.81vw;
   /* font-weight: 700; */
   vertical-align: middle;
   margin-top: 20px;
@@ -103,18 +105,21 @@
 }
 .cartSummaryHeader {
   margin-top: 130px;
+  font-size: 1.37vw;
 }
 .newSingleJSXCon {
   margin-top: 20px;
   display: flex;
+  font-size: 1.37vw;
 }
 .newSingleJSXHeader {
   margin-right: auto;
-  font-size: 14px;
+  font-size: 1.02vw;
 }
 .checkOutBtnCon{
 text-align: center;
 margin-top: 60px;
+
 }
 .checkOutBtn{
   padding: 15px 12px;
@@ -123,18 +128,43 @@ margin-top: 60px;
   font-weight: bold;
   outline: none;
   border: none;
-  width: 200px;
+  width: fit-content;
   border-radius: 10px;
   font-size: 15px;
   cursor: pointer;
+  font-size: 1.1vw;
 }
 .iAgreeCon{
   margin: 20px 0px 50px 0px;
 }
 .checkBoxLabelIAgree{
   font-weight: bold;
+  font-size: 1.02vw;
 }
 @media screen and (max-width: 999px) {
+  .formHeader {
+ font-size: 18.72px;
+  }
+  .personalDetails {
+    font-size: 1.37vw;
+  }
+  .ensure {
+    font-size: 11px;
+    font-style: italic;
+  }
+  .label {
+    font-size: 11px;
+  }
+  .checkBoxLabel {
+    margin-right: 10px;
+    font-size: 11px;
+  }
+  .cartSummaryHeader {
+    font-size: 18.72px;
+  }
+  .newSingleJSXHeader {
+    font-size: 14px;
+  }
 
   .artisteReleaseName {
     display: block;
@@ -143,7 +173,15 @@ margin-top: 60px;
     margin-right: 0px;
     display: block;
   }
-  
+  .newSingleJSXCon {
+    font-size: 18.72px;
+  }
+  .checkOutBtn{
+    font-size: 15px;
+    }
+    .checkBoxLabelIAgree{
+      font-size: 16px;
+    }
 }
 @media screen and (max-width: 540px) {
   .megaphoneBackground{

@@ -1,9 +1,13 @@
+.packageName{
+  font-size: 1.38vw;
+}
 .packageDetailsText {
   width: 50vw;
   margin: 25px 0px;
+  font-size: 1.2vw;
 }
 .packageDetailsSubText {
-  font-size: 13px;
+  font-size: 0.952vw;
   margin: 5px 0px;
   width: 50vw;
 }
@@ -12,6 +16,7 @@
   text-decoration: line-through;
   text-decoration-color: red;
   text-decoration-thickness: 3px;
+  font-size: 1.76vw;
 }
 .packagePriceCon {
   text-align: center;
@@ -19,22 +24,41 @@
 }
 .packagenewPrice {
   color: red;
+  font-size: 2.34vw;
 }
 .priceIncludes {
-  font-size: 13px;
+  font-size: 0.952vw;
   margin: 5px 0px;
   width: 50vw;
   color: gray;
   font-weight: bold;
 }
 @media screen and (max-width: 999px) {
+  .packageName{
+    font-size: 18.72px;
+  }
   .packageDetailsText {
     width: 80vw;
     margin: 25px 0px;
+    font-size: 16px;
   }
   .packageDetailsSubText {
     font-size: 13px;
     margin: 5px 0px;
     width: 80vw;
+  }
+  .packageOldPrice {
+    font-size: 24px;
+  }
+  .packagenewPrice {
+    color: red;
+    font-size: 32px;
+  }
+  .priceIncludes {
+    font-size: 13px;
+    margin: 5px 0px;
+    width: 50vw;
+    color: gray;
+    font-weight: bold;
   }
 }

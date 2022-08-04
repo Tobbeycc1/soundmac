@@ -1,11 +1,14 @@
 .earn{
-    font-size: 20px;
+    font-size: 1.5vw;
     margin-bottom: 30px;
 }.musicLogotext{
     margin-top: 30px;
-    font-size: 13px;
+    font-size: 0.952vw;
     margin-bottom: 140px;
     
+}
+.musicAppLogos{
+    width: 22.92vw;
 }
 .red{
     color: red;
@@ -13,13 +16,21 @@
 @media screen and (max-width: 999px) {
 .musicLogotext{
        margin-bottom: 140px;
-    
+       font-size: 13px;
+}
+.earn{
+    font-size: 20px;
+    margin-bottom: 30px;
+}
+.musicAppLogos{
+    width: 313px;
 }
 }
 
 @media screen and (max-width: 540px) {
     .musicLogotext{
            margin-bottom: 120px;
+           font-size: 13px;
         
     }
  }

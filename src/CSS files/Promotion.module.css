@@ -6,11 +6,11 @@ margin: 200px 50px 0px 50px;
 }
 .header{
     margin-top: 180px;
-    font-size: 30px;
-    width: 389px;
+    font-size: 2.2vw;
+    width: 28.5vw;
 }
 .text{
-    font-size: 18px;
+    font-size: 1.3vw;
     margin-top: 30px;
     font-weight: 500;
     margin-bottom: 100px;
@@ -26,16 +26,17 @@ margin: 200px 50px 0px 50px;
 
 .purpleBackgroundHeader{
     color: white;
-    font-size: 40px;
+    font-size: 2.92vw;
     
 }
 .purpleBackgroundCreate{
     color: yellow;
+    font-size: 2.92vw;
 }
 .purpleBackgroundText{
 color: white;
 margin-top: 40px;
-font-size: 18px;
+font-size: 1.32vw;
 }
 .purpleBackgroundTextCon{
     display: inline-block;
@@ -54,7 +55,7 @@ font-size: 18px;
 }
 .checkOur{
     margin: 160px 50px;
-    font-size: 22px;
+    font-size: 1.62vw;
 }
 .checkOurText{
     margin-top: 20px;
@@ -113,6 +114,16 @@ font-size: 18px;
    
 }
 @media screen and (max-width: 999px) {
+    .purpleBackgroundHeader, .purpleBackgroundCreate{
+           font-size: 40px;
+    }
+    
+    .purpleBackgroundText{
+    font-size: 18px;
+    }
+    .text{
+        font-size: 18px;
+    }
     .megaphoneHand{
       display: none;
     }
