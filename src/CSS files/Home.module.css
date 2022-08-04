@@ -19,7 +19,7 @@
    
 }
 .signInAndSpeakerCon{
-    margin: -5.13vw 50px 0px 50px;
+    margin: -73px 50px 0px 50px;
     display: flex;
     position: relative;
     margin-bottom: 45vh;
@@ -181,6 +181,7 @@
 }
 .bigCheck{
     width: 20.1vw;
+    display: inline-block;
 }
 
 
@@ -268,6 +269,7 @@
     width: 70px;
 }
 .signInAndSpeakerCon{
+    margin: -50px 50px 0px 50px;
     text-align: center;
      /* margin-bottom: 50vh; */
     display: block;

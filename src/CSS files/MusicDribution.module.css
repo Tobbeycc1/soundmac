@@ -1,7 +1,8 @@
 .earn{
     font-size: 1.5vw;
     margin-bottom: 30px;
-}.musicLogotext{
+}
+.musicLogotext{
     margin-top: 30px;
     font-size: 0.952vw;
     margin-bottom: 140px;
@@ -9,6 +10,8 @@
 }
 .musicAppLogos{
     width: 22.92vw;
+    text-align: center;
+    display: inline-block;
 }
 .red{
     color: red;

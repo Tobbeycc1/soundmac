@@ -2,7 +2,7 @@ import classes from '../CSS files/MusicDribution.module.css'
 import musicAppLogos from '../images/music app logos.png'
 function MusicDistribution(props) {
     return(
-<div>
+<div className={classes.earnCon}>
 <h3 className={classes.earn}>Earn While They Listen, With Over <span className={classes.red}>2million</span> Listeners </h3>
                 <img data-aos="fade-up" data-aos-delay="50"
     data-aos-duration="1000"

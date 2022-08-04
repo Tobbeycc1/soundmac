@@ -57,7 +57,7 @@ right: 20vw;
     color: white;
     
 }
-@media screen and (max-width: 360px) {
+@media screen and (max-width: 414px) {
     .tabletNavBar{
         left: 35vw;
         right: 20vw;  
