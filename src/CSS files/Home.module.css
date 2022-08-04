@@ -101,6 +101,7 @@
 }
 .aboutUsTextHeader{
     text-align: left;
+    font-weight: bold;
 }
 .aboutUsParagraphText{
     width: 400px;
