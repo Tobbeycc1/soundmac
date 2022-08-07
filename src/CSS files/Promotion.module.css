@@ -96,15 +96,8 @@ font-size: 1.32vw;
         position: relative;
         top: -350px;
      }
-     .checkOur{
-        margin: 90px 50px;
-        font-size: 22px;
-    }
-    .header{
-        margin-top: 180px;
-        font-size: 30px;
-        width: 90%;
-    }
+   
+   
     .purpleBackground{
         background: var(--purple);
         width: 100%;
@@ -117,6 +110,15 @@ font-size: 1.32vw;
    
 } */
 @media screen and (max-width: 999px) {
+    .checkOur{
+        margin: 90px 50px;
+        font-size: 22px;
+    }
+    .header{
+        margin-top: 180px;
+        font-size: 30px;
+        width: 90%;
+    }
     .purpleBackground{
         background: var(--purple);
         width: 100%;
