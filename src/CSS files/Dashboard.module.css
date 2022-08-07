@@ -5,6 +5,7 @@
     font-weight: 500;
     margin-bottom: 50px;
     vertical-align: middle;
+    font-size: 2.64vw;
 }
 .username{
     text-transform: uppercase;
@@ -32,14 +33,14 @@
     display: flex;
 }
 .dashboardIconsCon{
-    padding: 100px 10px 60px 10px;
+    padding: 100px 1.46vw 60px 1.46vw;
     background: var(--grey);
-    width: 36.6vw;
+    width: 45vw;
     border-radius: 20px;
     text-align: center;
     display: inline-block;
     vertical-align: top;
-    margin-right: 1.1092vw;
+    margin-right: 5%;
 }
 .dashboardIconsSubCon{
     text-align: center;
@@ -60,6 +61,7 @@
     border-radius: 50%;
     display: inline-block;
     vertical-align: middle;
+    width: 6vw;
     
 }
 .dashboardiconTextCon{
@@ -74,7 +76,7 @@ font-size: 18px;
 .totalStreamUploadAndActiveCon{
     display: inline-block;
     /* background: red; */
-    width: 40vw;
+    width: 100%;
     height: 500px;
     
 }
@@ -87,8 +89,8 @@ font-size: 18px;
     background: var(--grey);
     padding: 40px 10px;
     border-radius: 20px;
-    margin-right: 15.77px;
-    width: 12.05vw;
+    margin-right: 5%;
+    width: 35%;
     padding-top: 60px;
 }
 .totalSreamConB{
@@ -96,9 +98,9 @@ font-size: 18px;
     display: inline-block;
     background: var(--grey);
     padding: 50px 5px;
-    height: 153px;
+    /* height: 153px; */
     border-radius: 20px;
-    width: 26.354vw;
+    width: 60%;
 }
 
 .plusIcon{
@@ -119,6 +121,8 @@ font-size: 18px;
 }
 .totalSreamNumber{
     color: var(--green);
+    font-size: 1.4vw;
+font-weight: bold;
 }
 .totalStreamAndUploadUpOnlyCon{
     /* background: green; */
@@ -126,7 +130,7 @@ font-size: 18px;
 }
 .allActivePackageCon{
     /* background: red; */
-    height: 315px;
+    height: 20.6vw;
     overflow-y: scroll;
 }
 .allActivePackageSubCon{
@@ -143,7 +147,7 @@ font-size: 18px;
 .packageDivCon{
     background: var(--purple);
     padding: 10px 2.56vw;
-    height: 83px;
+    height: 6.1vw;
     position: relative;
     border-radius: 15px;
     margin-top: 21.4px;
@@ -161,12 +165,13 @@ font-size: 18px;
     display: inline-block;
     vertical-align: top;
     margin-left: 10px;
-    font-size: 20px;
+    font-size: 1.5vw;
     
 }
 .pricingPackage{
     margin-top: 20px;
     color: var(--dashPink);
+    font-size: 1.32vw;
 }
 .myEarningsMoneyDiv{
     transform: scale(-1, 1);
@@ -186,19 +191,58 @@ font-size: 18px;
 }
 .addNewMedia{
 width: 100%;
+font-size: 1.2vw;
+font-weight: bold;
 }
 .plusSign{
     font-weight: 1000;
     color: var(--green);
+    font-size: 1.4vw;
+    margin-bottom: 10px;
 }
-@media screen and (max-width: 1129px) {
-    .allActivePackageCon{
-        /* background: red; */
-        height: 390px;
-        overflow-y: scroll;
-    }
+.dashboardTT{
+    font-weight: bold;
+    font-size: 2.64vw;
 }
+.dashboardTTSub{
+    font-size: 1.4vw;
+}
+.catalogTT{
+    font-size: 1.4vw;
+    font-weight: bold;
+}
+.active{
+    font-weight: bold;
+    font-size: 1.2vw;
+}
+
 @media screen and (max-width: 999px) {
+    .active{
+        font-weight: bold;
+        font-size: 16px;
+    }
+    .packageDivCon{
+        background: var(--purple);
+        padding: 10px 2.56vw;
+        height: 83px;
+    }
+    .dashBoardPackageText{
+        font-size: 18px;
+    }
+    .pricingPackage, .plusSign{
+        font-size: 18px;
+    }
+    .addNewMedia{
+        font-size: 16px;
+        }
+        .totalSreamNumber{
+    font-size: 18px;
+     }
+    .usernameConfidentPhrase{
+        font-size: 36px;
+        margin-bottom: 30px;
+        font-weight: bold;
+    }
     .coolGlassesLady{
         display: none;
     }
@@ -293,9 +337,7 @@ width: 100%;
     .confidentPhraseAndImageCon{
         margin-top: 130px;
     }
-    .pricingPackage{
-        font-size: 15px;
-    }
+    
     .myEarningsMoneySubDiv{
         width: 100%;
     }

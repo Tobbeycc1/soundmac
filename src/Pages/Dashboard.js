@@ -78,8 +78,8 @@ function Dashboard(props) {
                 <div className={classes.dashboardIconsSubConSpecial}>
                     <img className={classes.dashboardIconImage} alt='grid box' src={dashboardIcon}/>
                     <div className={classes.dashboardiconTextCon}>
-                        <h2>Dashboard</h2>
-                        <div>Lorem ipsum dolor</div>
+                        <h2 className={classes.dashboardTT}>Dashboard</h2>
+                        <div className={classes.dashboardTTSub}>Lorem ipsum dolor</div>
                     </div>
 
                 </div>
@@ -91,8 +91,8 @@ function Dashboard(props) {
                 <div className={classes.dashboardIconsSubCon}>
                     <img className={classes.dashboardIconImage} src={catalogIcon} alt='catalog icon'/>
                     <div className={classes.dashboardiconTextCon}>
-                        <h2>Catalog</h2>
-                        <div>Lorem ipsum dolor</div>
+                        <h2 className={classes.catalogTT}>Catalog</h2>
+                        <div className={classes.catalogTTSub}>Lorem ipsum dolor</div>
                     </div>
 
                 </div>
@@ -105,8 +105,8 @@ function Dashboard(props) {
                 <div className={classes.dashboardIconsSubCon}>
                     <img className={classes.dashboardIconImage} src={historyIcon} alt='catalog icon'/>
                     <div className={classes.dashboardiconTextCon}>
-                        <h2>History</h2>
-                        <div>Lorem ipsum dolor</div>
+                        <h2 className={classes.catalogTT}>History</h2>
+                        <div lassName={classes.catalogTTSub}>Lorem ipsum dolor</div>
                     </div>
 
                 </div>
@@ -144,7 +144,7 @@ function Dashboard(props) {
 
 </div>
          </div> 
-         <h2>Active*</h2>
+         <h2 className={classes.active}>Active*</h2>
 
          <div className={classes.allActivePackageCon}>
             <div className={classes.allActivePackageSubCon}>

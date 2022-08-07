@@ -14,18 +14,24 @@
 }
 .nos{
     color: var(--green);
+    font-size: 1.3vw;
 }
 .noText{
     color: var(--green);
+    font-size: 1.3vw;
 }
+@media screen and (max-width: 999px) {
+    .nos{
+        font-size: 18px;
+        
+    }
+    .noText{
+        font-size: 18px;
+    }
+}
+
 @media screen and (max-width: 540px) {
     .tracks, .label{
         margin-right: 20px;
-    }
-    .nos{
-        font-size: 18px;
-    }
-    .noText{
-        font-size: 15px;
     }
 }
