@@ -3,6 +3,10 @@
     margin-top: 100px;
     padding: 0px 20px;
 }
+.whileWeDistribute{
+    font-size: 2.2vw;
+    font-weight: bold;
+}
 .cash{
     display: inline-block;
   text-align: center;
@@ -40,8 +44,21 @@
 }
 .distributeHeader{
     margin-top: 30px;
+    font-size: 2.2vw;
+}
+.iA{
+    font-size: 1.5vw;
 }
 @media screen and (max-width: 999px) {
+    .iA{
+        font-size: 20px;
+    }
+    .whileWeDistribute{
+        font-size: 25px;
+    }
+    .distributeHeader{
+        font-size: 25px;
+    }
     .cash{
         display: block;
       text-align: center;

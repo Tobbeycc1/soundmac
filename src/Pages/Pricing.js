@@ -16,7 +16,7 @@ function Pricing(props) {
           
 
            <div className={classes.pricingCon}>
-            <h1>While we distribute, <br/> <span className={classes.noBoldOnHeader}>you stay independent, focus on your music and earn money.</span></h1>
+            <h1 className={classes.whileWeDistribute}>While we distribute, <br/> <span className={classes.noBoldOnHeader}>you stay independent, focus on your music and earn money.</span></h1>
            </div>
 
            <div className={classes.pricingCardsCon}>
@@ -33,7 +33,7 @@ over 100 partner stores worldwide!
             <div className={classes.pricingCardsSubCon}>
                 <div className={classes.pricingCardsTextSubCon}>
                 <img className={classes.independentArtistLogo} src={independentArtistLogo} alt= "independent artis Logo"/>
-                <h2>Independent Artist</h2>
+                <h2 className={classes.iA}>Independent Artist</h2>
                 <PricingCheckBullet bulletText="Unlimited number of songs"/>
                 <PricingCheckBullet bulletText="You keep 90% royalty"/>
                 <PricingCheckBullet bulletText="Royalty split payments"/>
@@ -53,7 +53,7 @@ over 100 partner stores worldwide!
             <div className={classes.pricingCardsSubConMiniLabel}>
             <div className={classes.pricingCardsTextSubCon}>
                 <img className={classes.independentArtistLogo} src={miniLabelLogo} alt= ""/>
-                <h2>Mini Label Service (10 artists)</h2>
+                <h2 className={classes.iA}>Mini Label Service (10 artists)</h2>
                 <PricingCheckBullet bulletText="Accounting Services"/>
                 <PricingCheckBullet bulletText="You keep 85% royalty"/>
                 <PricingCheckBullet bulletText="Keep 100% of your copyright"/>
@@ -73,7 +73,7 @@ over 100 partner stores worldwide!
             <div className={classes.pricingCardsSubCon}>
             <div className={classes.pricingCardsTextSubCon}>
                 <img className={classes.independentArtistLogo} src={fullLabelLogo} alt= ""/>
-                <h2>Full Label Service (unlimited artists)</h2>
+                <h2 className={classes.iA}>Full Label Service (unlimited artists)</h2>
                 <PricingCheckBullet bulletText="Accounting Services"/>
                 <PricingCheckBullet bulletText="You keep 85% royalty"/>
                 <PricingCheckBullet bulletText="Keep 100% of your copyright"/>
