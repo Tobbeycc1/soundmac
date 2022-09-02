@@ -31,7 +31,7 @@ const [showNavItem, setShowNavItem]= useState(false)
     return(
         <div className={classes.tabletHeaderCon}>
             <Link className={classes.logo} to={'/'}><h3><Link className={classes.logo} to={'/'}>SoundMac</Link></h3></Link>
-            <h3 className={classes.haburgerMenu} onClick={navItem} >&#127828;</h3>
+            <h3 className={classes.haburgerMenu} onClick={navItem} >&#9776;</h3>
             {showNavItem && navJSX}
            
         </div>

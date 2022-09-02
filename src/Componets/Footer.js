@@ -9,7 +9,7 @@ function Footer(props) {
             <button className={classes.submitButton}>Suscribe</button>
         </form>
         <div className={classes.footerNavContentCOn}>
-            <h2 className={classes.footerSoundmac}>SoundMac</h2>
+            <h2 className={classes.footerSoundmac}>SOUNDMAC</h2>
             <p className={classes.footerSoundmacText}>Lorem ipsum dolor sit amet, consectetur adipiscing 
 elit. Suspendisse turpis lorem, placerat non purus sit
 amet, ultrices dapibus mi. Pellentesque quis dui ligula. 
@@ -40,7 +40,7 @@ volutpat nibh hendrerit, rhoncus dolor mattis, aliquam</p>
         {/* Contact */}
         <div className={classes.footerNavContentCOnB}>
         <h2 className={classes.footerSoundmac}>Contact</h2>
-        <a href="tel:09058387301" className={classes.footerSoundmacText}>080-78965-425</a>
+        <a href="tel:09058387301" className={classes.footerSoundmacText}>Phone</a>
         <a href="mailto:soundmacinfo@gmail.com" className={classes.footerSoundmacText}>soundmacinfo@gmail.com</a>
             <p className={classes.footerSoundmacText}> Rivers, Nigeria </p>
         </div>

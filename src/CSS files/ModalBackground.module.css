@@ -1,0 +1,7 @@
+.ModalBackground{
+    background: rgba(35, 6, 68, 0.363);
+    width: 100%;
+    position: fixed;
+    height: 100%;
+    cursor: pointer;
+}

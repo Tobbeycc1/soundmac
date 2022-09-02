@@ -25,6 +25,8 @@
     background: var(--purple);
     padding: 0px 10px;
     border-radius: 5px;
+    text-transform: uppercase;
+    font-weight: bold;
 }
 .navDiv{
     display: inline-block;
@@ -51,12 +53,19 @@
     font-size: 1.2vw;
     background: var(--purple);
     color: white;
-    padding: 5px 15px;
+    padding: 10px 15px;
     border-radius: 7px;
   
 }
 .button:hover{
-    box-shadow: -3px 8px 22px -6px rgba(0,0,0,0.55);
+    /* box-shadow: -3px 8px 22px -6px rgba(0,0,0,0.55);
 -webkit-box-shadow: -3px 8px 22px -6px rgba(0,0,0,0.55);
--moz-box-shadow: -3px 8px 22px -6px rgba(0,0,0,0.55);
+-moz-box-shadow: -3px 8px 22px -6px rgba(0,0,0,0.55); */
+border: 1px solid var(--purple);
+background: none;
+color: var(--purple);
+transition: all;
+transition-duration: 0.2s;
+transition-timing-function: ease-in-out;
+cursor: pointer;
 }

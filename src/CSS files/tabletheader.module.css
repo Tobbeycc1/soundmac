@@ -14,11 +14,13 @@
     text-decoration: none;
     display: inline-block;
     margin-right: 5%;
+    text-transform: uppercase;
+    font-weight: bold;
 }
 .haburgerMenu{
     /* background: var(--purple); */
     display: inline-block;
-    padding: 5px;
+    padding: 1px 5px;
     border: 2px solid var(--purple);
     border-radius: 5px;
     cursor: pointer;

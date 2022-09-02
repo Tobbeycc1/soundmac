@@ -22,7 +22,7 @@ const myEarningsMoney = '0'
 function Dashboard(props) {
     
     const [newSingleOutNow, setnewSingleOut]=useState('New Single Out Now')
-    const [bRDP, setBRDP]= useState('Before Release Date + Pre Save')
+    const [bRDP, setBRDP]= useState('Before Release Date + Pre save')
     const [mVOP, setMVOP]= useState('Music Video + Out Now + Pre Save')
     const [yA, setYA]= useState('YouTube Ads')
     const [sA, setSA] = useState('Spotify Ads')

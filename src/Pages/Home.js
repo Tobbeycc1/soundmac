@@ -14,7 +14,7 @@ import Footer from '../Componets/Footer'
 import MusicDistribution from '../Componets/MusicDistribution';
 import MediaQuery from 'react-responsive'
 import { Splide, SplideSlide,SplideTrack } from '@splidejs/react-splide';
-import '@splidejs/react-splide/css/sea-green'
+import '@splidejs/react-splide/css';
 import '../index.css'
 import bigCheck from '../images/big check.png'
 
@@ -55,7 +55,9 @@ function Home(props) {
         
   
         
+<div className={classes.relative}>
 
+</div>
          {/* Body */}
          <div id='musicDistribution' className={classes.earnCon} >
             <div >
@@ -65,7 +67,7 @@ function Home(props) {
                 
 
  {/* About Us */}
-<div id='about' data-aos="fade-down" data-aos-delay="50"
+{/* <div id='about' data-aos="fade-down" data-aos-delay="50"
     data-aos-duration="1000"
     data-aos-easing="ease-in-out">
  <h4 className={classes.aboutUsHeader}>About Us</h4>
@@ -84,7 +86,7 @@ volutpat nibh hendrerit, rhoncus dolor mattis, aliquam felis. Nulla tristique la
 eget magna fermentum interdum. Suspendisse molestie luctus diam, vitae convallis 
 arcu varius a. Vivamus lobortis posuere magna, at interdum dolor malesuada vel. </p>
  </div>   
-</div>
+</div> */}
  
 
             </div>
@@ -128,16 +130,14 @@ arcu varius a. Vivamus lobortis posuere magna, at interdum dolor malesuada vel. 
            <MediaQuery maxWidth={999}>
             
            <Splide
-      options={ {
-        rewind: true,
-        gap   : '4rem',
-        perPage: 1,
-        height: '50 rem',
-        // width : 800,
-        // pagination: false,
-        // arrows: false
-        
-      } }
+   options={ {
+    rewind: true,
+    type   : 'loop',
+    padding: '20%',
+    gap:'20px',
+    arrows: false
+    
+  } }
       
     >
       <SplideSlide>
