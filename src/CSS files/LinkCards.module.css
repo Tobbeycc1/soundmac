@@ -72,7 +72,10 @@
         font-size: 2.66vw;
     }
        
-    
+    .learnMore {
+        margin-top: 10.25vw;
+
+    }
     .iconHeader{
         font-size: 3.86vw;
         height: 11.59vw;
