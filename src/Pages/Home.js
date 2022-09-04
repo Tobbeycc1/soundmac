@@ -143,7 +143,7 @@ arcu varius a. Vivamus lobortis posuere magna, at interdum dolor malesuada vel. 
              icon={promotionLogo}
              link={'/promotion'}
              iconHeader={'Promotion'}
-             iconSubText={'Get your music heard! Soundmac’s  easy-to-use promotional tools get your tracks to the people that matters the most lorem Lorem ipsum dolor sit amet, consectetur.'}
+             iconSubText={'Get your music heard! Soundmac’s  easy-to-use promotional tools get your tracks to the people that matters the most.'}
              />
 
              {/* Pricing */}
@@ -151,7 +151,7 @@ arcu varius a. Vivamus lobortis posuere magna, at interdum dolor malesuada vel. 
              icon={pricingLogo}
              link={'/pricing'}
              iconHeader={'Pricing'}
-             iconSubText={'All-inclusive distribution you keep: 90%  revenue share on distribution and also get your music into over 100 partner stores worldwidelorem Lorem ipsum dolor sit amet, consectetur. '}
+             iconSubText={'All-inclusive distribution you keep: 90%  revenue share on distribution and also get your music into over 100 partner stores worldwide. '}
              />
              
             </MediaQuery>
@@ -165,7 +165,8 @@ arcu varius a. Vivamus lobortis posuere magna, at interdum dolor malesuada vel. 
     type   : 'loop',
     padding: '20%',
     gap:'20px',
-    arrows: false
+    arrows: false,
+    pagination: false
     
   } }
       
