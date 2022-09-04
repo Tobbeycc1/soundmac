@@ -74,7 +74,7 @@ const Marquee = () => {
   };
   return (
     <div
-      className={ `${classes.aB} relative text-gray-200 flex overflow-hidden items-center`}
+      className={ `${classes.aB} relative  flex overflow-hidden items-center`}
       style={{ minHeight: "11.12vw"}}
     >
       {renderMarqueeElements()}

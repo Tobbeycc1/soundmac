@@ -17,8 +17,8 @@ import { Splide, SplideSlide,SplideTrack } from '@splidejs/react-splide';
 import '@splidejs/react-splide/css';
 import '../index.css'
 import bigCheck from '../images/big check.png'
-import Marquee from '../Componets/Marquee';
 import qM from '../images/qm.png'
+import Marquee from "react-fast-marquee";
 
 // ..
 AOS.init();
@@ -68,10 +68,19 @@ function Home(props) {
                 </div>
                 
 
-                <Marquee/>
+                <Marquee>
+ <p className={classes.aB}>ABOUT US</p>
+ <p className={classes.aB}>ABOUT US</p>
+ <p className={classes.aB}>ABOUT US</p>
+</Marquee>
 
                 <div className={classes.newAboutusCon}>
                   <img src={qM} alt={'question mark'} className={classes.qM} />
+
+        <div className={classes.mobileBG}>
+
+        </div>
+
                   <p className={classes.newAboutText}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse turpis lorem,
 placerat non purus sit amet, ultrices dapibus mi. Pellentesque quis dui ligula. 
 volutpat nibh hendrerit, rhoncus dolor mattis, aliquam felis. Nulla tristique lacus 

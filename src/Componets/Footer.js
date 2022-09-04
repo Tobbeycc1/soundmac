@@ -42,7 +42,7 @@ volutpat nibh hendrerit, rhoncus dolor mattis, aliquam</p>
         <h2 className={classes.footerSoundmac}>Contact</h2>
         <a href="tel:09058387301" className={classes.footerSoundmacText}>Phone</a>
         <a href="mailto:soundmacinfo@gmail.com" className={classes.footerSoundmacText}>soundmacinfo@gmail.com</a>
-            <p className={classes.footerSoundmacText}> Rivers, Nigeria </p>
+            <p className={classes.footerSoundmacText}>  Nigeria </p>
         </div>
         <p className={classes.copywright}>copywright © SoundMac, 2022 All rights reserved </p> <br/>
         </div>

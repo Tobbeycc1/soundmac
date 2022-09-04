@@ -35,6 +35,7 @@
     font-weight: bold;
     margin-bottom: 120px;
     cursor: pointer;
+    color: var(--purple);
 }
 .footerNavContentCOn, .footerNavContentCOnB{
     color: white;
