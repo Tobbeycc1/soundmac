@@ -184,6 +184,35 @@
     width: 20.1vw;
     display: inline-block;
 }
+.aB{
+    font-size: 7.32vw;
+    /* -webkit-text-stroke-width: 3px;
+    -webkit-text-stroke-color: var(--purple); */
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-weight: bold;
+    position: relative;
+    color: var(--purple);
+}
+.qM{
+    width: 25%;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 50px
+
+}
+.newAboutText{
+    display: inline-block;
+    width: 60%;
+    vertical-align: middle;
+    font-size: 1.2vw;
+
+
+}
+.newAboutusCon{
+    text-align: center;
+    margin-top: 50px;
+    
+}
 
 
 /* Media Query */
@@ -207,6 +236,7 @@
 .horizontalLineB{
     width: 60px;
 }
+
 
 }
 @media screen and (max-width: 999px) {
@@ -320,6 +350,25 @@
 .bigCheck{
     width: 66.184vw;
 }
+.qM{
+    width: 30vw;
+    display: inline-block;
+    align-self: center;
+    padding: 10px;
+    margin-bottom: 20px;
+
+}
+.newAboutText{
+    display: block;
+    width: 100%;
+    font-size:14px;
+
+
+}
+.newAboutusCon{
+    margin-top: 20px;
+}
+
 
 }
 @media screen and (max-width: 590px) {
@@ -429,6 +478,7 @@
             
             width: 60.184vw;
         }
+        
 }
 @media screen and (max-width: 407px) {
 .signIn{
