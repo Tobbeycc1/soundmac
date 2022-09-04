@@ -48,6 +48,8 @@
 }
 .iA{
     font-size: 1.5vw;
+    font-weight: bold;
+
 }
 @media screen and (max-width: 999px) {
     .iA{

@@ -165,10 +165,14 @@
 }
 .reachLargerTextA{
     font-size: 1.76vw;
+    font-weight: bold;
+
 }
 .reachLargerText{
     margin-bottom: 75px;
     font-size: 1.76vw;
+    font-weight: bold;
+
 }
 .signUpOrLogIn{
     text-decoration: none;

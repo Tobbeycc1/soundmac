@@ -4,11 +4,11 @@ import helpAndThanksImage from '../images/help and thanks.png'
 function Contact(props) {
     return(
         <div className={classes.ContactCon}> 
-        <img src={helpAndThanksImage}/>
+        <img src={helpAndThanksImage} alt={helpAndThanksImage} className={classes.helpAndThanksImage}/>
 
         <div className={classes.ContactFormCon}>
             <diV className={classes.ContactFormSubCon}>
-                <h1>DROP A MESSAGE FOR US </h1>
+                <h1 className={classes.dropA}>DROP A MESSAGE FOR US </h1>
                 <p className={classes.weWould}> we would respond to you as swift as a cheetah</p>
 
                 <form>

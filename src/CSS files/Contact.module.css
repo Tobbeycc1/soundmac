@@ -11,6 +11,10 @@
     background: url(../images/contact\ purple\ and\ white\ backgro.png);
     margin: 70px 0px 150px 0px;
 }
+.dropA{
+    font-size: 1.47vw;
+    font-weight: bold;
+}
 .ContactFormSubCon{
 
     text-align: left;
@@ -78,6 +82,9 @@
     cursor: pointer;
 
 }
+.helpAndThanksImage{
+    padding-left: 10vw;
+}
 .contactFormBtn:hover{
     border: 2px solid var(--purple);
     color: var(--purple);
@@ -87,6 +94,10 @@
     .ContactCon{
         margin: 150px 0px 0px 0px ;
         text-align: center;
+    }
+    .dropA{
+        font-size: 16px;
+        font-weight: bold;
     }
 }
 @media screen and (max-width: 540px) {

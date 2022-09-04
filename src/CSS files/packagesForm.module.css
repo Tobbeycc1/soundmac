@@ -11,10 +11,14 @@
   padding: 20px 40px;
   border-radius: 10px;
   font-size: 1.37vw;
+  font-weight: bold;
+
 }
 .personalDetails {
   margin-top: 70px;
   font-size: 1.37vw;
+  font-weight: bold;
+
 }
 .ensure {
   font-size: 0.81vw;
@@ -106,15 +110,21 @@
 .cartSummaryHeader {
   margin-top: 130px;
   font-size: 1.37vw;
+  font-weight: bold;
+
 }
 .newSingleJSXCon {
   margin-top: 20px;
   display: flex;
   font-size: 1.37vw;
+  font-weight: bold;
+
 }
 .newSingleJSXHeader {
   margin-right: auto;
   font-size: 1.02vw;
+  font-weight: bold;
+
 }
 .checkOutBtnCon{
 text-align: center;

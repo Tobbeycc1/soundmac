@@ -1,5 +1,7 @@
 .packageName{
   font-size: 1.38vw;
+  font-weight: bold;
+
 }
 .packageDetailsText {
   width: 50vw;
@@ -25,6 +27,8 @@
 .packagenewPrice {
   color: red;
   font-size: 2.34vw;
+  font-weight: bold;
+
 }
 .priceIncludes {
   font-size: 0.952vw;
