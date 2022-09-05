@@ -21,11 +21,11 @@
    font-family: 'Roboto', sans-serif;
    margin-bottom: 20px;
 }
-.Input::placeholder{
-   font-size: 18px;
+input::placeholder{
+    font-size: 1.2vw;
    font-family: 'Roboto', sans-serif;
    color: var(--purple);
-   font-weight: 500;
+   font-weight: 400;
 
 }
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
@@ -33,4 +33,16 @@
 .formCon:hover{
     border: 2px solid blue;
    
+}
+@media screen and (max-width: 999px) {
+    input::placeholder{
+        font-size: 16px;
+      
+    }
+}
+@media screen and (max-width: 540px) {
+    input::placeholder{
+        font-size: 4.35vw;
+      
+    }
 }

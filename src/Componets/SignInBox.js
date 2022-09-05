@@ -62,7 +62,7 @@ function SignInBox(props) {
                 <p  onClick={props.signUpAt} className={classes.dontHave}>Don't have an account Yet?</p>
             </form>
 
-            <div className={classes.horizontalOrLine}></div>
+            
             <p className={classes.or}>or</p>
 
             <FcGoogle className={classes.googleLoginIcon}/> 

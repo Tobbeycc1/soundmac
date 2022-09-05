@@ -61,7 +61,6 @@ function SignUp(props) {
                 <p   className={classes.dontHave} onClick={props.iHaveAnAcc}>I have an account</p>
             </form>
           
-            <div className={classes.horizontalOrLine}></div>
             <p className={classes.or}>or</p>
 
             <FcGoogle className={classes.googleLoginIcon}/> 

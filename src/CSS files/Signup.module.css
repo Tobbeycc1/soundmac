@@ -1,9 +1,9 @@
 .SignInBoxDiv{
     position: fixed;
     /* left: 30%; */
-    /* top: 10vh; */
+    /* top: 15vh; */
     width: 100%;
-    padding: 5vh 29.82vw;
+    padding: 10vh 29.82vw 0px 29.82vw;
     left: 0;
     right: 0;
 
@@ -60,7 +60,7 @@ input.largerCheckbox {
     display: inline-block;
     font-family: 'Roboto', sans-serif;
     font-weight: 500; 
-    font-size: 14px;
+    font-size: 1.02vw;
     vertical-align: middle;
     color: gray;
     cursor: pointer;
@@ -72,14 +72,16 @@ input.largerCheckbox {
     margin-right: auto;
 }
 .signInCon{
-    text-align: right;
+    text-align: center;
     margin: 20PX 0PX;
+    width: 100%;
+    background: var(--purple);
+    border-radius: 20px;
+    padding: 15px 20px;
+
 }
 .signinButton{
-    background: var(--purple);
-    padding: 5px 20px;
     color: white;
-    border-radius: 12px;
     font-weight: bold;
 }
 .dontHave{
@@ -99,15 +101,38 @@ input.largerCheckbox {
     background: var(--purple);
 }
 .or{
-    margin-top: -15px;
+
     background: white;
-    width: 80px;
-    margin-left: 40%;
+    
 }
 .googleLoginIcon{
-    font-size: 40px;
+    font-size: 30px;
     color: blue;
     vertical-align: middle;
     display: inline-block;
-    margin: 20px;
+    margin: 10px;
+}
+@media screen and (max-width: 999px) {
+    .SignInBoxDiv{
+        padding: 10vh 100px 0vh 100px;
+    }
+    .Gi, .welcomeTo, .dontHave{
+       font-size: 16px;
+    }
+    
+     .rememberMe{
+    font-size: 14px;
+     }
+}
+@media screen and (max-width: 540px) {
+    .SignInBoxDiv{
+        padding: 15vh 30px 0vh 30px;
+    }
+    .Gi, .welcomeTo, .dontHave{
+       font-size: 4.35vw;
+    }
+    
+     .rememberMe{
+    font-size: 3.38vw;
+     }
 }
