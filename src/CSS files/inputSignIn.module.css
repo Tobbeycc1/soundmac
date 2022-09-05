@@ -1,0 +1,36 @@
+.Input{
+    /* outline: 2px solid red; */
+    display: inline-block;
+    vertical-align: middle;
+    width: 80%;
+    outline: none;
+    padding: 2px 15px;
+    background: white;
+}
+.label{
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 18px;
+}
+.formCon{
+    border: 2px solid rgb(223, 222, 222);
+    width: 100%;
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-size: 18px;
+   font-family: 'Roboto', sans-serif;
+   margin-bottom: 20px;
+}
+.Input::placeholder{
+   font-size: 18px;
+   font-family: 'Roboto', sans-serif;
+   color: var(--purple);
+   font-weight: 500;
+
+}
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
+.formCon:hover{
+    border: 2px solid blue;
+   
+}

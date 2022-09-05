@@ -4,15 +4,31 @@ import classes from '../CSS files/Header.module.css'
 import ModalBackground from "./ModalBackground";
 import SignInBox from "./SignInBox";
 import TabletHeader from "./tabletHeader";
+import SignUp from "./SignUp";
+
 
 function Header(props) {
 
     const [modal, showModal]=useState(false)
 
-    function showDeets() {
-        console.log('deets shown');
+    const [signUpModal, showSignupModal]= useState(false)
+
+     function showDeets() {
+        console.log('Login shown');
         showModal(!modal)
         
+    }
+    function signUp() {
+        console.log('signUp shown');
+        showSignupModal(!signUpModal)
+        showModal(false)
+        
+    }
+   
+    function sDAndSM() {
+        showModal(true)
+        showSignupModal(false)
+
     }
 
     return(
@@ -31,8 +47,12 @@ function Header(props) {
             
             </div>
 
-            {modal && <ModalBackground noDeets={showDeets}/> }
-            {modal && <SignInBox /> }
+            {modal && <ModalBackground noDeets={showDeets} /> }
+            {modal && <SignInBox showDeets={showDeets} signUpAt={signUp}/> }
+           
+            {signUpModal && <ModalBackground noDeets={signUp} /> }
+            {signUpModal && <SignUp noSignUp={signUp} iHaveAnAcc={sDAndSM}/> }
+            
 
         </div>
 

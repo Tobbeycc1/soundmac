@@ -1,5 +1,4 @@
-
-import classes from '../CSS files/SignInBox.module.css'
+import classes from '../CSS files/Signup.module.css'
 import { ImCancelCircle } from "react-icons/im";
 import { MdOutlineAttachEmail } from "react-icons/md";
 import { RiLockPasswordFill } from "react-icons/ri";
@@ -7,26 +6,18 @@ import { FcGoogle } from "react-icons/fc";
 import { RiFacebookCircleFill } from "react-icons/ri";
 
 
-
-
-
 import InputSignIn from './inputSignIn';
-
-
-
-function SignInBox(props) {
-    
-    
+function SignUp(props) {
     return(
-        <div className={classes.SignInBoxDiv} >
-            <div className={`${classes.SignInBox} animate__animated animate__rubberBand`} >
-            
-            {/* Cancel Button */}
+        <div className={classes.SignInBoxDiv}> 
+            <div className={`${classes.SignInBox} animate__animated animate__headShake`}>
+                            {/* Cancel Button */}
             <div className={classes.x}>
-                <ImCancelCircle className={classes.Gi} onClick={props.showDeets} />
+                <ImCancelCircle className={classes.Gi} onClick={props.noSignUp}/>
             </div>
-            <p className={classes.welcomeTo}>Welcome to <span className={classes.soundmac}>SOUNDMAC</span></p>
-            
+
+            <p className={classes.welcomeTo}>Thank you for choosing <span className={classes.soundmac}>SOUNDMAC</span></p>
+
             <form>
             <div className={classes.inputCon}>
                 
@@ -42,35 +33,42 @@ function SignInBox(props) {
                 placeholder={'Password'}
                 />
 
+                {/* Re enter password */}
+                <InputSignIn
+                icon= {<RiLockPasswordFill/>}
+                type={'password'}
+                placeholder={'Re-enter Password'}
+                />
+
                 <div className={classes.flexCon}>
                 <div className={classes.checkBoxCon}>
                 <input type='checkbox' className={classes.largerCheckbox}/><p className={classes.rememberMe}>Remember Me?</p>
                 </div>
 
-                <p className={classes.rememberMe}>Forgot Password?</p>
                 </div>
+
+                
                
     
                 </div>
 
                 <div className={classes.signInCon}>
-                    <button type='submit' className={classes.signinButton}>Sign In</button>
+                    <button type='submit' className={classes.signinButton}>Sign Up</button>
                    
                 </div>
 
 
-                <p  onClick={props.signUpAt} className={classes.dontHave}>Don't have an account Yet?</p>
+                <p   className={classes.dontHave} onClick={props.iHaveAnAcc}>I have an account</p>
             </form>
-
+          
             <div className={classes.horizontalOrLine}></div>
             <p className={classes.or}>or</p>
 
             <FcGoogle className={classes.googleLoginIcon}/> 
             <RiFacebookCircleFill className={classes.googleLoginIcon}/>
-          
-           
-        </div>
+
+            </div>
         </div>
     )
 }
-export default SignInBox
+export default SignUp

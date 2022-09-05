@@ -4,4 +4,6 @@
     position: fixed;
     height: 100%;
     cursor: pointer;
+    left: 0;
+    right: 0;
 }

@@ -12,6 +12,8 @@
  
  }
  
+
+
 :root {
   --purple: #210721;
   --yellow: #FAD30B;
@@ -22,8 +24,9 @@
   --grey: #F4F4F4;
   --green: #00bc90;
   --dashPink: #FF939C;
-  
+   
 }
+
 
 body {
   margin: 0;

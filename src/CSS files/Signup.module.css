@@ -1,9 +1,9 @@
 .SignInBoxDiv{
     position: fixed;
     /* left: 30%; */
-    /* top: 15vh; */
+    /* top: 10vh; */
     width: 100%;
-    padding: 10vh 29.82vw;
+    padding: 5vh 29.82vw;
     left: 0;
     right: 0;
 
@@ -60,7 +60,7 @@ input.largerCheckbox {
     display: inline-block;
     font-family: 'Roboto', sans-serif;
     font-weight: 500; 
-    font-size: 1.02vw;
+    font-size: 14px;
     vertical-align: middle;
     color: gray;
     cursor: pointer;
@@ -110,19 +110,4 @@ input.largerCheckbox {
     vertical-align: middle;
     display: inline-block;
     margin: 20px;
-}
-@media screen and (max-width: 540px) {
-    .SignInBoxDiv{
-        
-        padding: 10vh 30px;
-    
-       
-    }
-    .Gi, .welcomeTo, .dontHave{
-       font-size: 4.35vw;
-    }
-    
-     .rememberMe{
-    font-size: 3.38vw;
-     }
 }

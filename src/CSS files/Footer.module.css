@@ -14,10 +14,10 @@
 }
 .eMailInput{
     margin-top: 30px;
-    width: 70%;
+    width: 90%;
     height: 61px;
     background: var(--brown);
-    border-radius: 20px;
+    border-radius: 40px;
     outline: none;
     padding: 10px 30px;
     color: white;
@@ -36,6 +36,7 @@
     margin-bottom: 120px;
     cursor: pointer;
     color: var(--purple);
+    /* width: 90%; */
 }
 .footerNavContentCOn, .footerNavContentCOnB{
     color: white;
@@ -97,4 +98,9 @@
     /* .copywright{
         margin-bottom: 30px;
     } */
+}
+@media screen and (max-width: 540px) {
+    .submitButton{
+        width: 90%;
+    }
 }

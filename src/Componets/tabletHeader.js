@@ -1,6 +1,10 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom'
 import classes from '../CSS files/tabletheader.module.css'
+import ModalBackground from "./ModalBackground";
+import SignInBox from "./SignInBox";
+import SignUp from "./SignUp";
+
 
 
 
@@ -14,11 +18,34 @@ const navJSX =  <div className={`${classes.tabletNavBar} animate__animated anima
 <Link onClick={noNavItem} className={classes.nav} to={'/promotion'}>Promotion</Link>
 <Link onClick={noNavItem} className={classes.nav} to={'/pricing'}>Pricing</Link>
 <Link onClick={noNavItem} className={classes.nav} to={'/contact'}>Contact</Link>
-<Link onClick={noNavItem} className={classes.button} to={'/myportal'}>My Portal</Link>
+<span onClick={showDeets} className={classes.button} to={'/myportal'}>My Portal</span>
 
 </div>
 
 const [showNavItem, setShowNavItem]= useState(false)
+const [modal, showModal]=useState(false)
+const [signUpModal, showSignupModal]= useState(false)
+
+
+function showDeets() {
+    console.log('Login shown');
+    showModal(!modal)
+    setShowNavItem(false)
+    
+}
+
+function signUp() {
+    console.log('signUp shown');
+    showSignupModal(!signUpModal)
+    showModal(false)
+    
+}
+function sDAndSM() {
+    showModal(true)
+    showSignupModal(false)
+
+}
+
     function navItem() {
         console.log('nav items are visible');
         setShowNavItem(!showNavItem)
@@ -34,6 +61,13 @@ const [showNavItem, setShowNavItem]= useState(false)
             <h3 className={classes.haburgerMenu} onClick={navItem} >&#9776;</h3>
             {showNavItem && navJSX}
            
+
+            {modal && <ModalBackground  noDeets={showDeets}/> }
+            {modal && <SignInBox showDeets={showDeets} signUpAt={signUp}/> }
+
+
+            {signUpModal && <ModalBackground noDeets={signUp} /> }
+            {signUpModal && <SignUp noSignUp={signUp} iHaveAnAcc={sDAndSM}/> }
         </div>
         
     )
