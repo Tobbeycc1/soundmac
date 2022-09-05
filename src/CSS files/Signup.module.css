@@ -126,7 +126,7 @@ input.largerCheckbox {
 }
 @media screen and (max-width: 540px) {
     .SignInBoxDiv{
-        padding: 15vh 30px 0vh 30px;
+        padding: 10vh 30px 0vh 30px;
     }
     .Gi, .welcomeTo, .dontHave{
        font-size: 4.35vw;
