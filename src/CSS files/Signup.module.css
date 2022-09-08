@@ -3,9 +3,10 @@
     /* left: 30%; */
     /* top: 15vh; */
     width: 100%;
-    padding: 10vh 29.82vw 0px 29.82vw;
+    padding: 5vh 29.82vw 0px 29.82vw;
     left: 0;
     right: 0;
+    z-index: 2000;
 
    
 }
@@ -78,12 +79,21 @@ input.largerCheckbox {
     background: var(--purple);
     border-radius: 20px;
     padding: 15px 20px;
-
-}
-.signinButton{
     color: white;
     font-weight: bold;
+    cursor: pointer;
+    
+
 }
+.signInCon:hover{
+   border: 2px solid blue;
+   background: none;
+   color: var(--purple);
+   transition: all;
+   transition-duration: 0.2s;
+   transition-timing-function: ease-in;
+}
+
 .dontHave{
     font-weight: bold;
     font-size: 1.2vw;

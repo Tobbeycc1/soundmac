@@ -78,11 +78,19 @@ input.largerCheckbox {
     background: var(--purple);
     border-radius: 20px;
     padding: 15px 20px;
-
-}
-.signinButton{
     color: white;
     font-weight: bold;
+    cursor: pointer;
+    
+
+}
+.signInCon:hover{
+   border: 2px solid blue;
+   background: none;
+   color: var(--purple);
+   transition: all;
+   transition-duration: 0.2s;
+   transition-timing-function: ease-in;
 }
 .dontHave{
     font-weight: bold;

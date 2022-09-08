@@ -30,8 +30,13 @@
     font-weight: 700;
     text-decoration: none;
     line-height: 6.2vw;
-    
-
+    cursor: pointer;
+}
+.signIn:hover{
+    color: var(--yellow);
+}
+.login:hover{
+    color: var(--yellow);
 }
 .horizontalLine{
     width: 13.2vw;

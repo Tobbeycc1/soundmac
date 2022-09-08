@@ -19,6 +19,10 @@ import '../index.css'
 import bigCheck from '../images/big check.png'
 import qM from '../images/qm.png'
 import Marquee from "react-fast-marquee";
+import { useState } from "react";
+import ModalBackground from "../Componets/ModalBackground";
+import SignInBox from "../Componets/SignInBox";
+import SignUp from "../Componets/SignUp";
 
 // ..
 AOS.init();
@@ -35,16 +39,40 @@ const checkStyles= {
 }
 
 function Home(props) {
+
+  const [modal, showModal]=useState(false)
+
+  const [signUpModal, showSignupModal]= useState(false)
+
+   function showDeets() {
+      console.log('Login shown');
+      showModal(!modal)
+      
+  }
+  function signUp() {
+      console.log('signUp shown');
+      showSignupModal(!signUpModal)
+      showModal(false)
+      
+  }
+ 
+  function sDAndSM() {
+      showModal(true)
+      showSignupModal(false)
+
+  }
+
+
     return(
         <div className={classes.homeCon}>
-     
+    
 
         <div className={classes.homeCard1}>
         <div className={classes.signInAndSpeakerCon}>
            <div className={classes.signInCon}>
-           <Link to={'/myportal'} className={classes.signIn}> SIGN UP <br/> FOR FREE</Link>
+           <span to={'/myportal'} className={classes.signIn} onClick={signUp}> SIGN UP <br/> FOR FREE</span>
             <div>
-            <p className={classes.horizontalLine}></p> <h2 className={classes.login}>or Login</h2> <p className={classes.horizontalLineB}></p>
+            <p className={classes.horizontalLine}></p> <h2 className={classes.login} onClick={showDeets}>or Login</h2> <p className={classes.horizontalLineB}></p>
             </div>
            </div>
 
@@ -276,7 +304,7 @@ bulletText={'The best support worldwide'}
 <CheckBullet
 bulletText={'Keep major share of your music royalty'}
 />
-<Link className={classes.signUpOrLogIn} to={'/signIn'}>Sign up / Log in</Link>
+{/* <Link className={classes.signUpOrLogIn} to={'/signIn'}>Sign up / Log in</Link> */}
         </div>
 
         </div>
@@ -285,7 +313,11 @@ bulletText={'Keep major share of your music royalty'}
           <Footer/>
           </div>
           
-          
+          {modal && <ModalBackground noDeets={showDeets} /> }
+            {modal && <SignInBox showDeets={showDeets} signUpAt={signUp}/> }
+           
+            {signUpModal && <ModalBackground noDeets={signUp} /> }
+            {signUpModal && <SignUp noSignUp={signUp} iHaveAnAcc={sDAndSM}/> }
          
 
         </div>
