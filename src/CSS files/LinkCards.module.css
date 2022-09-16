@@ -1,16 +1,31 @@
 .LinkCardCon{
     width: 287px;
-    background: var(--cream);
+    background: var(--purple);
     border-radius: 20px;
     padding: 40px  ;
     display: inline-block; 
     margin:  30px;
     /* height: 25.7vw; */
     vertical-align: top;
+    color: white;
+    cursor: pointer;
+    color: var(--purple);
+    border-radius: 20px;
+    border: 2px solid var(--purple);
+    background: white;
 }
+/* .LinkCardCon:hover{
+    color: var(--purple);
+    border-radius: 20px;
+    border: 2px solid var(--purple);
+    background: white;
+} */
 .icon{
     display: inline-block;
     height: 91px;
+    background: white;
+    padding: 20px;
+    border-radius: 50%;
 }
 .iconHeader{
     margin: 20px;
@@ -35,12 +50,11 @@
 
 }
 .learnMore:hover{
-    color: red;
+    color: rgb(253, 130, 150);
 }
 @media screen and (max-width: 999px) {
     .LinkCardCon{
         width: fit-content;
-        background: var(--cream);
         border-radius: 20px;
         padding: 40px 7.42vw  ;
         display: block; 

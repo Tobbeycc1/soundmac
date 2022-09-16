@@ -39,7 +39,7 @@ function Header(props) {
 
             <div className={classes.navDiv}>
             <Link className={classes.nav} to={'/'}>Home</Link>
-            <Link to={"/musicDistribution"}className={classes.nav}>Music Distribution</Link>
+            {/* <Link to={"/musicDistribution"}className={classes.nav}>Music Distribution</Link> */}
             <Link className={classes.nav} to={'/promotion'}>Promotion</Link>
             <Link className={classes.nav} to={'/pricing'}>Pricing</Link>
             <Link className={classes.nav} to={'/contact'}>Contact</Link>

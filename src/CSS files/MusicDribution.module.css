@@ -1,30 +1,31 @@
 .earn{
-    font-size: 1.5vw;
+    font-size: 2.2vw;
     margin-bottom: 30px;
+    margin-top: 150px;
     font-weight: bold;
+    color: var(--purple);
+
 }
 .musicLogotext{
     margin-top: 30px;
     font-size: 0.952vw;
-    margin-bottom: 140px;
-    
+    margin-bottom: 140px;    
 }
 .musicAppLogos{
-    width: 22.92vw;
+    width: 30.92vw;
     text-align: center;
     display: inline-block;
 }
-.red{
-    color: red;
-}
+
 @media screen and (max-width: 999px) {
-.musicLogotext{
+    .earn{
+        font-size: 25px;
+         margin-top: 100px;
+    margin-bottom: 30px;
+    }
+    .musicLogotext{
        margin-bottom: 140px;
        font-size: 13px;
-}
-.earn{
-    font-size: 20px;
-    margin-bottom: 30px;
 }
 .musicAppLogos{
     width: 313px;
@@ -32,15 +33,17 @@
 }
 
 @media screen and (max-width: 540px) {
+    .earn{
+        font-size: 4.83vw;
+        margin-top: 50px;
+    }
+    
     .musicLogotext{
            margin-bottom: 120px;
            font-size: 13px;
         
     }
- }
- @media screen and (max-width: 315px) {
     .musicAppLogos{
-           width: 250px;
-        
+        width: 75.6vw;
     }
  }

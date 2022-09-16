@@ -17,12 +17,15 @@ import { Splide, SplideSlide,SplideTrack } from '@splidejs/react-splide';
 import '@splidejs/react-splide/css';
 import '../index.css'
 import bigCheck from '../images/big check.png'
-import qM from '../images/qm.png'
-import Marquee from "react-fast-marquee";
 import { useState } from "react";
 import ModalBackground from "../Componets/ModalBackground";
 import SignInBox from "../Componets/SignInBox";
 import SignUp from "../Componets/SignUp";
+import headsetGuys from '../images/headsetGuys.png'
+import DescriptionCard from '../Componets/DescriptionCard';
+import earpieceGirl from '../images/earpieceGirl.png'
+
+
 
 // ..
 AOS.init();
@@ -76,87 +79,110 @@ function Home(props) {
             </div>
            </div>
 
-            <div className={classes.speakerCon}>
-            <img src={speaker} alt='speaker' className={classes.speakerImg}/>
-            </div>
+            
 
          </div>
         </div>
+
+        
         
   
         
-<div className={classes.relative}>
 
-</div>
          {/* Body */}
          <div id='musicDistribution' className={classes.earnCon} >
             <div >
                 
                 <MusicDistribution/>
                 </div>
-                
+            </div>
 
-                <Marquee>
- <p className={classes.aB}>ABOUT US</p>
- <p className={classes.aB}>ABOUT US</p>
- <p className={classes.aB}>ABOUT US</p>
-</Marquee>
+            <div 
+            className={classes.headsetGuysCon}
+            data-aos="fade-up" data-aos-delay="50"
+            data-aos-duration="1000"
+            data-aos-easing="ease-in-out"
+            >
 
-                <div className={classes.newAboutusCon}>
-                  <img src={qM} alt={'question mark'} className={classes.qM} />
+              <img 
+              src={headsetGuys} 
+              alt='group of guys on headset'
+              className={classes.headsetGuys}
+              />
 
-        <div className={classes.mobileBG}>
+              <DescriptionCard
+            DescriptionCardText = 'Soundmac is one of the fastest-rising music distribution companies in the world.'
+              />
+            </div>
 
-        </div>
+            {/* show for only 540px */}
+            <div 
+            className={classes.headsetGuysConOnly}
+            data-aos="fade-up" data-aos-delay="50"
+            data-aos-duration="1000"
+            data-aos-easing="ease-in-out"
+            >
 
-                  <p className={classes.newAboutText}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse turpis lorem,
-placerat non purus sit amet, ultrices dapibus mi. Pellentesque quis dui ligula. 
-volutpat nibh hendrerit, rhoncus dolor mattis, aliquam felis. Nulla tristique lacus 
-eget magna fermentum interdum. Suspendisse molestie luctus diam, vitae convallis 
-arcu varius a. Vivamus lobortis posuere magna, at interdum dolor malesuada vel. 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse turpis lorem,
-placerat non purus sit amet, ultrices dapibus mi. Pellentesque quis dui ligula. 
-volutpat nibh hendrerit, rhoncus dolor mattis, aliquam felis. Nulla tristique lacus 
-eget magna fermentum interdum. Suspendisse molestie luctus diam, vitae convallis 
-arcu varius a. Vivamus lobortis posuere magna, at interdum dolor malesuada vel.</p>
-                </div>
-{/* <div className={classes.scrollContainer} >
-  <h1 className={classes.aB} >ABOUT US</h1>
-</div> */}
-                
- {/* About Us */}
-{/* <div id='about' data-aos="fade-down" data-aos-delay="50"
-    data-aos-duration="1000"
-    data-aos-easing="ease-in-out">
- <h4 className={classes.aboutUsHeader}>About Us</h4>
+              <img 
+              src={earpieceGirl} 
+              alt='group of guys on headset'
+              className={classes.headsetGuys}
+              />
 
+              <DescriptionCard
+            DescriptionCardText = 'We distribute music across all streaming platforms like Spotify, Audiomack, Apple, YouTube, etc'
+              />
+            </div>
 
- <div className={classes.aboutUsText}>
-    <h2 className={classes.aboutUsTextHeader}>We are very skilled <br/> at what we do</h2>
-    <p className={classes.aboutUsParagraphText}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse turpis lorem,
-placerat non purus sit amet, ultrices dapibus mi. Pellentesque quis dui ligula. 
-volutpat nibh hendrerit, rhoncus dolor mattis, aliquam felis. Nulla tristique lacus 
-eget magna fermentum interdum. Suspendisse molestie luctus diam, vitae convallis 
-arcu varius a. Vivamus lobortis posuere magna, at interdum dolor malesuada vel. 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse turpis lorem,
-placerat non purus sit amet, ultrices dapibus mi. Pellentesque quis dui ligula. 
-volutpat nibh hendrerit, rhoncus dolor mattis, aliquam felis. Nulla tristique lacus 
-eget magna fermentum interdum. Suspendisse molestie luctus diam, vitae convallis 
-arcu varius a. Vivamus lobortis posuere magna, at interdum dolor malesuada vel. </p>
- </div>   
-</div> */}
- 
+            {/* Show for only 540 ends */}
+            
+
+            
+
+            <div 
+            className={classes.headsetGuysCon2}
+            data-aos="fade-up" data-aos-delay="50"
+            data-aos-duration="1000"
+            data-aos-easing="ease-in-out"
+            >
+
+              <DescriptionCard
+            DescriptionCardText = 'We distribute music across all streaming platforms like Spotify, Audiomack, Apple, YouTube, etc'
+              />
+
+              <img 
+              src={earpieceGirl} 
+              alt='group of guys on headset'
+              className={classes.headsetGuys}
+              />
 
             </div>
+            
+            <div className={classes.getCon}>
+              <div>
+              <p className={classes.get} >Get your music distributed on all streaming platforms for FREE once you sign up. <br/>Distribute for free first and upgrade later for better offers.</p>
+        </div>
+             <div>
+             <button className={classes.freeTrialBtn} >Free Trial</button>
+
+             </div>
+        </div>
             
             <div id='metrics' className={classes.linkCards}
             data-aos="fade-down" data-aos-delay="50"
             data-aos-duration="1000"
             data-aos-easing="ease-in-out"
             >
+            
+            <p className={classes.get2} >Join Soundmac today and be heard whilst becoming rich. </p>
+            <p className={classes.get3} >Start for free, Low pricing, Unlimited distribution and Worlwide audience Only On SOUNDMAC</p>
+
+
           
 
             <MediaQuery minWidth={1000}>
+
+           
 
               {/* Music Distribution */}
             <LinkCards

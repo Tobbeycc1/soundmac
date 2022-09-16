@@ -4,7 +4,7 @@
 .squareAndCircleIcon{
     width: fit-content;
     height: fit-content;
-    background: var(--cream);
+    background: var(--purple);
     border-radius: 5px;
     text-align: center;
     display: inline-block;
@@ -34,7 +34,6 @@
     .squareAndCircleIcon{
         width: fit-content;
         height: fit-content;
-        background: var(--cream);
         border-radius: 5px;
         text-align: center;
         display: inline-block;

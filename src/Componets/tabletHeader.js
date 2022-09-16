@@ -14,7 +14,7 @@ function TabletHeader(props) {
 const navJSX =  <div className={`${classes.tabletNavBar} animate__animated animate__pulse`}>
 
 <Link onClick={noNavItem} className={classes.nav} to={'/'}>Home</Link>
-<Link onClick={noNavItem} to={"/musicDistribution"}className={classes.nav}>Music Distribution</Link>
+{/* <Link onClick={noNavItem} to={"/musicDistribution"}className={classes.nav}>Music Distribution</Link> */}
 <Link onClick={noNavItem} className={classes.nav} to={'/promotion'}>Promotion</Link>
 <Link onClick={noNavItem} className={classes.nav} to={'/pricing'}>Pricing</Link>
 <Link onClick={noNavItem} className={classes.nav} to={'/contact'}>Contact</Link>

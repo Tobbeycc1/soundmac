@@ -1,0 +1,37 @@
+.DescriptionCardCon{
+    display: inline-block;
+    width: 40vw;
+    background: var(--purple);
+    text-align: left;
+    vertical-align: middle;
+    padding: 3.66vw 5.13vw;
+    border-radius: 2.56vw;
+border: 3px solid var(--purple);
+background: none;
+}
+.DescriptionCardText{
+    font-size: 1.5vw;
+    color: white;
+    color: var(--purple);
+    font-weight: bold;
+}
+@media screen and (max-width: 999px) {
+    .DescriptionCardText{
+        font-size: 18px;
+    }
+    
+}
+@media screen and (max-width: 540px) {
+    .DescriptionCardText{
+        font-size: 18px;
+    }
+    .DescriptionCardCon{
+        display: block;
+        width: 100%;
+        margin-top: 20px;
+    border-radius: 3.56vw;
+
+    }
+  
+    
+}
