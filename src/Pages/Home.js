@@ -308,28 +308,25 @@ function Home(props) {
         <div className={classes.largerAudienceText}>
             <h2 className={classes.reachLargerTextA}>Your Independence <br/> Is Our Policy</h2>
             <br/>
-            <h2 className={classes.reachLargerText}>Reach larger audience, let get your <br/>
-music available across over 120<br/>
-music streaming platforms</h2>
+            <h2 className={classes.reachLargerText}>Sell your music efficiently.  <br/>
+            Earn money without spending money.</h2>
 <CheckBullet
-bulletText={'Distribute your music to hundreds of stores worldwide'}
+bulletText={'Spread your music worldwide for FREE'}
 />
 
 <CheckBullet
-bulletText={'Stress free point-and-vlick royalty management'}
+bulletText={'Release your music globally on Spotify, YouTube, Tidal, Audiomack, Apple, etc.'}
 />
 
 <CheckBullet
-bulletText={'Reach millions of new listeners'}
+bulletText={'Keep 90% Royalties. You work hard for your music, you deserve it all. '}
 />
 
 <CheckBullet
-bulletText={'The best support worldwide'}
+bulletText={'Keep 100% ownership of your music.'}
 />
 
-<CheckBullet
-bulletText={'Keep major share of your music royalty'}
-/>
+
 {/* <Link className={classes.signUpOrLogIn} to={'/signIn'}>Sign up / Log in</Link> */}
         </div>
 

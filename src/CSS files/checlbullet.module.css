@@ -18,6 +18,7 @@
     margin: 10px 0px;
     font-size: 0.952vw;
     vertical-align: middle;
+    width: 60%;
     
 }
 @media screen and (max-width: 999px) {
@@ -45,7 +46,7 @@
     .bulletText{
         display: inline-block;
         margin: 10px 0px;
-        font-size: 11px;
+        font-size: 4.34vw;
         vertical-align: middle;
         width: 60vw;
     }
