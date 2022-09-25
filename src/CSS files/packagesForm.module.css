@@ -193,7 +193,8 @@
   .newSingleJSXCon {
     font-size: 18.72px;
   }
-  .checkOutBtn {
+  .checkOutBtn,
+  .checkOutBtnGrey {
     font-size: 15px;
   }
   .checkBoxLabelIAgree {
