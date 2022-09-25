@@ -217,4 +217,7 @@
   .packageDetails {
     margin: 100px 20px;
   }
+  .personalDetails {
+    font-size: 3.86vw;
+  }
 }
