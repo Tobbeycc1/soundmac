@@ -12,13 +12,11 @@
   border-radius: 10px;
   font-size: 1.37vw;
   font-weight: bold;
-
 }
 .personalDetails {
   margin-top: 70px;
   font-size: 1.37vw;
   font-weight: bold;
-
 }
 .ensure {
   font-size: 0.81vw;
@@ -34,7 +32,8 @@
 .italics {
   font-style: italic;
 }
-.input {
+.input,
+.inputError {
   width: 100%;
   background: var(--pink);
   height: 42px;
@@ -45,11 +44,15 @@
   padding: 0px 12px;
 }
 .input::placeholder,
-.smallInput::placeholder {
+.inputError,
+.inputError::placeholder,
+.smallInput::placeholder,
+.smallInputError::placeholder {
   font-size: 11px;
   font-style: italic;
 }
-.smallInput {
+.smallInput,
+.smallInputError {
   width: 100%;
   background: var(--pink);
   height: 42px;
@@ -58,6 +61,10 @@
   border-radius: 10px;
   margin-top: 5px;
   padding: 0px 12px;
+}
+.smallInputError,
+.inputError {
+  border: 2px solid red;
 }
 .artisteReleaseName {
   display: flex;
@@ -102,36 +109,32 @@
   /* font-weight: 700; */
   vertical-align: middle;
   margin-top: 20px;
-
 }
-.checkBoxPF{
+.checkBoxPF {
   vertical-align: middle;
 }
 .cartSummaryHeader {
   margin-top: 130px;
   font-size: 1.37vw;
   font-weight: bold;
-
 }
 .newSingleJSXCon {
   margin-top: 20px;
   display: flex;
   font-size: 1.37vw;
   font-weight: bold;
-
 }
 .newSingleJSXHeader {
   margin-right: auto;
   font-size: 1.02vw;
   font-weight: bold;
-
 }
-.checkOutBtnCon{
-text-align: center;
-margin-top: 60px;
-
+.checkOutBtnCon {
+  text-align: center;
+  margin-top: 60px;
 }
-.checkOutBtn{
+.checkOutBtn,
+.checkOutBtnGrey {
   padding: 15px 12px;
   background: var(--purple);
   color: white;
@@ -144,16 +147,20 @@ margin-top: 60px;
   cursor: pointer;
   font-size: 1.1vw;
 }
-.iAgreeCon{
+.checkOutBtnGrey {
+  background: rgb(167, 167, 167);
+  cursor: not-allowed;
+}
+.iAgreeCon {
   margin: 20px 0px 50px 0px;
 }
-.checkBoxLabelIAgree{
+.checkBoxLabelIAgree {
   font-weight: bold;
   font-size: 1.02vw;
 }
 @media screen and (max-width: 999px) {
   .formHeader {
- font-size: 18.72px;
+    font-size: 18.72px;
   }
   .personalDetails {
     font-size: 1.37vw;
@@ -186,22 +193,22 @@ margin-top: 60px;
   .newSingleJSXCon {
     font-size: 18.72px;
   }
-  .checkOutBtn{
+  .checkOutBtn {
     font-size: 15px;
-    }
-    .checkBoxLabelIAgree{
-      font-size: 16px;
-    }
+  }
+  .checkBoxLabelIAgree {
+    font-size: 16px;
+  }
 }
 @media screen and (max-width: 540px) {
-  .megaphoneBackground{
+  .megaphoneBackground {
     margin: 200px 20px 0px 20px;
-    }
-  .checkOur{
+  }
+  .checkOur {
     margin: 160px 20px;
     font-size: 22px;
-}
-  .packageDetails{
+  }
+  .packageDetails {
     margin: 100px 20px;
-}
+  }
 }
