@@ -66,6 +66,7 @@
 .inputError {
   border: 2px solid red;
 }
+
 .artisteReleaseName {
   display: flex;
 }
@@ -78,7 +79,8 @@
   padding: 0px 12px;
   vertical-align: top;
 }
-.inputButDiv {
+.inputButDiv,
+.inputButDivError {
   width: 100%;
   background: var(--pink);
   height: fit-content;
@@ -89,6 +91,9 @@
   padding: 10px 12px 20px 12px;
   cursor: pointer;
   display: flex;
+}
+.inputButDivError {
+  border: 2px solid red;
 }
 .kindlyPickText {
   font-size: 11px;

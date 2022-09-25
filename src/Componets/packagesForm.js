@@ -2,6 +2,9 @@ import { useRef, useState } from "react";
 import classes from "../CSS files/packagesForm.module.css";
 import DatePickerForm from "./DatePicker";
 import NumberFormat from "react-number-format";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
+import "../CSS files/datePicker.css";
 
 function PackagesForm(props) {
   const checkBoxA = useRef();
@@ -34,6 +37,9 @@ function PackagesForm(props) {
   //   handle change of release name
   const [releaseName, setReleaseName] = useState(null);
 
+  //   handle change of date picker name
+  const [startDate, setStartDate] = useState(new Date());
+
   //   handle change of emaill
   const [email, setEmail] = useState(null);
 
@@ -61,6 +67,9 @@ function PackagesForm(props) {
   //   handle submit error of facebook url
   const [fbUrlErr, setFbUrlErr] = useState(false);
 
+  //   handle no checkbox is clicked error
+  const [noChBoxClicked, setChBoxClicked] = useState(false);
+  const [chBoxError, displayChBoxError] = useState(null);
   // new single out now cart summary JSX
   const newSingleJSX = (
     <div className={classes.newSingleJSXCon}>
@@ -132,16 +141,19 @@ function PackagesForm(props) {
       console.log("AAAAAAA");
       setNewSingleSummary(true);
       setNewSinglePrice(true);
+      setChBoxClicked(true);
     } else {
       console.log("false AAAAAAA");
       setNewSingleSummary(false);
       setNewSinglePrice(false);
+      setChBoxClicked(false);
     }
 
     if (checkBoxB.current.checked) {
       console.log("BBBBBBBBBB");
       setBeforeReleaseSummary(true);
       setBeforeReleasePrice(true);
+      setChBoxClicked(true);
     } else {
       console.log("false BBBBBB");
       setBeforeReleaseSummary(false);
@@ -152,19 +164,23 @@ function PackagesForm(props) {
       console.log("CCCCCCCCC");
       setMusicVideoOutSummary(true);
       setMusicVideoOutPrice(true);
+      setChBoxClicked(true);
     } else {
       console.log("false CCCCCCCC");
       setMusicVideoOutSummary(false);
       setMusicVideoOutPrice(false);
+      setBeforeReleasePrice(false);
     }
 
     if (checkBoxD.current.checked) {
       console.log("DDDDDDDD");
       setYoutubeAdsSummary(true);
       setYoutubeAdsPrice(true);
+      setChBoxClicked(true);
     } else {
       console.log("false DDDDDD");
       setYoutubeAdsSummary(false);
+      setBeforeReleasePrice(false);
       setYoutubeAdsPrice(false);
     }
 
@@ -172,9 +188,11 @@ function PackagesForm(props) {
       console.log("EEEEEEEE");
       setspotifyAdsSummary(true);
       setspotifyAdsPrice(true);
+      setChBoxClicked(true);
     } else {
       console.log("false EEEEEE");
       setspotifyAdsSummary(false);
+      setBeforeReleasePrice(false);
       setspotifyAdsPrice(false);
     }
   }
@@ -200,7 +218,18 @@ function PackagesForm(props) {
     fbURl == null || "" ? setFbUrlErr(true) : setFbUrlErr(false);
 
     igURl == null || "" ? setIgUrlErr(true) : setIgUrlErr(false);
+
+    noChBoxClicked == true ? displayChBoxError(true) : displayChBoxError(false);
   }
+
+  const sum =
+    totalNewSinglePrice +
+    totalBeforeReleasePrice +
+    totalMusicVideoOutPrice +
+    totalYoutubeAdsPrice +
+    totalspotifyAdsPrice;
+
+  console.log(sum > 0);
 
   return (
     <div className={classes.packagesFormCon}>
@@ -280,7 +309,19 @@ function PackagesForm(props) {
 
           <div className={classes.RartisteName}>
             <label className={classes.label}>Release Date</label>
-            <DatePickerForm />
+            <div
+              className={
+                startDate == null ? classes.smallInputError : classes.smallInput
+              }
+            >
+              <DatePicker
+                selected={startDate}
+                onChange={(date) => setStartDate(date)}
+                isClearable
+                placeholderText="Pick a date"
+                closeOnScroll={(e) => e.target === document}
+              />
+            </div>
           </div>
         </div>
 
@@ -317,7 +358,13 @@ function PackagesForm(props) {
         {/* Select a package */}
         <label className={classes.label}>Select A Package</label>
 
-        <div className={classes.inputButDiv}>
+        <div
+          className={
+            chBoxError == null || chBoxError == true
+              ? classes.inputButDiv
+              : classes.inputButDivError
+          }
+        >
           <div className={classes.checkBoxDatalistCon}>
             <input
               onChange={handleChange}
@@ -393,6 +440,8 @@ function PackagesForm(props) {
               email &&
               fbURl &&
               igURl &&
+              startDate !== null &&
+              sum > 0 &&
               TC == true
                 ? classes.checkOutBtn
                 : classes.checkOutBtnGrey
@@ -402,13 +451,7 @@ function PackagesForm(props) {
             CHECKOUT (
             <NumberFormat
               style={{ color: "white" }}
-              value={
-                totalNewSinglePrice +
-                totalBeforeReleasePrice +
-                totalMusicVideoOutPrice +
-                totalYoutubeAdsPrice +
-                totalspotifyAdsPrice
-              }
+              value={sum}
               displayType={"text"}
               thousandSeparator={true}
               prefix={"$"}
