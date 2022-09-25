@@ -5,6 +5,7 @@ import NumberFormat from "react-number-format";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import "../CSS files/datePicker.css";
+import ModalBackground from "./ModalBackground";
 
 function PackagesForm(props) {
   const checkBoxA = useRef();
@@ -70,6 +71,10 @@ function PackagesForm(props) {
   //   handle no checkbox is clicked error
   const [noChBoxClicked, setChBoxClicked] = useState(false);
   const [chBoxError, displayChBoxError] = useState(null);
+
+  // proceed to payment
+  const [proceedPmt, setProceedPmt] = useState(null);
+
   // new single out now cart summary JSX
   const newSingleJSX = (
     <div className={classes.newSingleJSXCon}>
@@ -220,6 +225,18 @@ function PackagesForm(props) {
     igURl == null || "" ? setIgUrlErr(true) : setIgUrlErr(false);
 
     noChBoxClicked == true ? displayChBoxError(true) : displayChBoxError(false);
+
+    fullName &&
+    artisteName &&
+    releaseName &&
+    email &&
+    fbURl &&
+    igURl &&
+    startDate !== null &&
+    sum > 0 &&
+    TC == true
+      ? setProceedPmt(true)
+      : setProceedPmt(false);
   }
 
   const sum =
@@ -230,6 +247,8 @@ function PackagesForm(props) {
     totalspotifyAdsPrice;
 
   console.log(sum > 0);
+
+  console.log(proceedPmt);
 
   return (
     <div className={classes.packagesFormCon}>
@@ -459,6 +478,12 @@ function PackagesForm(props) {
             )
           </span>
         </diV>
+
+        {proceedPmt == true ? (
+          <ModalBackground noDeets={() => setProceedPmt(!proceedPmt)} />
+        ) : (
+          <></>
+        )}
 
         <diV className={classes.iAgreeCon}>
           <input
