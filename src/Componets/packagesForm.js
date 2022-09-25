@@ -46,6 +46,21 @@ function PackagesForm(props) {
   //   handle submit error of full name
   const [fullNameErr, setFullNameErr] = useState(false);
 
+  //   handle submit error of Artiste name
+  const [artisteNameErr, setArtisteNameErr] = useState(false);
+
+  //   handle submit error of release name
+  const [releaseNameErr, setReleaseNameErr] = useState(false);
+
+  //   handle submit error of email address
+  const [emailErr, setEmailErr] = useState(false);
+
+  //   handle submit error of ig url
+  const [igUrlErr, setIgUrlErr] = useState(false);
+
+  //   handle submit error of facebook url
+  const [fbUrlErr, setFbUrlErr] = useState(false);
+
   // new single out now cart summary JSX
   const newSingleJSX = (
     <div className={classes.newSingleJSXCon}>
@@ -171,6 +186,20 @@ function PackagesForm(props) {
 
   function handleSubmit() {
     fullName == null || "" ? setFullNameErr(true) : setFullNameErr(false);
+
+    artisteName == null || ""
+      ? setArtisteNameErr(true)
+      : setArtisteNameErr(false);
+
+    releaseName == null || ""
+      ? setReleaseNameErr(true)
+      : setReleaseNameErr(false);
+
+    email == null || "" ? setEmailErr(true) : setEmailErr(false);
+
+    fbURl == null || "" ? setFbUrlErr(true) : setFbUrlErr(false);
+
+    igURl == null || "" ? setIgUrlErr(true) : setIgUrlErr(false);
   }
 
   return (
@@ -208,7 +237,9 @@ function PackagesForm(props) {
             <label className={classes.label}>Artist’s Name</label>
             <input
               className={
-                artisteName == "" ? classes.smallInputError : classes.smallInput
+                artisteNameErr == true || artisteName == ""
+                  ? classes.smallInputError
+                  : classes.smallInput
               }
               type={"text"}
               placeholder="Enter your artist's stage name"
@@ -220,7 +251,9 @@ function PackagesForm(props) {
             <label className={classes.label}>Release Name</label>
             <input
               className={
-                releaseName == "" ? classes.smallInputError : classes.smallInput
+                releaseNameErr == true || releaseName == ""
+                  ? classes.smallInputError
+                  : classes.smallInput
               }
               type={"text"}
               placeholder="Enter a name you wish to appear "
@@ -235,7 +268,9 @@ function PackagesForm(props) {
             <label className={classes.label}>E-mail Address</label>
             <input
               className={
-                email == "" ? classes.smallInputError : classes.smallInput
+                emailErr == true || email == ""
+                  ? classes.smallInputError
+                  : classes.smallInput
               }
               type={"email"}
               placeholder="Enter your e-mail address"
@@ -252,7 +287,9 @@ function PackagesForm(props) {
         {/* Faceebook url */}
         <label className={classes.label}>Facebook Page URL</label>
         <input
-          className={fbURl == "" ? classes.inputError : classes.input}
+          className={
+            fbUrlErr == true || fbURl == "" ? classes.inputError : classes.input
+          }
           type={"url"}
           placeholder=" e.g http://www.facebook.com/soundmac "
           onChange={(e) => setFbUrl(e.target.value)}
@@ -264,7 +301,9 @@ function PackagesForm(props) {
         <input
           type={"text"}
           placeholder="e.g Sound_Mac"
-          className={igURl == "" ? classes.inputError : classes.input}
+          className={
+            igUrlErr == true || igURl == "" ? classes.inputError : classes.input
+          }
           onChange={(e) => setIgUrl(e.target.value)}
         />
 
