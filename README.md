@@ -10,7 +10,8 @@ https://soundmac.vercel.app/
 
 ### Icons
 
-- Icons: [React-Icons](https://react-icons.github.io/react-icons)
+- React Icons: [React-Icons](https://react-icons.github.io/react-icons)
+- Google Icons: [React-Icons](https://fonts.google.com/about)
 
 ### Libraries used
 
