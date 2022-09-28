@@ -1,148 +1,150 @@
-.SignInBoxDiv{
-    position: fixed;
-    /* left: 30%; */
-    /* top: 15vh; */
-    width: 100%;
-    padding: 5vh 29.82vw 0px 29.82vw;
-    left: 0;
-    right: 0;
-    z-index: 2000;
+.SignInBoxDiv {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 40vw;
+}
+.SignInBox {
+  background: white;
+  color: var(--purple);
+  height: 600px;
+  text-align: center;
+  border-radius: 30px;
+  width: 100%;
+  padding: 20px 30px;
+  overflow-y: scroll;
+}
+.x {
+  text-align: right;
+  transform: scale(-1, 1);
+}
+.Gi {
+  color: var(--purple);
+  font-size: 1.2vw;
+  cursor: pointer;
+}
+.Gi:hover {
+  color: red;
+}
+.welcomeTo {
+  font-size: 1.2vw;
+  margin: 20px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+}
+.soundmac {
+  font-weight: bolder;
+}
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap");
 
-   
-}
-.SignInBox{
-    background: white;
-    color: var(--purple);
-    height: fit-content;
-    text-align: center;
-    border-radius: 30px;
-    width: 100%;
-    padding:  20px 30px;
-}
-.x{
-    text-align: right;
-    transform: scale(-1, 1);
-}
-.Gi{
-    color: var(--purple);
-   font-size: 1.2vw;
-   cursor: pointer;
-
-}
-.Gi:hover{
-    color: red;
-}
-.welcomeTo{
-   font-size: 1.2vw;
-   margin: 20px;
-   font-family: 'Roboto', sans-serif;
-   font-weight: 400; 
-
-
-
-}
-.soundmac{
-    font-weight: bolder; 
-}
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
-
-.inputCon{
-    text-align: left;
+.inputCon {
+  text-align: left;
 }
 
 input.largerCheckbox {
-    /* width: 40px;
+  /* width: 40px;
     height: 40px; */
-    vertical-align: middle;
-    margin-right: 8px;
-    border: none;
+  vertical-align: middle;
+  margin-right: 8px;
+  border: none;
 }
-.rememberMe{
-    display: inline-block;
-    font-family: 'Roboto', sans-serif;
-    font-weight: 500; 
-    font-size: 1.02vw;
-    vertical-align: middle;
-    color: gray;
-    cursor: pointer;
+.rememberMe {
+  display: inline-block;
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  font-size: 1.02vw;
+  vertical-align: middle;
+  color: gray;
+  cursor: pointer;
 }
-.flexCon{
-    display: flex;
+.flexCon {
+  display: flex;
 }
-.checkBoxCon{
-    margin-right: auto;
+.checkBoxCon {
+  margin-right: auto;
 }
-.signInCon{
-    text-align: center;
-    margin: 20PX 0PX;
-    width: 100%;
-    background: var(--purple);
-    border-radius: 20px;
-    padding: 15px 20px;
-    color: white;
-    font-weight: bold;
-    cursor: pointer;
-    
-
+.signInCon {
+  text-align: center;
+  margin: 20px 0px;
+  width: 100%;
+  background: var(--purple);
+  border-radius: 20px;
+  padding: 15px 20px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
 }
-.signInCon:hover{
-   border: 2px solid blue;
-   background: none;
-   color: var(--purple);
-   transition: all;
-   transition-duration: 0.2s;
-   transition-timing-function: ease-in;
+.signInCon:hover {
+  border: 2px solid blue;
+  background: none;
+  color: var(--purple);
+  transition: all;
+  transition-duration: 0.2s;
+  transition-timing-function: ease-in;
 }
 
-.dontHave{
-    font-weight: bold;
-    font-size: 1.2vw;
-    margin: 20px;
-    font-family: 'Roboto', sans-serif;
-    cursor: pointer;
-    margin-bottom: 40px;
-   }
-   .dontHave:hover{
-    color: blue;
-   }
-.horizontalOrLine{
-    width: 100%;
-    height: 1px;
-    background: var(--purple);
+.dontHavePrev,
+.dontHave {
+  font-weight: bold;
+  font-size: 1.2vw;
+  margin: 20px;
+  margin-right: 10px;
+  font-family: "Roboto", sans-serif;
+  margin-bottom: 40px;
+  display: inline-block;
 }
-.or{
-
-    background: white;
-    
+.dontHave {
+  margin: 0px;
+  font-weight: 900;
+  color: blue;
+  cursor: pointer;
 }
-.googleLoginIcon{
-    font-size: 30px;
-    color: blue;
-    vertical-align: middle;
-    display: inline-block;
-    margin: 10px;
+.dontHave:hover {
+  transform: scale(1.1);
+}
+.horizontalOrLine {
+  width: 100%;
+  height: 1px;
+  background: var(--purple);
+}
+.or {
+  background: white;
+}
+.googleLoginIcon {
+  font-size: 30px;
+  color: blue;
+  vertical-align: middle;
+  display: inline-block;
+  margin: 10px;
 }
 @media screen and (max-width: 999px) {
-    .SignInBoxDiv{
-        padding: 10vh 100px 0vh 100px;
-    }
-    .Gi, .welcomeTo, .dontHave{
-       font-size: 16px;
-    }
-    
-     .rememberMe{
+  .SignInBoxDiv {
+    width: 80vw;
+  }
+  .Gi,
+  .welcomeTo,
+  .dontHave,
+  .dontHavePrev {
+    font-size: 16px;
+  }
+
+  .rememberMe {
     font-size: 14px;
-     }
+  }
 }
 @media screen and (max-width: 540px) {
-    .SignInBoxDiv{
-        padding: 10vh 30px 0vh 30px;
-    }
-    .Gi, .welcomeTo, .dontHave{
-       font-size: 4.35vw;
-    }
-    
-     .rememberMe{
+  .SignInBoxDiv {
+    width: 80vw;
+  }
+  .Gi,
+  .welcomeTo,
+  .dontHave,
+  .dontHavePrev {
+    font-size: 4.35vw;
+  }
+
+  .rememberMe {
     font-size: 3.38vw;
-     }
+  }
 }

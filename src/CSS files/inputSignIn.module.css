@@ -1,48 +1,46 @@
-.Input{
-    /* outline: 2px solid red; */
-    display: inline-block;
-    vertical-align: middle;
-    width: 80%;
-    outline: none;
-    padding: 2px 15px;
-    background: white;
+.Input {
+  /* outline: 2px solid red; */
+  display: inline-block;
+  vertical-align: middle;
+  width: 80%;
+  outline: none;
+  padding: 2px 15px;
+  background: white;
 }
-.label{
-    display: inline-block;
-    vertical-align: middle;
-    font-size: 18px;
+.label {
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 18px;
 }
-.formCon{
-    border: 2px solid rgb(223, 222, 222);
-    width: 100%;
-    padding: 10px 20px;
-    border-radius: 20px;
-    font-size: 18px;
-   font-family: 'Roboto', sans-serif;
-   margin-bottom: 20px;
+.formCon {
+  border: 2px solid rgb(223, 222, 222);
+  width: 100%;
+  padding: 10px 20px;
+  border-radius: 20px;
+  font-size: 18px;
+  font-family: "Roboto", sans-serif;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
 }
-input::placeholder{
-    font-size: 1.2vw;
-   font-family: 'Roboto', sans-serif;
-   color: var(--purple);
-   font-weight: 400;
+input::placeholder {
+  font-size: 1.2vw;
+  font-family: "Roboto", sans-serif;
+  color: var(--purple);
+  font-weight: 400;
+}
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap");
 
-}
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
-
-.formCon:hover{
-    border: 2px solid blue;
-   
+.formCon:hover {
+  border: 2px solid blue;
 }
 @media screen and (max-width: 999px) {
-    input::placeholder{
-        font-size: 16px;
-      
-    }
+  input::placeholder {
+    font-size: 16px;
+  }
 }
 @media screen and (max-width: 540px) {
-    input::placeholder{
-        font-size: 4.35vw;
-      
-    }
+  input::placeholder {
+    font-size: 4.35vw;
+  }
 }
