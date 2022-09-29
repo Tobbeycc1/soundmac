@@ -23,12 +23,15 @@ function SignUp(props) {
   const { registerUser } = authContext;
 
   const [userDetails, setUserDetails] = useState({
+    first_name: "",
+    last_name: "",
     email: "",
     password: "",
     confirmPassword: "",
   });
 
-  const { email, password, confirmPassword } = userDetails;
+  const { first_name, last_name, email, password, confirmPassword } =
+    userDetails;
 
   const onChange = (e) => {
     setUserDetails((prev) => ({ ...prev, [e.target.name]: e.target.value }));
@@ -41,7 +44,10 @@ function SignUp(props) {
       // add alert(error) message
     } else {
       const user = {
-        username: email,
+        email,
+        first_name,
+        last_name,
+        country,
         password,
       };
       registerUser(user);
@@ -55,6 +61,7 @@ function SignUp(props) {
 
   const selectCountry = (val) => {
     setLocation({ location, country: val });
+    console.log(country);
   };
 
   return (
@@ -79,18 +86,18 @@ function SignUp(props) {
               icon={<MdDriveFileRenameOutline />}
               type={"name"}
               placeholder={"First name"}
-              name="firstName"
+              name="first_name"
               onChange={onChange}
-              value={""}
+              value={first_name}
             />
             {/* Input Last Name */}
             <InputSignIn
               icon={<MdDriveFileRenameOutline />}
               type={"name"}
               placeholder={"Last name"}
-              name="lastName"
+              name="last_name"
               onChange={onChange}
-              value={""}
+              value={last_name}
             />
             {/* input email */}
             <InputSignIn
@@ -110,7 +117,9 @@ function SignUp(props) {
               <CountryDropdown
                 className={classes.Input}
                 value={country}
-                onChange={(val) => selectCountry(val)}
+                onChange={(val) => {
+                  selectCountry(val);
+                }}
                 style={{
                   outline: "none",
                   padding: "2px 15px",
@@ -128,6 +137,16 @@ function SignUp(props) {
               name="password"
               onChange={onChange}
               value={password}
+            />
+
+            {/* confirm password */}
+            <InputSignIn
+              icon={<RiLockPasswordLine />}
+              type={"password"}
+              placeholder={"confirmPassword"}
+              name="confirmPassword"
+              onChange={onChange}
+              value={confirmPassword}
             />
 
             <div className={classes.flexCon}>

@@ -12,7 +12,7 @@ import InputSignIn from "./inputSignIn";
 function SignInBox(props) {
   const authContext = useContext(AuthContext);
 
-  const { registerUser } = authContext;
+  const { loginUser } = authContext;
 
   const [userDetails, setUserDetails] = useState({
     email: "",
@@ -28,14 +28,14 @@ function SignInBox(props) {
   const onSubmit = (e) => {
     e.preventDefault();
     if (email === "" && password === "") {
-      console.log("passwords do not match");
+      console.log("fields are empty");
       // add alert(error) message
     } else {
       const user = {
-        username: email,
+        email,
         password,
       };
-      registerUser(user);
+      loginUser(user);
       console.log(user);
     }
   };

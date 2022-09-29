@@ -1,10 +1,10 @@
-import { useReducer } from "react";
+import { useReducer, useState } from "react";
 import { AUTH_FAIL, REGISTER_USER } from "../types";
 import AuthContext from "./authContext";
 import authReducer from "./authReducer";
-// import axios from "axios";
+import axios from "axios";
 
-const URL = "http://localhost:5000";
+const URL = process.env.REACT_APP_AUTH_URL;
 
 const AuthState = ({ children }) => {
   const initialState = {
@@ -27,7 +27,7 @@ const AuthState = ({ children }) => {
     const body = JSON.stringify(userDetails);
 
     try {
-      const res = await fetch.post(`${URL}/api/user`, body, config);
+      const res = await axios.post(`${URL}/api/user`, body, config);
 
       const data = res.data;
 
@@ -37,6 +37,8 @@ const AuthState = ({ children }) => {
       });
     } catch (err) {
       console.log(err);
+      // console.log(err.response.data.errors);
+
       // dispatch auth failure
       dispatch({
         type: AUTH_FAIL,
@@ -56,7 +58,7 @@ const AuthState = ({ children }) => {
     const body = JSON.stringify(userDetails);
 
     try {
-      const res = await fetch.post(`${URL}/api/auth`, body, config);
+      const res = await axios.post(`${URL}/api/auth`, body, config);
 
       const data = res.data;
 
@@ -66,6 +68,8 @@ const AuthState = ({ children }) => {
       });
     } catch (err) {
       console.log(err);
+      console.log(err.response.data.errors);
+      console.log(1);
       // dispatch auth failure
       dispatch({
         type: AUTH_FAIL,
