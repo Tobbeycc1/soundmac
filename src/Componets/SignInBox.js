@@ -8,6 +8,7 @@ import { RiFacebookCircleFill } from "react-icons/ri";
 import AuthContext from "../contexts/auth/authContext";
 
 import InputSignIn from "./inputSignIn";
+import { useEffect } from "react";
 
 function SignInBox(props) {
   const authContext = useContext(AuthContext);
@@ -15,19 +16,40 @@ function SignInBox(props) {
   const { loginUser } = authContext;
 
   const [userDetails, setUserDetails] = useState({
-    email: "",
-    password: "",
+    email: null,
+    password: null,
   });
 
   const { email, password } = userDetails;
 
+  // if email field is empty
+  const [emailIsEmpty, setEmailIsEmpty] = useState(null);
+
+  // if password field is empty
+  const [passwordIsEmpty, setPasswordIsEmpty] = useState(null);
+
   const onChange = (e) => {
     setUserDetails((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+    setEmailIsEmpty(false);
+    setPasswordIsEmpty(false);
   };
 
   const onSubmit = (e) => {
     e.preventDefault();
-    if (email === "" && password === "") {
+
+    email == "" || email == null
+      ? setEmailIsEmpty(true)
+      : setEmailIsEmpty(false);
+
+    password == "" || password == null
+      ? setPasswordIsEmpty(true)
+      : setPasswordIsEmpty(false);
+
+    if (
+      email === "" ||
+      (email === null && password === "") ||
+      password === null
+    ) {
       console.log("fields are empty");
       // add alert(error) message
     } else {
@@ -55,6 +77,11 @@ function SignInBox(props) {
 
         <form onSubmit={onSubmit}>
           <div className={classes.inputCon}>
+            {userDetails.email == "" || emailIsEmpty == true ? (
+              <p className={classes.emailEmpty}>email field is empty</p>
+            ) : (
+              <></>
+            )}
             <InputSignIn
               icon={<MdOutlineAttachEmail />}
               type={"email"}
@@ -64,6 +91,11 @@ function SignInBox(props) {
               onChange={onChange}
             />
 
+            {userDetails.password == "" || passwordIsEmpty == true ? (
+              <p className={classes.emailEmpty}>password field is empty</p>
+            ) : (
+              <></>
+            )}
             <InputSignIn
               icon={<RiLockPasswordLine />}
               type={"password"}
