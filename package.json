@@ -17,6 +17,7 @@
     "axios": "^0.27.2",
     "gsap": "^3.11.1",
     "react": "^18.2.0",
+    "react-country-region-selector": "^3.6.1",
     "react-datepicker": "^4.8.0",
     "react-dom": "^18.2.0",
     "react-dropdown-date": "^2.2.7",

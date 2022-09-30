@@ -1,63 +1,68 @@
-.headerContainer{
-    display: flex;
-    width: 100%;
-       position: relative;
-       z-index: 96;
-       left: 0;
-       right: 0;
-       top: 0;
-   
-    
+.mDCon {
+  position: fixed;
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+  /* background: red; */
 }
 
-.logoDiv{
-    margin: 30px 0px 0px 50px;
-    margin-right: auto;
-    
- 
+.headerContainer {
+  display: flex;
+  width: 100%;
+  position: relative;
+  z-index: 96;
+  left: 0;
+  right: 0;
+  top: 0;
 }
-.logo{
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 2.2vw;
-    vertical-align: middle;
-    background: var(--purple);
-    padding: 0px 10px;
-    border-radius: 5px;
-    text-transform: uppercase;
-    font-weight: bold;
+
+.logoDiv {
+  margin: 30px 0px 0px 50px;
+  margin-right: auto;
 }
-.navDiv{
-    display: inline-block;
-    margin: 30px 50px 0px 0px;
-    
+.logo {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 2.2vw;
+  vertical-align: middle;
+  background: var(--purple);
+  padding: 0px 10px;
+  border-radius: 5px;
+  text-transform: uppercase;
+  font-weight: bold;
 }
-.nav{
-    color: var(--purple);
-    margin: 15px;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 1.2vw;
+.navDiv {
+  display: inline-block;
+  margin: 30px 50px 0px 0px;
 }
-.nav:hover{
-    text-shadow: 0 0 10px #21072154, 6px 14px 11px rgba(33,7,33,0);
+.nav {
+  color: var(--purple);
+  margin: 15px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.2vw;
 }
-.nav:active, .nav:focus{
-    border-bottom: 5px solid var(--purple);
+.nav:hover {
+  text-shadow: 0 0 10px #21072154, 6px 14px 11px rgba(33, 7, 33, 0);
 }
-.button{
-    margin: 15px;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 1.2vw;
-    background: var(--purple);
-    color: white;
-    padding: 10px 15px;
-    border-radius: 7px;
-  
+.nav:active,
+.nav:focus {
+  border-bottom: 5px solid var(--purple);
 }
-.button:hover{
-background: #4b0d4b;
-cursor: pointer;
+.button {
+  margin: 15px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.2vw;
+  background: var(--purple);
+  color: white;
+  padding: 10px 15px;
+  border-radius: 7px;
+}
+.button:hover {
+  background: #4b0d4b;
+  cursor: pointer;
 }
