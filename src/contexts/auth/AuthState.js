@@ -1,4 +1,4 @@
-import { useReducer, useState } from "react";
+import { useReducer } from "react";
 import { AUTH_FAIL, REGISTER_USER } from "../types";
 import AuthContext from "./authContext";
 import authReducer from "./authReducer";
