@@ -1,5 +1,5 @@
 import { useReducer, useEffect } from "react";
-import { AUTH_FAIL, GET_USER, REGISTER_USER } from "../types";
+import { AUTH_FAIL, GET_USER, LOGIN_USER, REGISTER_USER } from "../types";
 import AuthContext from "./authContext";
 import authReducer from "./authReducer";
 import axios from "axios";
@@ -36,6 +36,8 @@ const AuthState = ({ children }) => {
         payload: data.token,
       });
 
+      localStorage.setItem("auth-token", data.token);
+
       getUser(); // get user
     } catch (err) {
       console.log(err);
@@ -65,12 +67,13 @@ const AuthState = ({ children }) => {
       const data = res.data;
 
       dispatch({
-        type: REGISTER_USER,
+        type: LOGIN_USER,
         payload: data.token,
       });
 
-      // getUser(); // get user
-      localStorage.getItem("auth-token") && getUser();
+      localStorage.setItem("auth-token", data.token);
+
+      getUser(); // get user
     } catch (err) {
       console.log(err.response.data.errors);
       // dispatch auth failure
@@ -118,6 +121,7 @@ const AuthState = ({ children }) => {
         user: state.user,
         registerUser,
         loginUser,
+        getUser,
       }}
     >
       {children}

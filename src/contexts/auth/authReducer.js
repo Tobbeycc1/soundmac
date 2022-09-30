@@ -3,9 +3,8 @@ import { AUTH_FAIL, GET_USER, LOGIN_USER, REGISTER_USER } from "../types";
 const authReducer = (state, action) => {
   const { type, payload } = action;
   switch (type) {
-    case LOGIN_USER:
     case REGISTER_USER:
-      localStorage.setItem("auth-token", payload);
+    case LOGIN_USER:
       return {
         ...state,
         isAuthenticated: true,
@@ -21,7 +20,6 @@ const authReducer = (state, action) => {
       return {
         ...state,
         isAuthenticated: false,
-
         user: null,
       };
     default:
