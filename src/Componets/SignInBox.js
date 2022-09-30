@@ -8,7 +8,6 @@ import { RiFacebookCircleFill } from "react-icons/ri";
 import AuthContext from "../contexts/auth/authContext";
 
 import InputSignIn from "./inputSignIn";
-import { useEffect } from "react";
 
 function SignInBox(props) {
   const authContext = useContext(AuthContext);
@@ -16,8 +15,8 @@ function SignInBox(props) {
   const { loginUser } = authContext;
 
   const [userDetails, setUserDetails] = useState({
-    email: null,
-    password: null,
+    email: '',
+    password: '',
   });
 
   const { email, password } = userDetails;
@@ -37,11 +36,11 @@ function SignInBox(props) {
   const onSubmit = (e) => {
     e.preventDefault();
 
-    email == "" || email == null
+    email === "" || email === null
       ? setEmailIsEmpty(true)
       : setEmailIsEmpty(false);
 
-    password == "" || password == null
+    password === "" || password === null
       ? setPasswordIsEmpty(true)
       : setPasswordIsEmpty(false);
 
@@ -77,7 +76,7 @@ function SignInBox(props) {
 
         <form onSubmit={onSubmit}>
           <div className={classes.inputCon}>
-            {userDetails.email == "" || emailIsEmpty == true ? (
+            {userDetails.email === "" || emailIsEmpty === true ? (
               <p className={classes.emailEmpty}>email field is empty</p>
             ) : (
               <></>

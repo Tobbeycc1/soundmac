@@ -1,4 +1,4 @@
-import { AUTH_FAIL, LOGIN_USER, REGISTER_USER } from "../types"
+import { AUTH_FAIL, GET_USER, LOGIN_USER, REGISTER_USER } from "../types"
 
 
 const authReducer = (state, action) => {
@@ -6,14 +6,24 @@ const authReducer = (state, action) => {
     switch (type) {
         case LOGIN_USER:
         case REGISTER_USER:
+            localStorage.setItem('auth-token', payload)
             return {
+                ...state,
                 isAutheticated: true,
                 token: payload
             }
-        case AUTH_FAIL:
+        case GET_USER:
             return {
+                ...state,
+                user: payload
+            }
+        case AUTH_FAIL:
+            localStorage.removeItem('auth-token')
+            return {
+                ...state,
                 isAutheticated: false,
-                token: null
+                token: null,
+                user: null
             }
         default:
             return state

@@ -1,9 +1,5 @@
-<<<<<<< HEAD
-import { useReducer } from "react";
-=======
-import { useReducer, useState } from "react";
->>>>>>> a8b42dc467842380df60c76ad9fc1475f18488a8
-import { AUTH_FAIL, REGISTER_USER } from "../types";
+import { useReducer, useEffect } from "react";
+import { AUTH_FAIL, GET_USER, REGISTER_USER } from "../types";
 import AuthContext from "./authContext";
 import authReducer from "./authReducer";
 import axios from "axios";
@@ -11,6 +7,7 @@ import axios from "axios";
 const URL = process.env.REACT_APP_AUTH_URL;
 
 const AuthState = ({ children }) => {
+  // initialstate
   const initialState = {
     isAuthenticated: false,
     user: null,
@@ -39,6 +36,8 @@ const AuthState = ({ children }) => {
         type: REGISTER_USER,
         payload: data.token,
       });
+
+      getUser() // get user
     } catch (err) {
       console.log(err);
       // console.log(err.response.data.errors);
@@ -70,14 +69,10 @@ const AuthState = ({ children }) => {
         type: REGISTER_USER,
         payload: data.token,
       });
+
+      getUser() // get user
     } catch (err) {
-<<<<<<< HEAD
       console.log(err.response.data.errors);
-=======
-      console.log(err);
-      console.log(err.response.data.errors);
-      console.log(1);
->>>>>>> a8b42dc467842380df60c76ad9fc1475f18488a8
       // dispatch auth failure
       dispatch({
         type: AUTH_FAIL,
@@ -85,6 +80,36 @@ const AuthState = ({ children }) => {
       // dispatch alert error
     }
   };
+
+  // get user
+  const getUser = async () => {
+    const config = {
+      headers: {
+        'x-auth-token': localStorage.getItem('auth-token')
+      }
+    }
+    try {
+      const res = await axios.get(`${URL}/api/auth`, config);
+
+      const data = res.data;
+
+      dispatch({
+        type: GET_USER,
+        payload: data
+      })
+
+    } catch (err) {
+      const error = err.response.data.errors
+      console.log(error)
+      dispatch({
+        type: AUTH_FAIL,
+      });
+    }
+  }
+
+  useEffect(() => {
+    localStorage.getItem('auth-token') && getUser();
+  }, []);
 
   return (
     <AuthContext.Provider
