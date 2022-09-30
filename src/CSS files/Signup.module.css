@@ -8,9 +8,9 @@
 .SignInBox {
   background: white;
   color: var(--purple);
-  height: 600px;
+  height: 85vh;
   text-align: center;
-  border-radius: 10px;
+  border-radius: 30px;
   width: 100%;
   padding: 20px 30px;
   overflow-y: scroll;
@@ -30,13 +30,13 @@
 .welcomeTo {
   font-size: 1.2vw;
   margin: 20px;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   font-weight: 400;
 }
 .soundmac {
   font-weight: bolder;
 }
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap");
 
 .inputCon {
   text-align: left;
@@ -51,7 +51,7 @@ input.largerCheckbox {
 }
 .rememberMe {
   display: inline-block;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   font-weight: 500;
   font-size: 1.02vw;
   vertical-align: middle;
@@ -90,7 +90,7 @@ input.largerCheckbox {
   font-size: 1.2vw;
   margin: 20px;
   margin-right: 10px;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   margin-bottom: 40px;
   display: inline-block;
 }
@@ -124,6 +124,45 @@ input.largerCheckbox {
   padding-left: 20px;
   font-weight: bold;
 }
+.Input {
+  /* outline: 2px solid red; */
+  display: inline-block;
+  vertical-align: middle;
+  width: 80%;
+  outline: none;
+  padding: 2px 15px;
+  background: white;
+}
+.label {
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 18px;
+}
+.formCon {
+  border: 2px solid rgb(223, 222, 222);
+  width: 100%;
+  padding: 10px 20px;
+  border-radius: 20px;
+  font-size: 18px;
+  font-family: "Roboto", sans-serif;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+}
+input::placeholder {
+  font-size: 1.2vw;
+  font-family: "Roboto", sans-serif;
+  color: var(--purple);
+  font-weight: 400;
+}
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap");
+
+.formCon:hover {
+  border: 2px solid blue;
+}
+.ToastContainer {
+  position: absolute;
+}
 @media screen and (max-width: 999px) {
   .SignInBoxDiv {
     width: 80vw;
@@ -138,10 +177,13 @@ input.largerCheckbox {
   .rememberMe {
     font-size: 14px;
   }
+  input::placeholder {
+    font-size: 16px;
+  }
 }
 @media screen and (max-width: 540px) {
   .SignInBoxDiv {
-    width: 80vw;
+    width: 90vw;
   }
   .Gi,
   .welcomeTo,
@@ -152,5 +194,8 @@ input.largerCheckbox {
 
   .rememberMe {
     font-size: 3.38vw;
+  }
+  input::placeholder {
+    font-size: 4.35vw;
   }
 }
