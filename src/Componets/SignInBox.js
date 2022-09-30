@@ -6,8 +6,11 @@ import { RiLockPasswordLine } from "react-icons/ri";
 import { FcGoogle } from "react-icons/fc";
 import { RiFacebookCircleFill } from "react-icons/ri";
 import AuthContext from "../contexts/auth/authContext";
+import { ToastContainer, toast } from "react-toastify";
 
-import InputSignIn from "./inputSignIn";
+import "react-toastify/dist/ReactToastify.css";
+
+import { useEffect } from "react";
 
 function SignInBox(props) {
   const authContext = useContext(AuthContext);
@@ -15,40 +18,41 @@ function SignInBox(props) {
   const { loginUser } = authContext;
 
   const [userDetails, setUserDetails] = useState({
-    email: '',
-    password: '',
+    email: "",
+    password: "",
   });
 
   const { email, password } = userDetails;
 
-  // if email field is empty
-  const [emailIsEmpty, setEmailIsEmpty] = useState(null);
-
-  // if password field is empty
-  const [passwordIsEmpty, setPasswordIsEmpty] = useState(null);
-
   const onChange = (e) => {
     setUserDetails((prev) => ({ ...prev, [e.target.name]: e.target.value }));
-    setEmailIsEmpty(false);
-    setPasswordIsEmpty(false);
   };
 
   const onSubmit = (e) => {
     e.preventDefault();
-
-    email === "" || email === null
-      ? setEmailIsEmpty(true)
-      : setEmailIsEmpty(false);
-
-    password === "" || password === null
-      ? setPasswordIsEmpty(true)
-      : setPasswordIsEmpty(false);
-
-    if (
-      email === "" ||
-      (email === null && password === "") ||
-      password === null
-    ) {
+    if (email === "") {
+      toast.error("Email can't be empty !", {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: true,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+      });
+    }
+    if (password === "") {
+      toast.error("Password  can't be empty !", {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: true,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+      });
+    }
+    if (email === "" && password == "") {
       console.log("fields are empty");
       // add alert(error) message
     } else {
@@ -62,73 +66,79 @@ function SignInBox(props) {
   };
 
   return (
-    <div className={classes.SignInBoxDiv}>
-      <div
-        className={`${classes.SignInBox} animate__animated animate__rubberBand`}
-      >
-        {/* Cancel Button */}
-        <div className={classes.x}>
-          <ImCancelCircle className={classes.Gi} onClick={props.showDeets} />
-        </div>
-        <p className={classes.welcomeTo}>
-          Welcome to <span className={classes.soundmac}>SOUNDMAC</span>
-        </p>
-
-        <form onSubmit={onSubmit}>
-          <div className={classes.inputCon}>
-            {userDetails.email === "" || emailIsEmpty === true ? (
-              <p className={classes.emailEmpty}>email field is empty</p>
-            ) : (
-              <></>
-            )}
-            <InputSignIn
-              icon={<MdOutlineAttachEmail />}
-              type={"email"}
-              placeholder={"Email"}
-              name="email"
-              value={email}
-              onChange={onChange}
-            />
-
-            {userDetails.password == "" || passwordIsEmpty == true ? (
-              <p className={classes.emailEmpty}>password field is empty</p>
-            ) : (
-              <></>
-            )}
-            <InputSignIn
-              icon={<RiLockPasswordLine />}
-              type={"password"}
-              placeholder={"Password"}
-              name="password"
-              value={password}
-              onChange={onChange}
-            />
-
-            <div className={classes.flexCon}>
-              <div className={classes.checkBoxCon}>
-                <input type="checkbox" className={classes.largerCheckbox} />
-                <p className={classes.rememberMe}>Remember Me?</p>
-              </div>
-
-              <p className={classes.rememberMe}>Forgot Password?</p>
-            </div>
+    <div>
+      <ToastContainer
+        position="top-right"
+        autoClose={2000}
+        hideProgressBar={true}
+        newestOnTop
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+      />
+      <div className={classes.SignInBoxDiv}>
+        <div
+          className={`${classes.SignInBox} animate__animated animate__rubberBand`}
+        >
+          {/* Cancel Button */}
+          <div className={classes.x}>
+            <ImCancelCircle className={classes.Gi} onClick={props.showDeets} />
           </div>
-
-          <div className={classes.signInCon} onClick={onSubmit}>
-            <button type="submit" className={classes.signinButton}>
-              Sign In
-            </button>
-          </div>
-          <p className={classes.dontHavePrev}>Don't have an account?</p>
-          <p onClick={props.signUpAt} className={classes.dontHave}>
-            Register
+          <p className={classes.welcomeTo}>
+            Welcome to <span className={classes.soundmac}>SOUNDMAC</span>
           </p>
-        </form>
 
-        <p className={classes.or}>or</p>
+          <form>
+            <div className={classes.formCon}>
+              <span className={classes.label}>
+                <MdOutlineAttachEmail />
+              </span>
+              <input
+                className={classes.Input}
+                type="email"
+                onChange={onChange}
+                name={"email"}
+                value={email}
+                placeholder="email"
+                required
+              />
+            </div>
+            {/* password */}
+            <div className={classes.formCon}>
+              <span className={classes.label}>
+                <RiLockPasswordLine />
+              </span>
+              <input
+                className={classes.Input}
+                type="password"
+                onChange={onChange}
+                name={"password"}
+                value={password}
+                placeholder="password"
+                required
+              />
+            </div>
+            <button
+              type="submit"
+              className={classes.signInCon}
+              onClick={onSubmit}
+            >
+              SIgn In
+            </button>
 
-        <FcGoogle className={classes.googleLoginIcon} />
-        <RiFacebookCircleFill className={classes.googleLoginIcon} />
+            <p className={classes.dontHavePrev}>Don't have an account?</p>
+            <p onClick={props.signUpAt} className={classes.dontHave}>
+              Register
+            </p>
+          </form>
+
+          <p className={classes.or}>or</p>
+
+          <FcGoogle className={classes.googleLoginIcon} />
+          <RiFacebookCircleFill className={classes.googleLoginIcon} />
+        </div>
       </div>
     </div>
   );
