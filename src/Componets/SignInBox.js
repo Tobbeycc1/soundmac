@@ -30,11 +30,6 @@ function SignInBox(props) {
 
   const onSubmit = (e) => {
     e.preventDefault();
-
-    if (email === "" && password == "") {
-      console.log("fields are empty");
-      // add alert(error) message
-    }
     if (email === "") {
       toast.error("Email can't be empty !", {
         position: "top-right",
@@ -56,6 +51,10 @@ function SignInBox(props) {
         draggable: true,
         progress: undefined,
       });
+    }
+    if (email === "" && password == "") {
+      console.log("fields are empty");
+      // add alert(error) message
     } else {
       const user = {
         email,
