@@ -118,6 +118,12 @@ input.largerCheckbox {
   display: inline-block;
   margin: 10px;
 }
+.emailEmpty {
+  color: red;
+  font-size: 11px;
+  padding-left: 20px;
+  font-weight: bold;
+}
 @media screen and (max-width: 999px) {
   .SignInBoxDiv {
     width: 80vw;
