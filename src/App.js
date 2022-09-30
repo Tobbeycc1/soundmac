@@ -16,9 +16,6 @@ import TabletHeader from './Componets/tabletHeader';
 import Upload from './Upload';
 
 
-
-
-
 function App() {
   return (
     <div >

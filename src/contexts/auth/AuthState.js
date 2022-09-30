@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 import { useReducer } from "react";
+=======
+import { useReducer, useState } from "react";
+>>>>>>> a8b42dc467842380df60c76ad9fc1475f18488a8
 import { AUTH_FAIL, REGISTER_USER } from "../types";
 import AuthContext from "./authContext";
 import authReducer from "./authReducer";
@@ -67,7 +71,13 @@ const AuthState = ({ children }) => {
         payload: data.token,
       });
     } catch (err) {
+<<<<<<< HEAD
       console.log(err.response.data.errors);
+=======
+      console.log(err);
+      console.log(err.response.data.errors);
+      console.log(1);
+>>>>>>> a8b42dc467842380df60c76ad9fc1475f18488a8
       // dispatch auth failure
       dispatch({
         type: AUTH_FAIL,
