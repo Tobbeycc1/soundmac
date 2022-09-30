@@ -1,11 +1,14 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import classes from "../CSS files/tabletheader.module.css";
 import ModalBackground from "./ModalBackground";
 import SignInBox from "./SignInBox";
 import SignUp from "./SignUp";
+import AuthContext from "../contexts/auth/authContext";
 
 function TabletHeader(props) {
+  const { isAuthenticated } = useContext(AuthContext);
+
   //  the dropdown for navbar
   const navJSX = (
     <div className={`${classes.tabletNavBar} animate__animated animate__pulse`}>
@@ -22,9 +25,16 @@ function TabletHeader(props) {
       <Link onClick={noNavItem} className={classes.nav} to={"/contact"}>
         Contact
       </Link>
-      <span onClick={showDeets} className={classes.button} to={"/myportal"}>
-        My Portal
-      </span>
+
+      {isAuthenticated === false ? (
+        <span onClick={showDeets} className={classes.button} to={"/myportal"}>
+          Sign In
+        </span>
+      ) : (
+        <span onClick={showDeets} className={classes.button} to={"/myportal"}>
+          Dashboard
+        </span>
+      )}
     </div>
   );
 

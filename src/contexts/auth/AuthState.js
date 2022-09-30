@@ -12,7 +12,6 @@ const AuthState = ({ children }) => {
     isAuthenticated: false,
     user: null,
     loading: false,
-    token: null,
   };
 
   const [state, dispatch] = useReducer(authReducer, initialState);
@@ -37,7 +36,7 @@ const AuthState = ({ children }) => {
         payload: data.token,
       });
 
-      getUser() // get user
+      getUser(); // get user
     } catch (err) {
       console.log(err);
       // console.log(err.response.data.errors);
@@ -70,7 +69,8 @@ const AuthState = ({ children }) => {
         payload: data.token,
       });
 
-      getUser() // get user
+      // getUser(); // get user
+      localStorage.getItem("auth-token") && getUser();
     } catch (err) {
       console.log(err.response.data.errors);
       // dispatch auth failure
@@ -85,9 +85,9 @@ const AuthState = ({ children }) => {
   const getUser = async () => {
     const config = {
       headers: {
-        'x-auth-token': localStorage.getItem('auth-token')
-      }
-    }
+        "x-auth-token": localStorage.getItem("auth-token"),
+      },
+    };
     try {
       const res = await axios.get(`${URL}/api/auth`, config);
 
@@ -95,20 +95,19 @@ const AuthState = ({ children }) => {
 
       dispatch({
         type: GET_USER,
-        payload: data
-      })
-
+        payload: data,
+      });
     } catch (err) {
-      const error = err.response.data.errors
-      console.log(error)
+      const error = err.response.data.errors;
+      console.log(error);
       dispatch({
         type: AUTH_FAIL,
       });
     }
-  }
+  };
 
   useEffect(() => {
-    localStorage.getItem('auth-token') && getUser();
+    localStorage.getItem("auth-token") && getUser();
   }, []);
 
   return (

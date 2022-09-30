@@ -1,12 +1,15 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import classes from "../CSS files/Header.module.css";
 import ModalBackground from "./ModalBackground";
 import SignInBox from "./SignInBox";
 import TabletHeader from "./tabletHeader";
 import SignUp from "./SignUp";
+import AuthContext from "../contexts/auth/authContext";
 
 function Header(props) {
+  const { isAuthenticated } = useContext(AuthContext);
+
   const [modal, showModal] = useState(false);
 
   const [signUpModal, showSignupModal] = useState(false);
@@ -48,9 +51,16 @@ function Header(props) {
         <Link className={classes.nav} to={"/contact"}>
           Contact
         </Link>
-        <span className={classes.button} onClick={showDeets}>
-          My Portal
-        </span>
+
+        {isAuthenticated === false ? (
+          <span className={classes.button} onClick={showDeets}>
+            Sign In / Sign Up
+          </span>
+        ) : (
+          <span className={classes.button} onClick={showDeets}>
+            Dashboard
+          </span>
+        )}
       </div>
 
       <div></div>
