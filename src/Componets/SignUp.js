@@ -13,8 +13,6 @@ import inputClasses from "../CSS files/inputSignIn.module.css";
 
 import {
   CountryDropdown,
-  RegionDropdown,
-  CountryRegionData,
 } from "react-country-region-selector";
 
 function SignUp(props) {
@@ -117,6 +115,7 @@ function SignUp(props) {
     <div className={classes.SignInBoxDiv}>
       <div
         className={`${classes.SignInBox} animate__animated animate__headShake`}
+        id="signup-modal"
       >
         {/* Cancel Button */}
         <div className={classes.x}>

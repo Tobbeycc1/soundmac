@@ -10,7 +10,7 @@
   color: var(--purple);
   height: 600px;
   text-align: center;
-  border-radius: 30px;
+  border-radius: 10px;
   width: 100%;
   padding: 20px 30px;
   overflow-y: scroll;
@@ -30,13 +30,13 @@
 .welcomeTo {
   font-size: 1.2vw;
   margin: 20px;
-  font-family: "Roboto", sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-weight: 400;
 }
 .soundmac {
   font-weight: bolder;
 }
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
 
 .inputCon {
   text-align: left;
@@ -51,7 +51,7 @@ input.largerCheckbox {
 }
 .rememberMe {
   display: inline-block;
-  font-family: "Roboto", sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-weight: 500;
   font-size: 1.02vw;
   vertical-align: middle;
@@ -90,7 +90,7 @@ input.largerCheckbox {
   font-size: 1.2vw;
   margin: 20px;
   margin-right: 10px;
-  font-family: "Roboto", sans-serif;
+  font-family: 'Roboto', sans-serif;
   margin-bottom: 40px;
   display: inline-block;
 }
