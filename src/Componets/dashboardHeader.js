@@ -11,24 +11,14 @@ function DashboardHeader(props) {
   //   get user data function
   const { user } = useContext(AuthContext);
 
-  const [userInfo, setUserInfo] = useState("");
   console.log(user);
 
-  function updateUserInfo() {
-    !userInfo && setUserInfo(user);
-  }
-
-  useEffect(() => {
-    updateUserInfo();
-  }, [userInfo]);
-  console.log(userInfo.first_name);
   return (
     <div className={classes.dashboardHeaderCon}>
       <p className={classes.logo}>SOUNDMAC</p>
 
       <p className={classes.welcome}>
-        Welcome{" "}
-        <span className={classes.first_name}> {userInfo.first_name} </span>{" "}
+        Welcome <span className={classes.first_name}> </span>{" "}
       </p>
 
       <div className={classes.Tooltip_Con}>
