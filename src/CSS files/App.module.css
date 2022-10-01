@@ -1,7 +1,11 @@
-.musicDistributionLinkCon{
-    text-align: center;
-    
+.musicDistributionLinkCon {
+  text-align: center;
 }
-.musicDistributionLinkSubCon{
-    padding: 25vh 0px 0px 0px;
+.musicDistributionLinkSubCon {
+  padding: 25vh 0px 0px 0px;
+}
+.dashboard {
+  padding: 20px 20px;
+  background: hsl(0, 0%, 99%);
+  height: 100vh;
 }

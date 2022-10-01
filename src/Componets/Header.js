@@ -57,9 +57,9 @@ function Header(props) {
             Sign In / Sign Up
           </span>
         ) : (
-          <span className={classes.button} onClick={showDeets}>
+          <Link to={"/dashboard"} className={classes.button}>
             Dashboard
-          </span>
+          </Link>
         )}
       </div>
 

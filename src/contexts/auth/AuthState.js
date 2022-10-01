@@ -3,6 +3,7 @@ import { AUTH_FAIL, GET_USER, LOGIN_USER, REGISTER_USER } from "../types";
 import AuthContext from "./authContext";
 import authReducer from "./authReducer";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const URL = process.env.REACT_APP_AUTH_URL;
 
@@ -83,7 +84,8 @@ const AuthState = ({ children }) => {
       // dispatch alert error
     }
   };
-
+  const navigate = useNavigate();
+  console.log(state.isAuthenticated);
   // get user
   const getUser = async () => {
     const config = {
@@ -93,7 +95,6 @@ const AuthState = ({ children }) => {
     };
     try {
       const res = await axios.get(`${URL}/api/auth`, config);
-
       const data = res.data;
 
       dispatch({
@@ -111,7 +112,8 @@ const AuthState = ({ children }) => {
 
   useEffect(() => {
     localStorage.getItem("auth-token") && getUser();
-  }, []);
+    state.isAuthenticated === false ? navigate("/") : navigate("/dashboard");
+  }, [state.isAuthenticated]);
 
   return (
     <AuthContext.Provider

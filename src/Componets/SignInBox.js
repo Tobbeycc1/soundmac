@@ -7,16 +7,20 @@ import { FcGoogle } from "react-icons/fc";
 import { RiFacebookCircleFill } from "react-icons/ri";
 import AuthContext from "../contexts/auth/authContext";
 import { ToastContainer, toast } from "react-toastify";
+import "animate.css";
 
 import "react-toastify/dist/ReactToastify.css";
 
 import { useEffect } from "react";
+import { Link } from "react-router-dom";
 
 function SignInBox(props) {
   const authContext = useContext(AuthContext);
 
   const { loginUser } = authContext;
 
+  const { loading } = authContext;
+  // console.log(isAuthenticated);
   const [userDetails, setUserDetails] = useState({
     email: "",
     password: "",
@@ -52,7 +56,7 @@ function SignInBox(props) {
         progress: undefined,
       });
     }
-    if (email === "" && password == "") {
+    if (email === "" && password === "") {
       console.log("fields are empty");
       // add alert(error) message
     } else {
@@ -120,13 +124,19 @@ function SignInBox(props) {
                 required
               />
             </div>
-            <button
-              type="submit"
-              className={classes.signInCon}
-              onClick={onSubmit}
-            >
-              SIgn In
-            </button>
+
+            {loading === true ? (
+              <button className={classes.signInCon}> SIgning In...</button>
+            ) : (
+              <button
+                type="submit"
+                className={classes.signInCon}
+                onClick={onSubmit}
+              >
+                {" "}
+                SIgn In
+              </button>
+            )}
 
             <p className={classes.dontHavePrev}>Don't have an account?</p>
             <p onClick={props.signUpAt} className={classes.dontHave}>

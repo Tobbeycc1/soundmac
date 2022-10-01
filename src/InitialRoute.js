@@ -98,7 +98,7 @@ function InitialRoute() {
           }
         />
 
-        <Route
+        {/* <Route
           path="/dashboard"
           element={
             <div>
@@ -106,7 +106,9 @@ function InitialRoute() {
               <DashboardHeader /> <Dashboard />
             </div>
           }
-        />
+        /> */}
+
+        <Route path="/test" element={<p>GOOOOOO</p>} />
         <Route
           path="/catalog"
           element={
