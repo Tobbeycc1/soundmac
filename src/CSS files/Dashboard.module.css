@@ -25,11 +25,35 @@
 }
 .account_type_header {
   font-weight: bold;
-  margin: 0px 20px 20px 20px;
+  margin: 20px;
 }
 .proceed_button {
   text-align: right;
   /* background: red; */
   margin: 20px 0px;
   padding-left: 75%;
+}
+.modal {
+  width: calc(100% - 20px);
+  height: 100vh;
+  background: rgba(255, 255, 255, 0.425);
+  position: fixed;
+  z-index: 100;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.modal_sub_con {
+  position: relative;
+  background: white;
+  width: 30vw;
+  border-radius: 20px;
+  text-align: center;
+}
+.dashboard_con {
+  width: calc(100vw - 60px);
+  overflow-x: hidden;
 }
