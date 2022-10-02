@@ -19,3 +19,17 @@
   /* background: red; */
   border-radius: 20px;
 }
+.input_account_type {
+  text-align: left;
+  margin: 40px 20px 20px 20px;
+}
+.account_type_header {
+  font-weight: bold;
+  margin: 0px 20px 20px 20px;
+}
+.proceed_button {
+  text-align: right;
+  /* background: red; */
+  margin: 20px 0px;
+  padding-left: 75%;
+}

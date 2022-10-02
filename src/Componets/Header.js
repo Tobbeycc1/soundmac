@@ -54,7 +54,7 @@ function Header(props) {
 
         {isAuthenticated === false ? (
           <span>
-            <span className={classes.button} onClick={showDeets}>
+            <span className={classes.button_SignIn} onClick={showDeets}>
               Sign In
             </span>
 

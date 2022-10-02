@@ -2,6 +2,7 @@ import classes from "../CSS files/Dashboard.module.css";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 import { AutoScroll } from "@splidejs/splide-extension-auto-scroll";
 import "@splidejs/splide/css";
+import { ToastContainer, toast } from "react-toastify";
 import {
   Modal,
   Input,
@@ -16,6 +17,8 @@ import {
 import { useState } from "react";
 import { useEffect } from "react";
 import { useMemo } from "react";
+import { useContext } from "react";
+import AccountTypeContext from "../contexts/account type/accountTypeContext";
 
 const dummyImages = [
   {
@@ -54,14 +57,42 @@ function Dashboard(props) {
   };
   // drop down to select account type
   const [selected, setSelected] = useState(
-    new Set(["Please Select An Account Type"])
+    new Set(["Please Select  Account Type"])
   );
-  console.log(selected);
+  console.log(selected.anchorKey);
 
   const selectedValue = useMemo(
     () => Array.from(selected).join(", ").replaceAll("_", " "),
     [selected]
   );
+
+  // handle artiste name in the account type form
+  const [artisteFormName, setArtisteFormName] = useState("");
+
+  const onChange = (e) => {
+    // console.log(e.target.value);
+    setArtisteFormName(e.target.value);
+  };
+  console.log(artisteFormName);
+
+  const { proceed } = useContext(AccountTypeContext);
+
+  const onSubmit = () => {
+    if (selected.anchorKey !== "Free_account" && artisteFormName == "") {
+      console.log("error");
+      toast.error("Field can't be empty !", {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+      });
+    } else {
+      proceed();
+    }
+  };
   useEffect(() => {
     handler();
   }, []);
@@ -75,8 +106,20 @@ function Dashboard(props) {
         open={visible}
         onClose={closeHandler}
       >
+        {/* error message */}
+        <ToastContainer
+          position="top-right"
+          autoClose={2000}
+          hideProgressBar={true}
+          newestOnTop
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+        />
         <div className={classes.select_account_type_con}>
-          <p>SOUNDMAC ACCOUNT TYPE</p>
+          <p className={classes.account_type_header}>SOUNDMAC ACCOUNT TYPE</p>
           <Dropdown>
             <Dropdown.Button light color="primary" css={{ tt: "capitalize" }}>
               {selectedValue}
@@ -96,6 +139,25 @@ function Dashboard(props) {
               <Dropdown.Item key="label">Label</Dropdown.Item>
             </Dropdown.Menu>
           </Dropdown>
+        </div>
+
+        {selected.anchorKey === "Independent_artist" ||
+        selected.anchorKey === "label" ? (
+          <div className={classes.input_account_type}>
+            {" "}
+            <Input
+              labelPlaceholder="Artiste Name"
+              status="default"
+              onChange={onChange}
+            />
+          </div>
+        ) : (
+          <></>
+        )}
+        <div className={classes.proceed_button}>
+          <Button color="gradient" auto onPress={onSubmit}>
+            Proceed
+          </Button>
         </div>
       </Modal>
       <div className={classes.slide_con}>

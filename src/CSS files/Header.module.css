@@ -52,7 +52,8 @@
 .nav:focus {
   border-bottom: 5px solid var(--purple);
 }
-.button {
+.button,
+.button_SignIn {
   margin: 15px;
   text-decoration: none;
   font-weight: bold;
@@ -60,9 +61,12 @@
   background: var(--purple);
   color: white;
   padding: 10px 15px;
+  cursor: pointer;
   border-radius: 7px;
 }
 .button:hover {
   background: #4b0d4b;
-  cursor: pointer;
+}
+.button_SignIn {
+  background: #b1b1b1;
 }
