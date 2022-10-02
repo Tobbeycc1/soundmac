@@ -1,1 +1,21 @@
-
+.slide_con {
+  background: white;
+  /* height: 45vh; */
+  width: 100%;
+  border-radius: 20px;
+  margin: 50px 0px;
+  box-shadow: 0px 5px 15px -4px rgba(10, 10, 10, 0.71);
+  -webkit-box-shadow: 0px 5px 15px -4px rgba(10, 10, 10, 0.71);
+  -moz-box-shadow: 0px 5px 15px -4px rgba(10, 10, 10, 0.71);
+  padding: 20px;
+}
+.Cover_Image {
+  width: 400px;
+}
+.src {
+  width: 400px;
+  height: 250px;
+  object-fit: cover;
+  /* background: red; */
+  border-radius: 20px;
+}

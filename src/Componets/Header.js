@@ -53,8 +53,14 @@ function Header(props) {
         </Link>
 
         {isAuthenticated === false ? (
-          <span className={classes.button} onClick={showDeets}>
-            Sign In / Sign Up
+          <span>
+            <span className={classes.button} onClick={showDeets}>
+              Sign In
+            </span>
+
+            <span className={classes.button} onClick={signUp}>
+              Register
+            </span>
           </span>
         ) : (
           <Link to={"/dashboard"} className={classes.button}>

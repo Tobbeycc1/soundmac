@@ -13,11 +13,18 @@
   width: 40vw;
   text-align: center;
   margin-right: auto;
+  font-weight: 500;
+  font-size: 20px;
+  border-radius: 10px;
+  /* box-shadow: 0px 5px 15px -4px rgba(10, 10, 10, 0.71);
+  -webkit-box-shadow: 0px 5px 15px -4px rgba(10, 10, 10, 0.71);
+  -moz-box-shadow: 0px 5px 15px -4px rgba(10, 10, 10, 0.71); */
 }
 .first_name {
   text-transform: uppercase;
 }
-.icon_con {
+.icon_con,
+.first_letter_Con {
   background: var(--purple);
   width: 40px;
   height: 40px;
@@ -37,4 +44,20 @@
 }
 .Tooltip_Con {
   display: flex;
+  margin-right: 30px;
+}
+
+.first_letter {
+  text-transform: uppercase;
+  color: white;
+  font-weight: bold;
+}
+.small_circle {
+  width: 20px;
+  height: 20px;
+  border-radius: 100%;
+  background: var(--dashPink);
+  margin-right: -10px;
+  position: relative;
+  z-index: 2;
 }

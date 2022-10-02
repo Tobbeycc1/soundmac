@@ -1,5 +1,11 @@
 import { useReducer, useEffect } from "react";
-import { AUTH_FAIL, GET_USER, LOGIN_USER, REGISTER_USER } from "../types";
+import {
+  AUTH_FAIL,
+  GET_USER,
+  LOGIN_USER,
+  LOGOUT,
+  REGISTER_USER,
+} from "../types";
 import AuthContext from "./authContext";
 import authReducer from "./authReducer";
 import axios from "axios";
@@ -110,6 +116,12 @@ const AuthState = ({ children }) => {
     }
   };
 
+  // log out
+  const logOut = async (userDetails) => {
+    dispatch({
+      type: LOGOUT,
+    });
+  };
   useEffect(() => {
     localStorage.getItem("auth-token") && getUser();
     state.isAuthenticated === false ? navigate("/") : navigate("/dashboard");
@@ -124,6 +136,7 @@ const AuthState = ({ children }) => {
         registerUser,
         loginUser,
         getUser,
+        logOut,
       }}
     >
       {children}

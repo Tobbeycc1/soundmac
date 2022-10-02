@@ -10,6 +10,7 @@ import { Tooltip, Button } from "@nextui-org/react";
 function DashboardHeader(props) {
   //   get user data function
   const { user } = useContext(AuthContext);
+  const { logOut } = useContext(AuthContext);
 
   console.log(user);
 
@@ -18,7 +19,10 @@ function DashboardHeader(props) {
       <p className={classes.logo}>SOUNDMAC</p>
 
       <p className={classes.welcome}>
-        Welcome <span className={classes.first_name}> </span>{" "}
+        Welcome{" "}
+        <span className={classes.first_name}>
+          {user !== null && user.first_name}
+        </span>{" "}
       </p>
 
       <div className={classes.Tooltip_Con}>
@@ -47,10 +51,16 @@ function DashboardHeader(props) {
           placement="bottom"
           style={{ margin: "0px 5px" }}
         >
-          <div className={classes.icon_con}>
+          <div className={classes.icon_con} onClick={logOut}>
             <RiLogoutBoxRFill className={classes.icon} />
           </div>
         </Tooltip>
+      </div>
+      <div className={classes.small_circle}></div>
+      <div className={classes.first_letter_Con}>
+        <p className={classes.first_letter}>
+          {user !== null && user.first_name[0]}
+        </p>{" "}
       </div>
     </div>
   );

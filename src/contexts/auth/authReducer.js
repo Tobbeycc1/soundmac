@@ -1,4 +1,10 @@
-import { AUTH_FAIL, GET_USER, LOGIN_USER, REGISTER_USER } from "../types";
+import {
+  AUTH_FAIL,
+  GET_USER,
+  LOGIN_USER,
+  REGISTER_USER,
+  LOGOUT,
+} from "../types";
 
 const authReducer = (state, action) => {
   const { type, payload } = action;
@@ -16,6 +22,13 @@ const authReducer = (state, action) => {
         isAuthenticated: true,
       };
     case AUTH_FAIL:
+      localStorage.removeItem("auth-token");
+      return {
+        ...state,
+        isAuthenticated: false,
+        user: null,
+      };
+    case LOGOUT:
       localStorage.removeItem("auth-token");
       return {
         ...state,
