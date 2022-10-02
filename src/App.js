@@ -112,7 +112,7 @@ function App() {
         <Route
           path="/uploadmusic"
           element={
-            <div>
+            <div className={classes.dashboard}>
               {" "}
               <DashboardHeader /> <UploadSongs />{" "}
             </div>

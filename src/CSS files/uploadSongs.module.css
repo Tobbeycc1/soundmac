@@ -1,0 +1,30 @@
+.text,
+.back_icon {
+  font-size: 30px;
+  display: inline-block;
+  vertical-align: middle;
+  font-weight: bold;
+}
+.back_icon {
+  margin: 30px 20px 30px 30px;
+  cursor: pointer;
+}
+.upload_container {
+  width: 400px;
+  display: flex;
+  background: white;
+  text-align: center;
+  margin: 0px 30px;
+  height: 400px;
+  align-items: center;
+  border-radius: 20px;
+}
+.picture_con {
+  font-size: 100px;
+  margin: auto;
+}
+.upload_sub_con {
+  /* background: green; */
+  width: 40%;
+  margin: auto;
+}

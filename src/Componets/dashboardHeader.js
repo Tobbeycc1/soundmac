@@ -6,6 +6,7 @@ import { MdDashboard } from "react-icons/md";
 import { AiFillSetting } from "react-icons/ai";
 import { RiLogoutBoxRFill } from "react-icons/ri";
 import { Tooltip, Button } from "@nextui-org/react";
+import { useNavigate } from "react-router-dom";
 
 function DashboardHeader(props) {
   //   get user data function
@@ -13,6 +14,9 @@ function DashboardHeader(props) {
   const { logOut } = useContext(AuthContext);
 
   console.log(user);
+
+  // navigate
+  const navigate = useNavigate();
 
   return (
     <div className={classes.dashboardHeaderCon}>
@@ -27,6 +31,7 @@ function DashboardHeader(props) {
 
       <div className={classes.Tooltip_Con}>
         <Tooltip
+          onClick={() => navigate("/dashboard")}
           content={"Dashboard"}
           placement="bottom"
           style={{ margin: "0px 5px" }}
