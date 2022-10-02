@@ -19,30 +19,44 @@ import { useEffect } from "react";
 import { useMemo } from "react";
 import { useContext } from "react";
 import AccountTypeContext from "../contexts/account type/accountTypeContext";
+import { RiNeteaseCloudMusicLine } from "react-icons/ri";
+import { RiMusicLine } from "react-icons/ri";
+import { useNavigate } from "react-router-dom";
 
-const dummyImages = [
+const dummyData = [
   {
     id: 1,
+    song: "good girl",
     src: "https://cdn8.openculture.com/2018/02/26214611/Arlo-safe-e1519715317729.jpg",
   },
   {
     id: 2,
+    song: "good girl",
     src: "https://oscarmini.com/wp-content/uploads/2014/08/michaeljackson_coverart.jpg",
   },
   {
     id: 3,
+    song: "good girl",
     src: "https://graphicriver.img.customer.envatousercontent.com/files/383062766/music-albumcover-templates-bundle78-preview.jpg?auto=compress%2Cformat&fit=crop&crop=top&w=590&h=590&s=17318da830a8e0cad5e038de293bced3",
   },
   {
     id: 4,
+    song: "good girl",
     src: "https://www.bellanaija.com/wp-content/uploads/2018/09/rasaking-720x720.jpg",
   },
   {
     id: 5,
+    song: "good girl",
     src: "https://i.pinimg.com/736x/dc/ae/9a/dcae9acc196c7de7fdb4214b01de84ac.jpg",
   },
   {
     id: 6,
+    song: "good girl",
+    src: "https://d1csarkz8obe9u.cloudfront.net/posterpreviews/album-cover-art-template-design-6d5b5d8df1dbe0c1fcaa4c1ba16a86a9_screen.jpg?ts=1635384690",
+  },
+  {
+    id: 7,
+    song: "good girl",
     src: "https://d1csarkz8obe9u.cloudfront.net/posterpreviews/album-cover-art-template-design-6d5b5d8df1dbe0c1fcaa4c1ba16a86a9_screen.jpg?ts=1635384690",
   },
 ];
@@ -102,10 +116,23 @@ function Dashboard(props) {
       showModal(false);
     }
   };
+
+  // upload song
+  const navigate = useNavigate();
+
+  const uploadSongFn = () => {
+    console.log("upload song");
+    navigate("/uploadmusic");
+  };
   useEffect(() => {
     handler();
     modalShown();
   }, []);
+
+  // select the first 5 objects
+  const firstFive = dummyData.slice(0, 5);
+  // console.log(firstFive);
+  // console.log(dummyData);
 
   return (
     <div className={classes.dashboard_con}>
@@ -175,32 +202,58 @@ function Dashboard(props) {
         </div>
       )}
 
-      <div className={classes.slide_con}>
-        <Splide
-          options={{
-            rewind: true,
-            type: "loop",
-            padding: "34%",
-            gap: "20px",
-            pagination: false,
-            autoScroll: {
-              pauseOnHover: false,
-              pauseOnFocus: false,
-              rewind: false,
-              speed: 1,
-            },
-            focus: "center",
-          }}
-          extensions={{ AutoScroll }}
-        >
-          {dummyImages.map((item, index) => (
-            <SplideSlide>
-              <div className={classes.Cover_Image}>
-                <img src={item.src} className={classes.src} alt={item.id} />
-              </div>
-            </SplideSlide>
-          ))}
-        </Splide>
+      <div className={classes.slide_con_con}>
+        <div className={classes.slide_con}>
+          <Splide
+            options={{
+              rewind: true,
+              type: "loop",
+              padding: "34%",
+              gap: "20px",
+              pagination: false,
+              autoScroll: {
+                pauseOnHover: false,
+                pauseOnFocus: false,
+                rewind: false,
+                speed: 1,
+              },
+              focus: "center",
+            }}
+            extensions={{ AutoScroll }}
+          >
+            {firstFive.map((item, index) => (
+              <SplideSlide>
+                <div className={classes.Cover_Image}>
+                  <img src={item.src} className={classes.src} alt={item.id} />
+                </div>
+              </SplideSlide>
+            ))}
+          </Splide>
+        </div>
+      </div>
+
+      {/* song streams, music, visit & Upload song  */}
+      <div className={classes.section2_con}>
+        <div className={classes.todays_stream}></div>
+
+        {/* upload song */}
+
+        <div className={classes.upload_song_con} onClick={uploadSongFn}>
+          <p className={classes.upload_song}> Upload Song</p>
+          <div className={classes.cloud_icon_con}>
+            <RiMusicLine className={classes.cloud_icon} />
+          </div>
+          <p className={classes.supported_format}> Supported format: mp3</p>
+        </div>
+
+        {/* upload album */}
+        <div className={classes.upload_song_con}>
+          <p className={classes.upload_song}> Upload Album</p>
+          <div className={classes.cloud_icon_con}>
+            <RiNeteaseCloudMusicLine className={classes.cloud_icon} />
+          </div>
+          <p className={classes.supported_format}> Supported format: zip</p>
+        </div>
       </div>
     </div>
   );

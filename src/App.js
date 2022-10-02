@@ -13,6 +13,7 @@ import Catalog from "./Pages/Catalog";
 import MediaQuery from "react-responsive";
 import TabletHeader from "./Componets/tabletHeader";
 import Upload from "./Upload";
+import UploadSongs from "./Componets/UploadSong";
 
 function App() {
   return (
@@ -109,11 +110,11 @@ function App() {
           }
         />
         <Route
-          path="/catalog"
+          path="/uploadmusic"
           element={
             <div>
               {" "}
-              <DashboardHeader /> <Catalog />{" "}
+              <DashboardHeader /> <UploadSongs />{" "}
             </div>
           }
         />

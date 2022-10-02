@@ -3,11 +3,14 @@
   /* height: 45vh; */
   width: 100%;
   border-radius: 20px;
-  margin: 50px 0px;
+  margin: 30px 0px;
   box-shadow: 0px 5px 15px -4px rgba(10, 10, 10, 0.71);
   -webkit-box-shadow: 0px 5px 15px -4px rgba(10, 10, 10, 0.71);
   -moz-box-shadow: 0px 5px 15px -4px rgba(10, 10, 10, 0.71);
   padding: 20px;
+}
+.slide_con_con {
+  padding: 0px 30px;
 }
 .Cover_Image {
   width: 400px;
@@ -34,7 +37,7 @@
   padding-left: 75%;
 }
 .modal {
-  width: calc(100% - 20px);
+  width: 100vw;
   height: 100vh;
   background: rgba(255, 255, 255, 0.425);
   position: fixed;
@@ -54,6 +57,55 @@
   text-align: center;
 }
 .dashboard_con {
-  width: calc(100vw - 60px);
+  width: 100vw;
   overflow-x: hidden;
+}
+.section2_con {
+  /* background: red; */
+  display: flex;
+  padding: 10px 0px;
+}
+.todays_stream {
+  margin-right: auto;
+}
+.upload_song_con {
+  width: 250px;
+  height: 22vh;
+  background: var(--purple);
+  border-radius: 15px;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  cursor: pointer;
+  margin-right: 30px;
+}
+.upload_song_con:hover {
+  box-shadow: 0px 0px 13px 0px rgba(0, 0, 0, 0.83);
+  -webkit-box-shadow: 0px 0px 13px 0px rgba(0, 0, 0, 0.83);
+  -moz-box-shadow: 0px 0px 13px 0px rgba(0, 0, 0, 0.83);
+}
+.upload_song {
+  font-weight: bold;
+  text-align: left;
+}
+.cloud_icon_con {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
+  border-radius: 100%;
+  background: white;
+  border: 2px solid var(--purple);
+  width: 60px;
+  height: 60px;
+  margin: 10px auto;
+}
+.cloud_icon {
+  color: rgb(238, 0, 147);
+  color: var(--dashPink);
+  font-size: 30px;
+  font-weight: 900;
+}
+.supported_format {
+  font-size: 11px;
 }
