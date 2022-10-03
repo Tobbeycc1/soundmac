@@ -100,7 +100,7 @@ function Dashboard(props) {
   const { proceed } = useContext(AccountTypeContext);
 
   const onSubmit = () => {
-    if (selected.anchorKey !== "Free_account" && artisteFormName == "") {
+    if (artisteFormName === "") {
       console.log("error");
       toast.error("Field can't be empty !", {
         position: "top-right",
@@ -125,7 +125,7 @@ function Dashboard(props) {
     navigate("/uploadmusic");
   };
   useEffect(() => {
-    handler();
+    // handler();
     modalShown();
   }, []);
 
@@ -155,38 +155,48 @@ function Dashboard(props) {
               <p className={classes.account_type_header}>
                 SOUNDMAC ACCOUNT TYPE
               </p>
-              <Dropdown>
-                <Dropdown.Button
-                  light
-                  color="primary"
-                  css={{ tt: "capitalize" }}
-                >
-                  {selectedValue}
-                </Dropdown.Button>
-                <Dropdown.Menu
-                  aria-label="Single selection actions"
-                  color="secondary"
-                  disallowEmptySelection
-                  selectionMode="single"
-                  selectedKeys={selected}
-                  onSelectionChange={setSelected}
-                >
-                  <Dropdown.Item key="Free_account">Free Account</Dropdown.Item>
-                  <Dropdown.Item key="Independent_artist">
-                    Independent Artist
-                  </Dropdown.Item>
-                  <Dropdown.Item key="label">Label</Dropdown.Item>
-                </Dropdown.Menu>
-              </Dropdown>
+              <div className={classes.drop_drop_down_con}>
+                <Dropdown>
+                  <Dropdown.Button
+                    light
+                    color="default"
+                    css={{ tt: "capitalize" }}
+                  >
+                    {selectedValue}
+                  </Dropdown.Button>
+                  <Dropdown.Menu
+                    aria-label="Single selection actions"
+                    color="default"
+                    disallowEmptySelection
+                    selectionMode="single"
+                    selectedKeys={selected}
+                    onSelectionChange={setSelected}
+                  >
+                    <Dropdown.Item key="Free_account">
+                      Free Account
+                    </Dropdown.Item>
+                    <Dropdown.Item key="Independent_artist">
+                      Independent Artist
+                    </Dropdown.Item>
+                    <Dropdown.Item key="label">Label</Dropdown.Item>
+                  </Dropdown.Menu>
+                </Dropdown>
+              </div>
             </div>
 
             {selected.anchorKey === "Independent_artist" ||
-            selected.anchorKey === "label" ? (
+            selected.anchorKey === "label" ||
+            selected.anchorKey === "Free_account" ? (
               <div className={classes.input_account_type}>
                 {" "}
-                <Input
-                  labelPlaceholder="Artiste Name"
-                  status="default"
+                <input
+                  className={classes.input_artiste_name_field}
+                  type={"text"}
+                  placeholder={
+                    selected.anchorKey === "label"
+                      ? "Label name"
+                      : "Artiste name"
+                  }
                   onChange={onChange}
                 />
               </div>
@@ -194,9 +204,9 @@ function Dashboard(props) {
               <></>
             )}
             <div className={classes.proceed_button}>
-              <Button color="gradient" auto onPress={onSubmit}>
+              <button auto onClick={onSubmit} className={classes.proceed}>
                 Proceed
-              </Button>
+              </button>
             </div>
           </div>
         </div>

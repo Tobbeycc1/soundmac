@@ -10,6 +10,7 @@ import AuthContext from "./authContext";
 import authReducer from "./authReducer";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import { useState } from "react";
 
 const URL = process.env.REACT_APP_AUTH_URL;
 
@@ -22,6 +23,8 @@ const AuthState = ({ children }) => {
   };
 
   const [state, dispatch] = useReducer(authReducer, initialState);
+
+  const [errorMssg, setErrorMssg] = useState("");
 
   // register user
   const registerUser = async (userDetails) => {
@@ -82,7 +85,9 @@ const AuthState = ({ children }) => {
 
       getUser(); // get user
     } catch (err) {
-      console.log(err.response.data.errors);
+      console.log(err.response.data.errors[0].msg);
+      setErrorMssg(err.response.data.errors[0].msg);
+
       // dispatch auth failure
       dispatch({
         type: AUTH_FAIL,
@@ -90,6 +95,7 @@ const AuthState = ({ children }) => {
       // dispatch alert error
     }
   };
+
   const navigate = useNavigate();
   console.log(state.isAuthenticated);
   // get user
@@ -118,6 +124,7 @@ const AuthState = ({ children }) => {
 
   // log out
   const logOut = async (userDetails) => {
+    setErrorMssg("");
     dispatch({
       type: LOGOUT,
     });
@@ -137,6 +144,8 @@ const AuthState = ({ children }) => {
         loginUser,
         getUser,
         logOut,
+        errorMssg,
+        setErrorMssg,
       }}
     >
       {children}

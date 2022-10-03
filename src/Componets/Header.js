@@ -9,6 +9,7 @@ import AuthContext from "../contexts/auth/authContext";
 
 function Header(props) {
   const { isAuthenticated } = useContext(AuthContext);
+  const { setErrorMssg } = useContext(AuthContext);
 
   const [modal, showModal] = useState(false);
 
@@ -17,6 +18,7 @@ function Header(props) {
   function showDeets() {
     console.log("Login shown");
     showModal(!modal);
+    setErrorMssg("");
   }
   function signUp() {
     console.log("signUp shown");

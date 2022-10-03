@@ -4,6 +4,7 @@ import {
   LOGIN_USER,
   REGISTER_USER,
   LOGOUT,
+  SET_LOADER,
 } from "../types";
 
 const authReducer = (state, action) => {
@@ -14,6 +15,7 @@ const authReducer = (state, action) => {
       return {
         ...state,
         isAuthenticated: true,
+        loading: true,
       };
     case GET_USER:
       return {
@@ -27,6 +29,7 @@ const authReducer = (state, action) => {
         ...state,
         isAuthenticated: false,
         user: null,
+        loading: false,
       };
     case LOGOUT:
       localStorage.removeItem("auth-token");
@@ -34,6 +37,7 @@ const authReducer = (state, action) => {
         ...state,
         isAuthenticated: false,
         user: null,
+        loading: false,
       };
     default:
       return state;

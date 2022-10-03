@@ -20,6 +20,9 @@ function SignInBox(props) {
   const { loginUser } = authContext;
 
   const { loading } = authContext;
+
+  const { errorMssg } = authContext;
+
   // console.log(isAuthenticated);
   const [userDetails, setUserDetails] = useState({
     email: "",
@@ -86,6 +89,11 @@ function SignInBox(props) {
         <div
           className={`${classes.SignInBox} animate__animated animate__rubberBand`}
         >
+          {errorMssg === "Invalid credentials" ? (
+            <p>Incorrect e-mail or password</p>
+          ) : (
+            <></>
+          )}
           {/* Cancel Button */}
           <div className={classes.x}>
             <ImCancelCircle className={classes.Gi} onClick={props.showDeets} />

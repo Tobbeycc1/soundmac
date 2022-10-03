@@ -24,7 +24,7 @@
 }
 .input_account_type {
   text-align: left;
-  margin: 40px 20px 20px 20px;
+  margin: 10px 20px;
 }
 .account_type_header {
   font-weight: bold;
@@ -33,8 +33,13 @@
 .proceed_button {
   text-align: right;
   /* background: red; */
-  margin: 20px 0px;
-  padding-left: 75%;
+  margin: 20px 20px;
+}
+.proceed {
+  background: var(--purple);
+  color: white;
+  padding: 3px 15px;
+  border-radius: 7px;
 }
 .modal {
   width: 100vw;
@@ -108,4 +113,17 @@
 }
 .supported_format {
   font-size: 11px;
+}
+/* .drop_drop_down_con {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+} */
+.input_artiste_name_field {
+  outline: none;
+  border: 2px solid var(--purple);
+  margin: auto;
+  width: 100%;
+  border-radius: 10px;
+  padding: 10px 20px;
 }

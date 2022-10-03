@@ -8,6 +8,7 @@ import AuthContext from "../contexts/auth/authContext";
 
 function TabletHeader(props) {
   const { isAuthenticated } = useContext(AuthContext);
+  const { setErrorMssg } = useContext(AuthContext);
 
   //  the dropdown for navbar
   const navJSX = (
@@ -27,13 +28,19 @@ function TabletHeader(props) {
       </Link>
 
       {isAuthenticated === false ? (
-        <span onClick={showDeets} className={classes.button} to={"/myportal"}>
-          Sign In
+        <span>
+          <div className={classes.button} onClick={showDeets}>
+            Sign In
+          </div>
+
+          <div className={classes.button} onClick={signUp}>
+            Register
+          </div>
         </span>
       ) : (
-        <span onClick={showDeets} className={classes.button} to={"/myportal"}>
+        <Link to={"/dashboard"} className={classes.button}>
           Dashboard
-        </span>
+        </Link>
       )}
     </div>
   );
@@ -46,6 +53,7 @@ function TabletHeader(props) {
     console.log("Login shown");
     showModal(!modal);
     setShowNavItem(false);
+    setErrorMssg("");
   }
 
   function signUp() {
