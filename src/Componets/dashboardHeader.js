@@ -80,9 +80,13 @@ function DashboardHeader(props) {
           className={`${classes.not_for_desk} animate__animated animate__swing`}
         >
           <Tooltip
-            onClick={() => navigate("/dashboard")}
+            onClick={() => {
+              navigate("/dashboard");
+              showMobileNavDetails(false);
+            }}
             content={"Dashboard"}
             placement="bottom"
+            style={{ margin: "0px 5px" }}
           >
             <div className={classes.icon_con_toggle}>
               <MdDashboard className={classes.icon_toggle} />
@@ -93,6 +97,9 @@ function DashboardHeader(props) {
             content={"Settings"}
             placement="bottom"
             style={{ margin: "0px 5px" }}
+            onClick={() => {
+              showMobileNavDetails(false);
+            }}
           >
             <div className={classes.icon_con_toggle}>
               <AiFillSetting className={classes.icon_toggle} />
@@ -103,6 +110,9 @@ function DashboardHeader(props) {
             content={"Log Out"}
             placement="bottom"
             style={{ margin: "0px 5px" }}
+            onClick={() => {
+              showMobileNavDetails(false);
+            }}
           >
             <div className={classes.icon_con_toggle} onClick={logOut}>
               <RiLogoutBoxRFill className={classes.icon_toggle} />

@@ -11,6 +11,7 @@ import { BsFlag } from "react-icons/bs";
 import AuthContext from "../contexts/auth/authContext";
 import inputClasses from "../CSS files/inputSignIn.module.css";
 import { ToastContainer, toast } from "react-toastify";
+import { Loading } from "@nextui-org/react";
 
 import {
   CountryDropdown,
@@ -21,7 +22,7 @@ import {
 function SignUp(props) {
   const authContext = useContext(AuthContext);
 
-  const { registerUser } = authContext;
+  const { registerUser, loading, loader } = authContext;
 
   const [userDetails, setUserDetails] = useState({
     first_name: "",
@@ -118,6 +119,7 @@ function SignUp(props) {
       };
       registerUser(user);
       console.log(user);
+      loader();
     }
   };
 
@@ -250,13 +252,21 @@ function SignUp(props) {
                 required
               />
             </div>
-            <button
-              type="submit"
-              className={classes.signInCon}
-              onClick={onSubmit}
-            >
-              SIgn In
-            </button>
+            {loading === true ? (
+              <button className={classes.signInCon}>
+                {" "}
+                <Loading type="points-opacity" />
+              </button>
+            ) : (
+              <button
+                type="submit"
+                className={classes.signInCon}
+                onClick={onSubmit}
+              >
+                {" "}
+                Register
+              </button>
+            )}
           </form>
           <p className={classes.dontHavePrev}>Already have an account?</p>
           <p className={classes.dontHave} onClick={props.iHaveAnAcc}>
