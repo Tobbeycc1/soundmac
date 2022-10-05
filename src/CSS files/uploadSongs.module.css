@@ -1,21 +1,21 @@
 .text,
 .back_icon {
-  font-size: 30px;
+  font-size: 2.2vw;
   display: inline-block;
   vertical-align: middle;
   font-weight: bold;
 }
 .back_icon {
-  margin: 30px 20px 30px 30px;
+  margin: 40px 20px 30px 30px;
   cursor: pointer;
 }
 .upload_container {
-  width: 350px;
+  width: 25.62vw;
   display: flex;
   background: white;
   text-align: center;
   margin: 30px;
-  height: 50vh;
+  height: 25.62vw;
   align-items: center;
   cursor: pointer;
   border-radius: 20px;
@@ -29,7 +29,7 @@
   vertical-align: top;
 }
 .picture_con {
-  font-size: 100px;
+  font-size: 7.32vw;
   margin: auto;
 }
 .upload_sub_con {
@@ -38,13 +38,13 @@
   margin: auto;
 }
 .type_text {
-  font-size: 11px;
+  font-size: 0.81vw;
   font-weight: bold;
 }
 .mssg_con,
 .mssg_con_red {
   text-align: center;
-  width: 350px;
+  width: 25.62vw;
   margin: 30px;
 }
 .mssg,
@@ -60,7 +60,7 @@
   list-style: none;
   font-weight: bold;
   margin-bottom: 30px;
-  font-size: 13px;
+  font-size: 0.95vw;
 }
 .mssg_red {
   color: red;
@@ -130,6 +130,76 @@
   text-transform: capitalize;
 }
 .form_label {
-  font-size: 13px;
+  font-size: 0.95vw;
   font-weight: bold;
+}
+
+@media screen and (max-width: 999px) {
+  .text,
+  .back_icon {
+    font-size: 30px;
+  }
+  .upload_container {
+    width: 350px;
+    height: 350px;
+  }
+  .first_form_sub_con {
+    width: 100%;
+    margin: 10px;
+    padding: 0px 30px;
+    display: block;
+  }
+  .picture_con {
+    font-size: 100px;
+  }
+  .type_text {
+    font-size: 11px;
+  }
+  .mssg_con,
+  .mssg_con_red {
+    width: 350px;
+  }
+  .file_name,
+  .file_name {
+    font-size: 13px;
+  }
+  .small_input_con,
+  .small_input_con_B,
+  .smaller_input_con,
+  .smaller_input_con_B,
+  .smaller_input_con_B {
+    margin-right: 10px;
+    margin-bottom: 20px;
+    width: 100%;
+  }
+  .form_label {
+    font-size: 13px;
+  }
+}
+@media screen and (max-width: 540px) {
+  .text,
+  .back_icon {
+    font-size: 7.25vw;
+  }
+  .upload_container {
+    width: 84.54vw;
+    height: 84.54vw;
+  }
+  .picture_con {
+    font-size: 24.2vw;
+  }
+  .type_text {
+    font-size: 2.65vw;
+  }
+  .mssg_con,
+  .mssg_con_red {
+    width: 84.54vw;
+  }
+  .file_name,
+  .file_name {
+    font-size: 3.14vw;
+  }
+  .form_label {
+    font-size: 3.14vw;
+  }
 }

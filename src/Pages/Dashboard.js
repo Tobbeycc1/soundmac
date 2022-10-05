@@ -295,21 +295,25 @@ function Dashboard(props) {
                   {item.artisteName} {item.ft !== "" ? `ft ${item.ft}` : ""}{" "}
                 </p>
               </div>
-
-              <Popover isBordered disableShadow>
-                <Popover.Trigger>
-                  <Button auto flat>
-                    <GoKebabVertical />
-                  </Button>
-                </Popover.Trigger>
-                <Popover.Content>
-                  <Text css={{ p: "$10" }}>
-                    This is the content of the popover.
-                  </Text>
-                </Popover.Content>
-              </Popover>
+              <div className={classes.pop_over_con}>
+                <Popover isBordered disableShadow>
+                  <Popover.Trigger>
+                    <Button auto flat>
+                      <GoKebabVertical />
+                    </Button>
+                  </Popover.Trigger>
+                  <Popover.Content>
+                    <div>
+                      <p className={classes.popover_content}>
+                        no content from th endpoint yet
+                      </p>
+                    </div>
+                  </Popover.Content>
+                </Popover>
+              </div>
             </div>
           ))}
+          <br />
           <Link to={"/music_catalog"} className={classes.link_to_catalog}>
             more
           </Link>
@@ -339,7 +343,7 @@ function Dashboard(props) {
         </div>
 
         {/* upload song */}
-        <div>
+        <div className={classes.upload_con_con}>
           <div className={classes.upload_song_con} onClick={uploadSongFn}>
             <div className={classes.cloud_icon_con}>
               <RiMusicLine className={classes.cloud_icon} />

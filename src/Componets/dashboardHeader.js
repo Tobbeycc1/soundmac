@@ -18,6 +18,9 @@ function DashboardHeader(props) {
   // navigate
   const navigate = useNavigate();
 
+  // show mobile nav details
+  const [mobileNavDetails, showMobileNavDetails] = useState(false);
+
   return (
     <div className={classes.dashboardHeaderCon}>
       <p className={classes.logo}>SOUNDMAC</p>
@@ -62,11 +65,51 @@ function DashboardHeader(props) {
         </Tooltip>
       </div>
       <div className={classes.small_circle}></div>
-      <div className={classes.first_letter_Con}>
+      <div
+        className={classes.first_letter_Con}
+        onClick={() => showMobileNavDetails(!mobileNavDetails)}
+      >
         <p className={classes.first_letter}>
           {user !== null && user.first_name[0]}
         </p>{" "}
       </div>
+
+      {/* toggle for mobile */}
+      {mobileNavDetails && (
+        <div
+          className={`${classes.not_for_desk} animate__animated animate__swing`}
+        >
+          <Tooltip
+            onClick={() => navigate("/dashboard")}
+            content={"Dashboard"}
+            placement="bottom"
+          >
+            <div className={classes.icon_con_toggle}>
+              <MdDashboard className={classes.icon_toggle} />
+            </div>
+          </Tooltip>
+
+          <Tooltip
+            content={"Settings"}
+            placement="bottom"
+            style={{ margin: "0px 5px" }}
+          >
+            <div className={classes.icon_con_toggle}>
+              <AiFillSetting className={classes.icon_toggle} />
+            </div>
+          </Tooltip>
+
+          <Tooltip
+            content={"Log Out"}
+            placement="bottom"
+            style={{ margin: "0px 5px" }}
+          >
+            <div className={classes.icon_con_toggle} onClick={logOut}>
+              <RiLogoutBoxRFill className={classes.icon_toggle} />
+            </div>
+          </Tooltip>
+        </div>
+      )}
     </div>
   );
 }

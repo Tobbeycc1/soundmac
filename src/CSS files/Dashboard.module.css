@@ -143,6 +143,7 @@
   margin-left: 30px;
   font-weight: bold;
   font-size: 13px;
+  margin-top: 30px;
 }
 .link_to_catalog:hover {
   color: blue;
@@ -151,6 +152,8 @@
   margin-left: 30px;
   width: 35vw;
   /* background: red; */
+  display: flex;
+  align-items: center;
 }
 .item_song {
   text-transform: capitalize;
@@ -164,6 +167,16 @@
   display: inline-block;
   vertical-align: middle;
 }
+.pop_over_con {
+  display: inline-block;
+  margin-left: auto;
+  margin-right: 30px;
+}
+
+.popover_content {
+  padding: 20px;
+}
+
 @media screen and (max-width: 999px) {
   .Cover_Image,
   .src {
@@ -187,16 +200,39 @@
   .section2_con {
     display: block;
   }
-  .song_heading,
-  .link_to_catalog {
-    margin-left: 10px;
-  }
+
   .link_to_catalog {
     font-size: 13px;
   }
   .small_songs_con {
     width: 100vw;
-    margin: 0px 10px;
+  }
+  .pop_over_con {
+    display: inline-block;
+    margin-left: auto;
+    padding-right: 20px;
+  }
+  .upload_song_con {
+    width: 35vw;
+    display: inline-block;
+    padding: 10px;
+    margin-left: 30px;
+    margin-left: auto;
+  }
+  .upload_con_con {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .upload_song {
+    font-size: 13px;
+  }
+  .cloud_icon_con {
+    width: 50px;
+    height: 50px;
+  }
+  .cloud_icon {
+    font-size: 30px;
+    font-weight: 900;
   }
 }
 @media screen and (max-width: 540px) {
@@ -205,5 +241,19 @@
   }
   .modal_sub_con {
     width: 90vw;
+  }
+  .small_music_icon {
+    width: 8.45vw;
+    height: 8.45vw;
+  }
+  .link_to_catalog {
+    font-size: 3.14vw;
+  }
+  .upload_song {
+    font-size: 3.14vw;
+  }
+  .cloud_icon_con {
+    width: 8.45vw;
+    height: 8.45vw;
   }
 }

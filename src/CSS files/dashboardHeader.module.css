@@ -65,6 +65,13 @@
   position: relative;
   z-index: 2;
 }
+.Tooltip_Con_mobile {
+  display: none;
+}
+.not_for_desk {
+  display: none;
+}
+
 @media screen and (max-width: 999px) {
   .dashboardHeaderCon {
     padding: 20px 15px 0px 15px;
@@ -87,6 +94,21 @@
   .icon_con {
     display: none;
   }
+  .icon_con_toggle {
+    background: var(--purple);
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+    cursor: pointer;
+  }
+  .icon_toggle {
+    color: white;
+    font-size: 20px;
+  }
   .first_letter_Con {
     background: var(--purple);
     width: 50px;
@@ -98,6 +120,13 @@
     width: 20px;
     height: 20px;
     margin-right: -10px;
+  }
+  .not_for_desk {
+    display: block;
+    position: absolute;
+    left: 86vw;
+    z-index: 1000;
+    top: 110px;
   }
 }
 @media screen and (max-width: 540px) {

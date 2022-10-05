@@ -53,6 +53,18 @@ function UploadSongs(props) {
           </div>
         </div>
 
+        {/* for features  */}
+        <div className={classes.first_form_sub_con}>
+          <div className={classes.big_input_con}>
+            <label className={classes.form_label}> Featuring</label> <br />
+            <input
+              type={"text"}
+              className={classes.small_input}
+              placeholder="e.g Chukwuma Musa, Isong Ayodele"
+            />
+          </div>
+        </div>
+
         {/* for Copywright holder & date  */}
         <div className={classes.first_form_sub_con}>
           <div className={classes.small_input_con}>
