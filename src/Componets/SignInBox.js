@@ -1,4 +1,4 @@
-import { useState, useContext } from "react";
+import { useState, useContext, useEffect } from "react";
 import classes from "../CSS files/SignInBox.module.css";
 import { ImCancelCircle } from "react-icons/im";
 import { MdOutlineAttachEmail } from "react-icons/md";
@@ -11,14 +11,13 @@ import "animate.css";
 
 import "react-toastify/dist/ReactToastify.css";
 
-import { useEffect } from "react";
-import { Link } from "react-router-dom";
 import { Loading } from "@nextui-org/react";
+import { useNavigate } from "react-router-dom";
 
 function SignInBox(props) {
   const authContext = useContext(AuthContext);
 
-  const { loginUser, loading, errorMssg, loader } = authContext;
+  const { loginUser, loading, errorMssg, loader, user } = authContext;
 
   // console.log(isAuthenticated);
   const [userDetails, setUserDetails] = useState({
@@ -27,6 +26,8 @@ function SignInBox(props) {
   });
 
   const { email, password } = userDetails;
+
+  const navigate = useNavigate()
 
   const onChange = (e) => {
     setUserDetails((prev) => ({ ...prev, [e.target.name]: e.target.value }));
@@ -66,10 +67,14 @@ function SignInBox(props) {
       };
       loginUser(user);
       console.log(user);
-      loader();
     }
   };
-  // console.log(password.length);
+
+  useEffect(() => {
+    user !== null && navigate('/dashboard')
+    //eslint-disable-next-line
+  }, [user]);
+
   return (
     <div>
       <ToastContainer
@@ -100,7 +105,7 @@ function SignInBox(props) {
             Welcome to <span className={classes.soundmac}>SOUNDMAC</span>
           </p>
 
-          <form>
+          <form onSubmit={onSubmit}>
             <div className={classes.formCon}>
               <span className={classes.label}>
                 <MdOutlineAttachEmail />
@@ -142,8 +147,7 @@ function SignInBox(props) {
                 className={classes.signInCon}
                 onClick={onSubmit}
               >
-                {" "}
-                SIgn In
+                Sign In
               </button>
             )}
 

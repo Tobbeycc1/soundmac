@@ -1,4 +1,4 @@
-import { useReducer, useEffect } from "react";
+import { useReducer, useEffect, useState } from "react";
 import {
   AUTH_FAIL,
   GET_USER,
@@ -10,10 +10,8 @@ import {
 import AuthContext from "./authContext";
 import authReducer from "./authReducer";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
-import { useState } from "react";
 
-const URL = process.env.REACT_APP_AUTH_URL;
+const URL = process.env.REACT_APP_SERVER_URL;
 
 const AuthState = ({ children }) => {
   // initialstate
@@ -72,7 +70,9 @@ const AuthState = ({ children }) => {
 
     const body = JSON.stringify(userDetails);
 
+    loader(true)
     try {
+
       const res = await axios.post(`${URL}/api/auth`, body, config);
 
       const data = res.data;
@@ -84,8 +84,12 @@ const AuthState = ({ children }) => {
 
       localStorage.setItem("auth-token", data.token);
 
+      setTimeout(() => loader(false), 5000)
+
       getUser(); // get user
     } catch (err) {
+      loader(false)
+
       console.log(err.response.data.errors[0].msg);
       setErrorMssg(err.response.data.errors[0].msg);
 
@@ -97,8 +101,6 @@ const AuthState = ({ children }) => {
     }
   };
 
-  const navigate = useNavigate();
-  console.log(state.isAuthenticated);
   // get user
   const getUser = async () => {
     const config = {
@@ -124,24 +126,46 @@ const AuthState = ({ children }) => {
   };
 
   // log out
-  const logOut = async (userDetails) => {
-    setErrorMssg("");
+  const logOut = async () => {
     dispatch({
       type: LOGOUT,
     });
   };
-  // set loader
-  const loader = async (userDetails) => {
-    console.log("loader");
 
+  // set loader
+  const loader = async (val) => {
+    console.log(val)
     dispatch({
       type: SET_LOADER,
+      payload: val
     });
   };
+
+  // create account type
+  const createAccount = async (artist_name) => {
+
+    const config = {
+      headers: {
+        'Content-Type': 'application/json',
+        "x-auth-token": localStorage.getItem("auth-token"),
+      }
+    }
+
+    const body = JSON.stringify(artist_name);
+
+    try {
+      await axios.post(`${URL}/artist/create`, body, config);
+      getUser();
+    } catch (err) {
+      // dispatch err
+      const error = err.response.data.errors;
+      console.log(error);
+    }
+  }
+
   useEffect(() => {
     localStorage.getItem("auth-token") && getUser();
-    state.isAuthenticated === false ? navigate("/") : navigate("/dashboard");
-  }, [state.isAuthenticated]);
+  }, []);
 
   return (
     <AuthContext.Provider
@@ -153,6 +177,7 @@ const AuthState = ({ children }) => {
         loginUser,
         getUser,
         logOut,
+        createAccount,
         loader,
         errorMssg,
         setErrorMssg,

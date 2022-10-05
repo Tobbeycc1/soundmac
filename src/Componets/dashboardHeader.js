@@ -1,5 +1,4 @@
-import { useState } from "react";
-import { useContext, useEffect } from "react";
+import { useState, useContext } from "react";
 import AuthContext from "../contexts/auth/authContext";
 import classes from "../CSS files/dashboardHeader.module.css";
 import { MdDashboard } from "react-icons/md";
@@ -8,7 +7,7 @@ import { RiLogoutBoxRFill } from "react-icons/ri";
 import { Tooltip, Button } from "@nextui-org/react";
 import { useNavigate } from "react-router-dom";
 
-function DashboardHeader(props) {
+function DashboardHeader() {
   //   get user data function
   const { user } = useContext(AuthContext);
   const { logOut } = useContext(AuthContext);
@@ -17,6 +16,11 @@ function DashboardHeader(props) {
 
   // navigate
   const navigate = useNavigate();
+
+  const logOutFunc = () => {
+    logOut();
+    navigate('/')
+  }
 
   // show mobile nav details
   const [mobileNavDetails, showMobileNavDetails] = useState(false);
@@ -59,7 +63,7 @@ function DashboardHeader(props) {
           placement="bottom"
           style={{ margin: "0px 5px" }}
         >
-          <div className={classes.icon_con} onClick={logOut}>
+          <div className={classes.icon_con} onClick={logOutFunc}>
             <RiLogoutBoxRFill className={classes.icon} />
           </div>
         </Tooltip>

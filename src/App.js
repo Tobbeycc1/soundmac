@@ -14,6 +14,7 @@ import MediaQuery from "react-responsive";
 import TabletHeader from "./Componets/tabletHeader";
 import Upload from "./Upload";
 import UploadSongs from "./Componets/UploadSong";
+import PrivateRoute from "./routing/PrivateRoute";
 
 function App() {
   return (
@@ -36,7 +37,7 @@ function App() {
         />
 
         <Route
-          path="/musicDistribution"
+          path="/distribution"
           element={
             <div className={classes.musicDistributionLinkCon}>
               <MediaQuery minWidth={1000}>
@@ -103,23 +104,27 @@ function App() {
         <Route
           path="/dashboard"
           element={
-            <div className={classes.dashboard}>
-              {" "}
-              <DashboardHeader /> <Dashboard />{" "}
-            </div>
+            <PrivateRoute>
+              <div className={classes.dashboard}>
+                <DashboardHeader /> <Dashboard />{" "}
+              </div>
+            </PrivateRoute>
           }
         />
         <Route
-          path="/uploadmusic"
+          path="/upload/single"
           element={
-            <div className={classes.dashboard}>
-              {" "}
-              <DashboardHeader /> <UploadSongs />{" "}
-            </div>
+            <PrivateRoute>
+              <div className={classes.dashboard}>
+                {" "}
+                <DashboardHeader /> <UploadSongs />{" "}
+              </div>
+            </PrivateRoute>
           }
         />
 
         <Route path="playground" element={<Upload />} />
+
       </Routes>
     </div>
   );
