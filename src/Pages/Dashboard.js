@@ -127,8 +127,8 @@ function Dashboard(props) {
   const navigate = useNavigate();
 
   const uploadSongFn = () => {
-    console.log("upload song");
-    navigate("/uploadmusic");
+    // console.log("upload song");
+    navigate("/upload/single");
   };
   useEffect(() => {
     // handler();
