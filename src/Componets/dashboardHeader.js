@@ -19,8 +19,8 @@ function DashboardHeader() {
 
   const logOutFunc = () => {
     logOut();
-    navigate('/')
-  }
+    navigate("/");
+  };
 
   // show mobile nav details
   const [mobileNavDetails, showMobileNavDetails] = useState(false);
@@ -118,7 +118,7 @@ function DashboardHeader() {
               showMobileNavDetails(false);
             }}
           >
-            <div className={classes.icon_con_toggle} onClick={logOut}>
+            <div className={classes.icon_con_toggle} onClick={logOutFunc}>
               <RiLogoutBoxRFill className={classes.icon_toggle} />
             </div>
           </Tooltip>
