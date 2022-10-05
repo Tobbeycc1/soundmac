@@ -13,15 +13,12 @@ import "react-toastify/dist/ReactToastify.css";
 
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
+import { Loading } from "@nextui-org/react";
 
 function SignInBox(props) {
   const authContext = useContext(AuthContext);
 
-  const { loginUser } = authContext;
-
-  const { loading } = authContext;
-
-  const { errorMssg } = authContext;
+  const { loginUser, loading, errorMssg, loader } = authContext;
 
   // console.log(isAuthenticated);
   const [userDetails, setUserDetails] = useState({
@@ -48,8 +45,8 @@ function SignInBox(props) {
         progress: undefined,
       });
     }
-    if (password === "") {
-      toast.error("Password  can't be empty !", {
+    if (password.length < 8) {
+      toast.error("Password should be more than 7 characters !", {
         position: "top-right",
         autoClose: 5000,
         hideProgressBar: true,
@@ -69,9 +66,10 @@ function SignInBox(props) {
       };
       loginUser(user);
       console.log(user);
+      loader();
     }
   };
-
+  // console.log(password.length);
   return (
     <div>
       <ToastContainer
@@ -134,7 +132,10 @@ function SignInBox(props) {
             </div>
 
             {loading === true ? (
-              <button className={classes.signInCon}> SIgning In...</button>
+              <button className={classes.signInCon}>
+                {" "}
+                <Loading type="points-opacity" />
+              </button>
             ) : (
               <button
                 type="submit"

@@ -22,107 +22,109 @@ function UploadSongs(props) {
 
   return (
     <div>
-      <span onClick={backBtn} className={classes.back_icon}>
-        <IoReturnDownBack />
-      </span>{" "}
-      <h2 className={classes.text}>Upload Songs</h2>
-      <div className={classes.file_uploader_con}>
-        <div className={classes.upload_group_con}>
-          <UploadImageComp />
-          <UploadAudioComp />
+      <div>
+        <span onClick={backBtn} className={classes.back_icon}>
+          <IoReturnDownBack />
+        </span>{" "}
+        <h2 className={classes.text}>Upload Songs</h2>
+      </div>
+      <div className={classes.upload_group_con}>
+        <UploadImageComp />
+        <UploadAudioComp />
+      </div>
+      <div className={classes.form_con}>
+        {/* for Artiste name & song title  */}
+        <div className={classes.first_form_sub_con}>
+          <div className={classes.small_input_con}>
+            <label className={classes.form_label}>Artiste name</label> <br />
+            <input
+              type={"text"}
+              className={classes.small_input}
+              placeholder="enter ariste's name"
+            />
+          </div>
+          <div className={classes.small_input_con_B}>
+            <label className={classes.form_label}>Song title</label> <br />
+            <input
+              type={"text"}
+              placeholder="enter song's title"
+              className={classes.small_input}
+            />
+          </div>
         </div>
 
-        <div className={classes.form_group}>
-          {/* artiste name  */}
-          <div className={classes.input_con_con}>
-            <label className={classes.label}>Artiste Name</label>
-            <div className={classes.input_con}>
-              <input
-                type={"text"}
-                placeholder={"enter artiste name"}
-                className={classes.input_form}
-              />
-            </div>
+        {/* for Copywright holder & date  */}
+        <div className={classes.first_form_sub_con}>
+          <div className={classes.small_input_con}>
+            <label className={classes.form_label}>Copywright holder</label>{" "}
+            <br />
+            <input
+              type={"text"}
+              className={classes.small_input}
+              placeholder="enter copywright holder's name"
+            />
           </div>
-          {/* Song title */}
-          <div className={classes.input_con_con}>
-            <label className={classes.label}>Song Title</label>
-            <div className={classes.input_con}>
-              <input
-                type={"text"}
-                placeholder={"enter song title"}
-                className={classes.input_form}
-              />
-            </div>
+          <div className={classes.small_input_con_B}>
+            <label className={classes.form_label}>Copywright date</label> <br />
+            <input
+              type={"date"}
+              placeholder="enter song's title"
+              className={classes.small_input}
+            />
           </div>
-          {/* Copywright holder  */}
-          <div className={classes.input_con_con}>
-            <label className={classes.label}>Copywright Holder</label>
-            <div className={classes.input_con}>
-              <input
-                type={"text"}
-                placeholder={"enter copywright holder"}
-                className={classes.input_form}
-              />
-            </div>
-          </div>
-          {/* Copywright Year */}
-          <div className={classes.input_con_con}>
-            <label className={classes.label}> Copywright Year</label>
-            <div className={classes.input_con}>
-              <input
-                type={"date"}
-                placeholder={"pick date"}
-                className={classes.input_form_date}
-              />
-            </div>
+        </div>
+
+        {/* for language, Explicit, date  */}
+        <div className={classes.first_form_sub_con}>
+          <div className={classes.small_input_con}>
+            <label className={classes.form_label}> Language</label> <br />
+            <input
+              type={"text"}
+              className={classes.small_input}
+              placeholder="e.g English, Spanish, Yoruba"
+            />
           </div>
 
-          {/* Release date */}
-          <div className={classes.input_con_con}>
-            <label className={classes.label}>Release Date</label>
-            <div className={classes.input_con}>
-              <input
-                type={"date"}
-                placeholder={"pick date"}
-                className={classes.input_form_date}
-              />
-            </div>
-          </div>
-          {/* Language  */}
-          <div className={classes.input_con_con}>
-            <label className={classes.label}>Language</label>
-            <div className={classes.input_con}>
-              <input
-                type={"text"}
-                placeholder={"enter language"}
-                className={classes.input_form}
-              />
-            </div>
-          </div>
-          {/* explicit */}
-          <div className={classes.input_con_con}>
-            <label className={classes.label}>Explicit ?</label>
-            <div className={classes.input_con}>
-              <select className={classes.input_form}>
-                <option>yes</option>
-                <option>no</option>
-              </select>
-            </div>
+          {/* Explcit & release date */}
+          <div className={classes.smaller_input_con}>
+            <label className={classes.form_label}>Explicit?</label> <br />
+            <select className={classes.small_input}>
+              <option>Yes</option>
+              <option>No</option>
+            </select>
           </div>
 
-          {/* credit  */}
-          <div className={classes.input_con_con}>
-            <label className={classes.label}>Credit</label>
-            <div className={classes.input_con}>
-              <input
-                type={"text"}
-                placeholder={
-                  "seperate each individual's name with a comma ( , )"
-                }
-                className={classes.input_form_credit}
-              />
-            </div>
+          <div className={classes.smaller_input_con_B}>
+            <label className={classes.form_label}>Release date</label> <br />
+            <input
+              type={"date"}
+              placeholder="enter song's title"
+              className={classes.small_input}
+            />
+          </div>
+        </div>
+
+        {/* for producers  */}
+        <div className={classes.first_form_sub_con}>
+          <div className={classes.big_input_con}>
+            <label className={classes.form_label}>Producer(s) </label> <br />
+            <input
+              type={"text"}
+              className={classes.small_input}
+              placeholder="e.g Chukwuma Musa, Isong Ayodele"
+            />
+          </div>
+        </div>
+
+        {/* for Song writers  */}
+        <div className={classes.first_form_sub_con}>
+          <div className={classes.big_input_con}>
+            <label className={classes.form_label}>Songwriter(s) </label> <br />
+            <input
+              type={"text"}
+              className={classes.small_input}
+              placeholder="e.g Chukwuma Musa, Isong Ayodele"
+            />
           </div>
         </div>
       </div>
@@ -158,7 +160,7 @@ const UploadImageComp = () => {
     </li>
   ));
   return (
-    <div>
+    <div className={classes.Outer_con}>
       {/* Image upload button */}
       <div>
         <div className={classes.upload_container}>
@@ -225,7 +227,7 @@ const UploadAudioComp = () => {
     </li>
   ));
   return (
-    <div>
+    <div className={classes.Outer_con}>
       {/* audio upload button */}
       <div>
         <div className={classes.upload_container}>

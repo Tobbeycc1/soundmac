@@ -1,3 +1,9 @@
+.dashboard_con {
+  max-width: 100%;
+  overflow-x: hidden;
+
+  /* background: red; */
+}
 .slide_con {
   background: white;
   /* height: 45vh; */
@@ -13,11 +19,12 @@
   padding: 0px 30px;
 }
 .Cover_Image {
-  width: 400px;
+  width: 29.3vw;
+  padding: 0px 5px;
 }
 .src {
-  width: 400px;
-  height: 250px;
+  width: 29.3vw;
+  height: 29.3vw;
   object-fit: cover;
   /* background: red; */
   border-radius: 20px;
@@ -61,10 +68,7 @@
   border-radius: 20px;
   text-align: center;
 }
-.dashboard_con {
-  width: 100vw;
-  overflow-x: hidden;
-}
+
 .section2_con {
   /* background: red; */
   display: flex;
@@ -74,13 +78,13 @@
   margin-right: auto;
 }
 .upload_song_con {
-  width: 250px;
-  height: 22vh;
+  width: 18.3vw;
   background: var(--purple);
   border-radius: 15px;
   color: white;
-  padding: 10px 20px;
+  padding: 20px 20px;
   text-align: center;
+  margin: 10px;
   cursor: pointer;
   margin-right: 30px;
 }
@@ -91,7 +95,8 @@
 }
 .upload_song {
   font-weight: bold;
-  text-align: left;
+  text-align: center;
+  font-size: 0.9vw;
 }
 .cloud_icon_con {
   display: flex;
@@ -101,24 +106,17 @@
   border-radius: 100%;
   background: white;
   border: 2px solid var(--purple);
-  width: 60px;
-  height: 60px;
+  width: 4.4vw;
+  height: 4.4vw;
   margin: 10px auto;
 }
 .cloud_icon {
   color: rgb(238, 0, 147);
   color: var(--dashPink);
-  font-size: 30px;
+  font-size: 2.2vw;
   font-weight: 900;
 }
-.supported_format {
-  font-size: 11px;
-}
-/* .drop_drop_down_con {
-  text-align: center;
-  display: flex;
-  justify-content: center;
-} */
+
 .input_artiste_name_field {
   outline: none;
   border: 2px solid var(--purple);
@@ -126,4 +124,86 @@
   width: 100%;
   border-radius: 10px;
   padding: 10px 20px;
+}
+.small_music_icon {
+  width: 2.56vw;
+  height: 2.56vw;
+  margin: 10px 5px 5px 0px;
+  border-radius: 5px;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.song_heading {
+  margin-left: 30px;
+  font-weight: bold;
+  color: var(--dashPink);
+}
+.link_to_catalog {
+  margin-left: 30px;
+  font-weight: bold;
+  font-size: 13px;
+}
+.link_to_catalog:hover {
+  color: blue;
+}
+.small_songs_con {
+  margin-left: 30px;
+  width: 35vw;
+  /* background: red; */
+}
+.item_song {
+  text-transform: capitalize;
+  font-weight: bold;
+}
+.item_artiste_name {
+  text-transform: capitalize;
+  font-size: 11px;
+}
+.items_con {
+  display: inline-block;
+  vertical-align: middle;
+}
+@media screen and (max-width: 999px) {
+  .Cover_Image,
+  .src {
+    width: 100%;
+    height: 100vw;
+    padding: 0px 5px;
+  }
+  .slide_con {
+    padding: 15px 5px;
+  }
+  .slide_con_con {
+    padding: 0px 10px;
+  }
+  .modal_sub_con {
+    width: 80vw;
+  }
+  .small_music_icon {
+    width: 35px;
+    height: 35px;
+  }
+  .section2_con {
+    display: block;
+  }
+  .song_heading,
+  .link_to_catalog {
+    margin-left: 10px;
+  }
+  .link_to_catalog {
+    font-size: 13px;
+  }
+  .small_songs_con {
+    width: 100vw;
+    margin: 0px 10px;
+  }
+}
+@media screen and (max-width: 540px) {
+  .slide_con_con {
+    padding: 0px 10px;
+  }
+  .modal_sub_con {
+    width: 90vw;
+  }
 }

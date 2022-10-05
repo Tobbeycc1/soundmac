@@ -159,6 +159,18 @@ input::placeholder {
 .formCon:hover {
   border: 2px solid blue;
 }
+
+.modal {
+  width: 100vw;
+  height: 100vh;
+  background: red;
+  position: absolute;
+  z-index: 5000;
+  left: 0;
+}
+.modal_con {
+  position: absolute;
+}
 @media screen and (max-width: 999px) {
   .SignInBoxDiv {
     width: 80vw;

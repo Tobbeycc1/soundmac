@@ -3,17 +3,7 @@ import { Splide, SplideSlide } from "@splidejs/react-splide";
 import { AutoScroll } from "@splidejs/splide-extension-auto-scroll";
 import "@splidejs/splide/css";
 import { ToastContainer, toast } from "react-toastify";
-import {
-  Modal,
-  Input,
-  Row,
-  Checkbox,
-  Button,
-  Text,
-  Grid,
-  Dropdown,
-  Radio,
-} from "@nextui-org/react";
+import { Dropdown, Popover, Text, Button } from "@nextui-org/react";
 import { useState } from "react";
 import { useEffect } from "react";
 import { useMemo } from "react";
@@ -21,43 +11,59 @@ import { useContext } from "react";
 import AccountTypeContext from "../contexts/account type/accountTypeContext";
 import { RiNeteaseCloudMusicLine } from "react-icons/ri";
 import { RiMusicLine } from "react-icons/ri";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import MediaQuery from "react-responsive";
+import { GoKebabVertical } from "react-icons/go";
 
 const dummyData = [
   {
     id: 1,
+    artisteName: "Tobbey",
     song: "good girl",
     src: "https://cdn8.openculture.com/2018/02/26214611/Arlo-safe-e1519715317729.jpg",
+    ft: "wizkid",
   },
   {
     id: 2,
-    song: "good girl",
+    artisteName: "Tobbey",
+    song: "Gbese",
     src: "https://oscarmini.com/wp-content/uploads/2014/08/michaeljackson_coverart.jpg",
+    ft: "Asake, burna boy",
   },
   {
     id: 3,
-    song: "good girl",
+    artisteName: "Tobbey",
+    song: "Essence",
     src: "https://graphicriver.img.customer.envatousercontent.com/files/383062766/music-albumcover-templates-bundle78-preview.jpg?auto=compress%2Cformat&fit=crop&crop=top&w=590&h=590&s=17318da830a8e0cad5e038de293bced3",
+    ft: "",
   },
   {
     id: 4,
-    song: "good girl",
+    artisteName: "Tobbey",
+    song: "Daddy yo",
     src: "https://www.bellanaija.com/wp-content/uploads/2018/09/rasaking-720x720.jpg",
+    ft: "",
   },
   {
     id: 5,
-    song: "good girl",
+    artisteName: "Tobbey",
+    song: "Holla at your boy ",
     src: "https://i.pinimg.com/736x/dc/ae/9a/dcae9acc196c7de7fdb4214b01de84ac.jpg",
+    ft: "",
   },
   {
     id: 6,
-    song: "good girl",
+    artisteName: "Tobbey",
+    song: "soweto baby",
     src: "https://d1csarkz8obe9u.cloudfront.net/posterpreviews/album-cover-art-template-design-6d5b5d8df1dbe0c1fcaa4c1ba16a86a9_screen.jpg?ts=1635384690",
+    ft: "",
   },
   {
     id: 7,
-    song: "good girl",
+    artisteName: "Tobbey",
+    song: "Grace",
     src: "https://d1csarkz8obe9u.cloudfront.net/posterpreviews/album-cover-art-template-design-6d5b5d8df1dbe0c1fcaa4c1ba16a86a9_screen.jpg?ts=1635384690",
+    ft: "chris brown",
   },
 ];
 
@@ -212,57 +218,142 @@ function Dashboard(props) {
         </div>
       )}
 
-      <div className={classes.slide_con_con}>
-        <div className={classes.slide_con}>
-          <Splide
-            options={{
-              rewind: true,
-              type: "loop",
-              padding: "34%",
-              gap: "20px",
-              pagination: false,
-              autoScroll: {
-                pauseOnHover: false,
-                pauseOnFocus: false,
-                rewind: false,
-                speed: 1,
-              },
-              focus: "center",
-            }}
-            extensions={{ AutoScroll }}
-          >
-            {firstFive.map((item, index) => (
-              <SplideSlide>
-                <div className={classes.Cover_Image}>
-                  <img src={item.src} className={classes.src} alt={item.id} />
-                </div>
-              </SplideSlide>
-            ))}
-          </Splide>
+      <MediaQuery minWidth={1000}>
+        <div className={classes.slide_con_con}>
+          <div className={classes.slide_con}>
+            <Splide
+              options={{
+                rewind: true,
+                type: "loop",
+                padding: "34%",
+                gap: "20px",
+                pagination: false,
+                autoScroll: {
+                  pauseOnHover: false,
+                  pauseOnFocus: false,
+                  rewind: false,
+                  speed: 1,
+                },
+                focus: "center",
+              }}
+              extensions={{ AutoScroll }}
+            >
+              {firstFive.map((item, index) => (
+                <SplideSlide>
+                  <div className={classes.Cover_Image}>
+                    <img src={item.src} className={classes.src} alt={item.id} />
+                  </div>
+                </SplideSlide>
+              ))}
+            </Splide>
+          </div>
         </div>
-      </div>
+      </MediaQuery>
+
+      {/* for screen sizes lower tha 750px <<<<< */}
+      <MediaQuery maxWidth={999}>
+        <div className={classes.slide_con_con}>
+          <div className={classes.slide_con}>
+            <Splide
+              options={{
+                rewind: true,
+                type: "loop",
+                // gap: "20px",
+                perMove: 1,
+                pagination: false,
+                arrows: false,
+                autoplay: true,
+              }}
+            >
+              {firstFive.map((item, index) => (
+                <SplideSlide>
+                  <div className={classes.Cover_Image}>
+                    <img src={item.src} className={classes.src} alt={item.id} />
+                  </div>
+                </SplideSlide>
+              ))}
+            </Splide>
+          </div>
+        </div>
+      </MediaQuery>
 
       {/* song streams, music, visit & Upload song  */}
       <div className={classes.section2_con}>
-        <div className={classes.todays_stream}></div>
+        <div className={classes.todays_stream_A}>
+          <p className={classes.song_heading}>Songs</p>
+          {firstFive.map((item, index) => (
+            <div className={classes.small_songs_con}>
+              <img
+                src={item.src}
+                alt={item.title}
+                className={classes.small_music_icon}
+              />
 
-        {/* upload song */}
+              <div className={classes.items_con}>
+                <p className={classes.item_song}>{item.song}</p>
+                <p className={classes.item_artiste_name}>
+                  {item.artisteName} {item.ft !== "" ? `ft ${item.ft}` : ""}{" "}
+                </p>
+              </div>
 
-        <div className={classes.upload_song_con} onClick={uploadSongFn}>
-          <p className={classes.upload_song}> Upload Song</p>
-          <div className={classes.cloud_icon_con}>
-            <RiMusicLine className={classes.cloud_icon} />
-          </div>
-          <p className={classes.supported_format}> Supported format: mp3</p>
+              <Popover isBordered disableShadow>
+                <Popover.Trigger>
+                  <Button auto flat>
+                    <GoKebabVertical />
+                  </Button>
+                </Popover.Trigger>
+                <Popover.Content>
+                  <Text css={{ p: "$10" }}>
+                    This is the content of the popover.
+                  </Text>
+                </Popover.Content>
+              </Popover>
+            </div>
+          ))}
+          <Link to={"/music_catalog"} className={classes.link_to_catalog}>
+            more
+          </Link>
         </div>
 
-        {/* upload album */}
-        <div className={classes.upload_song_con}>
-          <p className={classes.upload_song}> Upload Album</p>
-          <div className={classes.cloud_icon_con}>
-            <RiNeteaseCloudMusicLine className={classes.cloud_icon} />
+        <div className={classes.todays_stream}>
+          <p className={classes.song_heading}>Albums</p>
+          {firstFive.map((item, index) => (
+            <div className={classes.small_songs_con}>
+              <img
+                src={item.src}
+                alt={item.title}
+                className={classes.small_music_icon}
+              />
+
+              <div className={classes.items_con}>
+                <p className={classes.item_song}>{item.song}</p>
+                <p className={classes.item_artiste_name}>
+                  {item.artisteName} {item.ft !== "" ? `ft ${item.ft}` : ""}{" "}
+                </p>
+              </div>
+            </div>
+          ))}
+          <Link to={"/album_catalog"} className={classes.link_to_catalog}>
+            more
+          </Link>
+        </div>
+
+        {/* upload song */}
+        <div>
+          <div className={classes.upload_song_con} onClick={uploadSongFn}>
+            <div className={classes.cloud_icon_con}>
+              <RiMusicLine className={classes.cloud_icon} />
+            </div>
+            <p className={classes.upload_song}>Upload Songs</p>
           </div>
-          <p className={classes.supported_format}> Supported format: zip</p>
+
+          {/* upload album */}
+          <div className={classes.upload_song_con}>
+            <div className={classes.cloud_icon_con}>
+              <RiNeteaseCloudMusicLine className={classes.cloud_icon} />
+            </div>
+            <p className={classes.upload_song}>Upload Album</p>
+          </div>
         </div>
       </div>
     </div>

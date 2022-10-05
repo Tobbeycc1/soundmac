@@ -39,6 +39,11 @@ const authReducer = (state, action) => {
         user: null,
         loading: false,
       };
+    case SET_LOADER:
+      return {
+        ...state,
+        loading: true,
+      };
     default:
       return state;
   }

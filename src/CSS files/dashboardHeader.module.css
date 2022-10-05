@@ -2,11 +2,12 @@
   display: flex;
   align-items: center;
   /* height: 50px; */
-  padding: 30px 30px;
+  padding: 20px 30px 0px 30px;
 }
 .logo {
   margin-right: auto;
   font-weight: bold;
+  font-size: 1.5vw;
 }
 .welcome {
   background: white;
@@ -15,7 +16,7 @@
   text-align: center;
   margin-right: auto;
   font-weight: 500;
-  font-size: 20px;
+  font-size: 1.5vw;
   border-radius: 10px;
   /* box-shadow: 0px 5px 15px -4px rgba(10, 10, 10, 0.71);
   -webkit-box-shadow: 0px 5px 15px -4px rgba(10, 10, 10, 0.71);
@@ -23,12 +24,14 @@
 }
 .first_name {
   text-transform: uppercase;
+  color: var(--dashPink);
+  font-weight: bold;
 }
 .icon_con,
 .first_letter_Con {
   background: var(--purple);
-  width: 40px;
-  height: 40px;
+  width: 2.93vw;
+  height: 2.93vw;
   border-radius: 100%;
   display: flex;
   justify-content: center;
@@ -36,7 +39,7 @@
   cursor: pointer;
 }
 .icon {
-  font-size: 20px;
+  font-size: 1.5vw;
   color: white;
 }
 .icon_con:hover {
@@ -45,7 +48,7 @@
 }
 .Tooltip_Con {
   display: flex;
-  margin-right: 30px;
+  margin-right: 2.2vw;
 }
 
 .first_letter {
@@ -54,11 +57,73 @@
   font-weight: bold;
 }
 .small_circle {
-  width: 20px;
-  height: 20px;
+  width: 1.5vw;
+  height: 1.5vw;
   border-radius: 100%;
   background: var(--dashPink);
-  margin-right: -10px;
+  margin-right: -0.73vw;
   position: relative;
   z-index: 2;
+}
+@media screen and (max-width: 999px) {
+  .dashboardHeaderCon {
+    padding: 20px 15px 0px 15px;
+    margin: 30px 0px 0px 0px;
+  }
+  .logo {
+    display: none;
+  }
+  .welcome {
+    display: block;
+    line-height: 25px;
+    text-align: left;
+    font-size: 20px;
+    font-weight: bold;
+  }
+  .first_name {
+    font-size: 30px;
+    display: block;
+  }
+  .icon_con {
+    display: none;
+  }
+  .first_letter_Con {
+    background: var(--purple);
+    width: 50px;
+    height: 50px;
+    font-size: 30px;
+    font-weight: bold;
+  }
+  .small_circle {
+    width: 20px;
+    height: 20px;
+    margin-right: -10px;
+  }
+}
+@media screen and (max-width: 540px) {
+  .dashboardHeaderCon {
+    padding: 10px 10px 0px 10px;
+  }
+  .logo {
+    display: none;
+  }
+  .welcome {
+    display: block;
+    line-height: 6.04vw;
+    font-size: 4.83vw;
+  }
+  .first_name {
+    font-size: 7.25vw;
+  }
+
+  .first_letter_Con {
+    width: 12.08vw;
+    height: 12.08vw;
+    font-size: 7.25vw;
+  }
+  .small_circle {
+    width: 4.83vw;
+    height: 4.83vw;
+    margin-right: -2.42vw;
+  }
 }

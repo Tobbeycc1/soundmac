@@ -5,6 +5,7 @@ import {
   LOGIN_USER,
   LOGOUT,
   REGISTER_USER,
+  SET_LOADER,
 } from "../types";
 import AuthContext from "./authContext";
 import authReducer from "./authReducer";
@@ -129,6 +130,14 @@ const AuthState = ({ children }) => {
       type: LOGOUT,
     });
   };
+  // set loader
+  const loader = async (userDetails) => {
+    console.log("loader");
+
+    dispatch({
+      type: SET_LOADER,
+    });
+  };
   useEffect(() => {
     localStorage.getItem("auth-token") && getUser();
     state.isAuthenticated === false ? navigate("/") : navigate("/dashboard");
@@ -144,6 +153,7 @@ const AuthState = ({ children }) => {
         loginUser,
         getUser,
         logOut,
+        loader,
         errorMssg,
         setErrorMssg,
       }}
