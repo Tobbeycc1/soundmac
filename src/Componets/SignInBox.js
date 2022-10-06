@@ -27,7 +27,7 @@ function SignInBox(props) {
 
   const { email, password } = userDetails;
 
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   const onChange = (e) => {
     setUserDetails((prev) => ({ ...prev, [e.target.name]: e.target.value }));
@@ -71,7 +71,7 @@ function SignInBox(props) {
   };
 
   useEffect(() => {
-    user !== null && navigate('/dashboard')
+    user !== null && navigate("/dashboard");
     //eslint-disable-next-line
   }, [user]);
 

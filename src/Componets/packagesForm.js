@@ -6,249 +6,72 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import "../CSS files/datePicker.css";
 import ModalBackground from "./ModalBackground";
+import { useEffect } from "react";
 
 function PackagesForm(props) {
-  const checkBoxA = useRef();
-  const checkBoxB = useRef();
-  const checkBoxC = useRef();
-  const checkBoxD = useRef();
-  const checkBoxE = useRef();
-
-  const [newSingleSummary, setNewSingleSummary] = useState(false);
-  const [beforeReleaseSummary, setBeforeReleaseSummary] = useState(false);
-  const [musicVideoOutSummary, setMusicVideoOutSummary] = useState(false);
-  const [youtubeAdsSummary, setYoutubeAdsSummary] = useState(false);
-  const [spotifyAdsSummary, setspotifyAdsSummary] = useState(false);
-
-  const [newSinglePrice, setNewSinglePrice] = useState(false);
-  const [beforeReleasePrice, setBeforeReleasePrice] = useState(false);
-  const [musicVideoOutPrice, setMusicVideoOutPrice] = useState(false);
-  const [youtubeAdsPrice, setYoutubeAdsPrice] = useState(false);
-  const [spotifyAdsPrice, setspotifyAdsPrice] = useState(false);
-
-  // Terms and conditions variables
-  const [TC, newTC] = useState(false);
-
-  //   handle change of full name
-  const [fullName, setFullName] = useState(null);
-
-  //   handle change of artist name
-  const [artisteName, setArtisteName] = useState(null);
-
-  //   handle change of release name
-  const [releaseName, setReleaseName] = useState(null);
-
   //   handle change of date picker name
   const [startDate, setStartDate] = useState(new Date());
 
-  //   handle change of emaill
-  const [email, setEmail] = useState(null);
+  // user details
+  const [userDetails, setUserDetails] = useState({
+    full_name: "",
+    artist_name: "",
+    release_name: "",
+    email: "",
+    release_date: "",
+    facebook_url: "",
+    instagram_url: "",
+  });
 
-  //   handle change of facebook url
-  const [fbURl, setFbUrl] = useState(null);
+  // package details
+  const [checkbox, setCheckbox] = useState({
+    new_single_out: "",
+    before_release_date: "",
+    music_video_and_pre_save: "",
+    youtube_ads: "",
+    spotify_ads: "",
+  });
 
-  //   handle change of instagram url
-  const [igURl, setIgUrl] = useState(null);
+  const {
+    full_name,
+    artist_name,
+    release_name,
+    email,
+    release_date,
+    facebook_url,
+    instagram_url,
+  } = userDetails;
 
-  //   handle submit error of full name
-  const [fullNameErr, setFullNameErr] = useState(false);
+  const {
+    new_single_out,
+    before_release_date,
+    music_video_and_pre_save,
+    youtube_ads,
+    spotify_ads,
+  } = checkbox;
 
-  //   handle submit error of Artiste name
-  const [artisteNameErr, setArtisteNameErr] = useState(false);
-
-  //   handle submit error of release name
-  const [releaseNameErr, setReleaseNameErr] = useState(false);
-
-  //   handle submit error of email address
-  const [emailErr, setEmailErr] = useState(false);
-
-  //   handle submit error of ig url
-  const [igUrlErr, setIgUrlErr] = useState(false);
-
-  //   handle submit error of facebook url
-  const [fbUrlErr, setFbUrlErr] = useState(false);
-
-  //   handle no checkbox is clicked error
-  const [noChBoxClicked, setChBoxClicked] = useState(false);
-  const [chBoxError, displayChBoxError] = useState(null);
-
-  // proceed to payment
-  const [proceedPmt, setProceedPmt] = useState(null);
-
-  // new single out now cart summary JSX
-  const newSingleJSX = (
-    <div className={classes.newSingleJSXCon}>
-      {" "}
-      <h4 className={classes.newSingleJSXHeader}>New Single Out Now </h4>{" "}
-      <h3>
-        $ <span>700</span>{" "}
-      </h3>{" "}
-    </div>
-  );
-
-  // Before Release Date + Pre Save JSX
-  const beforeReleaseJSX = (
-    <div className={classes.newSingleJSXCon}>
-      {" "}
-      <h4 className={classes.newSingleJSXHeader}>
-        Before Release Date + Pre Save{" "}
-      </h4>{" "}
-      <h3>
-        $ <span>850</span>{" "}
-      </h3>{" "}
-    </div>
-  );
-
-  // Music Video + Out Now + Pre Save JSX
-  const musicVideoOutJSX = (
-    <div className={classes.newSingleJSXCon}>
-      {" "}
-      <h4 className={classes.newSingleJSXHeader}>
-        Music Video + Out Now + Pre Save
-      </h4>{" "}
-      <h3>
-        $ <span>1,000</span>{" "}
-      </h3>{" "}
-    </div>
-  );
-
-  // YouTube Ads JSX
-  const youtueAdsJSX = (
-    <div className={classes.newSingleJSXCon}>
-      {" "}
-      <h4 className={classes.newSingleJSXHeader}>YouTube Ads</h4>{" "}
-      <h3>
-        $ <span>700</span>{" "}
-      </h3>{" "}
-    </div>
-  );
-
-  // Spotify Ads JSX
-  const spotifyAdsJSX = (
-    <div className={classes.newSingleJSXCon}>
-      {" "}
-      <h4 className={classes.newSingleJSXHeader}>Spotify Ads </h4>{" "}
-      <h3>
-        $ <span>1,000</span>{" "}
-      </h3>{" "}
-    </div>
-  );
-
-  const totalNewSinglePrice = newSinglePrice && 700;
-  const totalBeforeReleasePrice = beforeReleasePrice && 850;
-  const totalMusicVideoOutPrice = musicVideoOutPrice && 1000;
-  const totalYoutubeAdsPrice = youtubeAdsPrice && 700;
-  const totalspotifyAdsPrice = spotifyAdsPrice && 1000;
-
-  //if check boxes are checked
-  function handleChange() {
-    if (checkBoxA.current.checked) {
-      console.log("AAAAAAA");
-      setNewSingleSummary(true);
-      setNewSinglePrice(true);
-      setChBoxClicked(true);
-    } else {
-      console.log("false AAAAAAA");
-      setNewSingleSummary(false);
-      setNewSinglePrice(false);
-      setChBoxClicked(false);
-    }
-
-    if (checkBoxB.current.checked) {
-      console.log("BBBBBBBBBB");
-      setBeforeReleaseSummary(true);
-      setBeforeReleasePrice(true);
-      setChBoxClicked(true);
-    } else {
-      console.log("false BBBBBB");
-      setBeforeReleaseSummary(false);
-      setBeforeReleasePrice(false);
-    }
-
-    if (checkBoxC.current.checked) {
-      console.log("CCCCCCCCC");
-      setMusicVideoOutSummary(true);
-      setMusicVideoOutPrice(true);
-      setChBoxClicked(true);
-    } else {
-      console.log("false CCCCCCCC");
-      setMusicVideoOutSummary(false);
-      setMusicVideoOutPrice(false);
-      setBeforeReleasePrice(false);
-    }
-
-    if (checkBoxD.current.checked) {
-      console.log("DDDDDDDD");
-      setYoutubeAdsSummary(true);
-      setYoutubeAdsPrice(true);
-      setChBoxClicked(true);
-    } else {
-      console.log("false DDDDDD");
-      setYoutubeAdsSummary(false);
-      setBeforeReleasePrice(false);
-      setYoutubeAdsPrice(false);
-    }
-
-    if (checkBoxE.current.checked) {
-      console.log("EEEEEEEE");
-      setspotifyAdsSummary(true);
-      setspotifyAdsPrice(true);
-      setChBoxClicked(true);
-    } else {
-      console.log("false EEEEEE");
-      setspotifyAdsSummary(false);
-      setBeforeReleasePrice(false);
-      setspotifyAdsPrice(false);
-    }
-  }
-
-  function iAgreeChecked(e) {
-    console.log(e.target.checked);
-    newTC(e.target.checked);
-  }
-
-  function handleSubmit() {
-    fullName == null || "" ? setFullNameErr(true) : setFullNameErr(false);
-
-    artisteName == null || ""
-      ? setArtisteNameErr(true)
-      : setArtisteNameErr(false);
-
-    releaseName == null || ""
-      ? setReleaseNameErr(true)
-      : setReleaseNameErr(false);
-
-    email == null || "" ? setEmailErr(true) : setEmailErr(false);
-
-    fbURl == null || "" ? setFbUrlErr(true) : setFbUrlErr(false);
-
-    igURl == null || "" ? setIgUrlErr(true) : setIgUrlErr(false);
-
-    noChBoxClicked == true ? displayChBoxError(true) : displayChBoxError(false);
-
-    fullName &&
-    artisteName &&
-    releaseName &&
-    email &&
-    fbURl &&
-    igURl &&
-    startDate !== null &&
-    sum > 0 &&
-    TC == true
-      ? setProceedPmt(true)
-      : setProceedPmt(false);
-  }
-
+  //  check out sum
   const sum =
-    totalNewSinglePrice +
-    totalBeforeReleasePrice +
-    totalMusicVideoOutPrice +
-    totalYoutubeAdsPrice +
-    totalspotifyAdsPrice;
+    Number(new_single_out) +
+    Number(before_release_date) +
+    Number(music_video_and_pre_save) +
+    Number(youtube_ads) +
+    Number(spotify_ads);
 
-  console.log(sum > 0);
+  // handle input change
+  const onChange = (e) => {
+    setUserDetails((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+    console.log(e.target.value);
+  };
 
-  console.log(proceedPmt);
+  // handle click button
+  const onClick = (e) => {
+    e.target.checked
+      ? setCheckbox(() => ({ ...checkbox, [e.target.id]: e.target.value }))
+      : setCheckbox(() => ({ ...checkbox, [e.target.id]: "" }));
+  };
+
+  console.log(sum);
 
   return (
     <div className={classes.packagesFormCon}>
@@ -269,14 +92,11 @@ function PackagesForm(props) {
           </span>
         </label>
         <input
-          className={
-            fullNameErr == true || fullName == ""
-              ? classes.inputError
-              : classes.input
-          }
+          className={classes.input}
           type={"text"}
-          placeholder="Enter your full name "
-          onChange={(e) => setFullName(e.target.value)}
+          placeholder="Enter your full name"
+          name="full_name"
+          onChange={onChange}
         />
 
         {/* Artiste & release Name */}
@@ -284,28 +104,22 @@ function PackagesForm(props) {
           <div className={classes.artisteName}>
             <label className={classes.label}>Artist’s Name</label>
             <input
-              className={
-                artisteNameErr == true || artisteName == ""
-                  ? classes.smallInputError
-                  : classes.smallInput
-              }
+              className={classes.smallInput}
               type={"text"}
               placeholder="Enter your artist's stage name"
-              onChange={(e) => setArtisteName(e.target.value)}
+              name="artist_name"
+              onChange={onChange}
             />
           </div>
 
           <div className={classes.RartisteName}>
             <label className={classes.label}>Release Name</label>
             <input
-              className={
-                releaseNameErr == true || releaseName == ""
-                  ? classes.smallInputError
-                  : classes.smallInput
-              }
+              className={classes.smallInput}
               type={"text"}
               placeholder="Enter a name you wish to appear "
-              onChange={(e) => setReleaseName(e.target.value)}
+              name="release_name"
+              onChange={onChange}
             />
           </div>
         </div>
@@ -315,44 +129,36 @@ function PackagesForm(props) {
           <div className={classes.artisteName}>
             <label className={classes.label}>E-mail Address</label>
             <input
-              className={
-                emailErr == true || email == ""
-                  ? classes.smallInputError
-                  : classes.smallInput
-              }
+              className={classes.smallInput}
               type={"email"}
               placeholder="Enter your e-mail address"
-              onChange={(e) => setEmail(e.target.value)}
+              name="email"
+              onChange={onChange}
             />
           </div>
 
           <div className={classes.RartisteName}>
             <label className={classes.label}>Release Date</label>
-            <div
-              className={
-                startDate == null ? classes.smallInputError : classes.smallInput
-              }
-            >
-              <DatePicker
-                selected={startDate}
-                onChange={(date) => setStartDate(date)}
-                isClearable
-                placeholderText="Pick a date"
-                closeOnScroll={(e) => e.target === document}
+            <div className={classes.smallInput}>
+              <input
+                className={classes.input}
+                type={"date"}
+                placeholder=" release date"
+                name="release_date"
+                onChange={onChange}
               />
             </div>
           </div>
         </div>
 
-        {/* Faceebook url */}
+        {/* Facebook url */}
         <label className={classes.label}>Facebook Page URL</label>
         <input
-          className={
-            fbUrlErr == true || fbURl == "" ? classes.inputError : classes.input
-          }
+          className={classes.input}
           type={"url"}
           placeholder=" e.g http://www.facebook.com/soundmac "
-          onChange={(e) => setFbUrl(e.target.value)}
+          name="facebook_url"
+          onChange={onChange}
         />
 
         {/* Instagram Handle */}
@@ -361,10 +167,9 @@ function PackagesForm(props) {
         <input
           type={"text"}
           placeholder="e.g Sound_Mac"
-          className={
-            igUrlErr == true || igURl == "" ? classes.inputError : classes.input
-          }
-          onChange={(e) => setIgUrl(e.target.value)}
+          className={classes.input}
+          name="instagram_url"
+          onChange={onChange}
         />
 
         {/* Package Details Section */}
@@ -377,42 +182,36 @@ function PackagesForm(props) {
         {/* Select a package */}
         <label className={classes.label}>Select A Package</label>
 
-        <div
-          className={
-            chBoxError == null || chBoxError == true
-              ? classes.inputButDiv
-              : classes.inputButDivError
-          }
-        >
+        <div className={classes.inputDiv}>
           <div className={classes.checkBoxDatalistCon}>
             <input
-              onChange={handleChange}
-              ref={checkBoxA}
               type={"checkbox"}
-              id="New-Single-Out-Now"
-              value={"700"}
+              id="new_single_out"
+              name="new single out"
+              value={700}
+              onChange={onClick}
               className={classes.checkBoxPF}
             />{" "}
             <label className={classes.checkBoxLabel}>New Single Out Now</label>{" "}
             <br />
             <input
-              onChange={handleChange}
-              ref={checkBoxB}
               type={"checkbox"}
-              id="Before-Release-Date-Pre Save"
+              name="before release date"
+              id="before_release_date"
               value={850}
               className={classes.checkBoxPF}
+              onChange={onClick}
             />{" "}
             <label className={classes.checkBoxLabel}>
               Before Release Date + Pre Save
             </label>{" "}
             <br />
             <input
-              onChange={handleChange}
-              ref={checkBoxC}
               type={"checkbox"}
-              id="Music-Video-Out-Now-Pre Save"
+              id="music_video_and_pre_save"
+              name="music video + pre save"
               value={1000}
+              onChange={onClick}
               className={classes.checkBoxPF}
             />{" "}
             <label className={classes.checkBoxLabel}>
@@ -420,19 +219,19 @@ function PackagesForm(props) {
             </label>{" "}
             <br />
             <input
-              onChange={handleChange}
-              ref={checkBoxD}
               type={"checkbox"}
-              id="YouTube-Ads"
+              id="youtube_ads"
+              name="youtube ads"
+              onChange={onClick}
               value={700}
               className={classes.checkBoxPF}
             />{" "}
             <label className={classes.checkBoxLabel}>YouTube Ads</label> <br />
             <input
-              onChange={handleChange}
-              ref={checkBoxE}
               type={"checkbox"}
-              id="Spotify Ads"
+              id="spotify_ads"
+              name="spotify ads"
+              onChange={onClick}
               value={1000}
               className={classes.checkBoxPF}
             />{" "}
@@ -443,60 +242,79 @@ function PackagesForm(props) {
         {/* Cart Summary */}
 
         <h3 className={classes.cartSummaryHeader}>Cart Summary</h3>
+        <div>
+          {new_single_out !== "" && (
+            <PackageDescripComponent
+              title={"New Single Out"}
+              value={new_single_out}
+            />
+          )}
 
-        {newSingleSummary && newSingleJSX}
-        {beforeReleaseSummary && beforeReleaseJSX}
-        {musicVideoOutSummary && musicVideoOutJSX}
-        {youtubeAdsSummary && youtueAdsJSX}
-        {spotifyAdsSummary && spotifyAdsJSX}
+          {before_release_date !== "" && (
+            <PackageDescripComponent
+              title={"Before Release Date"}
+              value={before_release_date}
+            />
+          )}
 
-        <diV className={classes.checkOutBtnCon}>
-          <span
-            className={
-              fullName &&
-              artisteName &&
-              releaseName &&
-              email &&
-              fbURl &&
-              igURl &&
-              startDate !== null &&
-              sum > 0 &&
-              TC == true
-                ? classes.checkOutBtn
-                : classes.checkOutBtnGrey
-            }
-            onClick={handleSubmit}
-          >
+          {music_video_and_pre_save !== "" && (
+            <PackageDescripComponent
+              title={"Music video + pre-save"}
+              value={music_video_and_pre_save}
+            />
+          )}
+
+          {youtube_ads !== "" && (
+            <PackageDescripComponent
+              title={"YouTube Ads"}
+              value={youtube_ads}
+            />
+          )}
+
+          {spotify_ads !== "" && (
+            <PackageDescripComponent
+              title={"Spotify Ads"}
+              value={spotify_ads}
+            />
+          )}
+
+          {/*  */}
+        </div>
+        <div className={classes.checkOutBtnCon}>
+          <span className={classes.checkOutBtn}>
             CHECKOUT (
             <NumberFormat
               style={{ color: "white" }}
-              value={sum}
               displayType={"text"}
               thousandSeparator={true}
               prefix={"$"}
+              value={sum}
             />
             )
           </span>
-        </diV>
+        </div>
 
-        {proceedPmt == true ? (
-          <ModalBackground noDeets={() => setProceedPmt(!proceedPmt)} />
-        ) : (
-          <></>
-        )}
-
-        <diV className={classes.iAgreeCon}>
-          <input
-            type={"checkbox"}
-            onChange={iAgreeChecked}
-            id="i-agree"
-            value={"i-agree"}
-          />{" "}
+        <div className={classes.iAgreeCon}>
+          <input type={"checkbox"} id="i-agree" value={"i-agree"} />{" "}
           <label className={classes.checkBoxLabelIAgree}>
             I agree to the <a href="#">Terms and Conditions</a>{" "}
           </label>
-        </diV>
+        </div>
       </form>
+    </div>
+  );
+}
+
+function PackageDescripComponent(props) {
+  return (
+    <div className={classes.newSingleJSXCon}>
+      <h2 className={classes.newSingleJSXHeader}>{props.title}</h2>
+      <NumberFormat
+        displayType={"text"}
+        thousandSeparator={true}
+        prefix={"$"}
+        value={props.value}
+      />
     </div>
   );
 }
