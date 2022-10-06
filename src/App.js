@@ -128,7 +128,6 @@ function App() {
         />
 
         <Route path="playground" element={<Upload />} />
-
       </Routes>
     </div>
   );
