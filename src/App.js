@@ -15,10 +15,14 @@ import TabletHeader from "./Componets/tabletHeader";
 import Upload from "./Upload";
 import UploadSongs from "./Componets/UploadSong";
 import PrivateRoute from "./routing/PrivateRoute";
+import Alert from './Layouts/Alert';
+
+import "react-toastify/dist/ReactToastify.css";
 
 function App() {
   return (
     <div>
+      <Alert />
       <div className={classes.header}></div>
 
       <Routes>

@@ -1,4 +1,4 @@
-import { useReducer, useEffect, useState } from "react";
+import { useReducer, useEffect, useState, useContext } from "react";
 import {
   AUTH_FAIL,
   GET_USER,
@@ -10,10 +10,13 @@ import {
 import AuthContext from "./authContext";
 import authReducer from "./authReducer";
 import axios from "axios";
+import AlertContext from "../alert/alertContext";
 
 const URL = process.env.REACT_APP_SERVER_URL;
 
 const AuthState = ({ children }) => {
+  const { addMessage } = useContext(AlertContext);
+
   // initialstate
   const initialState = {
     isAuthenticated: false,
@@ -51,6 +54,9 @@ const AuthState = ({ children }) => {
     } catch (err) {
       console.log(err);
       // console.log(err.response.data.errors);
+      const error = err.response.data.errors;
+
+      error.map((val) => addMessage(val.msg, 'error'))
 
       // dispatch auth failure
       dispatch({
@@ -70,8 +76,8 @@ const AuthState = ({ children }) => {
 
     const body = JSON.stringify(userDetails);
 
-    loader(true)
     try {
+      loader(true)
 
       const res = await axios.post(`${URL}/api/auth`, body, config);
 
@@ -89,9 +95,12 @@ const AuthState = ({ children }) => {
       getUser(); // get user
     } catch (err) {
       loader(false)
+      const error = err.response.data.errors
 
-      console.log(err.response.data.errors[0].msg);
       setErrorMssg(err.response.data.errors[0].msg);
+
+      console.log(err.response.data.errors);
+      error.map((val) => addMessage(val.msg, 'error'))
 
       // dispatch auth failure
       dispatch({
@@ -118,6 +127,8 @@ const AuthState = ({ children }) => {
       });
     } catch (err) {
       const error = err.response.data.errors;
+      error.map((val) => addMessage(val.msg, 'error'))
+
       console.log(error);
       dispatch({
         type: AUTH_FAIL,
@@ -134,7 +145,6 @@ const AuthState = ({ children }) => {
 
   // set loader
   const loader = async (val) => {
-    console.log(val)
     dispatch({
       type: SET_LOADER,
       payload: val
@@ -143,28 +153,33 @@ const AuthState = ({ children }) => {
 
   // create account type
   const createAccount = async (artist_name) => {
+    console.log({ artist_name })
 
     const config = {
       headers: {
-        'Content-Type': 'application/json',
+        "Content-Type": "application/json",
         "x-auth-token": localStorage.getItem("auth-token"),
       }
     }
 
-    const body = JSON.stringify(artist_name);
+    const body = JSON.stringify({ artist_name });
 
     try {
-      await axios.post(`${URL}/artist/create`, body, config);
+      await axios.post(`${URL}/api/user/artist/create`, body, config);
+
       getUser();
     } catch (err) {
       // dispatch err
+      console.log(err);
       const error = err.response.data.errors;
-      console.log(error);
+      error.map((val) => addMessage(val.msg, 'error'))
+
     }
   }
 
   useEffect(() => {
     localStorage.getItem("auth-token") && getUser();
+    //eslint-disable-next-line
   }, []);
 
   return (
