@@ -17,7 +17,7 @@ import { useNavigate } from "react-router-dom";
 function SignInBox(props) {
   const authContext = useContext(AuthContext);
 
-  const { loginUser, loading, errorMssg, loader, user } = authContext;
+  const { loginUser, loading, errorMssg, user } = authContext;
 
   // console.log(isAuthenticated);
   const [userDetails, setUserDetails] = useState({
