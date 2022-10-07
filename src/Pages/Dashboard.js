@@ -68,8 +68,7 @@ const dummyData = [
 ];
 
 function Dashboard() {
-
-  const { user, loading, createAccount } = useContext(AuthContext)
+  const { user, loading, createAccount } = useContext(AuthContext);
 
   // drop down to select account type
   const [selected, setSelected] = useState(
@@ -91,25 +90,22 @@ function Dashboard() {
     setArtisteFormName(e.target.value);
   };
 
-
   const onSubmit = () => {
     if (artisteFormName === "") {
       console.log("error");
       toast.error("Add a name");
     } else {
-      createAccount(artisteFormName)
+      createAccount(artisteFormName);
     }
   };
-
 
   // upload song
   const navigate = useNavigate();
 
   const uploadSongFn = () => {
     console.log("upload song");
-    navigate("/upload/music");
+    navigate("/upload/single");
   };
-
 
   // select the first 5 objects
   const firstFive = dummyData.slice(0, 5);
@@ -120,75 +116,73 @@ function Dashboard() {
     <Fragment>
       {user !== null && !loading && (
         <div className={classes.dashboard_con}>
-          {
-            user.artist_name === "" && user.label_name === "" && (
-              <div className={classes.modal}>
-                {/* error message */}
+          {user.artist_name === "" && user.label_name === "" && (
+            <div className={classes.modal}>
+              {/* error message */}
 
-                <div className={classes.modal_sub_con}>
-                  <div className={classes.select_account_type_con}>
-                    <p className={classes.account_type_header}>
-                      SOUNDMAC ACCOUNT TYPE
-                    </p>
-                    <div className={classes.drop_drop_down_con}>
-                      <Dropdown>
-                        <Dropdown.Button
-                          light
-                          color="default"
-                          css={{ tt: "capitalize" }}
-                        >
-                          {selectedValue}
-                        </Dropdown.Button>
-                        <Dropdown.Menu
-                          aria-label="Single selection actions"
-                          color="default"
-                          disallowEmptySelection
-                          selectionMode="single"
-                          selectedKeys={selected}
-                          onSelectionChange={setSelected}
-                        >
-                          <Dropdown.Item key="Free_account">
-                            Free Account
-                          </Dropdown.Item>
-                          <Dropdown.Item key="Independent_artist">
-                            Independent Artist
-                          </Dropdown.Item>
-                          <Dropdown.Item key="label">Label</Dropdown.Item>
-                        </Dropdown.Menu>
-                      </Dropdown>
-                    </div>
-                  </div>
-
-                  {selected.anchorKey === "Independent_artist" ||
-                    selected.anchorKey === "label" ||
-                    selected.anchorKey === "Free_account" ? (
-                    <div className={classes.input_account_type}>
-                      {" "}
-                      <input
-                        className={classes.input_artiste_name_field}
-                        type={"text"}
-                        placeholder={
-                          selected.anchorKey === "label"
-                            ? "Label name"
-                            : "Artiste name"
-                        }
-                        onChange={onChange}
-                      />
-                    </div>
-                  ) : (
-                    <></>
-                  )}
-                  <div className={classes.proceed_button}>
-                    <button auto onClick={onSubmit} className={classes.proceed}>
-                      Proceed
-                    </button>
+              <div className={classes.modal_sub_con}>
+                <div className={classes.select_account_type_con}>
+                  <p className={classes.account_type_header}>
+                    SOUNDMAC ACCOUNT TYPE
+                  </p>
+                  <div className={classes.drop_drop_down_con}>
+                    <Dropdown>
+                      <Dropdown.Button
+                        light
+                        color="default"
+                        css={{ tt: "capitalize" }}
+                      >
+                        {selectedValue}
+                      </Dropdown.Button>
+                      <Dropdown.Menu
+                        aria-label="Single selection actions"
+                        color="default"
+                        disallowEmptySelection
+                        selectionMode="single"
+                        selectedKeys={selected}
+                        onSelectionChange={setSelected}
+                      >
+                        <Dropdown.Item key="Free_account">
+                          Free Account
+                        </Dropdown.Item>
+                        <Dropdown.Item key="Independent_artist">
+                          Independent Artist
+                        </Dropdown.Item>
+                        <Dropdown.Item key="label">Label</Dropdown.Item>
+                      </Dropdown.Menu>
+                    </Dropdown>
                   </div>
                 </div>
-              </div>
-            )
-          }
 
-          < MediaQuery minWidth={1000}>
+                {selected.anchorKey === "Independent_artist" ||
+                selected.anchorKey === "label" ||
+                selected.anchorKey === "Free_account" ? (
+                  <div className={classes.input_account_type}>
+                    {" "}
+                    <input
+                      className={classes.input_artiste_name_field}
+                      type={"text"}
+                      placeholder={
+                        selected.anchorKey === "label"
+                          ? "Label name"
+                          : "Artiste name"
+                      }
+                      onChange={onChange}
+                    />
+                  </div>
+                ) : (
+                  <></>
+                )}
+                <div className={classes.proceed_button}>
+                  <button auto onClick={onSubmit} className={classes.proceed}>
+                    Proceed
+                  </button>
+                </div>
+              </div>
+            </div>
+          )}
+
+          <MediaQuery minWidth={1000}>
             <div className={classes.slide_con_con}>
               <div className={classes.slide_con}>
                 <Splide
@@ -211,7 +205,11 @@ function Dashboard() {
                   {firstFive.map((item, index) => (
                     <SplideSlide>
                       <div className={classes.Cover_Image}>
-                        <img src={item.src} className={classes.src} alt={item.id} />
+                        <img
+                          src={item.src}
+                          className={classes.src}
+                          alt={item.id}
+                        />
                       </div>
                     </SplideSlide>
                   ))}
@@ -238,7 +236,11 @@ function Dashboard() {
                   {firstFive.map((item, index) => (
                     <SplideSlide>
                       <div className={classes.Cover_Image}>
-                        <img src={item.src} className={classes.src} alt={item.id} />
+                        <img
+                          src={item.src}
+                          className={classes.src}
+                          alt={item.id}
+                        />
                       </div>
                     </SplideSlide>
                   ))}
@@ -330,7 +332,7 @@ function Dashboard() {
               </div>
             </div>
           </div>
-        </div >
+        </div>
       )}
     </Fragment>
   );

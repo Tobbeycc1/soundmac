@@ -118,7 +118,11 @@ function DashboardHeader() {
               showMobileNavDetails(false);
             }}
           >
-            <div className={classes.icon_con_toggle} onClick={logOutFunc}>
+            <div
+              className={classes.icon_con_toggle}
+              onClick={logOutFunc}
+              style={{ marginLeft: "20px" }}
+            >
               <RiLogoutBoxRFill className={classes.icon_toggle} />
             </div>
           </Tooltip>

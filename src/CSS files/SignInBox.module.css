@@ -8,7 +8,7 @@
 .SignInBox {
   background: white;
   color: var(--purple);
-  height: fit-content;
+  height: 85vh;
   text-align: center;
   border-radius: 30px;
   width: 100%;
@@ -175,6 +175,10 @@ input::placeholder {
   .SignInBoxDiv {
     width: 80vw;
   }
+  .SignInBox {
+    height: 70vh;
+    overflow-y: scroll;
+  }
   .Gi,
   .welcomeTo,
   .dontHave,
@@ -193,6 +197,7 @@ input::placeholder {
   .SignInBoxDiv {
     width: 90vw;
   }
+
   .Gi,
   .welcomeTo,
   .dontHave,

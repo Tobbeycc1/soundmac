@@ -124,7 +124,8 @@
   .not_for_desk {
     display: block;
     position: absolute;
-    left: 86vw;
+    /* left: 86vw; */
+    right: 40px;
     z-index: 1000;
     top: 110px;
   }
