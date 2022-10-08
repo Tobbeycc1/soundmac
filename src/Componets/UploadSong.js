@@ -6,6 +6,13 @@ import { useDropzone } from "react-dropzone";
 import { FcPicture } from "react-icons/fc";
 import { FcHeadset } from "react-icons/fc";
 
+import { FcBusinessman } from "react-icons/fc";
+import { FcMusic } from "react-icons/fc";
+import { FcBusinesswoman } from "react-icons/fc";
+
+import { FcDownRight } from "react-icons/fc";
+import { FcDownLeft } from "react-icons/fc";
+
 import { useEffect } from "react";
 import { useState } from "react";
 
@@ -20,6 +27,18 @@ function UploadSongs(props) {
 
   // input music
 
+  const [clickCount, setClickCount] = useState(0);
+
+  const pageIncrement = () => {
+    setClickCount(clickCount + 1);
+    // clickCount > 2 && setClickCount(0);
+  };
+
+  const pageDecrement = () => {
+    setClickCount(clickCount - 1);
+  };
+  console.log(clickCount);
+
   return (
     <div>
       <div>
@@ -29,116 +48,46 @@ function UploadSongs(props) {
         <h2 className={classes.text}>Upload Songs</h2>
       </div>
       <div className={classes.upload_group_con}>
-        <UploadImageComp />
-        <UploadAudioComp />
+        {clickCount === 0 && (
+          <>
+            <UploadImageComp />
+            <UploadAudioComp />
+          </>
+        )}
+
+        {clickCount === 1 && (
+          <>
+            <PageTwo />
+          </>
+        )}
+
+        {clickCount === 2 && (
+          <>
+            <div>Copywright Info, producer & songwriter</div>
+          </>
+        )}
+
+        {clickCount === 3 && (
+          <>
+            <div>uspc, isrc & release date</div>
+          </>
+        )}
       </div>
-      <div className={classes.form_con}>
-        {/* for Artiste name & song title  */}
-        <div className={classes.first_form_sub_con}>
-          <div className={classes.small_input_con}>
-            <label className={classes.form_label}>Artiste name</label> <br />
-            <input
-              type={"text"}
-              className={classes.small_input}
-              placeholder="enter ariste's name"
-            />
-          </div>
-          <div className={classes.small_input_con_B}>
-            <label className={classes.form_label}>Song title</label> <br />
-            <input
-              type={"text"}
-              placeholder="enter song's title"
-              className={classes.small_input}
-            />
-          </div>
-        </div>
 
-        {/* for features  */}
-        <div className={classes.first_form_sub_con}>
-          <div className={classes.big_input_con}>
-            <label className={classes.form_label}> Featuring</label> <br />
-            <input
-              type={"text"}
-              className={classes.small_input}
-              placeholder="e.g Chukwuma Musa, Isong Ayodele"
-            />
-          </div>
-        </div>
+      <div className={classes.next_con}>
+        {clickCount !== 0 && (
+          <p className={classes.prev_button} onClick={pageDecrement}>
+            <FcDownLeft />
+          </p>
+        )}
 
-        {/* for Copywright holder & date  */}
-        <div className={classes.first_form_sub_con}>
-          <div className={classes.small_input_con}>
-            <label className={classes.form_label}>Copywright holder</label>{" "}
-            <br />
-            <input
-              type={"text"}
-              className={classes.small_input}
-              placeholder="enter copywright holder's name"
-            />
-          </div>
-          <div className={classes.small_input_con_B}>
-            <label className={classes.form_label}>Copywright date</label> <br />
-            <input
-              type={"date"}
-              placeholder="enter song's title"
-              className={classes.small_input}
-            />
-          </div>
-        </div>
-
-        {/* for language, Explicit, date  */}
-        <div className={classes.first_form_sub_con}>
-          <div className={classes.small_input_con}>
-            <label className={classes.form_label}> Language</label> <br />
-            <input
-              type={"text"}
-              className={classes.small_input}
-              placeholder="e.g English, Spanish, Yoruba"
-            />
-          </div>
-
-          {/* Explcit & release date */}
-          <div className={classes.smaller_input_con}>
-            <label className={classes.form_label}>Explicit?</label> <br />
-            <select className={classes.small_input}>
-              <option>Yes</option>
-              <option>No</option>
-            </select>
-          </div>
-
-          <div className={classes.smaller_input_con_B}>
-            <label className={classes.form_label}>Release date</label> <br />
-            <input
-              type={"date"}
-              placeholder="enter song's title"
-              className={classes.small_input}
-            />
-          </div>
-        </div>
-
-        {/* for producers  */}
-        <div className={classes.first_form_sub_con}>
-          <div className={classes.big_input_con}>
-            <label className={classes.form_label}>Producer(s) </label> <br />
-            <input
-              type={"text"}
-              className={classes.small_input}
-              placeholder="e.g Chukwuma Musa, Isong Ayodele"
-            />
-          </div>
-        </div>
-
-        {/* for Song writers  */}
-        <div className={classes.first_form_sub_con}>
-          <div className={classes.big_input_con}>
-            <label className={classes.form_label}>Songwriter(s) </label> <br />
-            <input
-              type={"text"}
-              className={classes.small_input}
-              placeholder="e.g Chukwuma Musa, Isong Ayodele"
-            />
-          </div>
-        </div>
+        {clickCount === 3 ? (
+          <p className={classes.submit}>submit</p>
+        ) : (
+          <p className={classes.next_button} onClick={pageIncrement}>
+            <FcDownRight />
+          </p>
+        )}
       </div>
     </div>
   );
@@ -277,5 +226,54 @@ const UploadAudioComp = () => {
     </div>
   );
 };
+
+// song details
+
+function PageTwo(props) {
+  return (
+    <div>
+      {/* form */}
+      <div className={classes.form_con}>
+        <div className={classes.purple_block}>
+          <FcBusinessman className={classes.people_con} />
+        </div>
+        <input
+          type={"text"}
+          className={classes.input}
+          style={{ marginRight: "auto" }}
+          placeholder={"Artiste name"}
+        />
+
+        <div className={classes.purple_block}>
+          <FcMusic className={classes.people_con} />
+        </div>
+        <input
+          type={"text"}
+          className={classes.input}
+          placeholder={"Song title"}
+        />
+      </div>
+
+      <div className={classes.form_con}>
+        <div className={classes.purple_block}>
+          <FcBusinesswoman className={classes.people_con} />
+        </div>
+        <input
+          type={"text"}
+          className={classes.input}
+          style={{ width: "100%" }}
+          placeholder={"featuring? e.g Isaac Chukwuma, Isong Ahmad"}
+        />
+      </div>
+
+      <form>
+        <p className={classes.explicit}>Explicit?</p>
+        <input type={"radio"} name="explicit" />{" "}
+        <label style={{ marginRight: "40px" }}>Yes</label>
+        <input type={"radio"} name="explicit" /> <label>No</label>
+      </form>
+    </div>
+  );
+}
 
 export default UploadSongs;
