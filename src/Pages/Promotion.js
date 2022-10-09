@@ -177,7 +177,7 @@ function Promotion(props) {
                 "- Enjoy increased brand awareness for your project"
               }
               packageOldPrice={"  $ 1,200  "}
-              packagenewPrice={" $ 1,00"}
+              packagenewPrice={" $ 1,000"}
               priceIncludes={" Price includes $550 ad spend."}
             />
           </div>
