@@ -1,37 +1,44 @@
-.squareAndCircleIcon{
-    width: 25px;
-    height: 25px;
-    background: var(--cream);
-    border-radius: 5px;
-    text-align: center;
-    display: inline-block;
-    margin-right: 10px;
-    vertical-align: middle;
+.squareAndCircleIcon {
+  width: 1.83vw;
+  height: 1.83vw;
+  background: var(--cream);
+  border-radius: 5px;
+  text-align: center;
+  display: inline-block;
+  margin-right: 10px;
+  vertical-align: middle;
 }
-.bulletText{
+.bulletText {
+  display: inline-block;
+  margin: 10px 0px;
+  font-weight: 500;
+  vertical-align: middle;
+  font-size: 1.2vw;
+}
+.con {
+  display: flex;
+  align-items: center;
+}
+@media screen and (max-width: 999px) {
+  .bulletText {
     display: inline-block;
     margin: 10px 0px;
     font-weight: 500;
     vertical-align: middle;
-    font-size: 1.2vw;
+    width: 100%;
+    font-size: 16px;
+  }
+  .squareAndCircleIcon {
+    width: 25px;
+    height: 25px;
+  }
 }
-@media screen and (max-width: 999px) {
-    .bulletText{
-        display: inline-block;
-        margin: 10px 0px;
-        font-weight: 500;
-        vertical-align: middle;
-        width: 65vw;
-        font-size: 16px;
-    }
+@media screen and (max-width: 540px) {
+  .bulletText {
+    font-size: 3.86vw;
+  }
+  .squareAndCircleIcon {
+    width: 6.04vw;
+    height: 6.04vw;
+  }
 }
-@media screen and (max-width: 360px) {
-    .bulletText{
-        display: inline-block;
-        margin: 10px 0px;
-        font-weight: 500;
-        vertical-align: middle;
-        width: 55vw;
-    }
-}
-    

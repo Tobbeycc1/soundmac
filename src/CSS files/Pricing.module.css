@@ -1,87 +1,98 @@
-.pricingCon{
-    text-align: center;
-    margin-top: 100px;
-    padding: 0px 20px;
-}
-.whileWeDistribute{
-    font-size: 2.2vw;
-    font-weight: bold;
-}
-.cash{
-    display: inline-block;
+.pricingCon {
   text-align: center;
-    width: 45%;
-    margin-right: 10%;
-    vertical-align: middle;
+  margin-top: 100px;
+  padding: 0px 20px;
 }
-.noBoldOnHeader{
-    font-weight: 400;
+.whileWeDistribute {
+  font-size: 2.2vw;
+  font-weight: bold;
 }
-.pricingCardsCon{
-    margin: 30px 50px 100px 50px;
+.cash {
+  display: inline-block;
+  text-align: center;
+  width: 45%;
+  margin-right: 10%;
+  vertical-align: middle;
 }
-.independentArtistLogo{
-    background: var(--purple);
-    border-radius: 10px;
-    margin-bottom: 30px;
+.noBoldOnHeader {
+  font-weight: 400;
 }
-.pricingCardsSubCon, .pricingCardsSubConMiniLabel{
-    margin-top: 50px;
-    
-    width: 45%;
-    display: inline-block;
-    vertical-align: middle;
+.pricingCardsCon {
+  margin: 30px 50px 100px 50px;
 }
-.pricingCardsSubConMiniLabel{
-    margin-right: 10%;
+.independentArtistLogo {
+  background: var(--purple);
+  border-radius: 10px;
+  margin-bottom: 30px;
 }
-.pricingCardsTextSubCon{
-    padding: 20px 30px;
-    box-shadow: 0px 2px 19px -2px rgba(0, 0, 0, 0.52);
-    -webkit-box-shadow: 0px 2px 19px -2px rgba(0, 0, 0, 0.52);
-    -moz-box-shadow: 0px 2px 19px -2px rgba(0, 0, 0, 0.52);
+.pricingCardsSubCon,
+.pricingCardsSubConMiniLabel,
+.pricingCardsSubCon_alone {
+  margin-top: 50px;
 
+  width: 45%;
+  display: inline-block;
+  vertical-align: middle;
 }
-.distributeHeader{
-    margin-top: 30px;
-    font-size: 2.2vw;
+.pricingCardsSubCon_alone {
+  position: relative;
+  left: 50%;
+  -ms-transform: translate(-50%, 0%);
+  transform: translate(-50%, 0%);
 }
-.iA{
-    font-size: 1.5vw;
-    font-weight: bold;
-
+.pricingCardsSubConMiniLabel {
+  margin-right: 10%;
+}
+.pricingCardsTextSubCon {
+  padding: 20px 30px;
+  box-shadow: 0px 2px 19px -2px rgba(0, 0, 0, 0.52);
+  -webkit-box-shadow: 0px 2px 19px -2px rgba(0, 0, 0, 0.52);
+  -moz-box-shadow: 0px 2px 19px -2px rgba(0, 0, 0, 0.52);
+}
+.distributeHeader {
+  margin-top: 30px;
+  font-size: 2.2vw;
+}
+.iA {
+  font-size: 1.5vw;
+  font-weight: bold;
 }
 @media screen and (max-width: 999px) {
-    .iA{
-        font-size: 20px;
-    }
-    .whileWeDistribute{
-        font-size: 25px;
-    }
-    .distributeHeader{
-        font-size: 25px;
-    }
-    .cash{
-        display: block;
-      text-align: center;
-        width: 100%;
-        margin-right: 0%;
-        margin-top: 100px;
-        
-    }
-    .pricingCardsSubCon, .pricingCardsSubConMiniLabel{
-        margin-top: 100px;
-        
-        width: 100%;
-        display: block;
-       
-    }
-    .cashImage{
-        width: 80vw;
-    }
-}
-@media screen and (max-width: 999px) {
-    .pricingCardsCon{
-        margin: 30px 20px 100px 20px;
-    }
+  .iA {
+    font-size: 20px;
+  }
+  .whileWeDistribute {
+    font-size: 25px;
+  }
+  .distributeHeader {
+    font-size: 25px;
+  }
+  .cash {
+    display: block;
+    text-align: center;
+    width: 100%;
+    margin-right: 0%;
+    margin-top: 100px;
+  }
+  .pricingCardsSubCon,
+  .pricingCardsSubConMiniLabel {
+    margin-top: 100px;
+
+    width: 100%;
+    display: block;
+  }
+  .cashImage {
+    width: 80vw;
+  }
+  .pricingCardsCon {
+    margin: 30px 20px 100px 20px;
+  }
+  .pricingCardsSubCon_alone {
+    position: relative;
+    left: 0;
+    right: 0;
+    width: 100%;
+    -ms-transform: translate(0%, 0%);
+    transform: translate(0%, 0%);
+  }
 }

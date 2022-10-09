@@ -1,63 +1,45 @@
-.squareAndCircleIconCon{
-    margin-bottom: 20px;
+.squareAndCircleIconCon {
+  margin-bottom: 20px;
 }
-.squareAndCircleIcon{
-    width: fit-content;
-    height: fit-content;
-    background: var(--purple);
-    border-radius: 5px;
-    text-align: center;
-    display: inline-block;
-    margin-right: 10px;
-    vertical-align: middle;
-    padding: 5px;
-    
+.squareAndCircleIcon {
+  width: fit-content;
+  height: fit-content;
+  background: var(--purple);
+  border-radius: 100%;
+  text-align: center;
+  display: inline-block;
+  margin-right: 10px;
+  vertical-align: middle;
+  padding: 5px;
 }
-.bulletText{
-    display: inline-block;
-    margin: 10px 0px;
-    font-size: 0.952vw;
-    vertical-align: middle;
-    width: 60%;
-    
+.bulletText {
+  display: inline-block;
+  margin: 10px 0px;
+  font-size: 0.952vw;
+  vertical-align: middle;
+  width: 60%;
 }
 @media screen and (max-width: 999px) {
-    .bulletText{
-       font-size: 13px;
-        
-        
-    }
+  .bulletText {
+    font-size: 13px;
+  }
 }
 @media screen and (max-width: 540px) {
-    .smallCheck{
-        width: 10px;
-    }
-    .squareAndCircleIcon{
-        width: fit-content;
-        height: fit-content;
-        border-radius: 5px;
-        text-align: center;
-        display: inline-block;
-        margin-right: 5px;
-        vertical-align: middle;
-        padding: 5px;
-        
-    }
-    .bulletText{
-        display: inline-block;
-        margin: 10px 0px;
-        font-size: 4.34vw;
-        vertical-align: middle;
-        width: 60vw;
-    }
-
-}
-@media screen and (max-width: 360px) {
-    .bulletText{
-        display: inline-block;
-        margin: 10px 0px;
-        font-size: 11px;
-        vertical-align: middle;
-        width: 50vw;
-    }
+  .squareAndCircleIcon {
+    width: fit-content;
+    height: fit-content;
+    border-radius: 100%;
+    text-align: center;
+    display: inline-block;
+    margin-right: 5px;
+    vertical-align: middle;
+    padding: 5px;
+  }
+  .bulletText {
+    display: inline-block;
+    margin: 10px 0px;
+    font-size: 4.34vw;
+    vertical-align: middle;
+    width: 60vw;
+  }
 }

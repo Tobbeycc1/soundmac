@@ -1,106 +1,106 @@
-.footerCon{
-    
-    background: url(../images/Footer\ Background.png);
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    text-align: center;
-    color: white;
+.footerCon {
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  text-align: center;
+  color: white;
+  background: url(../images/Footer.png);
 }
-.donotMiss{
-    padding-top: 150px;
-    color: white;
-    font-size: 1.76vw;
+.donotMiss {
+  padding-top: 150px;
+  color: white;
+  font-size: 1.76vw;
 }
-.eMailInput{
-    margin-top: 30px;
-    width: 90%;
-    height: 61px;
-    background: var(--brown);
-    border-radius: 40px;
-    outline: none;
-    padding: 10px 30px;
-    color: white;
-    border: none;
-    margin-bottom: 20px;
+.eMailInput {
+  margin-top: 30px;
+  width: 90%;
+  height: 61px;
+  background: white;
+  border-radius: 40px;
+  outline: none;
+  padding: 10px 30px;
+  border: none;
+  margin-bottom: 20px;
 }
-.submitButton{
-    background: var(--cream);
-    width: fit-content;
-    height: fit-content;
-    padding: 2px 10px;
-    border: none;
-    border-radius: 10px;
-    font-size: 1.83vw;
-    font-weight: bold;
-    margin-bottom: 120px;
-    cursor: pointer;
-    color: var(--purple);
-    /* width: 90%; */
+.submitButton {
+  background: white;
+  width: fit-content;
+  height: fit-content;
+  padding: 2px 10px;
+  border: none;
+  border-radius: 10px;
+  font-size: 1.83vw;
+  font-weight: bold;
+  margin-bottom: 120px;
+  cursor: pointer;
+  color: var(--purple);
+  /* width: 90%; */
 }
-.footerNavContentCOn, .footerNavContentCOnB{
-    color: white;
-    width: 310px;
-    display: inline-block;
-    text-align: left;
-    vertical-align: top;
-    margin-right: 80px;
+.footerNavContentCOn,
+.footerNavContentCOnB {
+  color: white;
+  width: 310px;
+  display: inline-block;
+  text-align: left;
+  vertical-align: top;
+  margin-right: 80px;
 }
-.footerNavContentCOnB{
-    width: fit-content;
+.footerNavContentCOnB {
+  width: fit-content;
 }
-.footerSoundmac{
-    color: white;
-    margin-bottom: 20px;
-    font-size: 1.76vw;
+.footerSoundmac {
+  color: white;
+  margin-bottom: 20px;
+  font-size: 1.76vw;
 }
-.footerSoundmacText{
-    color: white;
-    font-size: 0.952vw;
-    text-align: justify;
-    margin-bottom: 23px;
-    display: block;
-    text-decoration: none;
+.footerSoundmacText {
+  color: white;
+  font-size: 0.952vw;
+  text-align: justify;
+  margin-bottom: 23px;
+  display: block;
+  text-decoration: none;
 }
-.copywright{
-    color: white;
-    font-size: 13px;
-    margin-top: 40px;
-    display: block;
-    text-decoration: none;
+.copywright {
+  color: white;
+  font-size: 13px;
+  margin-top: 40px;
+  display: block;
+  text-decoration: none;
 }
 
 /* Media Query */
 @media screen and (max-width: 999px) {
-    .donotMiss{
-        font-size: 24px;
-    }
-    .submitButton{
-        font-size: 25px;
-    }
-    .footerNavContentCOn, .footerNavContentCOnB{
-        display: block;
-        width: 100%;
-        text-align: center;
-        padding: 0px 10vw;
-    }
-    .footerSoundmacText{
-        text-align: center;
-    }
-    .footerSoundmacText{
-        display: inline-block;
-        margin-right: 20px;
-        font-size: 13px;
-    }
-    .footerSoundmac{
-        font-size: 24px;
-    }
-    /* .copywright{
+  .donotMiss {
+    font-size: 24px;
+  }
+  .submitButton {
+    font-size: 25px;
+  }
+  .footerNavContentCOn,
+  .footerNavContentCOnB {
+    display: block;
+    width: 100%;
+    text-align: center;
+    padding: 0px 10vw;
+  }
+  .footerSoundmacText {
+    text-align: center;
+  }
+  .footerSoundmacText {
+    display: inline-block;
+    margin-right: 20px;
+    font-size: 13px;
+  }
+  .footerSoundmac {
+    font-size: 24px;
+  }
+  /* .copywright{
         margin-bottom: 30px;
     } */
 }
 @media screen and (max-width: 540px) {
-    .submitButton{
-        width: 90%;
-    }
+  .submitButton {
+    width: 90%;
+  }
 }

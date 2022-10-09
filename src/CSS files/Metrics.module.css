@@ -1,22 +1,33 @@
-.metricsCard{
-text-align: left;
-width: fit-content;
-display: inline-block;
-margin: 30px 30px;
+.metricsCard {
+  text-align: left;
+  width: fit-content;
+  display: inline-block;
+  margin: 30px 30px;
 }
-.category{
-    font-weight: bold ;
-    font-size: 0.952vw;
+.category {
+  font-weight: bold;
+  font-size: 0.952vw;
 }
-.value{
-    font-size: 2.34vw;
+.value {
+  font-size: 2.34vw;
+  font-weight: bold;
 }
 @media screen and (max-width: 999px) {
-    .value{
-        font-size: 32px;
-    }
-    .category{
-        font-weight: bold ;
-        font-size: 13px;
-    }
+  .value {
+    font-size: 32px;
+  }
+  .category {
+    font-weight: bold;
+    font-size: 13px;
+  }
+}
+@media screen and (max-width: 540px) {
+  .value {
+    font-size: 7.73vw;
+    text-align: center;
+  }
+  .category {
+    font-weight: bold;
+    font-size: 3.14vw;
+  }
 }

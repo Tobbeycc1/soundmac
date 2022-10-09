@@ -1,373 +1,280 @@
+.homeCard1 {
+  width: 100%;
+  height: 100vh;
+  background: red;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background: url(../images/desktop.png);
+}
+.signInAndSpeakerCon {
+  margin: -76px 50px 0px 50px;
+  display: flex;
+  position: relative;
+  margin-bottom: 100px;
+}
 
-.homeCard1{
-    width:100% ;
-    height: 100vh;
-    background: red;
-    background: url(../images/exports\ soundmac.png);
+.earnCon {
+  margin: 40px 50px;
+  text-align: center;
+  margin-top: 0px;
+}
+.red {
+  color: red;
+}
+.getCon {
+  background: rgb(247, 247, 247);
+  text-align: center;
+  padding: 80px 20px;
+  overflow: hidden;
+  margin: 100px 0px;
+}
+.get,
+.get2 {
+  margin-bottom: 20px;
+  font-size: 1.68vw;
+  font-weight: bold;
+  padding: 0px 10px;
+}
+.get3 {
+  font-size: 1.39vw;
+  font-weight: bold;
+  color: var(--blueA);
+  padding: 0px 10px;
+}
+.freeTrialBtn {
+  color: white;
+  vertical-align: middle;
+  background: var(--purple);
+  padding: 5px 20px;
+  border-radius: 10px;
+  font-size: 23px;
+  font-weight: bold;
+}
+.freeTrialBtn:hover {
+  background: #4b0d4b;
+}
+
+.linkCards {
+  margin: 100px 50px 0px 50px;
+  text-align: center;
+}
+.metrics,
+.metricsWithBorder {
+  margin: 150px 50px;
+  text-align: center;
+  display: inline-block;
+}
+.metricsWithBorder {
+  border-left: 7px solid var(--purple);
+  border-right: 7px solid var(--purple);
+  padding-left: 40px;
+  padding-right: 40px;
+}
+.metricsCon {
+  text-align: center;
+}
+.largerAudienceCon {
+  margin: 0px 50px;
+  text-align: center;
+}
+.squareAndCircleIcon {
+  width: 547px;
+  height: 40.1vw;
+  background: var(--purple);
+  border-radius: 50px;
+  text-align: center;
+  display: inline-block;
+  margin-right: 50px;
+  vertical-align: middle;
+  padding-top: 8.8vw;
+}
+.smallThinkLine {
+  width: 8px;
+  height: 99px;
+  background: var(--purple);
+  display: inline-block;
+  vertical-align: middle;
+}
+.largerAudienceText {
+  display: inline-block;
+  text-align: left;
+  border-left: 2px solid var(--purple);
+  padding-left: 55px;
+  margin-left: -5px;
+  vertical-align: middle;
+}
+.reachLargerTextA {
+  font-size: 1.76vw;
+  font-weight: bold;
+}
+.reachLargerText {
+  margin-bottom: 75px;
+  font-size: 1.76vw;
+  font-weight: bold;
+}
+.signUpOrLogIn {
+  text-decoration: none;
+  font-weight: 1000;
+  margin-top: 75px;
+  font-size: 1.83vw;
+  display: block;
+}
+.Footer {
+  margin-top: 200px;
+}
+
+.aB {
+  font-size: 7.32vw;
+  /* -webkit-text-stroke-width: 3px;
+    -webkit-text-stroke-color: var(--purple); */
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-weight: bold;
+  position: relative;
+  color: var(--purple);
+  height: 11.12vw;
+  margin: 0px 50px;
+}
+.headsetGuysCon,
+.headsetGuysConOnly {
+  margin: 100px 50px 0px 50px;
+  text-align: center;
+}
+.headsetGuysConOnly {
+  display: none;
+}
+.headsetGuysCon2 {
+  margin: 50px 50px 0px 50px;
+  text-align: center;
+}
+.headsetGuys {
+  width: 30vw;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.green,
+.pink,
+.orange,
+.blue,
+.red {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: greenyellow;
+  display: inline-block;
+  vertical-align: middle;
+  line-height: 100px;
+}
+.pink {
+  background: rgb(253, 130, 150);
+}
+.orange {
+  background: rgb(248, 143, 104);
+}
+.blue {
+  background: rgb(18, 200, 245);
+}
+.red {
+  background: rgb(233, 66, 6);
+}
+.start {
+  display: inline-block;
+  vertical-align: middle;
+}
+.big_check {
+  color: white;
+  font-size: 21.96vw;
+  margin: auto;
+  display: flex;
+  align-self: center;
+}
+/* .welcome {
+  color: white;
+  height: 95vh;
+  top: 50%;
+  position: relative;
+  left: 20px;
+  font-size: 50px;
+  font-weight: bold;
+} */
+@media screen and (max-width: 999px) {
+  .reachLargerText,
+  .reachLargerTextA {
+    font-size: 24px;
+  }
+
+  .homeCon {
+    overflow-x: hidden;
+  }
+  .big_check {
+    color: white;
+    font-size: 300px;
+  }
+
+  .homeCard1 {
+    height: 767px;
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-   
-}
-.signInAndSpeakerCon{
-    margin: -76px 50px 0px 50px;
+    background: url(../images/mobile.png);
+  }
+  .squareAndCircleIcon {
+    width: 100%;
+    height: 90vw;
+    border-radius: 20px;
+    text-align: center;
+    display: inline-block;
+
+    vertical-align: middle;
+    padding-top: 0px;
+    padding: 20px 20px;
     display: flex;
-    position: relative;
-    margin-bottom: 100px;
-}
-.signIn{
-    font-size: 5.9vw;
-    color: white;
-    font-weight: 700;
-    text-decoration: none;
-    line-height: 6.2vw;
-    cursor: pointer;
-    transition: all;
-    transition-duration: 0.3s;
-    transition-timing-function: ease-in-out;
-}
-.signIn:hover{
-    font-size: 6.3vw;
-}
-.login:hover{
-    color: rgb(253, 130, 150);
-}
-.horizontalLine{
-    width: 13.2vw;
-    height: 3px;
-    background: white;
-    margin-top: 30px ;
-    display: inline-block;
-}
-.login{
-    color: white;
-    display: inline-block;
-    vertical-align: middle;
-    cursor: pointer;
-    font-size: 24px;
-}
-.horizontalLineB{
-    width: 5.13vw;
-    height: 3px;
-    background: white;
-    margin-top: 30px ;
-    display: inline-block;
-}
-.signInCon{
-    display: inline-block;
-    margin-right: auto;
-    margin-top: 100px;
-    position: relative;
-    top: 45vh;
+  }
 
-}
-
-
-.earnCon{
-    margin: 40px 50px;
-    text-align: center;
-    margin-top: 0px;
-}
-.red{
-    color: red;
-}
-.getCon{
-    background: rgb(247, 247, 247);
-    text-align: center;
-    padding: 80px 20px;
-    overflow: hidden;
-    margin-top: 100px;
-}
-.get, .get2{
+  .signInCon {
+    top: 300px;
     margin-right: 20px;
-    margin-bottom: 20px;
-    font-size: 1.68vw;
-    font-weight: bold;
-    padding: 0px 10px;
-}
-.get3{
-    font-size: 1.39vw;
-    font-weight: bold;
-    color: var(--blueA);
-    padding: 0px 10px;
-
-}
-.freeTrialBtn{
-    color: white;
-    vertical-align: middle;
-    background: var(--purple);
-    padding: 5px 20px;
-    border-radius: 10px;
-    font-size: 23px;
-    font-weight: bold;
-}
-.freeTrialBtn:hover{
-    background: #4b0d4b;
-}
-
-
-.linkCards{
-    margin: 100px 50px 0px 50px;
-    text-align: center;
-  
-}
-.metrics, .metricsWithBorder{
-    margin: 150px 50px;
-    text-align: center;
-    display: inline-block;
-    
-}
-.metricsWithBorder{
-    border-left: 7px solid var(--purple);
-    border-right: 7px solid var(--purple);
-    padding-left: 40px;
-    padding-right:40px;
-}
-.metricsCon{
-    text-align: center;
-}
-.largerAudienceCon{
-    margin: 0px 50px;
-    text-align: center;
-}
-.squareAndCircleIcon{
-    width: 547px;
-    height: 40.1vw;
-    background: var(--purple);
-    border-radius: 50px;
-    text-align: center;
-    display: inline-block;
-    margin-right: 50px;
-    vertical-align: middle;
-    padding-top: 8.8vw;
-}
-.smallThinkLine{
-    width: 8px;
-    height: 99px;
-    background: var(--purple);
-    display: inline-block;
-    vertical-align: middle;
-}
-.largerAudienceText{
-    display: inline-block;
-    text-align: left;
-    border-left: 2px solid var(--purple);
-    padding-left: 55px;
-    margin-left: -5px;
-    vertical-align: middle;
-}
-.reachLargerTextA{
-    font-size: 1.76vw;
-    font-weight: bold;
-
-}
-.reachLargerText{
-    margin-bottom: 75px;
-    font-size: 1.76vw;
-    font-weight: bold;
-
-}
-.signUpOrLogIn{
-    text-decoration: none;
-    font-weight: 1000;
-    margin-top: 75px;
-    font-size: 1.83vw;
+    margin-left: 20px;
     display: block;
-}
-.Footer{
-    margin-top: 200px;
-}
-.bigCheck{
-    width: 20.1vw;
-    display: inline-block;
-}
-.aB{
-    font-size: 7.32vw;
-    /* -webkit-text-stroke-width: 3px;
-    -webkit-text-stroke-color: var(--purple); */
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    font-weight: bold;
-    position: relative;
-    color: var(--purple);
-    height: 11.12vw;
-    margin: 0px 50px;
-}
-.headsetGuysCon, .headsetGuysConOnly{
-    margin: 100px 50px 0px 50px;
-    text-align: center;
-}
-.headsetGuysConOnly{
+  }
+  .earnCon {
+    margin-top: 70px;
+  }
+
+  .speakerCon {
     display: none;
-}
-.headsetGuysCon2{
-    margin: 50px 50px 0px 50px;
-    text-align: center;
-}
-.headsetGuys{
-    width: 30vw;
-    display: inline-block;
-    vertical-align: middle;
-}
+  }
 
-
-.green, .pink, .orange, .blue, .red{
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    background: greenyellow;
-    display: inline-block;
-    vertical-align: middle;
-    line-height: 100px;
-}
-.pink{
-    background: rgb(253, 130, 150);
-}
-.orange{
-    background: rgb(248, 143, 104);
-}
-.blue{
-    background: rgb(18, 200, 245);
-}
-.red{
-    background: rgb(233, 66, 6);
-}
-.start{
-    display: inline-block;
-    vertical-align: middle;
-}
-
-/* Media Query */
-@media screen and (max-width: 1180px) {
-
-.speakerImg{
-    width: 550px;
-}
-.signIn{
-    font-size: 60px;
-    line-height: 85px;
-}
-
-
-    .speakerCon{
-        top: 45vh;
-    }
-    .horizontalLine{
-        width: 100px;
-}
-.horizontalLineB{
-    width: 60px;
-}
-
-
-}
-@media screen and (max-width: 999px) {
-    .mobileBG{
-        width: 100%;
-        height: 100px;
-        background: url(../images/geo.png);
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
-        margin-bottom: 50px;
-        display: block;
-    }
-    .reachLargerText,.reachLargerTextA{
-        font-size: 24px;
-    }
-    
-    .homeCon{
-    overflow-x: hidden;
-}
-.signUpOrLogIn{
-    font-size: 25px;
-}
-    .homeCard1{
-        height: 767px;
-        background: url(../images/1000\ home\ background.png);
-        background-position: center;
-        background-size: cover;
-        background-repeat: no-repeat;
-        
-        
-       
-    }
-    .squareAndCircleIcon{
-        width: 100%;
-        height: fit-content;
-        border-radius: 20px;
-        text-align: center;
-        display: inline-block;
-      
-        vertical-align: middle;
-        padding-top: 0px;
-        padding: 20px 20px;
-    }
-   
-    .signInCon{
-       top: 300px;
-       margin-right: 20px;
-       margin-left: 20px;
-       display: block;
-    
-    }
-    .earnCon{
-        margin-top: 70px;
-        
-    }
-    
-
-.speakerCon{
-    display: none;
-}
-
-.signIn{
-    font-size: 80px;
-}
-.horizontalLine{
-    width: 180px;
-}
-.horizontalLineB{
-    width: 70px;
-}
-.signInAndSpeakerCon{
-    margin: -50px 50px 0px 50px;
-    text-align: center;
-     /* margin-bottom: 50vh; */
-    display: block;
-    position: relative;
-   
-}
-.metrics, .metricsWithBorder{
+  .metrics,
+  .metricsWithBorder {
     margin: 50px 20px;
     text-align: center;
     /* display: block; */
-    
-    
-}
-.metricsWithBorder{
+  }
+  .metricsWithBorder {
     border-top: 7px solid var(--purple);
     border-bottom: 7px solid var(--purple);
     border-left: none;
     border-right: none;
     padding-left: 0px;
-    padding-right:0px;
+    padding-right: 0px;
     padding: 40px 0px;
-    }
-.linkCards{
+  }
+  .linkCards {
     margin: 100px 10px 0px 10px;
     text-align: center;
-  
-}
-.smallThinkLine{
+  }
+  .smallThinkLine {
     width: 8px;
     height: 99px;
     display: block;
     text-align: center;
     margin: 50px 0px;
     margin-left: 50%;
-    
-}
-.largerAudienceText{
+  }
+  .largerAudienceText {
     display: inline-block;
     text-align: left;
     border-left: 2px solid var(--purple);
@@ -375,195 +282,115 @@
     margin-left: -5px;
     vertical-align: middle;
     height: fit-content;
-}
-.bigCheck{
-    width: 66.184vw;
-}
-.qM{
-    display: none;
+  }
 
-}
-.newAboutText{
+  .qM {
+    display: none;
+  }
+  .newAboutText {
     display: block;
     width: 100%;
-    font-size:14px;
-
-
-}
-.newAboutusCon{
+    font-size: 14px;
+  }
+  .newAboutusCon {
     margin-top: 20px;
-}
+  }
 
-.get, .get2, .freeTrialBtn{
+  .get,
+  .get2,
+  .freeTrialBtn {
     font-size: 20px;
-}
-.get3{
+  }
+  .get3 {
     font-size: 16px;
     margin-bottom: 30px;
+  }
+  .reachLargerText {
+    margin-bottom: 50px;
+  }
 }
-
-}
-@media screen and (max-width: 590px) {
-    .aboutUsHeader{
-        transform: rotate(0deg);
-        font-size: 20px;
-        font-weight: bold;
-        text-decoration: underline;
-        text-decoration-thickness: 2px;
-        text-decoration-color: var(--cream);
-        display: block;
-        margin-top: 100px;
-        margin-bottom: 20px;
-        text-align: left;
-           
-    }
-    .aboutUsText{
-        display: block;
-        border-left: 2px solid var(--cream);
-        border-right: 2px solid var(--cream);
-        padding: 30px 30px;
-        border-radius: 20px;
-    }
-    .aboutUsParagraphText{
-        width: 100%;
-        font-size: 13px;
-        /* line-height: 20px; */
-        font-style: italic;
-        margin-top: 20px;
-        text-align: justify; 
-        /* background: var(--purple); */
-        /* color: white; */
-    }  
-    /* .aboutUsTextHeader{
-        color: white;
-    }  */
-    
-}
-
 @media screen and (max-width: 540px) {
-    
-    .signInCon{
-        top: 25vh;
-        margin-right: 20px;
-        margin-left: 20px;
-        display: block;
-     
-     }
-    .homeCard1{
-        height: 65vh;
-    }
-    .signIn{
-        font-size: 60px;
-    }
-    .horizontalLine{
-        width: 100px;
-    }
-    .horizontalLineB{
-        width: 60px;
-    }
-    
-   
-    .earnCon{
-        margin: 40px 20px;
-        
-    }
-    .metrics, .metricsWithBorder{
-        margin: 20px 20px;
-        
-        
-    }
-    
-    .linkCards{
-        margin: 50px 10px 0px 10px;
-        text-align: center;
-      
-    }
-    .smallThinkLine{
-        margin: 20px 0px;
-        margin-left: 50%;
-    }
-    .largerAudienceText{
-        padding-left: 20px;
-        margin-left: -5px;
-       
-        height: fit-content;
-        display: block;
-    }
-    .metrics, .metricsWithBorder{
-        margin: 50px 20px;
-        text-align: center;
-        display: block;
-        
-        
-    }
-    .metricsWithBorder{
-        border-left: none;
-        border-right: none;
-        padding-left: 0px;
-        padding-right:0px;
-        padding: 40px 0px;
-        }
-        .bigCheck{
-            width: 240px;
-            
-            width: 60.184vw;
-        }
-        .qM{
-            width: 50vw;
-        }
-        .aB{
-            font-size: 7.32vw;
-            margin: 0px 30px;
-        }
-        .headsetGuysConOnly{
-            display: block;
-        }
-        .headsetGuysCon2{
-            display: none;
-        }
-        .headsetGuys{
-            width: 100%;
-        }
-        .get, .get2, .freeTrialBtn{
-            font-size: 4.35vw;
-        }
-        .get3{
-            font-size: 3.62vw;
-        }
+  .signInCon {
+    top: 0;
+    margin: 5px 10px;
+    display: block;
+  }
+  .homeCard1 {
+    height: 65vh;
+    display: flex;
+    align-items: center;
+  }
+  .signIn {
+    font-size: 60px;
+  }
 
-        
-}
-@media screen and (max-width: 407px) {
-.signIn{
-    font-size: 40px;
-}
-.login{
-    font-size: 15px;
-}
-.horizontalLine{
-    width: 100px;
-}
-.horizontalLineB{
-    width: 40px;
-}
+  .earnCon {
+    margin: 40px 20px;
+  }
+  .metrics,
+  .metricsWithBorder {
+    margin: 20px 20px;
+  }
 
-}
-@media screen and (max-width: 315px) {
-    .signIn{
-        font-size: 30px;
-        line-height: 50px;
-    }
-    .login{
-        font-size: 10px;
-    }
-    .horizontalLine{
-        width: 70px;
-    }
-    .horizontalLineB{
-        width: 20px;
-    }
-    .squareAndCircleIcon{
-        padding: 5px;
-    }
+  .linkCards {
+    margin: 50px 10px 0px 10px;
+    text-align: center;
+  }
+  .smallThinkLine {
+    margin: 30px 0px;
+    margin-left: 50%;
+  }
+  .largerAudienceText {
+    padding-left: 20px;
+    margin-left: -5px;
 
+    height: fit-content;
+    display: block;
+  }
+  .metrics,
+  .metricsWithBorder {
+    margin: 50px 20px;
+    text-align: center;
+    display: block;
+  }
+  .metricsWithBorder {
+    border-left: none;
+    border-right: none;
+    padding-left: 0px;
+    padding-right: 0px;
+    padding: 40px 0px;
+  }
+
+  .qM {
+    width: 50vw;
+  }
+  .aB {
+    font-size: 7.32vw;
+    margin: 0px 30px;
+  }
+  .headsetGuysConOnly {
+    display: block;
+  }
+  .headsetGuysCon2 {
+    display: none;
+  }
+  .headsetGuys {
+    width: 100%;
+  }
+  .get,
+  .get2,
+  .freeTrialBtn {
+    font-size: 4.35vw;
+  }
+  .get3 {
+    font-size: 3.62vw;
+  }
+  .big_check {
+    color: white;
+    font-size: 48.31vw;
+  }
+  .reachLargerText,
+  .reachLargerTextA {
+    font-size: 5.314vw;
+  }
 }
