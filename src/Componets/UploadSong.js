@@ -3,18 +3,24 @@ import { useNavigate } from "react-router-dom";
 import classes from "../CSS files/uploadSongs.module.css";
 import { useDropzone } from "react-dropzone";
 
-import { FcPicture } from "react-icons/fc";
-import { FcHeadset } from "react-icons/fc";
+import {
+  FcPicture,
+  FcBusinessman,
+  FcHeadset,
+  FcBusinesswoman,
+  FcDownRight,
+  FcDownLeft,
+  FcCopyright,
+  FcCalendar,
+  FcMusic,
+  FcElectricalSensor,
+  FcInspection,
+  FcDisplay,
+  FcDataSheet,
+} from "react-icons/fc";
 
-import { FcBusinessman } from "react-icons/fc";
-import { FcMusic } from "react-icons/fc";
-import { FcBusinesswoman } from "react-icons/fc";
-
-import { FcDownRight } from "react-icons/fc";
-import { FcDownLeft } from "react-icons/fc";
-
-import { useEffect } from "react";
 import { useState } from "react";
+import { YearPicker } from "react-dropdown-date";
 
 function UploadSongs(props) {
   // back button
@@ -63,13 +69,21 @@ function UploadSongs(props) {
 
         {clickCount === 2 && (
           <>
-            <div>Copywright Info, producer & songwriter</div>
+            <PageThree />
           </>
         )}
 
         {clickCount === 3 && (
           <>
-            <div>uspc, isrc & release date</div>
+            <PageFour />
+          </>
+        )}
+
+        {clickCount === 4 && (
+          <>
+            <div>
+              <PageFive />
+            </div>
           </>
         )}
       </div>
@@ -77,15 +91,15 @@ function UploadSongs(props) {
       <div className={classes.next_con}>
         {clickCount !== 0 && (
           <p className={classes.prev_button} onClick={pageDecrement}>
-            <FcDownLeft />
+            <FcDownLeft className={classes.left_icon} />
           </p>
         )}
 
-        {clickCount === 3 ? (
+        {clickCount === 4 ? (
           <p className={classes.submit}>submit</p>
         ) : (
           <p className={classes.next_button} onClick={pageIncrement}>
-            <FcDownRight />
+            <FcDownRight className={classes.left_icon} />
           </p>
         )}
       </div>
@@ -95,14 +109,18 @@ function UploadSongs(props) {
 
 const UploadImageComp = () => {
   //   image upload library
-  const { acceptedFiles, fileRejections, getRootProps, getInputProps } =
-    useDropzone({
-      accept: {
-        "music/jpeg": [],
-        "image/png": [],
-      },
-      maxFiles: 1,
-    });
+  const {
+    acceptedFiles,
+    fileRejections,
+    getRootProps,
+    getInputProps,
+  } = useDropzone({
+    accept: {
+      "music/jpeg": [],
+      "image/png": [],
+    },
+    maxFiles: 1,
+  });
 
   const acceptedFileItems = acceptedFiles.map((file) => (
     <li key={file.path}>
@@ -163,13 +181,17 @@ const UploadImageComp = () => {
 // music upload component
 const UploadAudioComp = () => {
   //   image upload library
-  const { acceptedFiles, fileRejections, getRootProps, getInputProps } =
-    useDropzone({
-      accept: {
-        "audio/wav": [],
-      },
-      maxFiles: 1,
-    });
+  const {
+    acceptedFiles,
+    fileRejections,
+    getRootProps,
+    getInputProps,
+  } = useDropzone({
+    accept: {
+      "audio/wav": [],
+    },
+    maxFiles: 1,
+  });
 
   const acceptedFileItems = acceptedFiles.map((file) => (
     <li key={file.path}>
@@ -230,28 +252,33 @@ const UploadAudioComp = () => {
 // song details
 
 function PageTwo(props) {
+  const [yearSelected, setYear] = useState("Copyright year");
   return (
     <div>
       {/* form */}
-      <div className={classes.form_con}>
-        <div className={classes.purple_block}>
-          <FcBusinessman className={classes.people_con} />
-        </div>
-        <input
-          type={"text"}
-          className={classes.input}
-          style={{ marginRight: "auto" }}
-          placeholder={"Artiste name"}
-        />
 
-        <div className={classes.purple_block}>
-          <FcMusic className={classes.people_con} />
+      <div className={classes.form_con_small_flex}>
+        <div className={classes.form_con_small}>
+          <div className={classes.purple_block}>
+            <FcBusinessman className={classes.people_con} />
+          </div>
+          <input
+            type={"text"}
+            className={classes.input_full}
+            placeholder={"Artiste name"}
+          />
         </div>
-        <input
-          type={"text"}
-          className={classes.input}
-          placeholder={"Song title"}
-        />
+
+        <div className={classes.form_con_small_2}>
+          <div className={classes.purple_block}>
+            <FcMusic className={classes.people_con} />
+          </div>
+          <input
+            type={"text"}
+            className={classes.input_full}
+            placeholder={"Song title"}
+          />
+        </div>
       </div>
 
       <div className={classes.form_con}>
@@ -260,8 +287,7 @@ function PageTwo(props) {
         </div>
         <input
           type={"text"}
-          className={classes.input}
-          style={{ width: "100%" }}
+          className={classes.input_full}
           placeholder={"featuring? e.g Isaac Chukwuma, Isong Ahmad"}
         />
       </div>
@@ -276,4 +302,126 @@ function PageTwo(props) {
   );
 }
 
+function PageThree(props) {
+  const [yearSelected, setYear] = useState(1990);
+  return (
+    <div>
+      <div className={classes.form_con_small_flex}>
+        <div className={classes.form_con_medium}>
+          <div className={classes.purple_block}>
+            <FcCopyright className={classes.people_con} />
+          </div>
+          <input
+            type={"text"}
+            className={classes.input_full}
+            placeholder={"Copyright holder & date"}
+          />
+        </div>
+
+        <div className={classes.form_con_smallest}>
+          <div className={classes.purple_block}>
+            <FcCalendar className={classes.people_con} />
+          </div>
+          <div className={classes.input_copyright_date}>
+            <YearPicker
+              yearArray={["2019", "2020"]}
+              value={yearSelected}
+              onSelect={(e) => setYear(e)}
+              hideInput={false}
+              minRange={1000}
+              maxRange={2018}
+            />
+          </div>
+        </div>
+      </div>
+
+      <div className={classes.form_con}>
+        <div className={classes.purple_block}>
+          <FcElectricalSensor className={classes.people_con} />
+        </div>
+        <input
+          type={"text"}
+          className={classes.input}
+          style={{ width: "100%" }}
+          placeholder={"Producer(s)? e.g Isaac Chukwuma, Isong Ahmad"}
+        />
+      </div>
+
+      <div className={classes.form_con}>
+        <div className={classes.purple_block}>
+          <FcInspection className={classes.people_con} />
+        </div>
+        <input
+          type={"text"}
+          className={classes.input}
+          style={{ width: "100%" }}
+          placeholder={"Songwriter(s)? e.g Isaac Chukwuma, Isong Ahmad"}
+        />
+      </div>
+    </div>
+  );
+}
+
+function PageFour(props) {
+  return (
+    <div>
+      <div className={classes.form_con} style={{ height: "300px" }}>
+        <div className={classes.purple_block}>
+          <FcInspection className={classes.people_con} />
+        </div>
+        <textarea
+          className={classes.input}
+          style={{ width: "100%" }}
+          placeholder={"Credits"}
+        />
+      </div>
+    </div>
+  );
+}
+function PageFive(props) {
+  return (
+    <div>
+      {/* <div className={classes.form_con}>
+        <div className={classes.purple_block}>
+          <FcBusinessman className={classes.people_con} />
+        </div>
+        <input
+          type={"text"}
+          className={classes.input}
+          style={{ marginRight: "auto" }}
+          placeholder={"UPC"}
+        />
+
+        <div className={classes.purple_block}>
+          <FcMusic className={classes.people_con} />
+        </div>
+        <input type={"text"} className={classes.input} placeholder={"ISRC"} />
+      </div> */}
+
+      <div className={classes.form_con_small_flex}>
+        <div className={classes.form_con_small}>
+          <div className={classes.purple_block}>
+            <FcDisplay className={classes.people_con} />
+          </div>
+          <input
+            type={"text"}
+            className={classes.input_full}
+            placeholder={"UPC"}
+          />
+        </div>
+
+        <div className={classes.form_con_small_2}>
+          <div className={classes.purple_block}>
+            <FcDataSheet className={classes.people_con} />
+          </div>
+          <input
+            type={"text"}
+            className={classes.input_full}
+            placeholder={"ISRC"}
+          />
+        </div>
+      </div>
+    </div>
+  );
+}
 export default UploadSongs;

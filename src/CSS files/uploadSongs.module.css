@@ -78,7 +78,11 @@
   border-radius: 10px;
   justify-content: center;
 }
-.form_con {
+.form_con,
+.form_con_small,
+.form_con_small_2,
+.form_con_medium,
+.form_con_smallest {
   width: 759.94px;
   background: white;
   margin: auto;
@@ -90,7 +94,33 @@
   -moz-box-shadow: 0px 5px 15px -4px rgba(10, 10, 10, 0.71);
   margin-bottom: 20px;
 }
-.input {
+.form_con_small,
+.form_con_small_2,
+.form_con_medium,
+.form_con_smallest {
+  text-align: left;
+  width: 48%;
+  margin: 0;
+  margin-right: auto;
+}
+.form_con_small_flex {
+  width: 759.94px;
+  margin-bottom: 20px;
+  display: flex;
+}
+.form_con_small_2 {
+  margin: 0;
+}
+.form_con_medium {
+  width: 70%;
+}
+.form_con_smallest {
+  width: 25%;
+  margin: 0;
+}
+.input,
+.input_copyright_date,
+.input_full {
   /* background: green; */
   margin-left: 20px;
   border: 2px solid var(--purple);
@@ -99,10 +129,20 @@
   text-transform: capitalize;
   padding: 0px 15px;
   font-weight: bold;
+  font-size: 13px;
 }
-.input ::placeholder {
-  font-size: 11px;
-  font-weight: 900;
+.input_full {
+  width: 100%;
+}
+.input_copyright_date {
+  width: fit-content;
+  align-items: center;
+  padding-top: 10px;
+  height: 50px;
+}
+input::placeholder {
+  font-size: 13px;
+  /* font-weight: 900; */
 }
 .people_con {
   font-size: 30px;
@@ -116,14 +156,18 @@
 }
 .next_con {
   /* background: green; */
-  position: absolute;
-  top: 90vh;
+  position: fixed;
+  top: 80vh;
   width: 100%;
   height: 9.8vh;
   display: flex;
   justify-content: right;
   padding: 0px 30px;
   align-items: center;
+}
+.left_icon {
+  background: rgba(0, 0, 0, 0.226);
+  padding: 0px 3px;
 }
 .next_button,
 .prev_button,
@@ -174,6 +218,26 @@
   .file_name,
   .file_name {
     font-size: 13px;
+  }
+  .upload_group_con {
+    height: calc(100vh - 287.8px);
+    /* background: red; */
+    display: inline-block;
+    align-items: center;
+    justify-content: center;
+    padding: 0px 10px;
+  }
+  .form_con_small_flex {
+    display: inline;
+    width: 100vw;
+  }
+  .form_con,
+  .form_con_small,
+  .form_con_small_2,
+  .form_con_medium,
+  .form_con_smallest {
+    width: 100%;
+    margin-bottom: 20px;
   }
 }
 @media screen and (max-width: 540px) {
