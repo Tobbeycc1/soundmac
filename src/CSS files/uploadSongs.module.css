@@ -1,3 +1,9 @@
+.upload_page_con {
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+}
+
 .text,
 .back_icon {
   font-size: 2.2vw;
@@ -156,14 +162,13 @@ input::placeholder {
 }
 .next_con {
   /* background: green; */
-  position: fixed;
-  top: 80vh;
   width: 100%;
   height: 9.8vh;
   display: flex;
   justify-content: right;
   padding: 0px 30px;
   align-items: center;
+  margin-top: auto;
 }
 .left_icon {
   background: rgba(0, 0, 0, 0.226);

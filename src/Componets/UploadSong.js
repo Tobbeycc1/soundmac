@@ -46,7 +46,7 @@ function UploadSongs(props) {
   console.log(clickCount);
 
   return (
-    <div>
+    <div className={classes.upload_page_con}>
       <div>
         <span onClick={backBtn} className={classes.back_icon}>
           <IoReturnDownBack />
@@ -253,175 +253,18 @@ const UploadAudioComp = () => {
 
 function PageTwo(props) {
   const [yearSelected, setYear] = useState("Copyright year");
-  return (
-    <div>
-      {/* form */}
-
-      <div className={classes.form_con_small_flex}>
-        <div className={classes.form_con_small}>
-          <div className={classes.purple_block}>
-            <FcBusinessman className={classes.people_con} />
-          </div>
-          <input
-            type={"text"}
-            className={classes.input_full}
-            placeholder={"Artiste name"}
-          />
-        </div>
-
-        <div className={classes.form_con_small_2}>
-          <div className={classes.purple_block}>
-            <FcMusic className={classes.people_con} />
-          </div>
-          <input
-            type={"text"}
-            className={classes.input_full}
-            placeholder={"Song title"}
-          />
-        </div>
-      </div>
-
-      <div className={classes.form_con}>
-        <div className={classes.purple_block}>
-          <FcBusinesswoman className={classes.people_con} />
-        </div>
-        <input
-          type={"text"}
-          className={classes.input_full}
-          placeholder={"featuring? e.g Isaac Chukwuma, Isong Ahmad"}
-        />
-      </div>
-
-      <form>
-        <p className={classes.explicit}>Explicit?</p>
-        <input type={"radio"} name="explicit" />{" "}
-        <label style={{ marginRight: "40px" }}>Yes</label>
-        <input type={"radio"} name="explicit" /> <label>No</label>
-      </form>
-    </div>
-  );
+  return <div></div>;
 }
 
 function PageThree(props) {
   const [yearSelected, setYear] = useState(1990);
-  return (
-    <div>
-      <div className={classes.form_con_small_flex}>
-        <div className={classes.form_con_medium}>
-          <div className={classes.purple_block}>
-            <FcCopyright className={classes.people_con} />
-          </div>
-          <input
-            type={"text"}
-            className={classes.input_full}
-            placeholder={"Copyright holder & date"}
-          />
-        </div>
-
-        <div className={classes.form_con_smallest}>
-          <div className={classes.purple_block}>
-            <FcCalendar className={classes.people_con} />
-          </div>
-          <div className={classes.input_copyright_date}>
-            <YearPicker
-              yearArray={["2019", "2020"]}
-              value={yearSelected}
-              onSelect={(e) => setYear(e)}
-              hideInput={false}
-              minRange={1000}
-              maxRange={2018}
-            />
-          </div>
-        </div>
-      </div>
-
-      <div className={classes.form_con}>
-        <div className={classes.purple_block}>
-          <FcElectricalSensor className={classes.people_con} />
-        </div>
-        <input
-          type={"text"}
-          className={classes.input}
-          style={{ width: "100%" }}
-          placeholder={"Producer(s)? e.g Isaac Chukwuma, Isong Ahmad"}
-        />
-      </div>
-
-      <div className={classes.form_con}>
-        <div className={classes.purple_block}>
-          <FcInspection className={classes.people_con} />
-        </div>
-        <input
-          type={"text"}
-          className={classes.input}
-          style={{ width: "100%" }}
-          placeholder={"Songwriter(s)? e.g Isaac Chukwuma, Isong Ahmad"}
-        />
-      </div>
-    </div>
-  );
+  return <div></div>;
 }
 
 function PageFour(props) {
-  return (
-    <div>
-      <div className={classes.form_con} style={{ height: "300px" }}>
-        <div className={classes.purple_block}>
-          <FcInspection className={classes.people_con} />
-        </div>
-        <textarea
-          className={classes.input}
-          style={{ width: "100%" }}
-          placeholder={"Credits"}
-        />
-      </div>
-    </div>
-  );
+  return <div></div>;
 }
 function PageFive(props) {
-  return (
-    <div>
-      {/* <div className={classes.form_con}>
-        <div className={classes.purple_block}>
-          <FcBusinessman className={classes.people_con} />
-        </div>
-        <input
-          type={"text"}
-          className={classes.input}
-          style={{ marginRight: "auto" }}
-          placeholder={"UPC"}
-        />
-
-        <div className={classes.purple_block}>
-          <FcMusic className={classes.people_con} />
-        </div>
-        <input type={"text"} className={classes.input} placeholder={"ISRC"} />
-      </div> */}
-
-      <div className={classes.form_con_small_flex}>
-        <div className={classes.form_con_small}>
-          <div className={classes.purple_block}>
-            <FcDisplay className={classes.people_con} />
-          </div>
-          <input
-            type={"text"}
-            className={classes.input_full}
-            placeholder={"UPC"}
-          />
-        </div>
-
-        <div className={classes.form_con_small_2}>
-          <div className={classes.purple_block}>
-            <FcDataSheet className={classes.people_con} />
-          </div>
-          <input
-            type={"text"}
-            className={classes.input_full}
-            placeholder={"ISRC"}
-          />
-        </div>
-      </div>
-    </div>
-  );
+  return <div></div>;
 }
 export default UploadSongs;

@@ -1,4 +1,4 @@
-import { useState, useContext } from "react";
+import { useState, useContext, useEffect } from "react";
 import classes from "../CSS files/Signup.module.css";
 import { ImCancelCircle } from "react-icons/im";
 import { MdOutlineAttachEmail } from "react-icons/md";
@@ -12,6 +12,7 @@ import AuthContext from "../contexts/auth/authContext";
 import inputClasses from "../CSS files/inputSignIn.module.css";
 import { ToastContainer, toast } from "react-toastify";
 import { Loading } from "@nextui-org/react";
+import { useNavigate } from "react-router-dom";
 
 import {
   CountryDropdown,
@@ -22,7 +23,8 @@ import {
 function SignUp(props) {
   const authContext = useContext(AuthContext);
 
-  const { registerUser, loading, loader } = authContext;
+  const { registerUser, loading, loader, user } = authContext;
+  const navigate = useNavigate();
 
   const [userDetails, setUserDetails] = useState({
     first_name: "",
@@ -32,8 +34,13 @@ function SignUp(props) {
     confirmPassword: "",
   });
 
-  const { first_name, last_name, email, password, confirmPassword } =
-    userDetails;
+  const {
+    first_name,
+    last_name,
+    email,
+    password,
+    confirmPassword,
+  } = userDetails;
 
   const onChange = (e) => {
     setUserDetails((prev) => ({ ...prev, [e.target.name]: e.target.value }));
@@ -131,6 +138,10 @@ function SignUp(props) {
     setLocation({ location, country: val });
     console.log(country);
   };
+  useEffect(() => {
+    user !== null && navigate("/dashboard");
+    //eslint-disable-next-line
+  }, [user]);
 
   return (
     <div>
