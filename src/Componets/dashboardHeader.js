@@ -6,6 +6,8 @@ import { AiFillSetting } from "react-icons/ai";
 import { RiLogoutBoxRFill } from "react-icons/ri";
 import { Tooltip, Button } from "@nextui-org/react";
 import { useNavigate } from "react-router-dom";
+import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
+import "react-loading-skeleton/dist/skeleton.css";
 
 function DashboardHeader() {
   //   get user data function
@@ -32,7 +34,7 @@ function DashboardHeader() {
       <p className={classes.welcome}>
         Welcome{" "}
         <span className={classes.first_name}>
-          {user !== null && user.first_name}
+          {user !== null ? user.first_name : <Skeleton width="100px" />}
         </span>{" "}
       </p>
 

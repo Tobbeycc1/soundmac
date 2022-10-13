@@ -18,9 +18,11 @@ import {
   FcDisplay,
   FcDataSheet,
 } from "react-icons/fc";
-
+import { BsPencilFill } from "react-icons/bs";
+import { AiFillCheckCircle } from "react-icons/ai";
 import { useState } from "react";
 import { YearPicker } from "react-dropdown-date";
+import { useEffect } from "react";
 
 function UploadSongs(props) {
   // back button
@@ -47,7 +49,7 @@ function UploadSongs(props) {
 
   return (
     <div className={classes.upload_page_con}>
-      <div>
+      <div className={classes.backBtn_upload_con}>
         <span onClick={backBtn} className={classes.back_icon}>
           <IoReturnDownBack />
         </span>{" "}
@@ -253,18 +255,298 @@ const UploadAudioComp = () => {
 
 function PageTwo(props) {
   const [yearSelected, setYear] = useState("Copyright year");
-  return <div></div>;
+  return (
+    <div>
+      {/* form */}
+
+      <div className={classes.form_con_small_flex}>
+        <div className={classes.form_con_small}>
+          <div className={classes.purple_block}>
+            <FcBusinessman className={classes.people_con} />
+          </div>
+          <input
+            type={"text"}
+            className={classes.input_full}
+            placeholder={"Artiste name"}
+          />
+        </div>
+
+        <div className={classes.form_con_small_2}>
+          <div className={classes.purple_block}>
+            <FcMusic className={classes.people_con} />
+          </div>
+          <input
+            type={"text"}
+            className={classes.input_full}
+            placeholder={"Song title"}
+          />
+        </div>
+      </div>
+
+      <div className={classes.form_con}>
+        <div className={classes.purple_block}>
+          <FcBusinesswoman className={classes.people_con} />
+        </div>
+        <input
+          type={"text"}
+          className={classes.input_full}
+          placeholder={"featuring? e.g Isaac Chukwuma, Isong Ahmad"}
+        />
+      </div>
+
+      <form>
+        <p className={classes.explicit}>Explicit?</p>
+        <input type={"radio"} name="explicit" />{" "}
+        <label style={{ marginRight: "40px" }}>Yes</label>
+        <input type={"radio"} name="explicit" /> <label>No</label>
+      </form>
+    </div>
+  );
 }
 
 function PageThree(props) {
+  const fox = "fox: \u{1F98A}"; // 'fox: 🦊'
+
+  console.log(fox);
   const [yearSelected, setYear] = useState(1990);
-  return <div></div>;
+
+  const [featuring, setFeaturing] = useState(false);
+  const [songwriter, setSongwriter] = useState(false);
+  const [producer, setProducer] = useState(false);
+  const [composer, setComposer] = useState(false);
+
+  const [filledText, setFilledText] = useState({
+    featuringText: "",
+    songwriterText: "",
+    producerText: "",
+    composerText: "",
+  });
+
+  const {
+    featuringText,
+    songwriterText,
+    producerText,
+    composerText,
+  } = filledText;
+
+  const onFillText = (e) => {
+    setFilledText(() => ({ ...filledText, [e.target.name]: e.target.value }));
+    console.log(e.target.value);
+  };
+
+  return (
+    <div className={classes.page3_con}>
+      <div className={classes.credits_fill_space_con}>
+        <div className={classes.featuring_con}>
+          <div className={classes.featuring_sub_con}>
+            <p className={classes.featuring}>Featuring</p>{" "}
+            <span onClick={() => setFeaturing(!featuring)}>
+              <BsPencilFill />
+            </span>
+          </div>
+          {featuring && (
+            <input
+              type={"text"}
+              name={"featuringText"}
+              onChange={onFillText}
+              className={classes.input_featuring}
+              placeholder={"E.g Isaac Chukwuma, Isong Ahmad"}
+            />
+          )}
+        </div>
+
+        <div className={classes.featuring_con}>
+          <div className={classes.featuring_sub_con}>
+            <p className={classes.featuring}>Songwriter(s)</p>{" "}
+            <span onClick={() => setSongwriter(!songwriter)}>
+              <BsPencilFill />
+            </span>
+          </div>
+          {songwriter && (
+            <input
+              type={"text"}
+              name={"songwriterText"}
+              onChange={onFillText}
+              className={classes.input_featuring}
+              placeholder={"E.g Isaac Chukwuma, Isong Ahmad"}
+            />
+          )}
+        </div>
+
+        <div className={classes.featuring_con}>
+          <div className={classes.featuring_sub_con}>
+            <p className={classes.featuring}>Producer(s)</p>{" "}
+            <span onClick={() => setProducer(!producer)}>
+              <BsPencilFill />
+            </span>
+          </div>
+          {producer && (
+            <input
+              type={"text"}
+              name={"producerText"}
+              onChange={onFillText}
+              className={classes.input_featuring}
+              placeholder={"E.g Isaac Chukwuma, Isong Ahmad"}
+            />
+          )}
+        </div>
+
+        <div className={classes.featuring_con}>
+          <div className={classes.featuring_sub_con}>
+            <p className={classes.featuring}>Composer(s)</p>{" "}
+            <span onClick={() => setComposer(!composer)}>
+              <BsPencilFill />
+            </span>
+          </div>
+          {composer && (
+            <input
+              type={"text"}
+              name={"composerText"}
+              onChange={onFillText}
+              className={classes.input_featuring}
+              placeholder={"E.g Isaac Chukwuma, Isong Ahmad"}
+            />
+          )}
+        </div>
+      </div>
+      <div className={classes.credits_filled_display}>
+        <>
+          <AiFillCheckCircle
+            className={featuringText !== "" ? classes.feat : classes.feat_grey}
+          />{" "}
+          <h2
+            className={featuringText !== "" ? classes.feat : classes.feat_grey}
+          >
+            Feat
+          </h2>{" "}
+          <br />
+          {featuringText !== "" && (
+            <h2 className={classes.credits_filled}>{` ◉ ${featuringText.replace(
+              /,/g,
+              "\n ◉ "
+            )}`}</h2>
+          )}
+        </>
+        {/* songwriter */}
+        <>
+          <AiFillCheckCircle
+            className={songwriterText !== "" ? classes.feat : classes.feat_grey}
+          />{" "}
+          <h2
+            className={songwriterText !== "" ? classes.feat : classes.feat_grey}
+          >
+            Written by:
+          </h2>
+          <br />
+          {songwriterText !== "" && (
+            <h2
+              className={classes.credits_filled}
+            >{` ◉ ${songwriterText.replace(/,/g, "\n ◉ ")}`}</h2>
+          )}
+        </>
+
+        {/* producer */}
+        <>
+          <AiFillCheckCircle
+            className={producerText !== "" ? classes.feat : classes.feat_grey}
+          />{" "}
+          <h2
+            className={producerText !== "" ? classes.feat : classes.feat_grey}
+          >
+            Produced by:
+          </h2>
+          <br />
+          {producerText !== "" && (
+            <h2 className={classes.credits_filled}>{` ◉ ${producerText.replace(
+              /,/g,
+              "\n ◉ "
+            )}`}</h2>
+          )}
+        </>
+
+        {/* composer */}
+        <>
+          <AiFillCheckCircle
+            className={composerText !== "" ? classes.feat : classes.feat_grey}
+          />{" "}
+          <h2
+            className={composerText !== "" ? classes.feat : classes.feat_grey}
+          >
+            Composed by:
+          </h2>
+          <br />
+          {composerText !== "" && (
+            <h2 className={classes.credits_filled}>{` ◉ ${composerText.replace(
+              /,/g,
+              "\n ◉ "
+            )}`}</h2>
+          )}
+        </>
+      </div>
+    </div>
+  );
 }
 
 function PageFour(props) {
-  return <div></div>;
+  return (
+    <div>
+      <div className={classes.form_con} style={{ height: "300px" }}>
+        <div className={classes.purple_block}>
+          <FcInspection className={classes.people_con} />
+        </div>
+        <textarea
+          className={classes.input}
+          style={{ width: "100%" }}
+          placeholder={"Credits"}
+        />
+      </div>
+    </div>
+  );
 }
 function PageFive(props) {
-  return <div></div>;
+  return (
+    <div>
+      {/* <div className={classes.form_con}>
+        <div className={classes.purple_block}>
+          <FcBusinessman className={classes.people_con} />
+        </div>
+        <input
+          type={"text"}
+          className={classes.input}
+          style={{ marginRight: "auto" }}
+          placeholder={"UPC"}
+        />
+
+        <div className={classes.purple_block}>
+          <FcMusic className={classes.people_con} />
+        </div>
+        <input type={"text"} className={classes.input} placeholder={"ISRC"} />
+      </div> */}
+
+      <div className={classes.form_con_small_flex}>
+        <div className={classes.form_con_small}>
+          <div className={classes.purple_block}>
+            <FcDisplay className={classes.people_con} />
+          </div>
+          <input
+            type={"text"}
+            className={classes.input_full}
+            placeholder={"UPC"}
+          />
+        </div>
+
+        <div className={classes.form_con_small_2}>
+          <div className={classes.purple_block}>
+            <FcDataSheet className={classes.people_con} />
+          </div>
+          <input
+            type={"text"}
+            className={classes.input_full}
+            placeholder={"ISRC"}
+          />
+        </div>
+      </div>
+    </div>
+  );
 }
 export default UploadSongs;

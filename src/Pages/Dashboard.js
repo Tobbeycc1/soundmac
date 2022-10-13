@@ -14,55 +14,64 @@ import MediaQuery from "react-responsive";
 import { GoKebabVertical } from "react-icons/go";
 import AuthContext from "../contexts/auth/authContext";
 import { Fragment } from "react";
+import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
+import "react-loading-skeleton/dist/skeleton.css";
 
 const dummyData = [
   {
     id: 1,
     artisteName: "Tobbey",
     song: "good girl",
-    src: "https://cdn8.openculture.com/2018/02/26214611/Arlo-safe-e1519715317729.jpg",
+    src:
+      "https://cdn8.openculture.com/2018/02/26214611/Arlo-safe-e1519715317729.jpg",
     ft: "wizkid",
   },
   {
     id: 2,
     artisteName: "Tobbey",
     song: "Gbese",
-    src: "https://oscarmini.com/wp-content/uploads/2014/08/michaeljackson_coverart.jpg",
+    src:
+      "https://oscarmini.com/wp-content/uploads/2014/08/michaeljackson_coverart.jpg",
     ft: "Asake, burna boy",
   },
   {
     id: 3,
     artisteName: "Tobbey",
     song: "Essence",
-    src: "https://graphicriver.img.customer.envatousercontent.com/files/383062766/music-albumcover-templates-bundle78-preview.jpg?auto=compress%2Cformat&fit=crop&crop=top&w=590&h=590&s=17318da830a8e0cad5e038de293bced3",
+    src:
+      "https://graphicriver.img.customer.envatousercontent.com/files/383062766/music-albumcover-templates-bundle78-preview.jpg?auto=compress%2Cformat&fit=crop&crop=top&w=590&h=590&s=17318da830a8e0cad5e038de293bced3",
     ft: "",
   },
   {
     id: 4,
     artisteName: "Tobbey",
     song: "Daddy yo",
-    src: "https://www.bellanaija.com/wp-content/uploads/2018/09/rasaking-720x720.jpg",
+    src:
+      "https://www.bellanaija.com/wp-content/uploads/2018/09/rasaking-720x720.jpg",
     ft: "",
   },
   {
     id: 5,
     artisteName: "Tobbey",
     song: "Holla at your boy ",
-    src: "https://i.pinimg.com/736x/dc/ae/9a/dcae9acc196c7de7fdb4214b01de84ac.jpg",
+    src:
+      "https://i.pinimg.com/736x/dc/ae/9a/dcae9acc196c7de7fdb4214b01de84ac.jpg",
     ft: "",
   },
   {
     id: 6,
     artisteName: "Tobbey",
     song: "soweto baby",
-    src: "https://d1csarkz8obe9u.cloudfront.net/posterpreviews/album-cover-art-template-design-6d5b5d8df1dbe0c1fcaa4c1ba16a86a9_screen.jpg?ts=1635384690",
+    src:
+      "https://d1csarkz8obe9u.cloudfront.net/posterpreviews/album-cover-art-template-design-6d5b5d8df1dbe0c1fcaa4c1ba16a86a9_screen.jpg?ts=1635384690",
     ft: "",
   },
   {
     id: 7,
     artisteName: "Tobbey",
     song: "Grace",
-    src: "https://d1csarkz8obe9u.cloudfront.net/posterpreviews/album-cover-art-template-design-6d5b5d8df1dbe0c1fcaa4c1ba16a86a9_screen.jpg?ts=1635384690",
+    src:
+      "https://d1csarkz8obe9u.cloudfront.net/posterpreviews/album-cover-art-template-design-6d5b5d8df1dbe0c1fcaa4c1ba16a86a9_screen.jpg?ts=1635384690",
     ft: "chris brown",
   },
 ];
@@ -76,7 +85,10 @@ function Dashboard() {
   );
 
   const selectedValue = useMemo(
-    () => Array.from(selected).join(", ").replaceAll("_", " "),
+    () =>
+      Array.from(selected)
+        .join(", ")
+        .replaceAll("_", " "),
     [selected]
   );
 
@@ -114,7 +126,7 @@ function Dashboard() {
 
   return (
     <Fragment>
-      {user !== null && !loading && (
+      {user !== null && !loading ? (
         <div className={classes.dashboard_con}>
           {user.artist_name === "" && user.label_name === "" && (
             <div className={classes.modal}>
@@ -332,6 +344,10 @@ function Dashboard() {
               </div>
             </div>
           </div>
+        </div>
+      ) : (
+        <div className={classes.skeleton_con}>
+          <Skeleton count={2} className={classes.skeleton} />
         </div>
       )}
     </Fragment>

@@ -176,6 +176,14 @@
 .popover_content {
   padding: 20px;
 }
+.skeleton {
+  height: 55vh;
+  margin-bottom: 7vh;
+}
+.skeleton_con {
+  margin-top: 7.01vh;
+  padding: 0px 20px;
+}
 
 @media screen and (max-width: 999px) {
   .Cover_Image,
