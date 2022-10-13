@@ -178,11 +178,10 @@
 }
 .skeleton {
   height: 55vh;
-  margin-bottom: 7vh;
 }
 .skeleton_con {
   margin-top: 7.01vh;
-  padding: 0px 20px;
+  padding: 0px 30px;
 }
 
 @media screen and (max-width: 999px) {
@@ -241,6 +240,13 @@
   .cloud_icon {
     font-size: 30px;
     font-weight: 900;
+  }
+  .skeleton {
+    height: 100vw;
+  }
+  .skeleton_con {
+    margin-top: 7.01vh;
+    padding: 0px 10px;
   }
 }
 @media screen and (max-width: 540px) {

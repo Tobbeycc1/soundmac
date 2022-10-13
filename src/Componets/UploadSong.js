@@ -411,15 +411,20 @@ function PageThree(props) {
       </div>
       <div className={classes.credits_filled_display}>
         <>
-          <AiFillCheckCircle
-            className={featuringText !== "" ? classes.feat : classes.feat_grey}
-          />{" "}
-          <h2
-            className={featuringText !== "" ? classes.feat : classes.feat_grey}
-          >
-            Feat
-          </h2>{" "}
-          <br />
+          <div className={classes.feat_con}>
+            <AiFillCheckCircle
+              className={
+                featuringText !== "" ? classes.feat : classes.feat_grey
+              }
+            />{" "}
+            <h2
+              className={
+                featuringText !== "" ? classes.feat : classes.feat_grey
+              }
+            >
+              Feat
+            </h2>
+          </div>
           {featuringText !== "" && (
             <h2 className={classes.credits_filled}>{` ◉ ${featuringText.replace(
               /,/g,
@@ -429,15 +434,20 @@ function PageThree(props) {
         </>
         {/* songwriter */}
         <>
-          <AiFillCheckCircle
-            className={songwriterText !== "" ? classes.feat : classes.feat_grey}
-          />{" "}
-          <h2
-            className={songwriterText !== "" ? classes.feat : classes.feat_grey}
-          >
-            Written by:
-          </h2>
-          <br />
+          <div className={classes.feat_con}>
+            <AiFillCheckCircle
+              className={
+                songwriterText !== "" ? classes.feat : classes.feat_grey
+              }
+            />{" "}
+            <h2
+              className={
+                songwriterText !== "" ? classes.feat : classes.feat_grey
+              }
+            >
+              Written by:
+            </h2>
+          </div>
           {songwriterText !== "" && (
             <h2
               className={classes.credits_filled}
@@ -447,15 +457,17 @@ function PageThree(props) {
 
         {/* producer */}
         <>
-          <AiFillCheckCircle
-            className={producerText !== "" ? classes.feat : classes.feat_grey}
-          />{" "}
-          <h2
-            className={producerText !== "" ? classes.feat : classes.feat_grey}
-          >
-            Produced by:
-          </h2>
-          <br />
+          <div className={classes.feat_con}>
+            <AiFillCheckCircle
+              className={producerText !== "" ? classes.feat : classes.feat_grey}
+            />{" "}
+            <h2
+              className={producerText !== "" ? classes.feat : classes.feat_grey}
+            >
+              Produced by:
+            </h2>
+          </div>
+
           {producerText !== "" && (
             <h2 className={classes.credits_filled}>{` ◉ ${producerText.replace(
               /,/g,
@@ -466,15 +478,17 @@ function PageThree(props) {
 
         {/* composer */}
         <>
-          <AiFillCheckCircle
-            className={composerText !== "" ? classes.feat : classes.feat_grey}
-          />{" "}
-          <h2
-            className={composerText !== "" ? classes.feat : classes.feat_grey}
-          >
-            Composed by:
-          </h2>
-          <br />
+          <div className={classes.feat_con}>
+            <AiFillCheckCircle
+              className={composerText !== "" ? classes.feat : classes.feat_grey}
+            />{" "}
+            <h2
+              className={composerText !== "" ? classes.feat : classes.feat_grey}
+            >
+              Composed by:
+            </h2>
+          </div>
+
           {composerText !== "" && (
             <h2 className={classes.credits_filled}>{` ◉ ${composerText.replace(
               /,/g,

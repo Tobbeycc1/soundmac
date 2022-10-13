@@ -254,10 +254,15 @@ input::placeholder {
 .feat_grey {
   font-size: 1.83vw;
   font-weight: bold;
-  display: inline-block;
+  /* display: inline-block; */
   margin-bottom: 10px;
   color: green;
   /* width: 200px; */
+  margin: 0px 5px;
+}
+.feat_con {
+  display: flex;
+  align-items: center;
 }
 .feat_grey {
   color: gray;

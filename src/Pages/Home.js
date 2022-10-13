@@ -61,7 +61,12 @@ function Home(props) {
   return (
     <div className={classes.homeCon}>
       <div className={classes.homeCard1}>
-        <div className={classes.signInAndSpeakerCon}></div>
+        <div className={classes.signInAndSpeakerCon}>
+          <h1 className={classes.your_music}>
+            Your Music, <br />
+            Our World{" "}
+          </h1>
+        </div>
         {/* <h1 className={classes.welcome}>WELCOME</h1> */}
       </div>
 

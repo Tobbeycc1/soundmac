@@ -346,9 +346,62 @@ function Dashboard() {
           </div>
         </div>
       ) : (
-        <div className={classes.skeleton_con}>
-          <Skeleton count={2} className={classes.skeleton} />
-        </div>
+        <>
+          <MediaQuery minWidth={1000}>
+            <div className={classes.slide_con_con}>
+              <div className={classes.slide_con}>
+                <Splide
+                  options={{
+                    rewind: true,
+                    type: "loop",
+                    padding: "34%",
+                    gap: "20px",
+                    pagination: false,
+                    autoScroll: {
+                      pauseOnHover: false,
+                      pauseOnFocus: false,
+                      rewind: false,
+                      speed: 1,
+                    },
+                    focus: "center",
+                  }}
+                  extensions={{ AutoScroll }}
+                >
+                  <SplideSlide>
+                    <Skeleton className={classes.skeleton} />
+                  </SplideSlide>
+                </Splide>
+              </div>
+            </div>
+          </MediaQuery>
+
+          <MediaQuery maxWidth={999}>
+            <div className={classes.slide_con_con}>
+              <div className={classes.slide_con}>
+                <Splide
+                  options={{
+                    rewind: true,
+                    type: "loop",
+                    // gap: "20px",
+                    perMove: 1,
+                    pagination: false,
+                    arrows: false,
+                    autoplay: true,
+                  }}
+                >
+                  <SplideSlide>
+                    <Skeleton className={classes.skeleton} />
+                  </SplideSlide>
+                </Splide>
+              </div>
+            </div>
+          </MediaQuery>
+
+          <div className={classes.skeleton_con}>
+            {" "}
+            <Skeleton className={classes.skeleton} />
+          </div>
+        </>
       )}
     </Fragment>
   );
