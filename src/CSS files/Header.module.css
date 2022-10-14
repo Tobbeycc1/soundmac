@@ -16,6 +16,8 @@
   left: 0;
   right: 0;
   top: 0;
+  position: fixed;
+  background: white;
 }
 
 .logoDiv {
@@ -23,12 +25,12 @@
   margin-right: auto;
 }
 .logo {
-  color: white;
+  color: var(--purple);
   text-decoration: none;
   font-weight: bold;
   font-size: 2.2vw;
   vertical-align: middle;
-  background: var(--purple);
+  /* background: var(--purple); */
   padding: 0px 10px;
   border-radius: 5px;
   text-transform: uppercase;
@@ -50,6 +52,7 @@
 }
 .nav:active,
 .nav:focus {
+  padding-bottom: 10px;
   border-bottom: 5px solid var(--purple);
 }
 .button,
@@ -58,7 +61,7 @@
   text-decoration: none;
   font-weight: bold;
   font-size: 1.2vw;
-  background: var(--purple);
+  background: var(--red);
   color: white;
   padding: 10px 15px;
   cursor: pointer;

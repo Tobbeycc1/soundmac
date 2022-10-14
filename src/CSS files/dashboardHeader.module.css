@@ -24,7 +24,7 @@
 }
 .first_name {
   text-transform: uppercase;
-  color: var(--dashPink);
+  color: var(--red);
   font-weight: bold;
 }
 .icon_con,
@@ -44,7 +44,7 @@
 }
 .icon_con:hover {
   padding-top: 10px;
-  background: var(--dashPink);
+  background: var(--red);
 }
 .Tooltip_Con {
   display: flex;
@@ -60,7 +60,7 @@
   width: 1.5vw;
   height: 1.5vw;
   border-radius: 100%;
-  background: var(--dashPink);
+  background: var(--red);
   margin-right: -0.73vw;
   position: relative;
   z-index: 2;

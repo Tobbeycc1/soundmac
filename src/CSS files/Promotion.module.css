@@ -1,222 +1,175 @@
-.promotionCon{
-    overflow-x: hidden;
+.promotionCon {
+  overflow-x: hidden;
 }
-.megaphoneBackground{
-margin: 200px 50px 0px 50px;
+.megaphoneBackground {
+  margin: 200px 50px 0px 50px;
 }
-.header{
-    margin-top: 180px;
-    font-size: 2.2vw;
-    width: 28.5vw;
-    font-weight: bold;
-
+.header {
+  margin-top: 180px;
+  font-size: 2.2vw;
+  width: 28.5vw;
+  font-weight: bold;
 }
-.text{
-    font-size: 1.3vw;
-    margin-top: 30px;
-    font-weight: 500;
-    margin-bottom: 100px;
+.text {
+  font-size: 1.3vw;
+  margin-top: 30px;
+  font-weight: 500;
+  margin-bottom: 100px;
 }
-.purpleBackground{
-    background: var(--purple);
-    width: 100%;
-    height: 500px;
-    text-align: center;
-    
-    
+.purpleBackground {
+  background: var(--red);
+  width: 100%;
+  height: 500px;
+  text-align: center;
 }
 
-.purpleBackgroundHeader{
-    color: white;
-    font-size: 2.92vw;
-    
+.purpleBackgroundHeader {
+  color: white;
+  font-size: 2.92vw;
 }
-.purpleBackgroundCreate{
-    color: yellow;
-    font-size: 2.92vw;
+.purpleBackgroundCreate {
+  color: yellow;
+  font-size: 2.92vw;
 }
-.purpleBackgroundText{
-color: white;
-margin-top: 40px;
-font-size: 1.32vw;
+.purpleBackgroundText {
+  color: white;
+  margin-top: 40px;
+  font-size: 1.32vw;
 }
-.purpleBackgroundTextCon{
-    display: inline-block;
-    position: relative;
-    top: -250px;
-    
+.purpleBackgroundTextCon {
+  display: inline-block;
+  position: relative;
+  top: -250px;
 }
-.megaphoneHand{
-    vertical-align: middle;
-    position: relative;
-    display: inline-block;
-    top: -430px;
-   
-    
+.megaphoneHand {
+  vertical-align: middle;
+  position: relative;
+  display: inline-block;
+  top: -430px;
 }
 /* .purpleBackgroundSubCon{
    position: relative;
    top: -430px;
 } */
-.checkOur{
-    margin: 160px 50px;
-    font-size: 1.62vw;
-    font-weight: bold;
+.checkOur {
+  margin: 160px 50px;
+  font-size: 1.62vw;
+  font-weight: bold;
+}
+.checkOurText {
+  margin-top: 20px;
+}
+.packageDetails {
+  margin: 100px 50px;
+}
+.packageAndFormCon {
+  display: flex;
+}
+.allPackagesCon {
+  display: inline-block;
+  margin-right: auto;
+}
+.formCon {
+  margin-right: 50px;
+  vertical-align: top;
+  margin-top: 100px;
+}
 
-}
-.checkOurText{
-    margin-top: 20px;
-}
-.packageDetails{
-    margin: 100px 50px;
-}
-.packageAndFormCon{
-    display: flex;
-}
-.allPackagesCon{
-    display: inline-block;
-    margin-right: auto;
-}
-.formCon{
-    margin-right: 50px;
-    vertical-align: top;
-    margin-top: 100px;
-}
-/* @media screen and (max-width: 1180px) {
-    .megaphoneHand{
-        vertical-align: middle;
-        width: 370px;
-        
-    }
-    .purpleBackground{
-        background: var(--purple);
-        width: 100%;
-        height: 350px;
-        text-align: center;
-        padding: 0px 0px 0px 10px;
- 
-    }
-    .purpleBackgroundSubCon{
-        position: relative;
-        top: -350px;
-     }
-   
-   
-    .purpleBackground{
-        background: var(--purple);
-        width: 100%;
-        height: 500px;
-        text-align: center;
-        padding: 0px 10px;
-        
-        
-    }
-   
-} */
 @media screen and (max-width: 999px) {
-    .checkOur{
-        margin: 90px 50px;
-        font-size: 22px;
-    }
-    .header{
-        margin-top: 180px;
-        font-size: 30px;
-        width: 90%;
-    }
-    .purpleBackground{
-        background: var(--purple);
-        width: 100%;
-        height: 500px;
-        text-align: center;
-        
-        
-    }
-    
-    .purpleBackgroundHeader{
-        color: white;
-        font-size: 2.92vw;
-        
-    }
-    .purpleBackgroundCreate{
-        color: yellow;
-        font-size: 2.92vw;
-    }
-    .purpleBackgroundText{
+  .checkOur {
+    margin: 90px 50px;
+    font-size: 22px;
+  }
+  .header {
+    margin-top: 180px;
+    font-size: 30px;
+    width: 90%;
+  }
+  .purpleBackground {
+    width: 100%;
+    height: 500px;
+    text-align: center;
+  }
+
+  .purpleBackgroundHeader {
+    color: white;
+    font-size: 2.92vw;
+  }
+  .purpleBackgroundCreate {
+    color: yellow;
+    font-size: 2.92vw;
+  }
+  .purpleBackgroundText {
     color: white;
     margin-top: 40px;
     font-size: 1.32vw;
-    }
-    .purpleBackgroundTextCon{
-        display: inline-block;
-        position: relative;
-        top: 180px;
-        
-    }
-    .megaphoneHand{
-        vertical-align: middle;
-       
-        
-    }
-    .purpleBackgroundSubCon{
-       position: relative;
-       top: -430px;
-    }
-    .purpleBackgroundHeader, .purpleBackgroundCreate{
-           font-size: 40px;
-    }
-    
-    .purpleBackgroundText{
-    font-size: 18px;
-    }
-    .text{
-        font-size: 18px;
-    }
-    .megaphoneHand{
-      display: none;
-    }
-    .purpleBackgroundSubCon{
-        position: relative;
-        top: -80px;
-     }
-     
-     .packageAndFormCon{
-        display: block;
-        
-    }
-     .allPackagesCon{
-        display: block;
-    }
-    .formCon{
-        display: block;
-        margin: 100px 0px;
-        padding: 0px 50px;
-    }
-    .megaphoneBackground{
-        margin: 180px 20px 0px 20px;
-        }
+  }
+  .purpleBackgroundTextCon {
+    display: inline-block;
+    position: relative;
+    top: 180px;
+  }
+  .megaphoneHand {
+    vertical-align: middle;
+  }
+  .purpleBackgroundSubCon {
+    position: relative;
+    top: -430px;
+  }
+  .purpleBackgroundHeader,
+  .purpleBackgroundCreate {
+    font-size: 40px;
+  }
 
+  .purpleBackgroundText {
+    font-size: 18px;
+  }
+  .text {
+    font-size: 18px;
+  }
+  .megaphoneHand {
+    display: none;
+  }
+  .purpleBackgroundSubCon {
+    position: relative;
+    top: -80px;
+  }
+
+  .packageAndFormCon {
+    display: block;
+  }
+  .allPackagesCon {
+    display: block;
+  }
+  .formCon {
+    display: block;
+    margin: 100px 0px;
+    padding: 0px 50px;
+  }
+  .megaphoneBackground {
+    margin: 180px 20px 0px 20px;
+  }
 }
 @media screen and (max-width: 540px) {
-    .formCon{
-        display: block;
-        margin: 100px 0px;
-        padding: 0px 10px;
-    }
-    
-        .checkOur{
-            margin: 120px 20px;
-            font-size: 22px;
-        }
-        .packageDetails{
-            margin: 100px 20px;
-        }
+  .formCon {
+    display: block;
+    margin: 100px 0px;
+    padding: 0px 10px;
+  }
+
+  .checkOur {
+    margin: 120px 20px;
+    font-size: 22px;
+  }
+  .packageDetails {
+    margin: 100px 20px;
+  }
 }
 @media screen and (max-width: 320px) {
-    .purpleBackground{
-        background: var(--purple);
-        width: 100%;
-        height: 650px;
-        text-align: center;
-        padding: 0px 10px;
-    }
+  .purpleBackground {
+    width: 100%;
+    height: 650px;
+    text-align: center;
+    padding: 0px 10px;
+  }
 }

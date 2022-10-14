@@ -1,18 +1,18 @@
-.LinkCardCon{
-    width: 287px;
-    background: var(--purple);
-    border-radius: 20px;
-    padding: 40px  ;
-    display: inline-block; 
-    margin:  30px;
-    /* height: 25.7vw; */
-    vertical-align: top;
-    color: white;
-    cursor: pointer;
-    color: var(--purple);
-    border-radius: 20px;
-    border: 2px solid var(--purple);
-    background: white;
+.LinkCardCon {
+  width: 287px;
+  background: var(--purple);
+  border-radius: 20px;
+  padding: 40px;
+  display: inline-block;
+  margin: 30px;
+  /* height: 25.7vw; */
+  vertical-align: top;
+  color: white;
+  cursor: pointer;
+  color: var(--purple);
+  border-radius: 20px;
+  border: 2px solid var(--red);
+  background: white;
 }
 /* .LinkCardCon:hover{
     color: var(--purple);
@@ -20,81 +20,71 @@
     border: 2px solid var(--purple);
     background: white;
 } */
-.icon{
-    display: inline-block;
-    height: 91px;
-    background: white;
-    padding: 20px;
-    border-radius: 50%;
+.icon {
+  display: inline-block;
+  height: 91px;
+  background: white;
+  padding: 20px;
+  border-radius: 50%;
 }
-.iconHeader{
-    margin: 20px;
-    font-weight: bold;
+.iconHeader {
+  margin: 20px;
+  font-weight: bold;
 }
-.iconSubText{
-    font-size: 0.81vw;
-    margin: 20px 0px 0px 0px;
-    font-weight: 700;
-    height: 83px;
-   
+.iconSubText {
+  font-size: 0.81vw;
+  margin: 20px 0px 0px 0px;
+  font-weight: 700;
+  height: 83px;
 }
-.learnMore{
-    text-decoration: none;
-    font-size: 1.12vw;
-    font-weight: bold;
-    display: block;
-    margin-top: 50px;
-    transition: all;
-    transition-timing-function: ease-in-out;
-    transition-duration: 0.5s;
-
+.learnMore {
+  text-decoration: none;
+  font-size: 1.12vw;
+  font-weight: bold;
+  display: block;
+  margin-top: 50px;
+  transition: all;
+  transition-timing-function: ease-in-out;
+  transition-duration: 0.5s;
 }
-.learnMore:hover{
-    color: rgb(253, 130, 150);
+.learnMore:hover {
+  color: rgb(253, 130, 150);
 }
 @media screen and (max-width: 999px) {
-    .LinkCardCon{
-        width: fit-content;
-        border-radius: 20px;
-        padding: 40px 7.42vw  ;
-        display: block; 
-        margin:  0px;
-        height: fit-content;
-        text-align: center;
-        
-        
-    }
-    .iconHeader{
-       
-       font-size: 16px;
-    }
-    .iconSubText{
-        font-size: 11px;
-        margin: 20px 0px 14.65vh  0px;
-        font-weight: 700;
-    }
-    .learnMore{
-        text-decoration: none;
-        font-size: 16px;
-        font-weight: bold;
-        margin-top: 20px;
-
-    }
+  .LinkCardCon {
+    width: fit-content;
+    border-radius: 20px;
+    padding: 40px 7.42vw;
+    display: block;
+    margin: 0px;
+    height: fit-content;
+    text-align: center;
+  }
+  .iconHeader {
+    font-size: 16px;
+  }
+  .iconSubText {
+    font-size: 11px;
+    margin: 20px 0px 14.65vh 0px;
+    font-weight: 700;
+  }
+  .learnMore {
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 20px;
+  }
 }
 @media screen and (max-width: 540px) {
-    .iconSubText{
-        font-size: 2.66vw;
-    }
-       
-    .learnMore {
-        margin-top: 10.25vw;
+  .iconSubText {
+    font-size: 2.66vw;
+  }
 
-    }
-    .iconHeader{
-        font-size: 3.86vw;
-        height: 11.59vw;
-
-    }
-   
-    
+  .learnMore {
+    margin-top: 10.25vw;
+  }
+  .iconHeader {
+    font-size: 3.86vw;
+    height: 11.59vw;
+  }
 }

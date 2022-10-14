@@ -16,7 +16,7 @@ import MediaQuery from "react-responsive";
 import { Splide, SplideSlide, SplideTrack } from "@splidejs/react-splide";
 import "@splidejs/react-splide/css";
 import "../index.css";
-import bigCheck from "../images/big check.png";
+import art from "../images/art.png";
 import { useState } from "react";
 import ModalBackground from "../Componets/ModalBackground";
 import SignInBox from "../Componets/SignInBox";
@@ -61,13 +61,11 @@ function Home(props) {
   return (
     <div className={classes.homeCon}>
       <div className={classes.homeCard1}>
-        <div className={classes.signInAndSpeakerCon}>
-          <h1 className={classes.your_music}>
-            Your Music, <br />
-            Our World{" "}
-          </h1>
-        </div>
-        {/* <h1 className={classes.welcome}>WELCOME</h1> */}
+        <div className={classes.signInAndSpeakerCon}></div>
+        <h1 className={classes.welcome}>
+          {/* Your Music, <br />
+          Our World! */}
+        </h1>
       </div>
 
       {/* Body */}

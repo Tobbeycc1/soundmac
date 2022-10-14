@@ -68,7 +68,7 @@ input.largerCheckbox {
   text-align: center;
   margin: 20px 0px;
   width: 100%;
-  background: var(--purple);
+  background: var(--red);
   border-radius: 20px;
   padding: 15px 20px;
   color: white;
@@ -76,7 +76,7 @@ input.largerCheckbox {
   cursor: pointer;
 }
 .signInCon:hover {
-  border: 2px solid blue;
+  border: 2px solid var(--red);
   background: none;
   color: var(--purple);
   transition: all;
