@@ -163,18 +163,21 @@ input::placeholder {
   padding: 0px 30px;
   align-items: center;
   margin-top: auto;
+  position: fixed;
+  top: calc(100vh - 9.8vh);
 }
-.left_icon {
-  background: rgba(0, 0, 0, 0.226);
-  padding: 0px 3px;
-}
+
 .next_button,
 .prev_button,
 .submit {
-  font-size: 40px;
+  font-size: 22px;
   font-weight: bold;
   cursor: pointer;
-  color: red;
+  color: var(--red);
+  background: rgba(0, 0, 0, 0.37);
+  padding: 5px 10px;
+  color: white;
+  border-radius: 5px;
 }
 .prev_button {
   margin-right: auto;
@@ -184,11 +187,7 @@ input::placeholder {
   display: inline-block;
   margin-right: 40px;
 }
-.submit {
-  color: #3f51b5;
-  padding: 0px 15px;
-  border-radius: 10px;
-}
+
 .featuring_con {
   box-shadow: 0px 5px 15px -4px rgba(10, 10, 10, 0.71);
   -webkit-box-shadow: 0px 5px 15px -4px rgba(10, 10, 10, 0.71);
@@ -212,6 +211,9 @@ input::placeholder {
 .featuring {
   margin: 0px auto 0px 0px;
   font-weight: bold;
+  font-size: 1.83vw;
+}
+.pencil {
   font-size: 1.83vw;
 }
 .input_featuring {
@@ -278,6 +280,9 @@ input::placeholder {
 .credits_filled {
   font-size: 1.17vw;
 }
+.pencil {
+  cursor: pointer;
+}
 @media screen and (max-width: 999px) {
   .text,
   .back_icon {
@@ -335,7 +340,8 @@ input::placeholder {
   }
   .featuring,
   .feat,
-  .feat_grey {
+  .feat_grey,
+  .pencil {
     font-size: 20px;
   }
   .input_featuring {
@@ -372,9 +378,11 @@ input::placeholder {
   }
   .featuring,
   .feat,
-  .feat_grey {
+  .feat_grey,
+  .pencil {
     font-size: 4.35vw;
   }
+
   .input_featuring {
     margin-top: 10px;
   }

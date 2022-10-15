@@ -93,7 +93,7 @@ function UploadSongs(props) {
       <div className={classes.next_con}>
         {clickCount !== 0 && (
           <p className={classes.prev_button} onClick={pageDecrement}>
-            <FcDownLeft className={classes.left_icon} />
+            prev{" "}
           </p>
         )}
 
@@ -101,7 +101,7 @@ function UploadSongs(props) {
           <p className={classes.submit}>submit</p>
         ) : (
           <p className={classes.next_button} onClick={pageIncrement}>
-            <FcDownRight className={classes.left_icon} />
+            next{" "}
           </p>
         )}
       </div>
@@ -305,9 +305,6 @@ function PageTwo(props) {
 }
 
 function PageThree(props) {
-  const fox = "fox: \u{1F98A}"; // 'fox: 🦊'
-
-  console.log(fox);
   const [yearSelected, setYear] = useState(1990);
 
   const [featuring, setFeaturing] = useState(false);
@@ -340,7 +337,10 @@ function PageThree(props) {
         <div className={classes.featuring_con}>
           <div className={classes.featuring_sub_con}>
             <p className={classes.featuring}>Featuring</p>{" "}
-            <span onClick={() => setFeaturing(!featuring)}>
+            <span
+              onClick={() => setFeaturing(!featuring)}
+              className={classes.pencil}
+            >
               <BsPencilFill />
             </span>
           </div>
@@ -358,7 +358,10 @@ function PageThree(props) {
         <div className={classes.featuring_con}>
           <div className={classes.featuring_sub_con}>
             <p className={classes.featuring}>Songwriter(s)</p>{" "}
-            <span onClick={() => setSongwriter(!songwriter)}>
+            <span
+              onClick={() => setSongwriter(!songwriter)}
+              className={classes.pencil}
+            >
               <BsPencilFill />
             </span>
           </div>
@@ -376,7 +379,10 @@ function PageThree(props) {
         <div className={classes.featuring_con}>
           <div className={classes.featuring_sub_con}>
             <p className={classes.featuring}>Producer(s)</p>{" "}
-            <span onClick={() => setProducer(!producer)}>
+            <span
+              onClick={() => setProducer(!producer)}
+              className={classes.pencil}
+            >
               <BsPencilFill />
             </span>
           </div>
@@ -394,7 +400,10 @@ function PageThree(props) {
         <div className={classes.featuring_con}>
           <div className={classes.featuring_sub_con}>
             <p className={classes.featuring}>Composer(s)</p>{" "}
-            <span onClick={() => setComposer(!composer)}>
+            <span
+              onClick={() => setComposer(!composer)}
+              className={classes.pencil}
+            >
               <BsPencilFill />
             </span>
           </div>
@@ -502,41 +511,11 @@ function PageThree(props) {
 }
 
 function PageFour(props) {
-  return (
-    <div>
-      <div className={classes.form_con} style={{ height: "300px" }}>
-        <div className={classes.purple_block}>
-          <FcInspection className={classes.people_con} />
-        </div>
-        <textarea
-          className={classes.input}
-          style={{ width: "100%" }}
-          placeholder={"Credits"}
-        />
-      </div>
-    </div>
-  );
+  return <div></div>;
 }
 function PageFive(props) {
   return (
     <div>
-      {/* <div className={classes.form_con}>
-        <div className={classes.purple_block}>
-          <FcBusinessman className={classes.people_con} />
-        </div>
-        <input
-          type={"text"}
-          className={classes.input}
-          style={{ marginRight: "auto" }}
-          placeholder={"UPC"}
-        />
-
-        <div className={classes.purple_block}>
-          <FcMusic className={classes.people_con} />
-        </div>
-        <input type={"text"} className={classes.input} placeholder={"ISRC"} />
-      </div> */}
-
       <div className={classes.form_con_small_flex}>
         <div className={classes.form_con_small}>
           <div className={classes.purple_block}>
@@ -546,17 +525,6 @@ function PageFive(props) {
             type={"text"}
             className={classes.input_full}
             placeholder={"UPC"}
-          />
-        </div>
-
-        <div className={classes.form_con_small_2}>
-          <div className={classes.purple_block}>
-            <FcDataSheet className={classes.people_con} />
-          </div>
-          <input
-            type={"text"}
-            className={classes.input_full}
-            placeholder={"ISRC"}
           />
         </div>
       </div>
