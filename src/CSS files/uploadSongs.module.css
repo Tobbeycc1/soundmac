@@ -137,8 +137,14 @@
 .input_copyright_date {
   width: fit-content;
   align-items: center;
-  padding-top: 10px;
   height: 50px;
+  font-weight: lighter;
+  display: flex;
+  width: 100%;
+  outline: none;
+}
+.copyright_year_text {
+  margin-right: auto;
 }
 input::placeholder {
   font-size: 13px;
@@ -202,7 +208,7 @@ input::placeholder {
   padding: 15px;
   text-align: left;
   margin-bottom: 7vh;
-  margin-left: 30px;
+  /* margin-left: 30px; */
 }
 .featuring_sub_con {
   display: flex;
@@ -212,6 +218,7 @@ input::placeholder {
   margin: 0px auto 0px 0px;
   font-weight: bold;
   font-size: 1.83vw;
+  text-align: left;
 }
 .pencil {
   font-size: 1.83vw;
@@ -235,6 +242,10 @@ input::placeholder {
 .credits_fill_space_con {
   vertical-align: text-top;
   display: inline-block;
+  /* background: #ff0000; */
+  height: 62vh;
+  overflow-y: scroll;
+  padding: 20px;
 }
 
 .credits_filled_display {
@@ -248,13 +259,13 @@ input::placeholder {
 .credits_filled_grey {
   /* border-left: 10px solid green; */
   padding-right: 15px;
-  margin-bottom: 80px;
+  margin-bottom: 7px;
   width: 200px;
 }
 
 .feat,
 .feat_grey {
-  font-size: 1.83vw;
+  font-size: 1.17vw;
   font-weight: bold;
   /* display: inline-block; */
   margin-bottom: 10px;
@@ -268,6 +279,7 @@ input::placeholder {
 }
 .feat_grey {
   color: gray;
+  display: none;
 }
 /* .AiFillCheckCircle {
   display: inline-block;
@@ -283,6 +295,19 @@ input::placeholder {
 .pencil {
   cursor: pointer;
 }
+.genre {
+  width: 100%;
+  outline: none;
+  cursor: pointer;
+}
+.pick_a_date_con {
+  background: rgba(0, 0, 0, 0.568);
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  z-index: 1000;
+}
+
 @media screen and (max-width: 999px) {
   .text,
   .back_icon {
@@ -342,7 +367,7 @@ input::placeholder {
   .feat,
   .feat_grey,
   .pencil {
-    font-size: 20px;
+    font-size: 16px;
   }
   .input_featuring {
     margin-top: 15px;
@@ -380,7 +405,7 @@ input::placeholder {
   .feat,
   .feat_grey,
   .pencil {
-    font-size: 4.35vw;
+    font-size: 3.35vw;
   }
 
   .input_featuring {
