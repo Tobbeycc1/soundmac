@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import classes from "../CSS files/uploadSongs.module.css";
 import { useDropzone } from "react-dropzone";
 import MusicGenres from "musicgenres-json";
+import { ImCancelCircle } from "react-icons/im";
 
 import {
   FcPicture,
@@ -17,7 +18,6 @@ import { BsPencilFill } from "react-icons/bs";
 import { AiFillCheckCircle } from "react-icons/ai";
 import { useState } from "react";
 import { YearPicker } from "react-dropdown-date";
-import { useEffect } from "react";
 
 function UploadSongs(props) {
   // back button
@@ -50,10 +50,21 @@ function UploadSongs(props) {
   return (
     <div className={classes.upload_page_con}>
       {releaseDateCon && (
-        <div
-          className={classes.pick_a_date_con}
-          onClick={() => setReleaseDateCon(!releaseDateCon)}
-        ></div>
+        <div className={classes.pick_a_date_con}>
+          <div
+            className={classes.x}
+            onClick={() => setReleaseDateCon(!releaseDateCon)}
+          >
+            <ImCancelCircle className={classes.Gi} onClick={props.showDeets} />
+          </div>
+          <div className={classes.pick_date_text}>
+            <label className={classes.R_d_label}>Release Date</label>
+            <input type={"date"} className={classes.release_date_input} />
+            <div className={classes.submit_modal_con}>
+              <p className={classes.submit_modal_text}>Submit</p>
+            </div>
+          </div>
+        </div>
       )}
 
       <div className={classes.backBtn_upload_con}>
