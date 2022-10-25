@@ -366,7 +366,16 @@ input::placeholder {
 .submit_modal_text:hover {
   background: var(--purple);
 }
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
 
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
 @media screen and (max-width: 999px) {
   .Gi {
     font-size: 16px;

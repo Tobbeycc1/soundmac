@@ -5,7 +5,7 @@ import UploadSongContext from "../../contexts/upload Song  Fns/uploadSongContext
 import DisplayedCredits from "../Upload utilities/displayedCredits";
 
 function PageThree(props) {
-  const { onChangeInfo, allInfo, accountType } = useContext(UploadSongContext);
+  const { onChangeInfo, allInfo } = useContext(UploadSongContext);
 
   const [performer, setPerformer] = useState(false);
   const [producer, setProducer] = useState(false);

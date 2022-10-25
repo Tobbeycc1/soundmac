@@ -21,10 +21,15 @@ const UploadSongState = ({ children }) => {
     arranged_by: "",
     orchestrated_by: "",
     acted_by: "",
+    language: "",
+    genre: "",
+    copyright_holder: "",
+    copyright_year: "",
+    USPC: "",
+    ISRC: "",
   });
 
   const onChangeInfo = (e) => {
-    console.log("hg");
     setAllInfo((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
   return (

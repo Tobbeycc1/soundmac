@@ -1,4 +1,5 @@
 export const languagesArr = [
+  "click to select",
   "Afrikaans",
   "Arabic",
   "Bengali",

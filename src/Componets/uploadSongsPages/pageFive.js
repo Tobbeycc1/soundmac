@@ -1,10 +1,12 @@
 import { useContext, useState } from "react";
 import classes from "../../CSS files/uploadSongs.module.css";
-import { BsPencilFill } from "react-icons/bs";
 import UploadSongContext from "../../contexts/upload Song  Fns/uploadSongContext";
 import { FcCopyright, FcCalendar } from "react-icons/fc";
+import { YearPicker } from "react-dropdown-date";
 
 function PageFive(props) {
+  const { onChangeInfo, allInfo } = useContext(UploadSongContext);
+
   return (
     <div>
       <div className={classes.form_con_small_flex}>
@@ -17,6 +19,8 @@ function PageFive(props) {
             className={classes.input_full}
             placeholder={"Copyright holder"}
             name={"copyright_holder"}
+            onChange={onChangeInfo}
+            value={allInfo.copyright_holder}
           />
         </div>
 
@@ -24,10 +28,14 @@ function PageFive(props) {
           <div className={classes.purple_block}>
             <FcCalendar className={classes.people_con} />
           </div>
-          <div className={classes.input_copyright_date}>
-            <p className={classes.copyright_year_text}>Copyright Year</p>
-            {/* <YearPicker name={"copyright_year"} onChange={onChangeCopyright} /> */}
-          </div>
+          <input
+            type={"number"}
+            className={classes.input_full}
+            placeholder={"Copyright holder"}
+            name={"copyright_year"}
+            onChange={onChangeInfo}
+            value={allInfo.copyright_year}
+          />
         </div>
       </div>
 
@@ -39,6 +47,8 @@ function PageFive(props) {
             style={{ margin: "0", height: "50px" }}
             placeholder={"USPC"}
             name={"USPC"}
+            onChange={onChangeInfo}
+            value={allInfo.USPC}
           />
         </div>
 
@@ -49,6 +59,8 @@ function PageFive(props) {
             style={{ margin: "0", height: "50px" }}
             placeholder={"ISRC"}
             name={"ISRC"}
+            onChange={onChangeInfo}
+            value={allInfo.ISRC}
           />
         </div>
       </div>
