@@ -15,6 +15,7 @@ import PageFour from "./uploadSongsPages/pageFour";
 import PageFive from "./uploadSongsPages/pageFive";
 import UploadSongContext from "../contexts/upload Song  Fns/uploadSongContext";
 import { useEffect } from "react";
+import UploadImageButton from "./uploadSongsPages/pageOne";
 
 // import { YearPicker } from "react-dropdown-date";
 
@@ -30,6 +31,7 @@ function UploadSongs(props) {
 
   const pageIncrement = () => {
     setClickCount(clickCount + 1);
+
     if (
       clickCount === 1 &&
       accountType === "Independent_artist" &&
@@ -129,7 +131,7 @@ function UploadSongs(props) {
       <div className={classes.upload_group_con}>
         {clickCount === 0 && (
           <>
-            <UploadImageComp />
+            <UploadImageButton />
             <UploadAudioComp />
           </>
         )}

@@ -1,83 +1,89 @@
-const UploadImageComp = () => {
-  //   image upload library
-  const {
-    acceptedFiles,
-    fileRejections,
-    getRootProps,
-    getInputProps,
-  } = useDropzone({
-    accept: {
-      "music/jpeg": [],
-      "image/png": [],
-    },
-    maxFiles: 1,
-  });
+import { useState } from "react";
+import ImageUploading from "react-images-uploading";
+import classes from "../../CSS files/uploadSongs.module.css";
+import { FcPicture } from "react-icons/fc";
+import { useContext } from "react";
+import UploadSongContext from "../../contexts/upload Song  Fns/uploadSongContext";
+import { useEffect } from "react";
+import errorSRCLINK from "../../images/uploadImageIcon.png";
 
-  const [file, setFile] = useState(null);
-  const [img, setImg] = useState(null);
+function UploadImageButton() {
+  const { allInfo, setAllInfo } = useContext(UploadSongContext);
 
-  const onChange = (e) => {
-    setFile(e.target.files[0]);
-    console.log(e.target.files[0]);
+  const [images, setImages] = useState([]);
+  const maxNumber = 1;
+  const [src, setSrc] = useState("");
+
+  const onChange = (imageList, addUpdateIndex) => {
+    // data for submit
+    console.log(imageList, addUpdateIndex);
+    setImages(imageList);
+    setAllInfo((prev) => ({ ...prev, ["image"]: imageList }));
   };
 
-  const addImg = (e) => {
-    setImg(e.target.files[0]);
+  const srcFn = () => {
+    setSrc(allInfo.image[0].data_url);
+    console.log(allInfo.image.length);
   };
-
-  const acceptedFileItems = acceptedFiles.map((file) => (
-    <li key={file.path}>
-      {file.path} - {file.size} bytes
-    </li>
-  ));
-
-  const fileRejectionItems = fileRejections.map(({ file, errors }) => (
-    <li key={file.path}>
-      {file.path} - {file.size} bytes
-      <ul>
-        {errors.map((e) => (
-          <li key={e.code}>{e.message}</li>
-        ))}
-      </ul>
-    </li>
-  ));
-
+  useEffect(() => {
+    allInfo.image.length !== 0 && srcFn();
+  }, [allInfo]);
   return (
-    <div className={classes.Outer_con}>
-      {/* Image upload button */}
-      <div>
-        <div className={classes.upload_container}>
-          <div
-            {...getRootProps({ className: "dropzone" })}
-            className={classes.upload_sub_con}
-          >
-            <input {...getInputProps()} />
-            <div>
-              <FcPicture className={classes.picture_con} onChange={onChange} />
+    <div className="App">
+      <ImageUploading
+        multiple
+        value={images}
+        onChange={onChange}
+        maxNumber={maxNumber}
+        dataURLKey="data_url"
+        acceptType={["jpg"]}
+      >
+        {({
+          imageList,
+          onImageUpload,
+          onImageRemoveAll,
+          onImageUpdate,
+          onImageRemove,
+          isDragging,
+          dragProps,
+        }) => (
+          // write your building UI
+          <div className="upload__image-wrapper">
+            <div className={classes.src_con}>
+              <img
+                src={src}
+                alt={""}
+                className={classes.src}
+                onError={(e) => (
+                  (e.target.onerror = null), (e.target.src = errorSRCLINK)
+                )}
+              />
             </div>
-            <p className={classes.type_text}>
-              (Only *.jpeg and *.png images will be accepted)
-            </p>
-          </div>
-        </div>
-        <div>
-          {acceptedFileItems.length > 0 && (
-            <div className={classes.mssg_con}>
-              {" "}
-              <h4 className={classes.mssg}>Accepted </h4>
-              <span className={classes.file_name}>{acceptedFileItems}</span>
-            </div>
-          )}
+            {imageList.map((image, index) => (
+              <div key={index} className="image-item">
+                <img style={{ display: "none" }} src={image.data_url} alt="" />
 
-          {fileRejectionItems.length > 0 && (
-            <div className={classes.mssg_con_red}>
-              {" "}
-              <h4 className={classes.mssg_red}>Rejected </h4>
-              <span className={classes.file_name}>{fileRejectionItems}</span>
+                <div
+                  className={classes.change}
+                  onClick={() => onImageUpdate(index)}
+                >
+                  Change
+                </div>
+              </div>
+            ))}
+
+            <div
+              style={isDragging ? { color: "red" } : null}
+              onClick={onImageUpload}
+              {...dragProps}
+            >
+              <p className={classes.choose_file}> Choose file</p>
             </div>
-          )}
-        </div>
-      </div>
+          </div>
+        )}
+      </ImageUploading>
     </div>
   );
-};
+}
+
+export default UploadImageButton;

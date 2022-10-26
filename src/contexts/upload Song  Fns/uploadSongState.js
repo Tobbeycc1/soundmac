@@ -5,6 +5,7 @@ const accountType = "Independent_artist";
 
 const UploadSongState = ({ children }) => {
   const [allInfo, setAllInfo] = useState({
+    image: [],
     main_artiste: "",
     label_name: "",
     song_title: "",
@@ -33,7 +34,9 @@ const UploadSongState = ({ children }) => {
     setAllInfo((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
   return (
-    <UploadSongContext.Provider value={{ onChangeInfo, allInfo, accountType }}>
+    <UploadSongContext.Provider
+      value={{ onChangeInfo, allInfo, setAllInfo, accountType }}
+    >
       {children}
     </UploadSongContext.Provider>
   );
