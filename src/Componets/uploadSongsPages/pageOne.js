@@ -77,7 +77,7 @@ function UploadImageButton() {
               onClick={onImageUpload}
               {...dragProps}
             >
-              <p className={classes.choose_file}> Choose file</p>
+              <p className={classes.choose_file}> Choose cover art</p>
             </div>
           </div>
         )}

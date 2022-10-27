@@ -6,6 +6,7 @@ const accountType = "Independent_artist";
 const UploadSongState = ({ children }) => {
   const [allInfo, setAllInfo] = useState({
     image: [],
+    song: [],
     main_artiste: "",
     label_name: "",
     song_title: "",
@@ -26,6 +27,8 @@ const UploadSongState = ({ children }) => {
     genre: "",
     copyright_holder: "",
     copyright_year: "",
+    assign_uspc: true,
+    assign_isrc: true,
     USPC: "",
     ISRC: "",
   });

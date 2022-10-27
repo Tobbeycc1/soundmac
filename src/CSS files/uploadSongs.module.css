@@ -33,7 +33,12 @@
   -webkit-box-shadow: 0px 5px 15px -4px rgba(10, 10, 10, 0.71);
   -moz-box-shadow: 0px 5px 15px -4px rgba(10, 10, 10, 0.71);
   border-radius: 20px;
-  margin: 20px;
+  margin: auto;
+  margin-bottom: 20px;
+}
+.select_audio {
+  font-weight: bold;
+  color: var(--red);
 }
 .src {
   width: 100%;
@@ -78,6 +83,13 @@
   background: red;
   padding: 15px 10px;
   border-radius: 7px;
+}
+.upload_audio_con {
+  margin: 20px;
+  text-align: left;
+}
+.upload_song_button {
+  background: none;
 }
 .uploaded_image {
   width: 25.62vw;
@@ -183,7 +195,8 @@
 }
 .input,
 .input_copyright_date,
-.input_full {
+.input_full,
+.input_full_disabled {
   /* background: green; */
   margin-left: 20px;
   border: 2px solid var(--purple);
@@ -194,8 +207,12 @@
   font-weight: bold;
   font-size: 13px;
 }
-.input_full {
+.input_full,
+.input_full_disabled {
   width: 100%;
+}
+.input_full_disabled {
+  cursor: no-drop;
 }
 .input_copyright_date {
   width: fit-content;
@@ -439,6 +456,15 @@ input::-webkit-inner-spin-button {
 input[type="number"] {
   -moz-appearance: textfield;
 }
+.assign_checkbox {
+  margin-right: 10px;
+}
+.assign_uspc_con {
+  display: inline-block;
+}
+.form_con_check {
+  display: inline-block;
+}
 @media screen and (max-width: 999px) {
   .Gi {
     font-size: 16px;
@@ -448,7 +474,8 @@ input[type="number"] {
     font-size: 30px;
   }
   .upload_container,
-  .uploaded_image {
+  .uploaded_image,
+  .src_con {
     width: 350px;
     height: 350px;
   }
@@ -517,6 +544,11 @@ input[type="number"] {
   .pick_date_text {
     width: 80%;
   }
+  .change,
+  .choose_file {
+    width: fit-content;
+    padding: 20px;
+  }
 }
 @media screen and (max-width: 540px) {
   .Gi {
@@ -527,7 +559,8 @@ input[type="number"] {
     font-size: 7.25vw;
   }
   .upload_container,
-  .uploaded_image {
+  .uploaded_image,
+  .src_con {
     width: 84.54vw;
     height: 84.54vw;
   }

@@ -16,6 +16,7 @@ import PageFive from "./uploadSongsPages/pageFive";
 import UploadSongContext from "../contexts/upload Song  Fns/uploadSongContext";
 import { useEffect } from "react";
 import UploadImageButton from "./uploadSongsPages/pageOne";
+import all from "gsap/all";
 
 // import { YearPicker } from "react-dropdown-date";
 
@@ -28,11 +29,17 @@ function UploadSongs(props) {
 
   // change page numbers
   const [clickCount, setClickCount] = useState(0);
+  const [wavFormat, setWavFormat] = useState(false);
 
   const pageIncrement = () => {
     setClickCount(clickCount + 1);
-
-    if (
+    if (clickCount === 0 && allInfo.image.length === 0) {
+      toast.error("Upload a valid image!");
+      setClickCount(clickCount);
+    } else if (clickCount === 0 && wavFormat === false) {
+      toast.error("Upload a valid song!");
+      setClickCount(clickCount);
+    } else if (
       clickCount === 1 &&
       accountType === "Independent_artist" &&
       allInfo.main_artiste === ""
@@ -132,7 +139,10 @@ function UploadSongs(props) {
         {clickCount === 0 && (
           <>
             <UploadImageButton />
-            <UploadAudioComp />
+            <UploadAudioComp
+              wavFormat={wavFormat}
+              setWavFormat={setWavFormat}
+            />
           </>
         )}
 
@@ -184,82 +194,25 @@ function UploadSongs(props) {
   );
 }
 
-const UploadImageComp = () => {
-  return <div className={classes.Outer_con}></div>;
-};
-
 // music upload component
-const UploadAudioComp = () => {
-  //   image upload library
-  const {
-    acceptedFiles,
-    fileRejections,
-    getRootProps,
-    getInputProps,
-  } = useDropzone({
-    accept: {
-      "audio/wav": [],
-    },
-    maxFiles: 1,
-  });
+const UploadAudioComp = ({ wavFormat, setWavFormat }) => {
+  const { allInfo, setAllInfo } = useContext(UploadSongContext);
 
-  const acceptedFileItems = acceptedFiles.map((file) => (
-    <li key={file.path}>
-      {file.path} - {file.size} bytes
-    </li>
-  ));
-
-  const fileRejectionItems = fileRejections.map(({ file, errors }) => (
-    <li key={file.path}>
-      {file.path} - {file.size} bytes
-      <ul>
-        {errors.map((e) => (
-          <li key={e.code}>{e.message}</li>
-        ))}
-      </ul>
-    </li>
-  ));
+  const onChange = (e) => {
+    setAllInfo((prev) => ({ ...prev, ["song"]: e.target.files[0] }));
+    setWavFormat(e.target.value.includes(".wav"));
+  };
   return (
-    <div className={classes.Outer_con}>
-      {/* audio upload button */}
-      <div>
-        <div className={classes.upload_container}>
-          <div
-            {...getRootProps({ className: "dropzone" })}
-            className={classes.upload_sub_con}
-          >
-            <input {...getInputProps()} />
-            <div>
-              <FcHeadset className={classes.picture_con} />
-            </div>
-            <p className={classes.type_text}>
-              (Only *.wav audio will be accepted)
-            </p>
-          </div>
-        </div>
-        <div>
-          {acceptedFileItems.length > 0 && (
-            <div className={classes.mssg_con}>
-              {" "}
-              <h4 className={classes.mssg}>Accepted </h4>
-              <span className={classes.file_name}>{acceptedFileItems}</span>
-            </div>
-          )}
-
-          {fileRejectionItems.length > 0 && (
-            <div className={classes.mssg_con_red}>
-              {" "}
-              <h4 className={classes.mssg_red}>Rejected </h4>
-              <span className={classes.file_name}>{fileRejectionItems}</span>
-            </div>
-          )}
-        </div>
-      </div>
+    <div className={classes.upload_audio_con}>
+      <p className={classes.select_audio}>Select Audio</p>
+      <input
+        className={classes.upload_song_button}
+        type="file"
+        name="song"
+        onChange={onChange}
+      />
     </div>
   );
 };
-
-const genres = new MusicGenres();
-const genreList = genres.get();
 
 export default UploadSongs;

@@ -5,7 +5,7 @@ import { FcCopyright, FcCalendar } from "react-icons/fc";
 import { YearPicker } from "react-dropdown-date";
 
 function PageFive(props) {
-  const { onChangeInfo, allInfo } = useContext(UploadSongContext);
+  const { onChangeInfo, allInfo, setAllInfo } = useContext(UploadSongContext);
 
   return (
     <div>
@@ -43,25 +43,72 @@ function PageFive(props) {
         <div className={classes.form_con_small}>
           <input
             type={"text"}
-            className={classes.input_full}
+            className={
+              allInfo.assign_uspc === true
+                ? classes.input_full_disabled
+                : classes.input_full
+            }
             style={{ margin: "0", height: "50px" }}
             placeholder={"USPC"}
             name={"USPC"}
             onChange={onChangeInfo}
             value={allInfo.USPC}
+            disabled={allInfo.assign_uspc === true}
           />
         </div>
-
+        )
         <div className={classes.form_con_small_2}>
           <input
             type={"text"}
-            className={classes.input_full}
+            className={
+              allInfo.assign_isrc === true
+                ? classes.input_full_disabled
+                : classes.input_full
+            }
             style={{ margin: "0", height: "50px" }}
             placeholder={"ISRC"}
             name={"ISRC"}
             onChange={onChangeInfo}
             value={allInfo.ISRC}
+            disabled={allInfo.assign_isrc === true}
           />
+        </div>
+        )
+      </div>
+      <div className={classes.form_con_check}>
+        <div className={classes.assign_uspc_con}>
+          <input
+            type={"checkbox"}
+            name="assign_uspc"
+            className={classes.assign_checkbox}
+            onChange={(e) => {
+              e.target.checked
+                ? setAllInfo((prev) => ({ ...prev, [e.target.name]: true }))
+                : setAllInfo((prev) => ({ ...prev, [e.target.name]: false }));
+            }}
+            checked={allInfo.assign_uspc === true}
+          />{" "}
+          <label
+            style={{ marginRight: "40px" }}
+            className={classes.assign_label_uspc}
+          >
+            Automatically assign USPC
+          </label>
+        </div>
+
+        <div className={classes.assign_uspc_con}>
+          <input
+            type={"checkbox"}
+            name="assign_isrc"
+            className={classes.assign_checkbox}
+            onChange={(e) => {
+              e.target.checked
+                ? setAllInfo((prev) => ({ ...prev, [e.target.name]: true }))
+                : setAllInfo((prev) => ({ ...prev, [e.target.name]: false }));
+            }}
+            checked={allInfo.assign_isrc === true}
+          />{" "}
+          <label>Automatically assign ISRC</label>
         </div>
       </div>
     </div>
