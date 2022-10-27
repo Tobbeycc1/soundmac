@@ -50,7 +50,7 @@
 .choose_file {
   background: var(--purple);
   color: white;
-  width: 40%;
+  width: 45%;
   margin: auto;
   border-radius: 10px;
   height: 2.93vw;
@@ -61,6 +61,8 @@
   position: relative;
   z-index: 1000;
   cursor: pointer;
+  font-weight: bold;
+  padding: 5px;
 }
 .change {
   background: var(--red);
@@ -236,7 +238,8 @@ input::placeholder,
 .assign_label_uspc,
 .release_date_input,
 .R_d_label,
-.submit_modal_text {
+.submit_modal_text,
+.choose_file {
   font-size: 1.2vw;
   /* font-weight: 900; */
   vertical-align: middle;
@@ -478,6 +481,9 @@ input[type="number"] {
 .assign_label_uspc {
   margin-right: 40px;
 }
+.terms_link {
+  text-decoration: underline;
+}
 @media screen and (max-width: 999px) {
   .next_con {
     width: 100%;
@@ -599,7 +605,8 @@ input[type="number"] {
   .assign_label_uspc,
   .release_date_input,
   .R_d_label,
-  .submit_modal_text {
+  .submit_modal_text,
+  .choose_file {
     font-size: 14px;
   }
 }
@@ -656,7 +663,8 @@ input[type="number"] {
   .assign_label_uspc,
   .release_date_input,
   .R_d_label,
-  .submit_modal_text {
+  .submit_modal_text,
+  .choose_file {
     font-size: 3.14vw;
   }
 }

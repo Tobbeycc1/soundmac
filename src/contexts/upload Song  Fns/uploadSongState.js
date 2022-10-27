@@ -31,6 +31,7 @@ const UploadSongState = ({ children }) => {
     assign_isrc: true,
     USPC: "",
     ISRC: "",
+    release_date: "",
   });
 
   const onChangeInfo = (e) => {
