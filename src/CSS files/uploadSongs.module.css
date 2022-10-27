@@ -207,7 +207,7 @@
   text-transform: capitalize;
   padding: 0px 15px;
   font-weight: bold;
-  font-size: 13px;
+  font-size: 1.2vw;
 }
 .input_full,
 .input_full_disabled {
@@ -229,10 +229,19 @@
 .copyright_year_text {
   margin-right: auto;
 }
-input::placeholder {
-  font-size: 13px;
+input::placeholder,
+.checkbox_font,
+.genre,
+.assign_uspc_con,
+.assign_label_uspc,
+.release_date_input,
+.R_d_label,
+.submit_modal_text {
+  font-size: 1.2vw;
   /* font-weight: 900; */
+  vertical-align: middle;
 }
+
 .people_con {
   font-size: 30px;
 }
@@ -461,9 +470,13 @@ input[type="number"] {
 }
 .assign_uspc_con {
   display: inline-block;
+  margin-bottom: 15px;
 }
 .form_con_check {
   display: inline-block;
+}
+.assign_label_uspc {
+  margin-right: 40px;
 }
 @media screen and (max-width: 999px) {
   .next_con {
@@ -568,6 +581,27 @@ input[type="number"] {
     margin: auto;
     width: 90%;
   }
+  .assign_uspc_con {
+    display: block;
+  }
+
+  .assign_label_uspc {
+    margin-right: 0px;
+  }
+  .input,
+  .input_copyright_date,
+  .input_full,
+  .input_full_disabled,
+  input::placeholder,
+  .checkbox_font,
+  .genre,
+  .assign_checkbox,
+  .assign_label_uspc,
+  .release_date_input,
+  .R_d_label,
+  .submit_modal_text {
+    font-size: 14px;
+  }
 }
 @media screen and (max-width: 540px) {
   .Gi {
@@ -610,5 +644,19 @@ input[type="number"] {
   .x,
   .pick_date_text {
     width: 90%;
+  }
+  .input,
+  .input_copyright_date,
+  .input_full,
+  .input_full_disabled,
+  input::placeholder,
+  .checkbox_font,
+  .genre,
+  .assign_uspc_con,
+  .assign_label_uspc,
+  .release_date_input,
+  .R_d_label,
+  .submit_modal_text {
+    font-size: 3.14vw;
   }
 }

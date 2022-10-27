@@ -65,7 +65,7 @@ function PageTwo(props) {
         />
       </div>
 
-      <form>
+      <form className={classes.checkbox_font}>
         <p className={classes.explicit}>Explicit?</p>
         <input
           type={"radio"}

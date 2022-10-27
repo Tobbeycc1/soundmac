@@ -87,10 +87,8 @@ function PageFive(props) {
             }}
             checked={allInfo.assign_uspc === true}
           />{" "}
-          <label
-            style={{ marginRight: "40px" }}
-            className={classes.assign_label_uspc}
-          >
+          <label className={classes.assign_label_uspc}>
+            {" "}
             Automatically assign USPC
           </label>
         </div>

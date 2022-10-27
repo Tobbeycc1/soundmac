@@ -1,14 +1,9 @@
 // import { YearPicker } from "react-dropdown-date";
-import langList from "lang-list";
-import MusicGenres from "musicgenres-json";
 import { useContext } from "react";
 import UploadSongContext from "../../contexts/upload Song  Fns/uploadSongContext";
 import classes from "../../CSS files/uploadSongs.module.css";
+import { genreArr } from "../Upload utilities/genreList";
 import { languagesArr } from "../Upload utilities/languageList";
-
-const genres = new MusicGenres();
-const genreList = genres.get();
-genreList.unshift("click to select");
 
 function PageFour(props) {
   const { onChangeInfo, allInfo } = useContext(UploadSongContext);
@@ -24,7 +19,7 @@ function PageFour(props) {
           onChange={onChangeInfo}
           value={allInfo.genre}
         >
-          {genreList.map((item, index) => (
+          {genreArr.map((item, index) => (
             <>
               <option value={item} name={"genre"} key={index}>
                 {item}

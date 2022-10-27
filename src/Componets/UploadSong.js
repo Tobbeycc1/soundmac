@@ -33,58 +33,58 @@ function UploadSongs(props) {
 
   const pageIncrement = () => {
     setClickCount(clickCount + 1);
-    if (clickCount === 0 && allInfo.image.length === 0) {
-      toast.error("Upload a valid image!");
-      setClickCount(clickCount);
-    } else if (clickCount === 0 && wavFormat === false) {
-      toast.error("Upload a valid song!");
-      setClickCount(clickCount);
-    } else if (
-      clickCount === 1 &&
-      accountType === "Independent_artist" &&
-      allInfo.main_artiste === ""
-    ) {
-      toast.error("Main artiste field can't be empty!");
-      setClickCount(clickCount);
-    } else if (
-      clickCount === 1 &&
-      accountType !== "Independent_artist" &&
-      allInfo.label_name === ""
-    ) {
-      toast.error("Label name field can't be empty!");
-      setClickCount(clickCount);
-    } else if (clickCount === 1 && allInfo.song_title === "") {
-      toast.error("Song title field can't be empty!");
-      setClickCount(clickCount);
-    } else if (
-      clickCount === 1 &&
-      accountType !== "Independent_artist" &&
-      allInfo.other_artiste === ""
-    ) {
-      toast.error("Artiste field can't be empty!");
-      setClickCount(clickCount);
-    } else if (clickCount === 1 && allInfo.explicit === "") {
-      toast.error("Explicit field can't be empty!");
-      setClickCount(clickCount);
-    } else if (clickCount === 2 && allInfo.produced_by === "") {
-      toast.error("producer field can't be empty!");
-      setClickCount(clickCount);
-    } else if (clickCount === 2 && allInfo.lyrics_by === "") {
-      toast.error("Lyricist field can't be empty!");
-      setClickCount(clickCount);
-    } else if (
-      (clickCount === 3 && allInfo.genre === "") ||
-      (clickCount === 3 && allInfo.genre === "click to select")
-    ) {
-      toast.error("Select a genre");
-      setClickCount(clickCount);
-    } else if (
-      (clickCount === 3 && allInfo.language === "") ||
-      (clickCount === 3 && allInfo.language === "click to select")
-    ) {
-      toast.error("Select a language!");
-      setClickCount(clickCount);
-    }
+    // if (clickCount === 0 && allInfo.image.length === 0) {
+    //   toast.error("Upload a valid image!");
+    //   setClickCount(clickCount);
+    // } else if (clickCount === 0 && wavFormat === false) {
+    //   toast.error("Upload a valid song!");
+    //   setClickCount(clickCount);
+    // } else if (
+    //   clickCount === 1 &&
+    //   accountType === "Independent_artist" &&
+    //   allInfo.main_artiste === ""
+    // ) {
+    //   toast.error("Main artiste field can't be empty!");
+    //   setClickCount(clickCount);
+    // } else if (
+    //   clickCount === 1 &&
+    //   accountType !== "Independent_artist" &&
+    //   allInfo.label_name === ""
+    // ) {
+    //   toast.error("Label name field can't be empty!");
+    //   setClickCount(clickCount);
+    // } else if (clickCount === 1 && allInfo.song_title === "") {
+    //   toast.error("Song title field can't be empty!");
+    //   setClickCount(clickCount);
+    // } else if (
+    //   clickCount === 1 &&
+    //   accountType !== "Independent_artist" &&
+    //   allInfo.other_artiste === ""
+    // ) {
+    //   toast.error("Artiste field can't be empty!");
+    //   setClickCount(clickCount);
+    // } else if (clickCount === 1 && allInfo.explicit === "") {
+    //   toast.error("Explicit field can't be empty!");
+    //   setClickCount(clickCount);
+    // } else if (clickCount === 2 && allInfo.produced_by === "") {
+    //   toast.error("producer field can't be empty!");
+    //   setClickCount(clickCount);
+    // } else if (clickCount === 2 && allInfo.lyrics_by === "") {
+    //   toast.error("Lyricist field can't be empty!");
+    //   setClickCount(clickCount);
+    // } else if (
+    //   (clickCount === 3 && allInfo.genre === "") ||
+    //   (clickCount === 3 && allInfo.genre === "click to select")
+    // ) {
+    //   toast.error("Select a genre");
+    //   setClickCount(clickCount);
+    // } else if (
+    //   (clickCount === 3 && allInfo.language === "") ||
+    //   (clickCount === 3 && allInfo.language === "click to select")
+    // ) {
+    //   toast.error("Select a language!");
+    //   setClickCount(clickCount);
+    // }
   };
 
   const pageDecrement = () => {
@@ -106,7 +106,24 @@ function UploadSongs(props) {
     }
   };
 
+  // context
   const { allInfo, accountType } = useContext(UploadSongContext);
+
+  // acknoledgements
+  const [acknoledgement, setAcknoledgement] = useState({
+    tracks_rejection: false,
+    own_the_copyright: false,
+    other_artiste_permission: false,
+    terms_and_condition: false,
+  });
+  // on change acknoledgment function
+  const onChangeAcknoledgement = (e) => {
+    setAcknoledgement((prev) => ({
+      ...prev,
+      [e.target.name]: e.target.checked,
+    }));
+  };
+  console.log(acknoledgement.tracks_rejection);
 
   return (
     <div className={classes.upload_page_con}>
@@ -120,8 +137,54 @@ function UploadSongs(props) {
             <ImCancelCircle className={classes.Gi} onClick={props.showDeets} />
           </div>
           <div className={classes.pick_date_text}>
-            <label className={classes.R_d_label}>Release Date</label>
+            <p className={classes.R_d_label}>Release Date</p>
             <input type={"date"} className={classes.release_date_input} />
+
+            <input
+              type={"checkbox"}
+              name="tracks_rejection"
+              className={classes.assign_checkbox}
+              onChange={onChangeAcknoledgement}
+            />
+            <label className={classes.assign_label_uspc}>
+              I Understand tracks may be rejected from stores if they are not
+              correctly labelled as explicit or if formatting is inaccurate.
+            </label>
+            <br />
+            <br />
+            <input
+              type={"checkbox"}
+              name="own_the_copyright"
+              className={classes.assign_checkbox}
+            />
+            <label className={classes.assign_label_uspc}>
+              I own the copyright for the music and I authorised to sell it and
+              collect royalties.
+            </label>
+            <br />
+            <br />
+            <input
+              type={"checkbox"}
+              name="other_artiste_permission"
+              className={classes.assign_checkbox}
+            />
+            <label className={classes.assign_label_uspc}>
+              I am not using any other artiste's name, song, title or album
+              title without their consent.
+            </label>
+            <br />
+            <br />
+            <input
+              type={"checkbox"}
+              name="terms_and_condition"
+              className={classes.assign_checkbox}
+            />
+            <label className={classes.assign_label_uspc}>
+              I understand that i have agreed the{" "}
+              <a href="#">TERMS OF SERVICE AND PRIVACY POLICY</a> and that they
+              are applicable to this transaction.
+            </label>
+
             <div className={classes.submit_modal_con}>
               <p className={classes.submit_modal_text}>Submit</p>
             </div>

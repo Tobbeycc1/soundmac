@@ -49,12 +49,31 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
-input[type="checkbox"] {
+input[type="checkbox"],
+input[type="radio"] {
   accent-color: var(--purple);
+  width: 1.2vw;
+  height: 1.2vw;
+  border-radius: 7px;
+  vertical-align: middle;
 }
 .splide__pagination__page {
   top: 200px;
 }
 .splide__arrow svg {
   fill: #210721;
+}
+@media screen and (max-width: 999px) {
+  input[type="checkbox"],
+  input[type="radio"] {
+    width: 14px;
+    height: 14px;
+  }
+}
+@media screen and (max-width: 540px) {
+  input[type="checkbox"],
+  input[type="radio"] {
+    width: 3.14vw;
+    height: 3.14vw;
+  }
 }
