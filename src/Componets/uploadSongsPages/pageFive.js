@@ -56,7 +56,7 @@ function PageFive(props) {
             disabled={allInfo.assign_uspc === true}
           />
         </div>
-        )
+
         <div className={classes.form_con_small_2}>
           <input
             type={"text"}
@@ -73,7 +73,6 @@ function PageFive(props) {
             disabled={allInfo.assign_isrc === true}
           />
         </div>
-        )
       </div>
       <div className={classes.form_con_check}>
         <div className={classes.assign_uspc_con}>

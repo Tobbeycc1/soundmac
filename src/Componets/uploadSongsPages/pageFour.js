@@ -13,11 +13,11 @@ genreList.unshift("click to select");
 function PageFour(props) {
   const { onChangeInfo, allInfo } = useContext(UploadSongContext);
   return (
-    <div>
-      <h2 className={classes.featuring} style={{ marginBottom: "10px" }}>
+    <div className={classes.genre_outer_con}>
+      <h2 className={classes.featuring} style={{ margin: "10px 20px" }}>
         Genre
       </h2>
-      <div className={classes.featuring_con}>
+      <div className={classes.featuring_con} style={{ marginBottom: "70px" }}>
         <select
           className={classes.genre}
           name={"genre"}
@@ -35,7 +35,7 @@ function PageFour(props) {
       </div>
 
       {/* languages */}
-      <h2 className={classes.featuring} style={{ marginBottom: "10px" }}>
+      <h2 className={classes.featuring} style={{ margin: "10px 20px" }}>
         Language
       </h2>
       <div className={classes.featuring_con}>

@@ -87,6 +87,8 @@
 .upload_audio_con {
   margin: 20px;
   text-align: left;
+  position: relative;
+  z-index: 1000;
 }
 .upload_song_button {
   background: none;
@@ -214,6 +216,7 @@
 .input_full_disabled {
   cursor: no-drop;
 }
+
 .input_copyright_date {
   width: fit-content;
   align-items: center;
@@ -240,17 +243,14 @@ input::placeholder {
   margin-top: 7vh;
 }
 .next_con {
-  /* background: green; */
-
   width: 100%;
   height: 9.8vh;
   display: flex;
   justify-content: right;
   padding: 0px 30px;
   align-items: center;
-  margin-top: auto;
   position: fixed;
-  top: calc(100vh - 9.8vh);
+  margin-top: calc(100vh - 9.8vh);
 }
 
 .next_button,
@@ -466,6 +466,17 @@ input[type="number"] {
   display: inline-block;
 }
 @media screen and (max-width: 999px) {
+  .next_con {
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    justify-content: right;
+    padding: 0px 30px;
+    align-items: center;
+    margin-top: auto;
+    position: relative;
+    margin-bottom: 20px;
+  }
   .Gi {
     font-size: 16px;
   }
@@ -549,6 +560,14 @@ input[type="number"] {
     width: fit-content;
     padding: 20px;
   }
+  .upload_audio_con {
+    margin: 20px 5px 70px 5px;
+    text-align: center;
+  }
+  .genre_outer_con {
+    margin: auto;
+    width: 90%;
+  }
 }
 @media screen and (max-width: 540px) {
   .Gi {
@@ -591,8 +610,5 @@ input[type="number"] {
   .x,
   .pick_date_text {
     width: 90%;
-  }
-  .next_con {
-    top: calc(100vh - 15.8vh);
   }
 }
