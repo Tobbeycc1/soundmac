@@ -239,10 +239,16 @@ input::placeholder,
 .release_date_input,
 .R_d_label,
 .submit_modal_text,
-.choose_file {
+.choose_file,
+.select_audio,
+.song_name {
   font-size: 1.2vw;
   /* font-weight: 900; */
   vertical-align: middle;
+}
+.song_name {
+  font-weight: bold;
+  text-transform: capitalize;
 }
 
 .people_con {
@@ -484,7 +490,32 @@ input[type="number"] {
 .terms_link {
   text-decoration: underline;
 }
+input[type="file"] {
+  display: inline-block;
+  width: 25.62vw;
+  padding: 8.78vw 0 0 0;
+  height: 7.32vw;
+  overflow: hidden;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  /* background: var(--white); */
+  border-radius: 20px;
+  box-shadow: 0px 5px 15px -4px rgba(10, 10, 10, 0.71);
+  -webkit-box-shadow: 0px 5px 15px -4px rgba(10, 10, 10, 0.71);
+  -moz-box-shadow: 0px 5px 15px -4px rgba(10, 10, 10, 0.71);
+  border: 2px dotted var(--purple);
+  background: url(../images/uploadaudiobackground.png) center center no-repeat
+    white;
+  margin: 10px 0px 20px 0px;
+}
 @media screen and (max-width: 999px) {
+  input[type="file"] {
+    display: inline-block;
+    width: 350px;
+    padding: 120px 0 0 0;
+    height: 100px;
+  }
   .next_con {
     width: 100%;
     height: fit-content;
@@ -606,8 +637,13 @@ input[type="number"] {
   .release_date_input,
   .R_d_label,
   .submit_modal_text,
-  .choose_file {
+  .choose_file,
+  .select_audio,
+  .song_name {
     font-size: 14px;
+  }
+  .credits_filled_display {
+    display: none;
   }
 }
 @media screen and (max-width: 540px) {
@@ -664,7 +700,15 @@ input[type="number"] {
   .release_date_input,
   .R_d_label,
   .submit_modal_text,
-  .choose_file {
+  .choose_file,
+  .select_audio,
+  .song_name {
     font-size: 3.14vw;
+  }
+  input[type="file"] {
+    display: inline-block;
+    width: 84.54vw;
+    padding: 28.99vw 0 0 0;
+    height: 24.16vw;
   }
 }

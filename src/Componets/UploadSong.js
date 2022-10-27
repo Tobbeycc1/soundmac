@@ -300,16 +300,21 @@ const UploadAudioComp = ({ wavFormat, setWavFormat }) => {
   const onChange = (e) => {
     setAllInfo((prev) => ({ ...prev, ["song"]: e.target.files[0] }));
     setWavFormat(e.target.value.includes(".wav"));
+    console.log(e.target.files[0].name);
   };
   return (
     <div className={classes.upload_audio_con}>
-      <p className={classes.select_audio}>Select Audio (Accepted file: .wav)</p>
+      <p className={classes.select_audio}>
+        Select Audio (Accepted files: .wav)
+      </p>
       <input
         className={classes.upload_song_button}
         type="file"
         name="song"
+        id="file"
         onChange={onChange}
       />
+      <p className={classes.song_name}>{allInfo.song.name}</p>
     </div>
   );
 };
