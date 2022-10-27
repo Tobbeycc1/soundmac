@@ -303,7 +303,7 @@ const UploadAudioComp = ({ wavFormat, setWavFormat }) => {
   };
   return (
     <div className={classes.upload_audio_con}>
-      <p className={classes.select_audio}>Select Audio</p>
+      <p className={classes.select_audio}>Select Audio (Accepted file: .wav)</p>
       <input
         className={classes.upload_song_button}
         type="file"
