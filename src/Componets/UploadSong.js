@@ -15,8 +15,12 @@ import PageFour from "./uploadSongsPages/pageFour";
 import PageFive from "./uploadSongsPages/pageFive";
 import UploadSongContext from "../contexts/upload Song  Fns/uploadSongContext";
 import UploadImageButton from "./uploadSongsPages/pageOne";
+import AuthContext from "../contexts/auth/authContext";
 
-// import { YearPicker } from "react-dropdown-date";
+const privacyPolicyLink =
+  "https://docs.google.com/document/d/1-tynZeQmY3k-WYpBu4-enhhRGlXYvvEq3nLWpdvvdF4/edit";
+const termsAndConditionsLink =
+  "https://docs.google.com/document/d/1-_DkSO5wLcjmCgUsdDBuGAqumsRQBzAOf1mZ8JutOJc/edit";
 
 function UploadSongs(props) {
   // back button
@@ -28,6 +32,8 @@ function UploadSongs(props) {
   // change page numbers
   const [clickCount, setClickCount] = useState(0);
   const [wavFormat, setWavFormat] = useState(false);
+
+  const { user } = useContext(AuthContext);
 
   const pageIncrement = () => {
     setClickCount(clickCount + 1);
@@ -144,13 +150,23 @@ function UploadSongs(props) {
           </div>
           <div className={classes.pick_date_text}>
             <p className={classes.R_d_label}>Release Date</p>
-            <input
-              type={"date"}
-              className={classes.release_date_input}
-              name={"release_date"}
-              value={allInfo.release_date}
-              onChange={onChangeInfo}
-            />
+            {user.premium !== false ? (
+              <input
+                type={"date"}
+                className={classes.release_date_input}
+                name={"release_date"}
+                value={allInfo.release_date}
+                onChange={onChangeInfo}
+              />
+            ) : (
+              <p
+                className={classes.assign_label_uspc}
+                style={{ fontWeight: "bold", color: "var(--red)" }}
+              >
+                {allInfo.release_date.toString()}
+              </p>
+            )}
+
             <br />
             <br />
             <p
@@ -208,8 +224,23 @@ function UploadSongs(props) {
             />
             <label className={classes.assign_label_uspc}>
               I understand that i have agreed the{" "}
-              <a className={classes.terms_link} href="#" target="_blank">
-                TERMS OF SERVICE AND PRIVACY POLICY
+              <a
+                className={classes.terms_link}
+                href={termsAndConditionsLink}
+                target="_blank"
+                rel="noopener"
+              >
+                TERMS OF SERVICE{" "}
+              </a>{" "}
+              AND{" "}
+              <a
+                className={classes.terms_link}
+                href={privacyPolicyLink}
+                target="_blank"
+                rel="noopener"
+              >
+                {" "}
+                PRIVACY POLICY
               </a>{" "}
               and that they are applicable to this transaction.
             </label>

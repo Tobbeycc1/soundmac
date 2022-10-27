@@ -1,8 +1,10 @@
 import { useState } from "react";
 import UploadSongContext from "./uploadSongContext";
 
-const accountType = "Independent_artist";
+const freeAccountReleaseDate = new Date();
+freeAccountReleaseDate.setDate(freeAccountReleaseDate.getDate() + 10);
 
+console.log(freeAccountReleaseDate);
 const UploadSongState = ({ children }) => {
   const [allInfo, setAllInfo] = useState({
     image: [],
@@ -31,16 +33,14 @@ const UploadSongState = ({ children }) => {
     assign_isrc: true,
     USPC: "",
     ISRC: "",
-    release_date: "",
+    release_date: freeAccountReleaseDate,
   });
 
   const onChangeInfo = (e) => {
     setAllInfo((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
   return (
-    <UploadSongContext.Provider
-      value={{ onChangeInfo, allInfo, setAllInfo, accountType }}
-    >
+    <UploadSongContext.Provider value={{ onChangeInfo, allInfo, setAllInfo }}>
       {children}
     </UploadSongContext.Provider>
   );

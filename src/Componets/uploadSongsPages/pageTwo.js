@@ -2,8 +2,13 @@ import { useContext } from "react";
 import classes from "../../CSS files/uploadSongs.module.css";
 import { FcBusinessman, FcBusinesswoman, FcMusic } from "react-icons/fc";
 import UploadSongContext from "../../contexts/upload Song  Fns/uploadSongContext";
+import AuthContext from "../../contexts/auth/authContext";
 function PageTwo(props) {
-  const { onChangeInfo, allInfo, accountType } = useContext(UploadSongContext);
+  const { onChangeInfo, allInfo } = useContext(UploadSongContext);
+  const { user } = useContext(AuthContext);
+
+  console.log(user.premium);
+
   return (
     <div>
       {/* form */}
@@ -13,7 +18,7 @@ function PageTwo(props) {
           <div className={classes.purple_block}>
             <FcBusinessman className={classes.people_con} />
           </div>
-          {accountType === "Independent_artist" ? (
+          {user.premium === false ? (
             <input
               type={"text"}
               className={classes.input_full}
@@ -56,9 +61,7 @@ function PageTwo(props) {
         <input
           type={"text"}
           className={classes.input_full}
-          placeholder={
-            accountType === "Independent_artist" ? "Other artiste" : "Artiste"
-          }
+          placeholder={user.premium === false ? "Other artiste" : "Artiste"}
           name={"other_artiste"}
           onChange={onChangeInfo}
           value={allInfo.other_artiste}
