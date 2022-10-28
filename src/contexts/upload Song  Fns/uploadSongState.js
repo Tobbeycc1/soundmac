@@ -3,6 +3,7 @@ import UploadSongContext from "./uploadSongContext";
 
 const freeAccountReleaseDate = new Date();
 freeAccountReleaseDate.setDate(freeAccountReleaseDate.getDate() + 10);
+const accountType = "Independent_artist";
 
 console.log(freeAccountReleaseDate);
 const UploadSongState = ({ children }) => {
@@ -29,9 +30,9 @@ const UploadSongState = ({ children }) => {
     genre: "",
     copyright_holder: "",
     copyright_year: "",
-    assign_uspc: true,
+    assign_upc: true,
     assign_isrc: true,
-    USPC: "",
+    UPC: "",
     ISRC: "",
     release_date: freeAccountReleaseDate,
   });
@@ -40,7 +41,9 @@ const UploadSongState = ({ children }) => {
     setAllInfo((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
   return (
-    <UploadSongContext.Provider value={{ onChangeInfo, allInfo, setAllInfo }}>
+    <UploadSongContext.Provider
+      value={{ onChangeInfo, allInfo, setAllInfo, accountType }}
+    >
       {children}
     </UploadSongContext.Provider>
   );

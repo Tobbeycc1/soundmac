@@ -44,16 +44,16 @@ function PageFive(props) {
           <input
             type={"text"}
             className={
-              allInfo.assign_uspc === true
+              allInfo.assign_upc === true
                 ? classes.input_full_disabled
                 : classes.input_full
             }
             style={{ margin: "0", height: "50px" }}
-            placeholder={"USPC"}
-            name={"USPC"}
+            placeholder={"UPC"}
+            name={"UPC"}
             onChange={onChangeInfo}
-            value={allInfo.USPC}
-            disabled={allInfo.assign_uspc === true}
+            value={allInfo.UPC}
+            disabled={allInfo.assign_upc === true}
           />
         </div>
 
@@ -78,18 +78,18 @@ function PageFive(props) {
         <div className={classes.assign_uspc_con}>
           <input
             type={"checkbox"}
-            name="assign_uspc"
+            name="assign_upc"
             className={classes.assign_checkbox}
             onChange={(e) => {
               e.target.checked
                 ? setAllInfo((prev) => ({ ...prev, [e.target.name]: true }))
                 : setAllInfo((prev) => ({ ...prev, [e.target.name]: false }));
             }}
-            checked={allInfo.assign_uspc === true}
+            checked={allInfo.assign_upc === true}
           />{" "}
           <label className={classes.assign_label_uspc}>
             {" "}
-            Automatically assign USPC
+            Automatically assign UPC
           </label>
         </div>
 
@@ -105,7 +105,9 @@ function PageFive(props) {
             }}
             checked={allInfo.assign_isrc === true}
           />{" "}
-          <label>Automatically assign ISRC</label>
+          <label className={classes.assign_label_uspc}>
+            Automatically assign ISRC
+          </label>
         </div>
       </div>
     </div>
