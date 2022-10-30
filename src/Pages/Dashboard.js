@@ -121,10 +121,10 @@ function Dashboard() {
   // upload song
   const navigate = useNavigate();
 
-  const uploadSongFn = () => {
-    console.log("upload song");
-    navigate("/upload/single");
-  };
+  // const uploadSongFn = () => {
+  //   console.log("upload song");
+  //   navigate("/upload/single");
+  // };
 
   // select the first 5 objects
   const firstFive = dummyData.slice(0, 5);
@@ -327,7 +327,10 @@ function Dashboard() {
 
             {/* upload song */}
             <div className={classes.upload_con_con}>
-              <div className={classes.upload_song_con} onClick={uploadSongFn}>
+              <div
+                className={classes.upload_song_con}
+                onClick={() => navigate("/upload/single")}
+              >
                 <div className={classes.cloud_icon_con}>
                   <RiMusicLine className={classes.cloud_icon} />
                 </div>
@@ -335,7 +338,10 @@ function Dashboard() {
               </div>
 
               {/* upload album */}
-              <div className={classes.upload_song_con}>
+              <div
+                className={classes.upload_song_con}
+                onClick={() => navigate("/upload/album")}
+              >
                 <div className={classes.cloud_icon_con}>
                   <RiNeteaseCloudMusicLine className={classes.cloud_icon} />
                 </div>

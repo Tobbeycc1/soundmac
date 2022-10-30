@@ -31,7 +31,7 @@ function PageFive(props) {
           <input
             type={"number"}
             className={classes.input_full}
-            placeholder={"Copyright holder"}
+            placeholder={"Copyright year"}
             name={"copyright_year"}
             onChange={onChangeInfo}
             value={allInfo.copyright_year}
@@ -84,6 +84,8 @@ function PageFive(props) {
               e.target.checked
                 ? setAllInfo((prev) => ({ ...prev, [e.target.name]: true }))
                 : setAllInfo((prev) => ({ ...prev, [e.target.name]: false }));
+
+              e.target.checked && setAllInfo((prev) => ({ ...prev, UPC: "" }));
             }}
             checked={allInfo.assign_upc === true}
           />{" "}
@@ -102,6 +104,8 @@ function PageFive(props) {
               e.target.checked
                 ? setAllInfo((prev) => ({ ...prev, [e.target.name]: true }))
                 : setAllInfo((prev) => ({ ...prev, [e.target.name]: false }));
+
+              e.target.checked && setAllInfo((prev) => ({ ...prev, ISRC: "" }));
             }}
             checked={allInfo.assign_isrc === true}
           />{" "}

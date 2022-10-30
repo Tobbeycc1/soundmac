@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 
+// const uploadSingleEndpoint = `${URL}/api/single`;
 const Upload = () => {
   const [file, setFile] = useState(null);
   const [img, setImg] = useState(null);

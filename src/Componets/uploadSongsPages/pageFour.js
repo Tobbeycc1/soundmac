@@ -42,7 +42,7 @@ function PageFour(props) {
         >
           {languagesArr.map((item, index) => (
             <>
-              <option value={item} name={"language"}>
+              <option value={item} name={"language"} key={index}>
                 {item}
               </option>{" "}
             </>

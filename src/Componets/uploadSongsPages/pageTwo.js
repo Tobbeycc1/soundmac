@@ -1,6 +1,11 @@
 import { useContext } from "react";
 import classes from "../../CSS files/uploadSongs.module.css";
-import { FcBusinessman, FcBusinesswoman, FcMusic } from "react-icons/fc";
+import {
+  FcBusinessman,
+  FcBusinesswoman,
+  FcMusic,
+  FcConferenceCall,
+} from "react-icons/fc";
 import UploadSongContext from "../../contexts/upload Song  Fns/uploadSongContext";
 function PageTwo(props) {
   const { onChangeInfo, allInfo, accountType } = useContext(UploadSongContext);
@@ -13,25 +18,15 @@ function PageTwo(props) {
           <div className={classes.purple_block}>
             <FcBusinessman className={classes.people_con} />
           </div>
-          {accountType === "Independent_artist" ? (
-            <input
-              type={"text"}
-              className={classes.input_full}
-              placeholder={"Main Artiste"}
-              name={"main_artiste"}
-              onChange={onChangeInfo}
-              value={allInfo.main_artiste}
-            />
-          ) : (
-            <input
-              type={"text"}
-              className={classes.input_full}
-              placeholder={"Label Name"}
-              name={"label_name"}
-              onChange={onChangeInfo}
-              value={allInfo.label_name}
-            />
-          )}
+
+          <input
+            type={"text"}
+            className={classes.input_full}
+            placeholder={"Main Artiste"}
+            name={"main_artiste"}
+            onChange={onChangeInfo}
+            value={allInfo.main_artiste}
+          />
         </div>
 
         <div className={classes.form_con_small_2}>
@@ -49,6 +44,22 @@ function PageTwo(props) {
         </div>
       </div>
 
+      {accountType !== "Independent_artist" && accountType !== "Free_account" && (
+        <div className={classes.form_con}>
+          <div className={classes.purple_block}>
+            <FcConferenceCall className={classes.people_con} />
+          </div>
+          <input
+            type={"text"}
+            className={classes.input_full}
+            placeholder={"Label Name"}
+            name={"label_name"}
+            onChange={onChangeInfo}
+            value={allInfo.label_name}
+          />
+        </div>
+      )}
+
       <div className={classes.form_con}>
         <div className={classes.purple_block}>
           <FcBusinesswoman className={classes.people_con} />
@@ -56,9 +67,7 @@ function PageTwo(props) {
         <input
           type={"text"}
           className={classes.input_full}
-          placeholder={
-            accountType === "Independent_artist" ? "Other artiste" : "Artiste"
-          }
+          placeholder={"Other artiste"}
           name={"other_artiste"}
           onChange={onChangeInfo}
           value={allInfo.other_artiste}

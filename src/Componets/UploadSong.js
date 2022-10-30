@@ -35,37 +35,40 @@ function UploadSongs(props) {
 
   const { user } = useContext(AuthContext);
 
+  // context
+  const { allInfo, accountType, onChangeInfo, onSubmitAllInfo } = useContext(
+    UploadSongContext
+  );
+
+  const imageSize = allInfo.image[0].file.size;
+
   const pageIncrement = () => {
     setClickCount(clickCount + 1);
     if (clickCount === 0 && allInfo.image.length === 0) {
       toast.error("Upload a valid image!");
       setClickCount(clickCount);
-    } else if (clickCount === 0 && wavFormat === false) {
+    } else if (clickCount === 0 && imageSize > 10000000) {
+      toast.error("Image size should be less than 10mb!");
+      setClickCount(clickCount);
+    } else if (clickCount === 0 && allInfo.song.type !== "audio/wav") {
       toast.error("Upload a valid song!");
       setClickCount(clickCount);
-    } else if (
-      clickCount === 1 &&
-      accountType === "Independent_artist" &&
-      allInfo.main_artiste === ""
-    ) {
+    } else if (clickCount === 0 && allInfo.song.size > 150000000) {
+      toast.error("Song size should be less than 150mb!");
+      setClickCount(clickCount);
+    } else if (clickCount === 1 && allInfo.main_artiste === "") {
       toast.error("Main artiste field can't be empty!");
       setClickCount(clickCount);
     } else if (
       clickCount === 1 &&
       accountType !== "Independent_artist" &&
+      accountType !== "Free_account" &&
       allInfo.label_name === ""
     ) {
       toast.error("Label name field can't be empty!");
       setClickCount(clickCount);
     } else if (clickCount === 1 && allInfo.song_title === "") {
       toast.error("Song title field can't be empty!");
-      setClickCount(clickCount);
-    } else if (
-      clickCount === 1 &&
-      accountType !== "Independent_artist" &&
-      allInfo.other_artiste === ""
-    ) {
-      toast.error("Artiste field can't be empty!");
       setClickCount(clickCount);
     } else if (clickCount === 1 && allInfo.explicit === "") {
       toast.error("Explicit field can't be empty!");
@@ -106,20 +109,18 @@ function UploadSongs(props) {
       toast.error("Incorrect copyright year!");
       setClickCount(clickCount);
     } else {
-      setReleaseDateCon(!releaseDateCon);
+      setReleaseDateCon(true);
     }
   };
 
   // on submit
   const onSubmit = () => {
-    console.log("submited infos");
     if (allInfo.release_date <= 0) {
       toast.error("Input a valid date!");
+    } else {
+      onSubmitAllInfo();
     }
   };
-
-  // context
-  const { allInfo, accountType, onChangeInfo } = useContext(UploadSongContext);
 
   // acknoledgements
   const [acknoledgement, setAcknoledgement] = useState({
@@ -135,7 +136,7 @@ function UploadSongs(props) {
       [e.target.name]: e.target.checked,
     }));
   };
-  console.log(acknoledgement.tracks_rejection);
+  // console.log(acknoledgement.tracks_rejection);
 
   return (
     <div className={classes.upload_page_con}>
@@ -325,18 +326,16 @@ function UploadSongs(props) {
 }
 
 // music upload component
-const UploadAudioComp = ({ wavFormat, setWavFormat }) => {
+const UploadAudioComp = () => {
   const { allInfo, setAllInfo } = useContext(UploadSongContext);
 
   const onChange = (e) => {
     setAllInfo((prev) => ({ ...prev, ["song"]: e.target.files[0] }));
-    setWavFormat(e.target.value.includes(".wav"));
-    console.log(e.target.files[0].name);
   };
   return (
     <div className={classes.upload_audio_con}>
       <p className={classes.select_audio}>
-        Select Audio (Accepted files: .wav)
+        Select Audio (Accepted files: .wav, <br /> not more than 150mb)
       </p>
       <input
         className={classes.upload_song_button}

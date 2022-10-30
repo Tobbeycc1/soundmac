@@ -23,7 +23,7 @@ function UploadImageButton() {
 
   const srcFn = () => {
     setSrc(allInfo.image[0].data_url);
-    console.log(allInfo.image.length);
+    // console.log(allInfo.image.length);
   };
   useEffect(() => {
     allInfo.image.length !== 0 && srcFn();
@@ -36,7 +36,7 @@ function UploadImageButton() {
         onChange={onChange}
         maxNumber={maxNumber}
         dataURLKey="data_url"
-        acceptType={["jpg"]}
+        acceptType={["jpg", "png"]}
       >
         {({
           imageList,
@@ -49,6 +49,13 @@ function UploadImageButton() {
         }) => (
           // write your building UI
           <div className="upload__image-wrapper">
+            <p
+              className={classes.select_audio}
+              style={{ marginBottom: "10px" }}
+            >
+              Accepted files: .png/jpg, size: 3000 X 3000
+              <br /> not more than 10mb)
+            </p>
             <div className={classes.src_con}>
               <img
                 src={src}

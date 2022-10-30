@@ -37,8 +37,9 @@
   margin-bottom: 20px;
 }
 .select_audio {
-  font-weight: bold;
-  color: var(--red);
+  text-align: center;
+  font-weight: normal;
+  font-size: 12px;
 }
 .src {
   width: 100%;
@@ -240,7 +241,6 @@ input::placeholder,
 .R_d_label,
 .submit_modal_text,
 .choose_file,
-.select_audio,
 .song_name {
   font-size: 1.2vw;
   /* font-weight: 900; */
@@ -641,6 +641,11 @@ input[type="file"] {
   .select_audio,
   .song_name {
     font-size: 14px;
+  }
+  .select_audio {
+    text-align: center;
+    font-weight: normal;
+    font-size: 12px;
   }
   .credits_filled_display {
     display: none;

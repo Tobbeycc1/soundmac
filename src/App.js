@@ -15,7 +15,7 @@ import TabletHeader from "./Componets/tabletHeader";
 import Upload from "./Upload";
 import UploadSongs from "./Componets/UploadSong";
 import PrivateRoute from "./routing/PrivateRoute";
-import Alert from './Layouts/Alert';
+import Alert from "./Layouts/Alert";
 
 import "react-toastify/dist/ReactToastify.css";
 
@@ -122,6 +122,18 @@ function App() {
               <div className={classes.dashboard}>
                 {" "}
                 <DashboardHeader /> <UploadSongs />{" "}
+              </div>
+            </PrivateRoute>
+          }
+        />
+
+        <Route
+          path="/upload/album"
+          element={
+            <PrivateRoute>
+              <div className={classes.dashboard}>
+                {" "}
+                <DashboardHeader />
               </div>
             </PrivateRoute>
           }
