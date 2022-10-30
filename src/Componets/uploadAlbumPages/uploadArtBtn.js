@@ -2,12 +2,13 @@ import { useState } from "react";
 import ImageUploading from "react-images-uploading";
 import classes from "../../CSS files/uploadSongs.module.css";
 import { useContext } from "react";
-import UploadSongContext from "../../contexts/upload Song  Fns/uploadSongContext";
 import { useEffect } from "react";
 import errorSRCLINK from "../../images/uploadImageIcon.png";
+import UploadAlbumContext from "../../contexts/upload album fns/uploadAlbumContext";
 
-function UploadImageButton() {
-  const { allInfo, setAllInfo } = useContext(UploadSongContext);
+function UploadArtBtn() {
+  const { albumInfo, setAlbumInfo } = useContext(UploadAlbumContext);
+  console.log(albumInfo);
 
   const [images, setImages] = useState([]);
   const maxNumber = 1;
@@ -17,16 +18,16 @@ function UploadImageButton() {
     // data for submit
     console.log(imageList, addUpdateIndex);
     setImages(imageList);
-    setAllInfo((prev) => ({ ...prev, ["image"]: imageList }));
+    setAlbumInfo((prev) => ({ ...prev, ["image"]: imageList }));
   };
 
   const srcFn = () => {
-    setSrc(allInfo.image[0].data_url);
+    setSrc(albumInfo.image[0].data_url);
     // console.log(allInfo.image.length);
   };
   useEffect(() => {
-    allInfo.image.length !== 0 && srcFn();
-  }, [allInfo]);
+    albumInfo.image.length !== 0 && srcFn();
+  }, [albumInfo]);
   return (
     <div className="App">
       <ImageUploading
@@ -92,4 +93,4 @@ function UploadImageButton() {
   );
 }
 
-export default UploadImageButton;
+export default UploadArtBtn;

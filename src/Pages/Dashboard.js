@@ -46,38 +46,6 @@ const dummyData = [
       "https://graphicriver.img.customer.envatousercontent.com/files/383062766/music-albumcover-templates-bundle78-preview.jpg?auto=compress%2Cformat&fit=crop&crop=top&w=590&h=590&s=17318da830a8e0cad5e038de293bced3",
     ft: "",
   },
-  // {
-  //   id: 4,
-  //   artisteName: "Tobbey",
-  //   song: "Daddy yo",
-  //   src:
-  //     "https://www.bellanaija.com/wp-content/uploads/2018/09/rasaking-720x720.jpg",
-  //   ft: "",
-  // },
-  // {
-  //   id: 5,
-  //   artisteName: "Tobbey",
-  //   song: "Holla at your boy ",
-  //   src:
-  //     "https://i.pinimg.com/736x/dc/ae/9a/dcae9acc196c7de7fdb4214b01de84ac.jpg",
-  //   ft: "",
-  // },
-  // {
-  //   id: 6,
-  //   artisteName: "Tobbey",
-  //   song: "soweto baby",
-  //   src:
-  //     "https://d1csarkz8obe9u.cloudfront.net/posterpreviews/album-cover-art-template-design-6d5b5d8df1dbe0c1fcaa4c1ba16a86a9_screen.jpg?ts=1635384690",
-  //   ft: "",
-  // },
-  // {
-  //   id: 7,
-  //   artisteName: "Tobbey",
-  //   song: "Grace",
-  //   src:
-  //     "https://d1csarkz8obe9u.cloudfront.net/posterpreviews/album-cover-art-template-design-6d5b5d8df1dbe0c1fcaa4c1ba16a86a9_screen.jpg?ts=1635384690",
-  //   ft: "chris brown",
-  // },
 ];
 const musicCoverArt = [bannerOne, bannerThree, bannerTwo, bannerFour];
 
@@ -88,8 +56,6 @@ function Dashboard() {
   const [selected, setSelected] = useState(
     new Set(["Please Select  Account Type"])
   );
-
-  console.log(dummyData.length < 4);
 
   const selectedValue = useMemo(
     () =>
@@ -111,7 +77,6 @@ function Dashboard() {
 
   const onSubmit = () => {
     if (artisteFormName === "") {
-      console.log("error");
       toast.error("Add a name");
     } else {
       createAccount(artisteFormName);
@@ -121,15 +86,7 @@ function Dashboard() {
   // upload song
   const navigate = useNavigate();
 
-  // const uploadSongFn = () => {
-  //   console.log("upload song");
-  //   navigate("/upload/single");
-  // };
-
-  // select the first 5 objects
   const firstFive = dummyData.slice(0, 5);
-  // console.log(firstFive);
-  // console.log(dummyData);
 
   return (
     <Fragment>

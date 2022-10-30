@@ -1,14 +1,9 @@
 import { IoReturnDownBack } from "react-icons/io5";
 import { useNavigate } from "react-router-dom";
 import classes from "../CSS files/uploadSongs.module.css";
-import { useDropzone } from "react-dropzone";
-import MusicGenres from "musicgenres-json";
 import { ImCancelCircle } from "react-icons/im";
-
-import { FcPicture, FcHeadset, FcCopyright, FcCalendar } from "react-icons/fc";
 import { useContext, useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
-
 import PageTwo from "./uploadSongsPages/pageTwo";
 import PageThree from "./uploadSongsPages/pageThree";
 import PageFour from "./uploadSongsPages/pageFour";
@@ -23,11 +18,7 @@ const termsAndConditionsLink =
   "https://docs.google.com/document/d/1-_DkSO5wLcjmCgUsdDBuGAqumsRQBzAOf1mZ8JutOJc/edit";
 
 function UploadSongs(props) {
-  // back button
   const navigate = useNavigate();
-  const backBtn = () => {
-    navigate(-1);
-  };
 
   // change page numbers
   const [clickCount, setClickCount] = useState(0);
@@ -40,8 +31,6 @@ function UploadSongs(props) {
     UploadSongContext
   );
 
-  // const imageSize = allInfo.image[0].file.size;
-
   const pageIncrement = () => {
     setClickCount(clickCount + 1);
     if (clickCount === 0 && allInfo.image.length === 0) {
@@ -50,7 +39,7 @@ function UploadSongs(props) {
     } else if (clickCount === 0 && allInfo.image[0].file.size > 10000000) {
       toast.error("Image size should be less than 10mb!");
       setClickCount(clickCount);
-    } else if (clickCount === 0 && allInfo.song.type !== "audio/wav") {
+    } else if (clickCount === 0 && wavFormat === false) {
       toast.error("Upload a valid song!");
       setClickCount(clickCount);
     } else if (clickCount === 0 && allInfo.song.size > 150000000) {
@@ -261,7 +250,7 @@ function UploadSongs(props) {
       )}
 
       <div className={classes.backBtn_upload_con}>
-        <span onClick={backBtn} className={classes.back_icon}>
+        <span onClick={() => navigate(-1)} className={classes.back_icon}>
           <IoReturnDownBack />
         </span>{" "}
         <h2 className={classes.text}>Upload Songs</h2>
@@ -326,11 +315,13 @@ function UploadSongs(props) {
 }
 
 // music upload component
-const UploadAudioComp = () => {
+const UploadAudioComp = ({ wavFormat, setWavFormat }) => {
   const { allInfo, setAllInfo } = useContext(UploadSongContext);
 
   const onChange = (e) => {
     setAllInfo((prev) => ({ ...prev, ["song"]: e.target.files[0] }));
+    setWavFormat(e.target.value.includes(".wav"));
+    console.log(e.target.value.includes(".wav"));
   };
   return (
     <div className={classes.upload_audio_con}>

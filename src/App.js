@@ -18,6 +18,7 @@ import PrivateRoute from "./routing/PrivateRoute";
 import Alert from "./Layouts/Alert";
 
 import "react-toastify/dist/ReactToastify.css";
+import UploadAlbum from "./Componets/uploadAlbum";
 
 function App() {
   return (
@@ -134,6 +135,7 @@ function App() {
               <div className={classes.dashboard}>
                 {" "}
                 <DashboardHeader />
+                <UploadAlbum />
               </div>
             </PrivateRoute>
           }
