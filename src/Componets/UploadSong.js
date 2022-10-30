@@ -40,32 +40,20 @@ function UploadSongs(props) {
     UploadSongContext
   );
 
-  const imageSize = allInfo.image[0].file.size;
+  // const imageSize = allInfo.image[0].file.size;
 
   const pageIncrement = () => {
     setClickCount(clickCount + 1);
     if (clickCount === 0 && allInfo.image.length === 0) {
       toast.error("Upload a valid image!");
       setClickCount(clickCount);
-    } else if (
-      clickCount === 0 &&
-      allInfo.image.length > 0 &&
-      imageSize > 10000000
-    ) {
+    } else if (clickCount === 0 && allInfo.image[0].file.size > 10000000) {
       toast.error("Image size should be less than 10mb!");
       setClickCount(clickCount);
-    } else if (
-      clickCount === 0 &&
-      allInfo.song.length > 0 &&
-      allInfo.song.type !== "audio/wav"
-    ) {
+    } else if (clickCount === 0 && allInfo.song.type !== "audio/wav") {
       toast.error("Upload a valid song!");
       setClickCount(clickCount);
-    } else if (
-      clickCount === 0 &&
-      allInfo.song.length > 0 &&
-      allInfo.song.size > 150000000
-    ) {
+    } else if (clickCount === 0 && allInfo.song.size > 150000000) {
       toast.error("Song size should be less than 150mb!");
       setClickCount(clickCount);
     } else if (clickCount === 1 && allInfo.main_artiste === "") {
