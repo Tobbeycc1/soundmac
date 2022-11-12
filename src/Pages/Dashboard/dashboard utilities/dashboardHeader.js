@@ -51,6 +51,7 @@ function DashboardHeader() {
         </Tooltip>
 
         <Tooltip
+          onClick={() => navigate("/dashboard/settings")}
           content={"Settings"}
           placement="bottom"
           style={{ margin: "0px 5px" }}
@@ -104,6 +105,7 @@ function DashboardHeader() {
             placement="bottom"
             style={{ margin: "0px 5px" }}
             onClick={() => {
+              navigate("/dashboard/settings");
               showMobileNavDetails(false);
             }}
           >

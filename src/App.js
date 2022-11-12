@@ -18,6 +18,7 @@ import Header from "./Pages/Home Page/HomePage Utilities/Header";
 import DashboardHeader from "./Pages/Dashboard/dashboard utilities/dashboardHeader";
 import TabletHeader from "./Pages/Home Page/HomePage Utilities/tabletHeader";
 import Dashboard from "./Pages/Dashboard/Dashboard";
+import Settings from "./Pages/Dashboard/Settings/Settings";
 
 function App() {
   return (
@@ -115,6 +116,18 @@ function App() {
             </PrivateRoute>
           }
         />
+
+        <Route
+          path="/dashboard/settings"
+          element={
+            <PrivateRoute>
+              <div className={classes.dashboard}>
+                <DashboardHeader /> <Settings />{" "}
+              </div>
+            </PrivateRoute>
+          }
+        />
+
         <Route
           path="/upload/single"
           element={

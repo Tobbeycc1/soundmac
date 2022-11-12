@@ -3,7 +3,7 @@ import { Splide, SplideSlide } from "@splidejs/react-splide";
 import { AutoScroll } from "@splidejs/splide-extension-auto-scroll";
 import "@splidejs/splide/css";
 import { toast } from "react-toastify";
-import { Dropdown, Popover, Button } from "@nextui-org/react";
+import { Dropdown } from "@nextui-org/react";
 import { useState } from "react";
 import { useMemo } from "react";
 import { useContext } from "react";
@@ -11,7 +11,6 @@ import { RiNeteaseCloudMusicLine } from "react-icons/ri";
 import { RiMusicLine } from "react-icons/ri";
 import { Link, useNavigate } from "react-router-dom";
 import MediaQuery from "react-responsive";
-import { GoKebabVertical } from "react-icons/go";
 import { Fragment } from "react";
 import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
@@ -20,6 +19,7 @@ import bannerTwo from "../../images/dashboard banner two.png";
 import bannerThree from "../../images/808ef896-eed6-4312-98c1-ab651beb.jpg";
 import bannerFour from "../../images/dashboard banner four.png";
 import AuthContext from "../../contexts/auth/authContext";
+import SongDetails from "./Upload utilities/SongsDetails";
 
 const dummyData = [
   {
@@ -87,6 +87,13 @@ function Dashboard() {
   const navigate = useNavigate();
 
   const firstFive = dummyData.slice(0, 5);
+
+  // open song details on click of each song
+  const [songModal, setSongModal] = useState(false);
+
+  const openSongModal = () => {
+    setSongModal(!songModal);
+  };
 
   return (
     <Fragment>
@@ -222,7 +229,10 @@ function Dashboard() {
             <div className={classes.todays_stream_A}>
               <p className={classes.song_heading}>Songs</p>
               {firstFive.map((item, index) => (
-                <div className={classes.small_songs_con}>
+                <div
+                  className={classes.small_songs_con}
+                  onClick={openSongModal}
+                >
                   <img
                     src={item.src}
                     alt={item.title}
@@ -352,6 +362,7 @@ function Dashboard() {
           </div>
         </>
       )}
+      {songModal && <SongDetails closeSongModal={openSongModal} />}
     </Fragment>
   );
 }
