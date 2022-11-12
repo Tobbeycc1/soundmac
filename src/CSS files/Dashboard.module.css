@@ -135,9 +135,9 @@
 }
 
 .song_heading {
-  margin-left: 30px;
+  margin-left: 40px;
   font-weight: bold;
-  color: var(--dashPink);
+  color: var(--red);
 }
 .link_to_catalog {
   margin-left: 30px;
@@ -154,6 +154,12 @@
   /* background: red; */
   display: flex;
   align-items: center;
+  padding: 2px 10px;
+  border-radius: 10px 2px;
+  cursor: pointer;
+}
+.small_songs_con:hover {
+  background: rgba(212, 184, 212, 0.384);
 }
 .item_song {
   text-transform: capitalize;
