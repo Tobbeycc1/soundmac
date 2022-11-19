@@ -56,7 +56,7 @@ const AuthState = ({ children }) => {
       // console.log(err.response.data.errors);
       const error = err.response.data.errors;
 
-      error.map((val) => addMessage(val.msg, 'error'))
+      error.map((val) => addMessage(val.msg, "error"));
 
       // dispatch auth failure
       dispatch({
@@ -77,7 +77,7 @@ const AuthState = ({ children }) => {
     const body = JSON.stringify(userDetails);
 
     try {
-      loader(true)
+      loader(true);
 
       const res = await axios.post(`${URL}/api/auth`, body, config);
 
@@ -90,17 +90,17 @@ const AuthState = ({ children }) => {
 
       localStorage.setItem("auth-token", data.token);
 
-      setTimeout(() => loader(false), 5000)
+      setTimeout(() => loader(false), 5000);
 
       getUser(); // get user
     } catch (err) {
-      loader(false)
-      const error = err.response.data.errors
+      loader(false);
+      const error = err.response.data.errors;
 
       setErrorMssg(err.response.data.errors[0].msg);
 
       console.log(err.response.data.errors);
-      error.map((val) => addMessage(val.msg, 'error'))
+      error.map((val) => addMessage(val.msg, "error"));
 
       // dispatch auth failure
       dispatch({
@@ -127,7 +127,7 @@ const AuthState = ({ children }) => {
       });
     } catch (err) {
       const error = err.response.data.errors;
-      error.map((val) => addMessage(val.msg, 'error'))
+      error.map((val) => addMessage(val.msg, "error"));
 
       console.log(error);
       dispatch({
@@ -147,20 +147,20 @@ const AuthState = ({ children }) => {
   const loader = async (val) => {
     dispatch({
       type: SET_LOADER,
-      payload: val
+      payload: val,
     });
   };
 
   // create account type
   const createAccount = async (artist_name) => {
-    console.log({ artist_name })
+    console.log({ artist_name });
 
     const config = {
       headers: {
         "Content-Type": "application/json",
         "x-auth-token": localStorage.getItem("auth-token"),
-      }
-    }
+      },
+    };
 
     const body = JSON.stringify({ artist_name });
 
@@ -172,10 +172,9 @@ const AuthState = ({ children }) => {
       // dispatch err
       console.log(err);
       const error = err.response.data.errors;
-      error.map((val) => addMessage(val.msg, 'error'))
-
+      error.map((val) => addMessage(val.msg, "error"));
     }
-  }
+  };
 
   useEffect(() => {
     localStorage.getItem("auth-token") && getUser();

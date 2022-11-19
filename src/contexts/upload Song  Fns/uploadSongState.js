@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import UploadSongContext from "./uploadSongContext";
 import axios from "axios";
 import swal from "sweetalert";
@@ -111,6 +111,30 @@ const UploadSongState = ({ children }) => {
     }
   };
 
+  // get songs
+  const [gottenSongs, setGottenSongs] = useState("");
+
+  // get songs function
+  const getSongs = async () => {
+    const config = {
+      headers: {
+        "x-auth-token": localStorage.getItem("auth-token"),
+      },
+    };
+    try {
+      const res = await axios.get(`${URL}/api/single/tracks`, config);
+      const data = res.data.songs;
+      console.log(data);
+      setGottenSongs(data);
+    } catch (err) {
+      console.log(err.response);
+    }
+  };
+
+  useEffect(() => {
+    gottenSongs === "" && getSongs();
+  }, []);
+
   return (
     <UploadSongContext.Provider
       value={{
@@ -120,6 +144,7 @@ const UploadSongState = ({ children }) => {
         accountType,
         onSubmitAllInfo,
         loading,
+        gottenSongs,
       }}
     >
       {children}

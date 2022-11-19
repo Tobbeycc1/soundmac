@@ -20,6 +20,7 @@ import bannerThree from "../../images/808ef896-eed6-4312-98c1-ab651beb.jpg";
 import bannerFour from "../../images/dashboard banner four.png";
 import AuthContext from "../../contexts/auth/authContext";
 import SongDetails from "./Upload utilities/SongsDetails";
+import UploadSongContext from "../../contexts/upload Song  Fns/uploadSongContext";
 
 const dummyData = [
   {
@@ -51,6 +52,7 @@ const musicCoverArt = [bannerOne, bannerThree, bannerTwo, bannerFour];
 
 function Dashboard() {
   const { user, loading, createAccount } = useContext(AuthContext);
+  const { gottenSongs } = useContext(UploadSongContext);
 
   // drop down to select account type
   const [selected, setSelected] = useState(
@@ -86,7 +88,7 @@ function Dashboard() {
   // upload song
   const navigate = useNavigate();
 
-  const firstFive = dummyData.slice(0, 5);
+  const firstFive = gottenSongs.slice(0, 5);
 
   // open song details on click of each song
   const [songModal, setSongModal] = useState(false);
@@ -94,6 +96,7 @@ function Dashboard() {
   const openSongModal = () => {
     setSongModal(!songModal);
   };
+  console.log(gottenSongs);
 
   return (
     <Fragment>
@@ -228,21 +231,21 @@ function Dashboard() {
           <div className={classes.section2_con}>
             <div className={classes.todays_stream_A}>
               <p className={classes.song_heading}>Songs</p>
-              {firstFive.map((item, index) => (
+              {firstFive.map((item) => (
                 <div
                   className={classes.small_songs_con}
                   onClick={openSongModal}
                 >
                   <img
-                    src={item.src}
+                    src={item.cover_art_url}
                     alt={item.title}
                     className={classes.small_music_icon}
                   />
 
                   <div className={classes.items_con}>
-                    <p className={classes.item_song}>{item.song}</p>
+                    <p className={classes.item_song}>{item.release_title}</p>
                     <p className={classes.item_artiste_name}>
-                      {item.artisteName} {item.ft !== "" ? `ft ${item.ft}` : ""}{" "}
+                      {item.artist_name}
                     </p>
                   </div>
                 </div>
@@ -255,7 +258,9 @@ function Dashboard() {
                 more
               </Link>
             </div>
-
+            {/* {gottenSongs.map((item, index) => (
+              <div>{item.artist_name} </div>
+            ))} */}
             <div className={classes.todays_stream}>
               <p className={classes.song_heading}>Albums</p>
               {firstFive.map((item, index) => (
@@ -278,7 +283,6 @@ function Dashboard() {
                 more
               </Link>
             </div>
-
             {/* upload song */}
             <div className={classes.upload_con_con}>
               <div
