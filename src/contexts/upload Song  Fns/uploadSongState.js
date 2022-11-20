@@ -112,7 +112,7 @@ const UploadSongState = ({ children }) => {
   };
 
   // get songs
-  const [gottenSongs, setGottenSongs] = useState("");
+  const [gottenSongs, setGottenSongs] = useState([]);
 
   // get songs function
   const getSongs = async () => {

@@ -88,7 +88,7 @@ function Dashboard() {
   // upload song
   const navigate = useNavigate();
 
-  const firstFive = gottenSongs.slice(0, 5);
+  const firstFive = gottenSongs.length > 0 && gottenSongs.slice(0, 5);
 
   // open song details on click of each song
   const [songModal, setSongModal] = useState(false);
@@ -231,25 +231,26 @@ function Dashboard() {
           <div className={classes.section2_con}>
             <div className={classes.todays_stream_A}>
               <p className={classes.song_heading}>Songs</p>
-              {firstFive.map((item) => (
-                <div
-                  className={classes.small_songs_con}
-                  onClick={openSongModal}
-                >
-                  <img
-                    src={item.cover_art_url}
-                    alt={item.title}
-                    className={classes.small_music_icon}
-                  />
+              {firstFive.length > 0 &&
+                firstFive.map((item) => (
+                  <div
+                    className={classes.small_songs_con}
+                    onClick={openSongModal}
+                  >
+                    <img
+                      src={item.cover_art_url}
+                      alt={item.title}
+                      className={classes.small_music_icon}
+                    />
 
-                  <div className={classes.items_con}>
-                    <p className={classes.item_song}>{item.release_title}</p>
-                    <p className={classes.item_artiste_name}>
-                      {item.artist_name}
-                    </p>
+                    <div className={classes.items_con}>
+                      <p className={classes.item_song}>{item.release_title}</p>
+                      <p className={classes.item_artiste_name}>
+                        {item.artist_name}
+                      </p>
+                    </div>
                   </div>
-                </div>
-              ))}
+                ))}
               <br />
               <Link
                 to={"/dashboard/allsongs"}
@@ -263,22 +264,24 @@ function Dashboard() {
             ))} */}
             <div className={classes.todays_stream}>
               <p className={classes.song_heading}>Albums</p>
-              {firstFive.map((item, index) => (
-                <div className={classes.small_songs_con}>
-                  <img
-                    src={item.src}
-                    alt={item.title}
-                    className={classes.small_music_icon}
-                  />
+              {firstFive.length > 0 &&
+                firstFive.map((item, index) => (
+                  <div className={classes.small_songs_con}>
+                    <img
+                      src={item.src}
+                      alt={item.title}
+                      className={classes.small_music_icon}
+                    />
 
-                  <div className={classes.items_con}>
-                    <p className={classes.item_song}>{item.song}</p>
-                    <p className={classes.item_artiste_name}>
-                      {item.artisteName} {item.ft !== "" ? `ft ${item.ft}` : ""}{" "}
-                    </p>
+                    <div className={classes.items_con}>
+                      <p className={classes.item_song}>{item.song}</p>
+                      <p className={classes.item_artiste_name}>
+                        {item.artisteName}{" "}
+                        {item.ft !== "" ? `ft ${item.ft}` : ""}{" "}
+                      </p>
+                    </div>
                   </div>
-                </div>
-              ))}
+                ))}
               <Link to={"/album_catalog"} className={classes.link_to_catalog}>
                 more
               </Link>
