@@ -19,6 +19,7 @@ import DashboardHeader from "./Pages/Dashboard/dashboard utilities/dashboardHead
 import TabletHeader from "./Pages/Home Page/HomePage Utilities/tabletHeader";
 import Dashboard from "./Pages/Dashboard/Dashboard";
 import Settings from "./Pages/Dashboard/Settings/Settings";
+import InputYourArtiste from "./Pages/Account Type Page/InputYourArtiste";
 
 function App() {
   return (
@@ -161,6 +162,19 @@ function App() {
                 {" "}
                 <DashboardHeader />
                 <AllSongsPages />
+              </div>
+            </PrivateRoute>
+          }
+        />
+
+        <Route
+          path="/register/addartiste"
+          element={
+            <PrivateRoute>
+              <div className={classes.dashboard}>
+                {" "}
+                <DashboardHeader />
+                <InputYourArtiste />
               </div>
             </PrivateRoute>
           }

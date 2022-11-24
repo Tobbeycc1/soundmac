@@ -3,7 +3,6 @@ import { Splide, SplideSlide } from "@splidejs/react-splide";
 import { AutoScroll } from "@splidejs/splide-extension-auto-scroll";
 import "@splidejs/splide/css";
 import { toast } from "react-toastify";
-import { Dropdown } from "@nextui-org/react";
 import { useState } from "react";
 import { useMemo } from "react";
 import { useContext } from "react";
@@ -21,6 +20,7 @@ import bannerFour from "../../images/dashboard banner four.png";
 import AuthContext from "../../contexts/auth/authContext";
 import SongDetails from "./Upload utilities/SongsDetails";
 import UploadSongContext from "../../contexts/upload Song  Fns/uploadSongContext";
+import AccountTypeContext from "../../contexts/account type/accountTypeContext";
 
 const dummyData = [
   {
@@ -51,39 +51,11 @@ const dummyData = [
 const musicCoverArt = [bannerOne, bannerThree, bannerTwo, bannerFour];
 
 function Dashboard() {
-  const { user, loading, createAccount } = useContext(AuthContext);
+  const { user, loading } = useContext(AuthContext);
   const { gottenSongs } = useContext(UploadSongContext);
-
-  // drop down to select account type
-  const [selected, setSelected] = useState(
-    new Set(["Please Select  Account Type"])
+  const { onSelectAccountType, accountTypeVal, proceed } = useContext(
+    AccountTypeContext
   );
-
-  const selectedValue = useMemo(
-    () =>
-      Array.from(selected)
-        .join(", ")
-        .replaceAll("_", " "),
-    [selected]
-  );
-
-  // modal
-
-  // handle artiste name in the account type form
-  const [artisteFormName, setArtisteFormName] = useState("");
-
-  const onChange = (e) => {
-    // console.log(e.target.value);
-    setArtisteFormName(e.target.value);
-  };
-
-  const onSubmit = () => {
-    if (artisteFormName === "") {
-      toast.error("Add a name");
-    } else {
-      createAccount(artisteFormName);
-    }
-  };
 
   // upload song
   const navigate = useNavigate();
@@ -102,71 +74,58 @@ function Dashboard() {
     <Fragment>
       {user !== null && !loading ? (
         <div className={classes.dashboard_con}>
-          {user.artist_name === "" && user.label_name === "" && (
-            <div className={classes.modal}>
-              {/* error message */}
+          <div className={classes.modal}>
+            {/* error message */}
 
-              <div className={classes.modal_sub_con}>
-                <div className={classes.select_account_type_con}>
-                  <p className={classes.account_type_header}>
-                    SOUNDMAC ACCOUNT TYPE
-                  </p>
-                  <div className={classes.drop_drop_down_con}>
-                    <Dropdown>
-                      <Dropdown.Button
-                        light
-                        color="default"
-                        css={{ tt: "capitalize" }}
-                      >
-                        {selectedValue}
-                      </Dropdown.Button>
-                      <Dropdown.Menu
-                        aria-label="Single selection actions"
-                        color="default"
-                        disallowEmptySelection
-                        selectionMode="single"
-                        selectedKeys={selected}
-                        onSelectionChange={setSelected}
-                      >
-                        <Dropdown.Item key="Free_account">
-                          Free Account
-                        </Dropdown.Item>
-                        <Dropdown.Item key="Independent_artist">
-                          Independent Artist
-                        </Dropdown.Item>
-                        <Dropdown.Item key="label">Label</Dropdown.Item>
-                      </Dropdown.Menu>
-                    </Dropdown>
-                  </div>
-                </div>
+            <div className={classes.modal_sub_con}>
+              <div className={classes.select_account_type_con}>
+                <p className={classes.account_type_header}>
+                  SOUNDMAC ACCOUNT TYPE
+                </p>
+              </div>
+              <select
+                className={classes.account_type_con}
+                name={"account_type"}
+                onChange={onSelectAccountType}
+              >
+                <option value="">none</option>
+                <option>Free Account</option>
+                <option>Independent Account</option>
+                <option>Mini Label Account</option>
+                <option>Label Account</option>
+              </select>
+              {accountTypeVal.account_type !== "" && (
+                <>
+                  {(accountTypeVal.account_type === "Free Account" ||
+                    accountTypeVal.account_type === "Independent Account") && (
+                    <div className={classes.input_account_type}>
+                      <input
+                        className={classes.input_artiste_name_field}
+                        type={"text"}
+                        placeholder={"Artiste name"}
+                        name={"artisteName"}
+                        onChange={proceed}
+                      />
+                    </div>
+                  )}
 
-                {selected.anchorKey === "Independent_artist" ||
-                selected.anchorKey === "label" ||
-                selected.anchorKey === "Free_account" ? (
                   <div className={classes.input_account_type}>
-                    {" "}
                     <input
                       className={classes.input_artiste_name_field}
                       type={"text"}
-                      placeholder={
-                        selected.anchorKey === "label"
-                          ? "Label name"
-                          : "Artiste name"
-                      }
-                      onChange={onChange}
+                      placeholder={"Label name"}
+                      onChange={onSelectAccountType}
                     />
                   </div>
-                ) : (
-                  <></>
-                )}
-                <div className={classes.proceed_button}>
-                  <button auto onClick={onSubmit} className={classes.proceed}>
-                    Proceed
-                  </button>
-                </div>
-              </div>
+                  <div className={classes.proceed_button}>
+                    <button onClick={proceed} className={classes.proceed}>
+                      Proceed
+                    </button>
+                  </div>
+                </>
+              )}
             </div>
-          )}
+          </div>
 
           <MediaQuery minWidth={1000}>
             <div className={classes.slide_con_con}>
@@ -199,7 +158,6 @@ function Dashboard() {
               </div>
             </div>
           </MediaQuery>
-
           {/* for screen sizes lower tha 750px <<<<< */}
           <MediaQuery maxWidth={999}>
             <div className={classes.slide_con_con}>
@@ -226,7 +184,6 @@ function Dashboard() {
               </div>
             </div>
           </MediaQuery>
-
           {/* songs, album & Upload song & Upload album */}
           <div className={classes.section2_con}>
             <div className={classes.todays_stream_A}>

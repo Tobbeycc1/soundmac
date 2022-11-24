@@ -1,0 +1,50 @@
+.text {
+  font-size: 2.2vw;
+  display: inline-block;
+  vertical-align: middle;
+  font-weight: bold;
+}
+.input_your_artiste_con {
+  padding: 30px;
+}
+.form_con_small {
+  display: flex;
+  align-items: center;
+  margin: 20px 0px;
+  border: 2px solid var(--purple);
+  padding: 10px;
+  border-radius: 10px;
+  width: 50%;
+}
+.form_con_small:hover {
+  border: 2px solid var(--red);
+}
+.people_con {
+  margin-right: 20px;
+}
+.add_artiste_container {
+  width: 50%;
+  display: block;
+}
+.add_artiste {
+  background: var(--purple);
+  width: fit-content;
+  margin-left: auto;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.add_artiste:hover {
+  background: var(--red);
+}
+.input_full {
+  width: 95%;
+  outline: none;
+}
+@media screen and (max-width: 999px) {
+  .add_artiste_container,
+  .form_con_small {
+    width: 100%;
+  }
+}
