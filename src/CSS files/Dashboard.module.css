@@ -228,6 +228,19 @@
   width: 90%;
   cursor: pointer;
 }
+.skeleton_con_b {
+  height: 5px;
+  margin-top: 10px;
+}
+.availability_mssg,
+.availability_mssg_red {
+  font-size: 11px;
+  font-weight: bold;
+  color: var(--blue);
+}
+.availability_mssg_red {
+  color: var(--red);
+}
 
 @media screen and (max-width: 999px) {
   .Cover_Image,

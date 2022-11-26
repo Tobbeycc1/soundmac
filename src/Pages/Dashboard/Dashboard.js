@@ -11,7 +11,7 @@ import { RiMusicLine } from "react-icons/ri";
 import { Link, useNavigate } from "react-router-dom";
 import MediaQuery from "react-responsive";
 import { Fragment } from "react";
-import Skeleton from "react-loading-skeleton";
+import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
 import bannerOne from "../../images/dashboard banner one.png";
 import bannerTwo from "../../images/dashboard banner two.png";
@@ -53,9 +53,13 @@ const musicCoverArt = [bannerOne, bannerThree, bannerTwo, bannerFour];
 function Dashboard() {
   const { user, loading } = useContext(AuthContext);
   const { gottenSongs } = useContext(UploadSongContext);
-  const { onSelectAccountType, accountTypeVal, proceed } = useContext(
-    AccountTypeContext
-  );
+  const {
+    onSelectAccountType,
+    accountTypeVal,
+    proceed,
+    loadingNameAvailability,
+    availabilityMssg,
+  } = useContext(AccountTypeContext);
 
   // upload song
   const navigate = useNavigate();
@@ -68,7 +72,6 @@ function Dashboard() {
   const openSongModal = () => {
     setSongModal(!songModal);
   };
-  console.log(gottenSongs);
 
   return (
     <Fragment>
@@ -104,8 +107,29 @@ function Dashboard() {
                         type={"text"}
                         placeholder={"Artiste name"}
                         name={"artisteName"}
-                        onChange={proceed}
+                        onChange={onSelectAccountType}
                       />
+                      {loadingNameAvailability === true ? (
+                        <SkeletonTheme
+                          baseColor="#7a1400af"
+                          highlightColor="#444"
+                        >
+                          <Skeleton
+                            count={1}
+                            className={classes.skeleton_con_b}
+                          />
+                        </SkeletonTheme>
+                      ) : (
+                        <p
+                          className={
+                            availabilityMssg !== "Name available"
+                              ? classes.availability_mssg_red
+                              : classes.availability_mssg
+                          }
+                        >
+                          {availabilityMssg}
+                        </p>
+                      )}
                     </div>
                   )}
 
