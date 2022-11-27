@@ -53,7 +53,7 @@ const AccountTypeState = ({ children }) => {
     } else if (
       (accountTypeVal.account_type === "Mini Label Account" ||
         accountTypeVal.account_type === "Label Account") &&
-      artisteName === ""
+      labelName === ""
     ) {
       toast.error("Input a valid label name!");
     }

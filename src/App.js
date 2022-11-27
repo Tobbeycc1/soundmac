@@ -18,10 +18,18 @@ import Header from "./Pages/Home Page/HomePage Utilities/Header";
 import DashboardHeader from "./Pages/Dashboard/dashboard utilities/dashboardHeader";
 import TabletHeader from "./Pages/Home Page/HomePage Utilities/tabletHeader";
 import Dashboard from "./Pages/Dashboard/Dashboard";
-import Settings from "./Pages/Dashboard/Settings/Settings";
 import InputYourArtiste from "./Pages/Account Type Page/InputYourArtiste";
+import SettingsnavBar from "./Pages/Dashboard/Settings/SettingsNavBar";
+import PersonalInfo from "./Pages/Dashboard/Settings/PersonalInfo";
+import SettingsHeader from "./Pages/Dashboard/dashboard utilities/SettingsHeader";
+import { useContext } from "react";
+import SettingsContext from "./contexts/Settings Context/SettingsContext";
 
 function App() {
+  const { isBigScreen, showHamburgerMenu, isSmallScreen } = useContext(
+    SettingsContext
+  );
+
   return (
     <div>
       <Alert />
@@ -119,11 +127,56 @@ function App() {
         />
 
         <Route
-          path="/dashboard/settings"
+          path="/dashboard/settings/personal-info"
           element={
             <PrivateRoute>
               <div className={classes.dashboard}>
-                <DashboardHeader /> <Settings />{" "}
+                <DashboardHeader /> <SettingsHeader />
+                {isBigScreen && <SettingsnavBar />}
+                {isSmallScreen && showHamburgerMenu && <SettingsnavBar />}
+                <PersonalInfo />
+              </div>
+            </PrivateRoute>
+          }
+        />
+
+        <Route
+          path="/dashboard/settings/upgrade-plan"
+          element={
+            <PrivateRoute>
+              <div className={classes.dashboard}>
+                <DashboardHeader /> <SettingsHeader />
+                {isBigScreen && <SettingsnavBar />}
+                {isSmallScreen && showHamburgerMenu && <SettingsnavBar />}
+                <p>upgrade plan</p>
+              </div>
+            </PrivateRoute>
+          }
+        />
+
+        <Route
+          path="/dashboard/settings/payout-info"
+          element={
+            <PrivateRoute>
+              <div className={classes.dashboard}>
+                <DashboardHeader /> <SettingsHeader />
+                {isBigScreen && <SettingsnavBar />}
+                {isSmallScreen && showHamburgerMenu && <SettingsnavBar />}
+                <p>payout info</p>
+              </div>
+            </PrivateRoute>
+          }
+        />
+
+        <Route
+          path="/dashboard/settings/update-password"
+          element={
+            <PrivateRoute>
+              <div className={classes.dashboard}>
+                <DashboardHeader /> <SettingsHeader />
+                {isBigScreen && <SettingsnavBar />}
+                {isSmallScreen && showHamburgerMenu && <SettingsnavBar />}
+                <p>update password</p>
               </div>
             </PrivateRoute>
           }

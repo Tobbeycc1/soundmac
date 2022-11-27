@@ -1,0 +1,98 @@
+.settings_nav_bar_container,
+.settings_con {
+  display: inline-block;
+  vertical-align: top;
+  padding: 30px;
+}
+
+.settings_con {
+  height: calc(100vh - 150px);
+  overflow-y: scroll;
+  width: 80%;
+}
+
+.settings_text,
+.settings_text_clicked {
+  color: var(--purple);
+  font-weight: bold;
+  margin-bottom: 40px;
+  cursor: pointer;
+  padding: 10px 20px;
+  border-radius: 10px;
+}
+.settings_text:hover,
+.settings_text_clicked:hover {
+  background: rgba(77, 71, 77, 0.24);
+}
+.settings_text_clicked {
+  color: white;
+  background: var(--purple);
+}
+.settings_header_con {
+  padding: 20px 30px 0px 30px;
+}
+.haburgerMenu,
+.text {
+  font-size: 2.2vw;
+  vertical-align: middle;
+  display: inline-block;
+  font-weight: bold;
+}
+.haburgerMenu {
+  border: 2px solid var(--purple);
+  margin-right: 20px;
+  padding: 2px 10px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.Input {
+  outline: none;
+  border: none;
+  width: 100%;
+}
+.formCon {
+  border: 2px solid var(--blueA);
+  width: 60%;
+  padding: 10px 20px;
+  border-radius: 10px;
+}
+.formCon:hover {
+  border: 2px solid var(--purple);
+}
+.update_con {
+  display: flex;
+  margin: 10px 0px;
+  margin-bottom: 50px;
+  width: 60%;
+}
+.update_text {
+  margin-left: auto;
+  padding: 7px 15px;
+  background: var(--blueA);
+  color: white;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: bold;
+}
+.update_text:hover {
+  background: rgb(122, 105, 122);
+}
+@media screen and (max-width: 999px) {
+  .settings_con {
+    width: 100%;
+  }
+  .update_con,
+  .formCon {
+    width: 100%;
+  }
+  .haburgerMenu,
+  .text {
+    font-size: 25px;
+  }
+}
+@media screen and (max-width: 540px) {
+  .haburgerMenu,
+  .text {
+    font-size: 25px;
+  }
+}

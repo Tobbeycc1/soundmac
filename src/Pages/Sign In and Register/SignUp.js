@@ -1,8 +1,7 @@
 import { useState, useContext, useEffect } from "react";
 import classes from "../../CSS files/Signup.module.css";
 import { ImCancelCircle } from "react-icons/im";
-import { MdOutlineAttachEmail } from "react-icons/md";
-import { MdDriveFileRenameOutline } from "react-icons/md";
+import { MdOutlineAttachEmail, MdDriveFileRenameOutline } from "react-icons/md";
 import { RiLockPasswordLine } from "react-icons/ri";
 import { FcGoogle } from "react-icons/fc";
 import { RiFacebookCircleFill } from "react-icons/ri";

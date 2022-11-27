@@ -8,6 +8,7 @@ import AlertState from "./contexts/alert/AlertState";
 import AccountTypeState from "./contexts/account type/accountTypeState";
 import UploadSongState from "./contexts/upload Song  Fns/uploadSongState";
 import UploadAlbumState from "./contexts/upload album fns/uploadAlbumState";
+import SettingsState from "./contexts/Settings Context/SettingsState";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -17,7 +18,9 @@ root.render(
         <AlertState>
           <AuthState>
             <AccountTypeState>
-              <App />
+              <SettingsState>
+                <App />
+              </SettingsState>
             </AccountTypeState>
           </AuthState>
         </AlertState>
