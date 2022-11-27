@@ -29,6 +29,8 @@
   background: var(--purple);
 }
 .settings_header_con {
+  position: relative;
+  z-index: 100;
   padding: 20px 30px 0px 30px;
 }
 .haburgerMenu,
@@ -87,12 +89,20 @@
   }
   .haburgerMenu,
   .text {
-    font-size: 25px;
+    font-size: 30px;
+  }
+
+  .settings_nav_bar_container {
+    height: 100vh;
+    position: fixed;
+    background: white;
+    padding-top: 51.21vw;
+    z-index: -0;
   }
 }
 @media screen and (max-width: 540px) {
   .haburgerMenu,
   .text {
-    font-size: 25px;
+    font-size: 7.25vw;
   }
 }
