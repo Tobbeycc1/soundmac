@@ -24,6 +24,8 @@ import PersonalInfo from "./Pages/Dashboard/Settings/PersonalInfo";
 import SettingsHeader from "./Pages/Dashboard/dashboard utilities/SettingsHeader";
 import { useContext } from "react";
 import SettingsContext from "./contexts/Settings Context/SettingsContext";
+import UpdatePassword from "./Pages/Dashboard/Settings/UpdatePassword";
+import PayoutInfo from "./Pages/Dashboard/Settings/PayoutInfo";
 
 function App() {
   const { isBigScreen, showHamburgerMenu, isSmallScreen } = useContext(
@@ -162,7 +164,7 @@ function App() {
                 <DashboardHeader /> <SettingsHeader />
                 {isBigScreen && <SettingsnavBar />}
                 {isSmallScreen && showHamburgerMenu && <SettingsnavBar />}
-                <p>payout info</p>
+                <PayoutInfo />
               </div>
             </PrivateRoute>
           }
@@ -176,7 +178,7 @@ function App() {
                 <DashboardHeader /> <SettingsHeader />
                 {isBigScreen && <SettingsnavBar />}
                 {isSmallScreen && showHamburgerMenu && <SettingsnavBar />}
-                <p>update password</p>
+                <UpdatePassword />
               </div>
             </PrivateRoute>
           }
