@@ -133,14 +133,18 @@ function Dashboard() {
                     </div>
                   )}
 
-                  <div className={classes.input_account_type}>
-                    <input
-                      className={classes.input_artiste_name_field}
-                      type={"text"}
-                      placeholder={"Label name"}
-                      onChange={onSelectAccountType}
-                    />
-                  </div>
+                  {(accountTypeVal.account_type === "Mini Label Account" ||
+                    accountTypeVal.account_type === "Label Account") && (
+                    <div className={classes.input_account_type}>
+                      <input
+                        className={classes.input_artiste_name_field}
+                        type={"text"}
+                        placeholder={"Label name"}
+                        onChange={onSelectAccountType}
+                      />
+                    </div>
+                  )}
+
                   <div className={classes.proceed_button}>
                     <button onClick={proceed} className={classes.proceed}>
                       Proceed

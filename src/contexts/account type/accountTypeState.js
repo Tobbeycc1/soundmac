@@ -29,23 +29,34 @@ const AccountTypeState = ({ children }) => {
       [e.target.name]: e.target.value,
     }));
 
-    setLoadingNameAvailability(true);
+    artisteName.length > 2 && setLoadingNameAvailability(true);
 
     // stop loading after 10 secs
     setTimeout(() => {
       setLoadingNameAvailability(false);
-    }, 10000);
+    }, 3000);
 
-    artisteName.length < 4 && setAvailabilityMssg("Type in a valid name");
+    artisteName.length < 4 && setAvailabilityMssg("");
   };
 
   // when user clicks proceed button
   function proceed(e) {
     e.preventDefault();
-    setAccountTypeVal((prev) => ({
-      ...prev,
-      [e.target.name]: e.target.value,
-    }));
+    if (account_type === "") {
+      toast.error("Accout type field can't be empty!");
+    } else if (
+      (accountTypeVal.account_type === "Free Account" ||
+        accountTypeVal.account_type === "Independent Account") &&
+      artisteName === ""
+    ) {
+      toast.error("Input a valid artiste name!");
+    } else if (
+      (accountTypeVal.account_type === "Mini Label Account" ||
+        accountTypeVal.account_type === "Label Account") &&
+      artisteName === ""
+    ) {
+      toast.error("Input a valid label name!");
+    }
   }
 
   const onPost = async ({ name: artisteName }) => {
