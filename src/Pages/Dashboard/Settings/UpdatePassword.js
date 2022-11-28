@@ -4,6 +4,9 @@ function UpdatePassword() {
   return (
     <div className={classes.settings_con}>
       <div>
+        <p className={classes.settings_text_kindly}>
+          Kindly ensure that all details filled are accurate
+        </p>
         {/* email */}
         <form>
           <div className={classes.formCon}>
