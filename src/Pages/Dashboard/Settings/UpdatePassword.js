@@ -21,13 +21,26 @@ function UpdatePassword() {
           <br />
           <br />
 
+          {/* old password */}
+          <div className={classes.formCon}>
+            <input
+              className={classes.Input}
+              type={"password"}
+              name={"old_password"}
+              placeholder="old password"
+              required
+            />
+          </div>
+          <br />
+          <br />
+
           {/* password */}
           <div className={classes.formCon}>
             <input
               className={classes.Input}
               type={"password"}
-              name={"password"}
-              placeholder="password"
+              name={"new_password"}
+              placeholder="new password"
               required
             />
           </div>
@@ -39,8 +52,8 @@ function UpdatePassword() {
             <input
               className={classes.Input}
               type={"password"}
-              name={"confirm_password"}
-              placeholder="confirm password"
+              name={"confirm_new_password"}
+              placeholder="confirm new password"
               required
             />
           </div>
