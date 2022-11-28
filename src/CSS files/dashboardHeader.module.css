@@ -4,7 +4,7 @@
   /* height: 50px; */
   padding: 20px 30px 0px 30px;
   position: relative;
-  z-index: 100;
+  z-index: 4000;
 }
 .logo {
   margin-right: auto;

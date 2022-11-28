@@ -16,6 +16,19 @@ const SettingsState = ({ children }) => {
   const [country, setCountry] = useState("");
   const [region, setRegion] = useState("");
 
+  // payout info state
+  const [payOutInfo, setPayOutInfo] = useState({
+    payOutOption: "",
+  });
+
+  // payout function on select of payment optiopn
+  const payoutFn = (e) => {
+    setPayOutInfo((prev) => ({
+      ...prev,
+      [e.target.name]: e.target.value,
+    }));
+  };
+
   return (
     <SettingsContext.Provider
       value={{
@@ -28,6 +41,8 @@ const SettingsState = ({ children }) => {
         setCountry,
         region,
         setRegion,
+        payoutFn,
+        payOutInfo,
       }}
     >
       {children}

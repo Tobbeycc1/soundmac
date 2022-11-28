@@ -14,6 +14,9 @@ function PersonalInfo() {
   return (
     <div className={classes.settings_con}>
       <div>
+        <p className={classes.settings_text_kindly}>
+          Kindly ensure that all details filled are accurate
+        </p>
         {/* firstName */}
         <form>
           <div className={classes.formCon}>
@@ -22,7 +25,6 @@ function PersonalInfo() {
               type={"text"}
               name={"first_name"}
               placeholder="first name"
-              required
             />
           </div>
           <div className={classes.update_con}>
@@ -38,7 +40,6 @@ function PersonalInfo() {
               type={"text"}
               name={"last_name"}
               placeholder="last name"
-              required
             />
           </div>
           <div className={classes.update_con}>
@@ -54,7 +55,6 @@ function PersonalInfo() {
               type={"text"}
               name={"artiste_name"}
               placeholder="artiste name"
-              required
             />
           </div>
           <div className={classes.update_con}>
@@ -70,7 +70,6 @@ function PersonalInfo() {
               type={"text"}
               name={"label_name"}
               placeholder="label name"
-              required
             />
           </div>
           <div className={classes.update_con}>
@@ -86,7 +85,6 @@ function PersonalInfo() {
               type={"tel"}
               name={"mobile_number"}
               placeholder="mobile number"
-              required
             />
           </div>
           <div className={classes.update_con}>
@@ -102,7 +100,6 @@ function PersonalInfo() {
               type={"text"}
               name={"address_1"}
               placeholder="address 1"
-              required
             />
           </div>
           <div className={classes.update_con}>
@@ -118,7 +115,6 @@ function PersonalInfo() {
               type={"text"}
               name={"address_2"}
               placeholder="address 2"
-              required
             />
           </div>
           <div className={classes.update_con}>
@@ -160,7 +156,6 @@ function PersonalInfo() {
             type={"text"}
             name={"city"}
             placeholder="city / town"
-            required
           />
         </div>
         <br />
@@ -171,7 +166,6 @@ function PersonalInfo() {
             type={"number"}
             name={"postal_code"}
             placeholder="postal code"
-            required
           />
         </div>
 

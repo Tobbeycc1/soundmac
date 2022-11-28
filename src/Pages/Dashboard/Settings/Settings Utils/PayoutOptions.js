@@ -1,6 +1,6 @@
 export const payoutOptions = [
   "Click to select",
   "Paypal",
-  "payoneer",
+  "Payoneer",
   "Local bank",
 ];
