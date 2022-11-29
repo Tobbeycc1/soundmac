@@ -73,87 +73,93 @@ function Dashboard() {
     setSongModal(!songModal);
   };
 
+  const [account_type_db, setAccount_type_db] = useState("");
+
   return (
     <Fragment>
       {user !== null && !loading ? (
         <div className={classes.dashboard_con}>
-          <div className={classes.modal}>
-            {/* error message */}
+          {/* if account type is empty */}
+          {account_type_db === "" && (
+            <div className={classes.modal}>
+              {/* error message */}
 
-            <div className={classes.modal_sub_con}>
-              <div className={classes.select_account_type_con}>
-                <p className={classes.account_type_header}>
-                  SOUNDMAC ACCOUNT TYPE
-                </p>
+              <div className={classes.modal_sub_con}>
+                <div className={classes.select_account_type_con}>
+                  <p className={classes.account_type_header}>
+                    SOUNDMAC ACCOUNT TYPE
+                  </p>
+                </div>
+                <select
+                  className={classes.account_type_con}
+                  name={"account_type"}
+                  onChange={onSelectAccountType}
+                >
+                  <option value="">none</option>
+                  <option>Free Account</option>
+                  <option>Independent Account</option>
+                  <option>Mini Label Account</option>
+                  <option>Label Account</option>
+                </select>
+                {accountTypeVal.account_type !== "" && (
+                  <>
+                    {(accountTypeVal.account_type === "Free Account" ||
+                      accountTypeVal.account_type ===
+                        "Independent Account") && (
+                      <div className={classes.input_account_type}>
+                        <input
+                          className={classes.input_artiste_name_field}
+                          type={"text"}
+                          placeholder={"Artiste name"}
+                          name={"artisteName"}
+                          onChange={onSelectAccountType}
+                        />
+                        {loadingNameAvailability === true ? (
+                          <SkeletonTheme
+                            baseColor="#7a1400af"
+                            highlightColor="#444"
+                          >
+                            <Skeleton
+                              count={1}
+                              className={classes.skeleton_con_b}
+                            />
+                          </SkeletonTheme>
+                        ) : (
+                          <p
+                            className={
+                              availabilityMssg !== "Name available"
+                                ? classes.availability_mssg_red
+                                : classes.availability_mssg
+                            }
+                          >
+                            {availabilityMssg}
+                          </p>
+                        )}
+                      </div>
+                    )}
+
+                    {(accountTypeVal.account_type === "Mini Label Account" ||
+                      accountTypeVal.account_type === "Label Account") && (
+                      <div className={classes.input_account_type}>
+                        <input
+                          className={classes.input_artiste_name_field}
+                          type={"text"}
+                          placeholder={"Label name"}
+                          onChange={onSelectAccountType}
+                        />
+                      </div>
+                    )}
+
+                    <div className={classes.proceed_button}>
+                      <button onClick={proceed} className={classes.proceed}>
+                        Proceed
+                      </button>
+                    </div>
+                  </>
+                )}
               </div>
-              <select
-                className={classes.account_type_con}
-                name={"account_type"}
-                onChange={onSelectAccountType}
-              >
-                <option value="">none</option>
-                <option>Free Account</option>
-                <option>Independent Account</option>
-                <option>Mini Label Account</option>
-                <option>Label Account</option>
-              </select>
-              {accountTypeVal.account_type !== "" && (
-                <>
-                  {(accountTypeVal.account_type === "Free Account" ||
-                    accountTypeVal.account_type === "Independent Account") && (
-                    <div className={classes.input_account_type}>
-                      <input
-                        className={classes.input_artiste_name_field}
-                        type={"text"}
-                        placeholder={"Artiste name"}
-                        name={"artisteName"}
-                        onChange={onSelectAccountType}
-                      />
-                      {loadingNameAvailability === true ? (
-                        <SkeletonTheme
-                          baseColor="#7a1400af"
-                          highlightColor="#444"
-                        >
-                          <Skeleton
-                            count={1}
-                            className={classes.skeleton_con_b}
-                          />
-                        </SkeletonTheme>
-                      ) : (
-                        <p
-                          className={
-                            availabilityMssg !== "Name available"
-                              ? classes.availability_mssg_red
-                              : classes.availability_mssg
-                          }
-                        >
-                          {availabilityMssg}
-                        </p>
-                      )}
-                    </div>
-                  )}
-
-                  {(accountTypeVal.account_type === "Mini Label Account" ||
-                    accountTypeVal.account_type === "Label Account") && (
-                    <div className={classes.input_account_type}>
-                      <input
-                        className={classes.input_artiste_name_field}
-                        type={"text"}
-                        placeholder={"Label name"}
-                        onChange={onSelectAccountType}
-                      />
-                    </div>
-                  )}
-
-                  <div className={classes.proceed_button}>
-                    <button onClick={proceed} className={classes.proceed}>
-                      Proceed
-                    </button>
-                  </div>
-                </>
-              )}
             </div>
-          </div>
+          )}
 
           <MediaQuery minWidth={1000}>
             <div className={classes.slide_con_con}>
