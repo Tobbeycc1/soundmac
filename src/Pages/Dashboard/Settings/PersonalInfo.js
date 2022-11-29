@@ -18,109 +18,65 @@ function PersonalInfo() {
           Kindly ensure that all details filled are accurate
         </p>
         {/* firstName */}
-        <form>
-          <div className={classes.formCon}>
-            <input
-              className={classes.Input}
-              type={"text"}
-              name={"first_name"}
-              placeholder="first name"
-            />
-          </div>
-          <div className={classes.update_con}>
-            <p className={classes.update_text}>Update</p>
-          </div>
-        </form>
+        <div className={classes.formCon}>
+          <input
+            className={classes.Input}
+            type={"text"}
+            name={"first_name"}
+            placeholder="first name"
+          />
+        </div>
+        <br />
+        <br />
 
         {/* last name */}
-        <form>
-          <div className={classes.formCon}>
-            <input
-              className={classes.Input}
-              type={"text"}
-              name={"last_name"}
-              placeholder="last name"
-            />
-          </div>
-          <div className={classes.update_con}>
-            <p className={classes.update_text}>Update</p>
-          </div>
-        </form>
-
-        {/* artiste name */}
-        <form>
-          <div className={classes.formCon}>
-            <input
-              className={classes.Input}
-              type={"text"}
-              name={"artiste_name"}
-              placeholder="artiste name"
-            />
-          </div>
-          <div className={classes.update_con}>
-            <p className={classes.update_text}>Update</p>
-          </div>
-        </form>
-
-        {/* label name */}
-        <form>
-          <div className={classes.formCon}>
-            <input
-              className={classes.Input}
-              type={"text"}
-              name={"label_name"}
-              placeholder="label name"
-            />
-          </div>
-          <div className={classes.update_con}>
-            <p className={classes.update_text}>Update</p>
-          </div>
-        </form>
+        <div className={classes.formCon}>
+          <input
+            className={classes.Input}
+            type={"text"}
+            name={"last_name"}
+            placeholder="last name"
+          />
+        </div>
+        <br />
+        <br />
 
         {/* mobile number */}
-        <form>
-          <div className={classes.formCon}>
-            <input
-              className={classes.Input}
-              type={"tel"}
-              name={"mobile_number"}
-              placeholder="mobile number"
-            />
-          </div>
-          <div className={classes.update_con}>
-            <p className={classes.update_text}>Update</p>
-          </div>
-        </form>
+        <div className={classes.formCon}>
+          <input
+            className={classes.Input}
+            type={"tel"}
+            name={"mobile_number"}
+            placeholder="mobile number"
+          />
+        </div>
+        <br />
+        <br />
 
         {/* address 1 */}
-        <form>
-          <div className={classes.formCon}>
-            <input
-              className={classes.Input}
-              type={"text"}
-              name={"address_1"}
-              placeholder="address 1"
-            />
-          </div>
-          <div className={classes.update_con}>
-            <p className={classes.update_text}>Update</p>
-          </div>
-        </form>
+        <div className={classes.formCon}>
+          <input
+            className={classes.Input}
+            type={"text"}
+            name={"address_1"}
+            placeholder="address 1"
+          />
+        </div>
+
+        <br />
+        <br />
 
         {/* Address 2 */}
-        <form>
-          <div className={classes.formCon}>
-            <input
-              className={classes.Input}
-              type={"text"}
-              name={"address_2"}
-              placeholder="address 2"
-            />
-          </div>
-          <div className={classes.update_con}>
-            <p className={classes.update_text}>Update</p>
-          </div>
-        </form>
+        <div className={classes.formCon}>
+          <input
+            className={classes.Input}
+            type={"text"}
+            name={"address_2"}
+            placeholder="address 2"
+          />
+        </div>
+        <br />
+        <br />
 
         {/* country */}
 
@@ -136,6 +92,8 @@ function PersonalInfo() {
           />
         </div>
         <br />
+        <br />
+
         <div className={classes.formCon}>
           <RegionDropdown
             country={country}
@@ -150,6 +108,8 @@ function PersonalInfo() {
           <br />
         </div>
         <br />
+        <br />
+
         <div className={classes.formCon}>
           <input
             className={classes.Input}
@@ -158,6 +118,7 @@ function PersonalInfo() {
             placeholder="city / town"
           />
         </div>
+        <br />
         <br />
 
         <div className={classes.formCon}>
@@ -168,6 +129,9 @@ function PersonalInfo() {
             placeholder="postal code"
           />
         </div>
+
+        <br />
+        <br />
 
         <div className={classes.update_con}>
           <p className={classes.update_text}>Update</p>

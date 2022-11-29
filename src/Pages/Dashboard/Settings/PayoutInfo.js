@@ -78,18 +78,12 @@ function PayoutInfo() {
 
             {/* Bank Name */}
             <div className={classes.formCon}>
-              <select
-                name={"payOutOption"}
-                value={payOutInfo.payOutOption}
-                onChange={payoutFn}
+              <input
                 className={classes.Input}
-              >
-                {banksArr.map((item, index) => (
-                  <>
-                    <option key={index}>{item}</option>
-                  </>
-                ))}
-              </select>
+                type={"text"}
+                name={"bank_name"}
+                placeholder="Bank name"
+              />
             </div>
 
             <br />
@@ -126,6 +120,11 @@ function PayoutInfo() {
               />
             </div>
             <br />
+            <br />
+
+            <div className={classes.update_con}>
+              <p className={classes.update_text}>Update</p>
+            </div>
           </div>
         )}
       </div>

@@ -7,20 +7,8 @@ function UpdatePassword() {
         <p className={classes.settings_text_kindly}>
           Kindly ensure that all details filled are accurate
         </p>
-        {/* email */}
-        <form>
-          <div className={classes.formCon}>
-            <input
-              className={classes.Input}
-              type={"email"}
-              name={"email"}
-              placeholder="email"
-              required
-            />
-          </div>
-          <br />
-          <br />
 
+        <form>
           {/* old password */}
           <div className={classes.formCon}>
             <input

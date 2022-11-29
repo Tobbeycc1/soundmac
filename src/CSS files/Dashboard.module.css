@@ -33,6 +33,7 @@
 .account_type_con {
   text-align: left;
   margin: 10px 20px;
+  background: white;
 }
 .account_type_header {
   font-weight: bold;
@@ -242,7 +243,19 @@
 .availability_mssg_red {
   color: var(--red);
 }
-
+.zero_songs_text,
+.zero_songs_text_more {
+  width: 200px;
+  margin: 10px 10px 10px 40px;
+  font-weight: bold;
+  color: var(--purple);
+  width: 35vw;
+  font-size: 0.9vw;
+}
+.zero_songs_text_more {
+  color: var(--purple);
+  font-size: 1.2vw;
+}
 @media screen and (max-width: 999px) {
   .Cover_Image,
   .src {
@@ -307,6 +320,16 @@
     margin-top: 7.01vh;
     padding: 0px 10px;
   }
+  .zero_songs_text,
+  .zero_songs_text_more {
+    width: calc(100% - 80px);
+    margin: 10px 40px;
+    font-weight: bold;
+    font-size: 12px;
+  }
+  .zero_songs_text_more {
+    font-size: 16px;
+  }
 }
 @media screen and (max-width: 540px) {
   .slide_con_con {
@@ -328,5 +351,12 @@
   .cloud_icon_con {
     width: 8.45vw;
     height: 8.45vw;
+  }
+  .zero_songs_text,
+  .zero_songs_text_more {
+    font-size: 2.9vw;
+  }
+  .zero_songs_text_more {
+    font-size: 3.87vw;
   }
 }

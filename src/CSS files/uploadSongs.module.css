@@ -397,6 +397,7 @@ input::placeholder,
   width: 100%;
   outline: none;
   cursor: pointer;
+  background: white;
 }
 .pick_a_date_con {
   background: rgba(0, 0, 0, 0.774);

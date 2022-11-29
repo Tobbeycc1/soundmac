@@ -2,9 +2,7 @@ import classes from "../../CSS files/Dashboard.module.css";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 import { AutoScroll } from "@splidejs/splide-extension-auto-scroll";
 import "@splidejs/splide/css";
-import { toast } from "react-toastify";
 import { useState } from "react";
-import { useMemo } from "react";
 import { useContext } from "react";
 import { RiNeteaseCloudMusicLine } from "react-icons/ri";
 import { RiMusicLine } from "react-icons/ri";
@@ -22,32 +20,6 @@ import SongDetails from "./Upload utilities/SongsDetails";
 import UploadSongContext from "../../contexts/upload Song  Fns/uploadSongContext";
 import AccountTypeContext from "../../contexts/account type/accountTypeContext";
 
-const dummyData = [
-  {
-    id: 1,
-    artisteName: "Tobbey",
-    song: "good girl",
-    src:
-      "https://cdn8.openculture.com/2018/02/26214611/Arlo-safe-e1519715317729.jpg",
-    ft: "wizkid",
-  },
-  {
-    id: 2,
-    artisteName: "Tobbey",
-    song: "Gbese",
-    src:
-      "https://oscarmini.com/wp-content/uploads/2014/08/michaeljackson_coverart.jpg",
-    ft: "Asake, burna boy",
-  },
-  {
-    id: 3,
-    artisteName: "Tobbey",
-    song: "Essence",
-    src:
-      "https://graphicriver.img.customer.envatousercontent.com/files/383062766/music-albumcover-templates-bundle78-preview.jpg?auto=compress%2Cformat&fit=crop&crop=top&w=590&h=590&s=17318da830a8e0cad5e038de293bced3",
-    ft: "",
-  },
-];
 const musicCoverArt = [bannerOne, bannerThree, bannerTwo, bannerFour];
 
 function Dashboard() {
@@ -73,7 +45,7 @@ function Dashboard() {
     setSongModal(!songModal);
   };
 
-  const [account_type_db, setAccount_type_db] = useState("");
+  const [account_type_db, setAccount_type_db] = useState("ff");
 
   return (
     <Fragment>
@@ -222,7 +194,7 @@ function Dashboard() {
           <div className={classes.section2_con}>
             <div className={classes.todays_stream_A}>
               <p className={classes.song_heading}>Songs</p>
-              {firstFive.length > 0 &&
+              {firstFive.length > 0 ? (
                 firstFive.map((item) => (
                   <div
                     className={classes.small_songs_con}
@@ -240,22 +212,28 @@ function Dashboard() {
                         {item.artist_name}
                       </p>
                     </div>
+                    <p
+                      className={classes.zero_songs_text_more}
+                      onClick={() => navigate('"/dashboard/allsongs"')}
+                    >
+                      more
+                    </p>
                   </div>
-                ))}
-              <br />
-              <Link
-                to={"/dashboard/allsongs"}
-                className={classes.link_to_catalog}
-              >
-                more
-              </Link>
+                ))
+              ) : (
+                <p className={classes.zero_songs_text}>
+                  You currently have zero(0) songs to display, kindly click the
+                  upload button to upload your first song with SOUNDMAC
+                </p>
+              )}
             </div>
+            <br />
             {/* {gottenSongs.map((item, index) => (
               <div>{item.artist_name} </div>
             ))} */}
             <div className={classes.todays_stream}>
               <p className={classes.song_heading}>Albums</p>
-              {firstFive.length > 0 &&
+              {firstFive.length > 0 ? (
                 firstFive.map((item, index) => (
                   <div className={classes.small_songs_con}>
                     <img
@@ -272,10 +250,13 @@ function Dashboard() {
                       </p>
                     </div>
                   </div>
-                ))}
-              <Link to={"/album_catalog"} className={classes.link_to_catalog}>
-                more
-              </Link>
+                ))
+              ) : (
+                <p className={classes.zero_songs_text}>
+                  You currently have zero(0) albums to display, kindly click the
+                  upload button to upload your first album with SOUNDMAC
+                </p>
+              )}
             </div>
             {/* upload song */}
             <div className={classes.upload_con_con}>
