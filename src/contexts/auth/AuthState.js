@@ -17,6 +17,9 @@ const URL = process.env.REACT_APP_SERVER_URL;
 const AuthState = ({ children }) => {
   const { addMessage } = useContext(AlertContext);
 
+  // loading state
+  const [loadingState, setLoadingState] = useState(false);
+
   // initialstate
   const initialState = {
     isAuthenticated: false,
@@ -49,6 +52,7 @@ const AuthState = ({ children }) => {
       });
 
       localStorage.setItem("auth-token", data.token);
+      setLoadingState(false);
 
       getUser(); // get user
     } catch (err) {
@@ -64,6 +68,7 @@ const AuthState = ({ children }) => {
       });
       // dispatch alert error
     }
+    setLoadingState(false);
   };
 
   // login user
@@ -195,6 +200,8 @@ const AuthState = ({ children }) => {
         loader,
         errorMssg,
         setErrorMssg,
+        loadingState,
+        setLoadingState,
       }}
     >
       {children}

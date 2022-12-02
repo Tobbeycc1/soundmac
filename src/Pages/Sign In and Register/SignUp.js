@@ -14,15 +14,15 @@ import { useNavigate } from "react-router-dom";
 
 import {
   CountryDropdown,
-  RegionDropdown,
-  CountryRegionData,
+  // RegionDropdown,
+  // CountryRegionData,
 } from "react-country-region-selector";
 import AuthContext from "../../contexts/auth/authContext";
 
 function SignUp(props) {
   const authContext = useContext(AuthContext);
 
-  const { registerUser, loading, loader, user } = authContext;
+  const { registerUser, loadingState, setLoadingState, user } = authContext;
   const navigate = useNavigate();
 
   const [userDetails, setUserDetails] = useState({
@@ -125,7 +125,13 @@ function SignUp(props) {
       };
       registerUser(user);
       console.log(user);
-      loader();
+      // loader();
+      setLoadingState(true);
+
+      // incase of network failure
+      setTimeout(() => {
+        setLoadingState(false);
+      }, 10000);
     }
   };
 
@@ -262,7 +268,7 @@ function SignUp(props) {
                 required
               />
             </div>
-            {loading === true ? (
+            {loadingState === true ? (
               <button className={classes.signInCon}>
                 {" "}
                 <Loading type="points-opacity" />
